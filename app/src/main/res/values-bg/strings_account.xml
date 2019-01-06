@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="account_name">Име на профила</string>
+    <string name="account_name_desc">Името, с което ще се изобразява профила</string>
+</resources>

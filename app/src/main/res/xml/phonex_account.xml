@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--Currently no editing of user name is allowed-->
+    <!--<EditTextPreference-->
+        <!--android:key="display_name"-->
+        <!--android:singleLine="true"-->
+        <!--android:title="@string/account_name"></EditTextPreference>-->
+
+    <Preference
+        android:key="change_password"
+        android:summary="@string/change_password_desc"
+        android:title="@string/change_password">
+        <intent
+            android:targetClass=".ChangePasswordActivity"
+            android:targetPackage="net.phonex.ui.preferences" />
+    </Preference>
+
+    <Preference
+        android:key="recovery_email"
+        android:summary="@string/recovery_email_desc"
+        android:title="@string/recovery_email">
+        <intent
+            android:targetClass=".ChangeRecoveryEmailActivity"
+            android:targetPackage="net.phonex.ui" />
+    </Preference>
+
+    <Preference
+        android:key="my_certificate"
+        android:summary="@string/my_certificate_desc"
+        android:title="@string/my_certificate">
+        <intent
+            android:targetClass=".MyCertificateActivity"
+            android:targetPackage="net.phonex.ui.preferences" />
+    </Preference>
+
+    <Preference
+        android:key="sync_certificates"
+        android:summary="@string/sync_certificates_desc"
+        android:title="@string/sync_certificates" />
+
+    <Preference
+        android:key="sync_dhkeys"
+        android:summary="@string/sync_dhkeys_desc"
+        android:title="@string/sync_dhkeys" />
+
+    <Preference
+        android:key="restart_stack"
+        android:summary="@string/restart_stack_desc"
+        android:title="@string/restart_stack" />
+
+    <Preference
+        android:key="send_logs"
+        android:summary="@string/send_logs"
+        android:title="@string/send_logs" />
+
+    <Preference
+        android:key="log_out"
+        android:title="@string/logout" />
+</PreferenceScreen>

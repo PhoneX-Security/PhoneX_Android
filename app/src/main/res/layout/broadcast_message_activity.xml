@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/toolbar"/>
+
+    <include layout="@layout/message_limit_warning" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin">
+        <!--android:background="@drawable/app_layered_background"-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_whitesmoke"
+            android:text="@string/broadcast_recipients"
+            />
+
+        <net.phonex.ui.broadcast.SipContactCompletionView
+            android:id="@+id/recipients_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:singleLine="false"
+            style="@style/edit_text_flat"
+            />
+
+        <TextView
+            android:id="@+id/message_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="14sp"
+            android:textColor="@color/text_whitesmoke"
+            android:text="@string/broadcast_message"
+            />
+
+        <net.phonex.ui.customViews.SecurePasteEditText
+            android:id="@+id/embedded_text_editor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+
+            android:imeOptions="actionSend"
+            android:inputType="textAutoCorrect|textCapSentences|textMultiLine"
+            android:singleLine="false"
+            android:maxLength="3000"
+            android:lines="4"
+            android:maxLines="8"
+            android:gravity="top"
+            android:scrollbars="vertical"
+            android:isScrollContainer="true"
+            style="@style/edit_text_flat"
+            android:nextFocusRight="@+id/send_button" />
+
+        <ListView
+            android:id="@+id/file_list"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:choiceMode="multipleChoice"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:fadingEdge="none" />
+        <!--android:layout_height="0dp"-->
+        <!--android:layout_weight="1"-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/broadcast_note"
+            />
+
+        </LinearLayout>
+</LinearLayout>

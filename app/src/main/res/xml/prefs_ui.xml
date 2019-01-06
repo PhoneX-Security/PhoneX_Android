@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/general_ui">
+        <ListPreference
+            android:defaultValue="0"
+            android:entries="@array/languages_choices"
+            android:entryValues="@array/languages_values"
+            android:key="language"
+            android:summary="@string/language_desc"
+            android:title="@string/language" />
+
+        <RingtonePreference
+            android:key="ringtone"
+            android:summary="@string/ringtone_desc"
+            android:title="@string/ringtone"></RingtonePreference>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="prevent_screen_rotation"
+            android:summary="@string/prevent_screen_rotation_desc"
+            android:title="@string/prevent_screen_rotation" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="contactlist_sort_online"
+            android:summary="@string/contactlist_sort_online_desc"
+            android:title="@string/contactlist_sort_online" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="contactlist_show_usernames"
+            android:summary="@string/contactlist_show_username_desc"
+            android:title="@string/contactlist_show_username" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="alert_new_message_during_chat"
+            android:summary="@string/alert_new_message_during_chat_desc"
+            android:title="@string/alert_new_message_during_chat" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="advanced_ui"
+        android:title="@string/advanced_ui">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="keep_awake_incall"
+            android:summary="@string/keep_awake_incall_desc"
+            android:title="@string/keep_awake_incall" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="invert_proximity_sensor"
+            android:summary="@string/invert_proximity_sensor_desc"
+            android:title="@string/invert_proximity_sensor" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="use_partial_wake_lock"
+            android:summary="@string/use_partial_wake_lock_desc"
+            android:title="@string/use_partial_wake_lock" />
+
+        <EditTextPreference
+            android:defaultValue="1"
+            android:key="log_level"
+            android:numeric="signed"
+            android:summary="@string/log_level_desc"
+            android:title="@string/log_level" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="log_to_file"
+            android:summary="@string/log_to_file_desc"
+            android:title="@string/log_to_file" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

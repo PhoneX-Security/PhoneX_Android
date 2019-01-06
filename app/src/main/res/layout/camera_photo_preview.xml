@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/photo_preview"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="invisible"
+    android:background="@color/background_material_dark">
+
+    <!-- Quick photo preview is on bottom -->
+    <net.phonex.camera.control.PinchImageView
+        android:id="@+id/future_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <!-- Draw progress bar over it, to show that we are loading high res -->
+    <ProgressBar
+        android:id="@+id/loading_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <!-- High resolution preview is on top -->
+    <net.phonex.camera.control.PinchImageView
+        android:id="@+id/full_photo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal|bottom" />
+
+    <ImageButton
+        android:id="@+id/rotate_right"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_gravity="right|top"
+        android:layout_margin="@dimen/large_margin"
+        android:background="@null"
+        android:src="@android:drawable/ic_menu_rotate"
+        android:scaleType="fitCenter"/>
+
+    <ImageButton
+        android:id="@+id/rotate_left"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_gravity="left|top"
+        android:layout_margin="@dimen/large_margin"
+        android:background="@null"
+        android:src="@android:drawable/ic_menu_rotate"
+        android:scaleX="-1"
+        android:scaleType="fitCenter" />
+
+    <ImageButton
+        android:id="@+id/confirm"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_gravity="right|bottom"
+        android:layout_margin="@dimen/large_margin"
+        android:background="@null"
+        android:scaleType="fitCenter" />
+
+    <ImageButton
+        android:id="@+id/repeat"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_gravity="left|bottom"
+        android:layout_margin="@dimen/large_margin"
+        android:background="@null"
+        android:src="@drawable/svg_trash"
+        android:scaleType="fitCenter"/>
+
+    <RelativeLayout
+        android:id="@+id/saving_progress_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible">
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lbl_saving"/>
+
+        <ProgressBar
+            android:id="@+id/saving_progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/large_margin"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+
+
+
+</FrameLayout>

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="verify_n_digit_pin">Введите ПИН-код</string>
+    <string name="create_n_digit_pin">Введите новый ПИН-код</string>
+    <string name="confirm_n_digit_pin">Подтвердите ПИН-код</string>
+    <string name="pin_mismatch">ПИН-код не совпадает</string>
+    <string name="pin_created">ПИН-код создан</string>
+    <string name="saving_pin">Запись ПИН-кода</string>
+    <string name="pin_tries_depleted">Неверный ПИН-код введен %d раз(a), выход из системы</string>
+</resources>

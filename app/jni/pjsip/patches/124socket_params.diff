@@ -1,0 +1,13 @@
+Index: pjproject/sources/pjlib/include/pj/sock.h
+===================================================================
+--- pjproject.orig/sources/pjlib/include/pj/sock.h
++++ pjproject/sources/pjlib/include/pj/sock.h
+@@ -617,7 +617,7 @@ typedef struct pj_ip_mreq {
+ } pj_ip_mreq;
+ 
+ /* Maximum number of socket options. */
+-#define PJ_MAX_SOCKOPT_PARAMS 4
++#define PJ_MAX_SOCKOPT_PARAMS 12
+ 
+ /**
+  * Options to be set for the socket. 

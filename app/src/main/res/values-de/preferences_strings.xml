@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">Einstellungen</string>
+  <string name="prefs_connectivity">Netzwerk</string>
+  <string name="prefs_media">Audio</string>
+  <string name="prefs_ui">Benutzeroberfläche</string>
+  <!--Network-->
+  <string name="transport">Protokoll</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">Audioqualität</string>
+  <string name="audio_volume">Lautstärke</string>
+  <string name="codecs">Codecs</string>
+  <string name="echo_cancellation">Echounterdrückung</string>
+  <string name="echo_cancellation_desc">Aktiviert die Echounterdrückung</string>
+  <string name="disable_vad">Sprachaktivitätserkennung</string>
+  <string name="disable_vad_desc">Aktiviert die Sprachaktivitätserkennung</string>
+  <string name="enable_noise_reduction">Lärmreduktion</string>
+  <string name="enable_noise_reduction_desc">Funktioniert, wenn Echounterdrückung aktiviert ist und das WebRTC-Echounterdrückungs-Backend verwendet wird.</string>
+  <string name="sound_mic_volume">Mikrofonverstärkung</string>
+  <string name="sound_speaker_volume">Lautsprecherverstärkung</string>
+  <string name="sound_bt_mic_volume">Bluetooth Mikrofonverstärkung</string>
+  <string name="media_quality">Audioqualität</string>
+  <string name="media_quality_desc">Qualität der Audiodaten (Verändere diesen Wert nur, wenn du weißt was du tust)</string>
+  <string name="sound_clock_rate">Abtastrate</string>
+  <string name="sound_clock_rate_desc">Verändert die Abtastrate der Audiodaten</string>
+  <string name="echo_cancellation_mode">Unterdrückungsalgorithmus</string>
+  <string name="echo_cancellation_mode_desc">Verwendeter Echounterdrückungs-Algorithmus</string>
+  <string name="enable_focus_audio">Audio exklusiv in Anspuch nehmen</string>
+  <string name="auto">Automatisch</string>
+  <string name="simple">Einfach</string>
+  <string name="slow">Langsam</string>
+  <string name="fast">Schnell</string>
+  <!--UI-->
+  <string name="general_ui">Standard-Benutzeroberfläche</string>
+  <string name="keep_awake_incall">Display während Anruf nicht ausschalten</string>
+  <string name="keep_awake_incall_desc">Beim Telefonieren das Einschlafen verhindern. (Behebt Probleme mit abgehacktem Audio.)</string>
+  <string name="log_level">Protokollierungsstufe</string>
+  <string name="ringtone">Klingelton</string>
+  <string name="prevent_screen_rotation">Verhindere Displayrotation</string>
+  <string name="invert_proximity_sensor">Entfernungs-Sensor invertieren</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <string name="normal_preferences">Normaler Modus</string>
+  <!--Generic-->
+  <!-- ##automatically translated below -->
+
+<string name="prefs_security">Sicherheit</string>
+<string name="network_watchdog">Netzwerk Watchdog</string>
+<string name="network_watchdog_desc">Startet Service im Falle von keiner Registrierung. In Sekunden. 0 = deaktiviert</string>
+<string name="security_messages">Nachrichten</string>
+<string name="messages_delete_period_desc">Wie lange Ihre Nachrichten im Archiv halten</string>
+<string name="messages_delete_period">Nachrichten Archivierung</string>
+<string name="just_session">Gerade diese Sitzung</string>
+<string name="one_day">1 Tag</string>
+<string name="three_days">3 Tage</string>
+<string name="week">Woche</string>
+<string name="month">Monat</string>
+<string name="forever">Immer</string>
+</resources>

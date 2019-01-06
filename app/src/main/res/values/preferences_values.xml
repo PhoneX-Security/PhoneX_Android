@@ -1,0 +1,206 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string-array name="clock_rate_values">
+        <item>8000</item>
+        <item>16000</item>
+        <item>32000</item>
+        <item>44100</item>
+    </string-array>
+    <string-array name="clock_rate_choices">
+        <item>8KHz</item>
+        <item>16KHz</item>
+        <item>32KHz</item>
+        <item>44.1KHz</item>
+    </string-array>
+    <string-array name="ft_resize_values">
+        <item>-1</item>
+        <item>640</item>
+        <item>800</item>
+        <item>1024</item>
+        <item>1280</item>
+    </string-array>
+    <string-array name="ft_resize_choices">
+        <item>@string/ft_resize_disable</item>
+        <item>@string/ft_resize_pixels_640</item>
+        <item>@string/ft_resize_pixels_800</item>
+        <item>@string/ft_resize_pixels_1024</item>
+        <item>@string/ft_resize_pixels_1280</item>
+    </string-array>
+    <string-array name="micro_source_values">
+        <item>0</item>
+        <item>1</item>
+        <item>4</item>
+        <item>7</item>
+        <item>2</item>
+        <item>3</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+    <string-array name="micro_source_choices">
+        <item>DEFAULT</item>
+        <item>MIC</item>
+        <item>VOICE_CALL</item>
+        <item>VOICE_COMMUNICATION</item>
+        <item>VOICE_CALL_UP</item>
+        <item>VOICE_CALL_DOWN</item>
+        <item>CAMCORDER</item>
+        <item>VOICE_RECOGNITION</item>
+    </string-array>
+    <string-array name="echo_mode_values">
+        <item>0</item>
+        <!-- Default -->
+        <item>1</item>
+        <!-- Speex -->
+        <item>2</item>
+        <!-- Simple -->
+        <item>3</item>
+        <!-- WebRTC -->
+    </string-array>
+    <string-array name="echo_mode_choices">
+        <item>@string/auto</item>
+        <item>@string/speex</item>
+        <item>@string/simple</item>
+        <item>@string/webrtc</item>
+    </string-array>
+    <string-array name="band_types">
+        <item>nb</item>
+        <item>wb</item>
+    </string-array>
+    <string-array name="band_types_name">
+        <item>@string/slow</item>
+        <item>@string/fast</item>
+    </string-array>
+    <string-array name="audio_implementation_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
+    <string-array name="audio_implementation_choices">
+        <item>Java</item>
+        <item>OpenSL</item>
+    </string-array>
+    <!-- security related -->
+
+    <string-array name="messages_delete_period_values">
+        <!--In hours-->
+        <item>-1</item> <!-- Never -->
+        <item>1</item> <!-- 1 hour -->
+        <item>6</item> <!-- 6 hour -->
+        <item>12</item> <!-- 12 hour -->
+        <item>24</item> <!-- 1 day -->
+        <item>72</item> <!-- 3 days -->
+        <item>168</item> <!-- 7 days -->
+        <item>672</item> <!-- 28 days -->
+    </string-array>
+    <string-array name="messages_delete_period_choices">
+        <item>@string/forever</item>
+        <item>@string/one_hour</item>
+        <item>@string/six_hours</item>
+        <item>@string/twelve_hours</item>
+        <item>@string/one_day</item>
+        <item>@string/three_days</item>
+        <item>@string/week</item>
+        <item>@string/month</item>
+    </string-array>
+
+    <string-array name="languages_values">
+        <item>auto</item>
+        <item>af</item>
+        <item>ar</item>
+        <item>bg</item>
+        <item>cs</item>
+        <item>da</item>
+        <item>el</item>
+        <item>en</item>
+        <item>es</item>
+        <item>fi</item>
+        <item>fr</item>
+        <item>gl</item>
+        <item>he</item>
+        <item>hi</item>
+        <item>hr</item>
+        <item>hu</item>
+        <item>hy</item>
+        <item>it</item>
+        <item>ja</item>
+        <item>km</item>
+        <item>ko</item>
+        <item>nl</item>
+        <item>pl</item>
+        <item>pt</item>
+        <item>ro</item>
+        <item>ru</item>
+        <item>sk</item>
+        <item>sl</item>
+        <item>sr</item>
+        <item>sv</item>
+        <item>tr</item>
+        <item>uk</item>
+        <item>zh_cn</item>
+    </string-array>
+
+    <string-array name="languages_choices">
+        <item>@string/auto</item>
+        <item>Afrikaans</item>
+        <item>العربية</item>
+        <item>български език</item>
+        <item>čeština</item>
+        <item>dansk</item>
+        <item>ελληνικά</item>
+        <item>english</item>
+        <item>español</item>
+        <item>suomi</item>
+        <item>français</item>
+        <item>galego</item>
+        <item>עברית</item>
+        <item>हिन्दी, हिंदी (Hindi)</item>
+        <item>hrvatski jezik</item>
+        <item>magyar</item>
+        <item>Հայերեն (Armenian)</item>
+        <item>italiano</item>
+        <item>日本語 (にほんご)</item>
+        <item>ខ្មែរ, ខេមរភាសា, ភាសាខ្មែរ (Khmer)</item>
+        <item>한국어 (韓國語)</item>
+        <item>Nederlands</item>
+        <item>polszczyzna</item>
+        <item>português</item>
+        <item>limba română</item>
+        <item>русский язык</item>
+        <item>slovenčina</item>
+        <item>slovenščina</item>
+        <item>српски језик</item>
+        <item>Svenska</item>
+        <item>Türkçe</item>
+        <item>українська мова</item>
+        <item>汉语, 漢語</item>
+    </string-array>
+
+    <string-array name="pinlock_timer_values">
+        <!-- In milliseconds -->
+        <item>-1</item> <!-- Asap -->
+        <item>30000</item> <!-- 30 sec -->
+        <item>60000</item> <!-- 1 min -->
+        <item>120000</item> <!-- 2 min -->
+        <item>180000</item> <!-- 3 min -->
+        <item>300000</item> <!-- 5 min -->
+        <item>600000</item> <!-- 10 min -->
+        <item>900000</item> <!-- 15 min -->
+        <item>1800000</item> <!-- 30 min -->
+        <item>2700000</item> <!-- 45 min -->
+        <item>3600000</item> <!-- 60 min -->
+    </string-array>
+
+    <string-array name="pinlock_timer_choices">
+        <item>@string/lock_asap</item>
+        <item>@string/lock_30s</item>
+        <item>@string/lock_1m</item>
+        <item>@string/lock_2m</item>
+        <item>@string/lock_3m</item>
+        <item>@string/lock_5m</item>
+        <item>@string/lock_10m</item>
+        <item>@string/lock_15m</item>
+        <item>@string/lock_30m</item>
+        <item>@string/lock_45m</item>
+        <item>@string/lock_60m</item>
+    </string-array>
+
+</resources>

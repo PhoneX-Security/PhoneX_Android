@@ -1,0 +1,123 @@
+Index: pjsip/sources/pjsip/include/pjsua-lib/pjsua.h
+===================================================================
+--- pjsip.orig/sources/pjsip/include/pjsua-lib/pjsua.h
++++ pjsip/sources/pjsip/include/pjsua-lib/pjsua.h
+@@ -3432,6 +3432,15 @@ typedef struct pjsua_acc_config
+      */
+     pj_bool_t         register_on_acc_add;
+ 
++    /**
++     * Timeout for sending register requests.
++     * If 0 is used, internal timeout value is used.
++     * Value is in milliseconds.
++     *
++     * Default: 0
++     */
++    pj_uint32_t        register_tsx_timeout;
++
+ } pjsua_acc_config;
+ 
+ 
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_core.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_core.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_core.c
+@@ -302,6 +302,7 @@ PJ_DEF(void) pjsua_acc_config_default(pj
+     cfg->call_hold_type = PJSUA_CALL_HOLD_TYPE_DEFAULT;
+     cfg->register_on_acc_add = PJ_TRUE;
+     cfg->mwi_expires = PJSIP_MWI_DEFAULT_EXPIRES;
++    cfg->register_tsx_timeout = 0;
+ }
+ 
+ PJ_DEF(void) pjsua_buddy_config_default(pjsua_buddy_config *cfg)
+Index: pjsip/sources/pjsip/src/pjsip-ua/sip_reg.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip-ua/sip_reg.c
++++ pjsip/sources/pjsip/src/pjsip-ua/sip_reg.c
+@@ -111,6 +111,7 @@ struct pjsip_regc
+      * it open.
+      */
+     pjsip_transport		*last_transport;
++    pj_uint32_t			 tsx_timeout;
+ };
+ 
+ 
+@@ -135,6 +136,7 @@ PJ_DEF(pj_status_t) pjsip_regc_create( p
+     regc->token = token;
+     regc->cb = cb;
+     regc->expires = PJSIP_REGC_EXPIRATION_NOT_SPECIFIED;
++    regc->tsx_timeout = REGC_TSX_TIMEOUT;
+     regc->add_xuid_param = pjsip_cfg()->regc.add_xuid_param;
+ 
+     status = pj_lock_create_recursive_mutex(pool, pool->obj_name, 
+@@ -444,6 +446,15 @@ PJ_DEF(pj_status_t) pjsip_regc_set_trans
+     return PJ_SUCCESS;
+ }
+ 
++PJ_DEF(pj_status_t) pjsip_regc_set_tsx_timeout(pjsip_regc *regc, pj_uint32_t timeout){
++    PJ_ASSERT_RETURN(regc, PJ_EINVAL);
++
++    pj_uint32_t newTimeout = timeout == 0 ? REGC_TSX_TIMEOUT : timeout;
++    regc->tsx_timeout = newTimeout;
++
++    return PJ_SUCCESS;
++}
++
+ /* Release transport */
+ PJ_DEF(pj_status_t) pjsip_regc_release_transport(pjsip_regc *regc)
+ {
+@@ -1421,7 +1432,7 @@ PJ_DEF(pj_status_t) pjsip_regc_send(pjsi
+     pj_lock_release(regc->lock);
+ 
+     /* Now send the message */
+-    status = pjsip_endpt_send_request(regc->endpt, tdata, REGC_TSX_TIMEOUT,
++    status = pjsip_endpt_send_request(regc->endpt, tdata, (pj_int32_t) regc->tsx_timeout,
+ 				      regc, &regc_tsx_callback);
+     if (status!=PJ_SUCCESS) {
+ 	PJ_LOG(4,(THIS_FILE, "Error sending request, status=%d", status));
+Index: pjsip/sources/pjsip/include/pjsip-ua/sip_regc.h
+===================================================================
+--- pjsip.orig/sources/pjsip/include/pjsip-ua/sip_regc.h
++++ pjsip/sources/pjsip/include/pjsip-ua/sip_regc.h
+@@ -312,6 +312,16 @@ PJ_DECL(pj_status_t) pjsip_regc_set_tran
+ 					      const pjsip_tpselector *sel);
+ 
+ /**
++ * Sets timeout for new register transactions.
++ *
++ * @param regc	    The client registration instance.
++ * @param timeout	Timeout in milliseconds.
++ *
++ * @return	    PJ_SUCCESS on success, or the appropriate error code.
++ */
++PJ_DECL(pj_status_t) pjsip_regc_set_tsx_timeout(pjsip_regc *regc, pj_uint32_t timeout);
++
++/**
+  * Release the reference to current transport being used by the regc, if any.
+  * The regc keeps the reference to the last transport being used in order
+  * to prevent it from being destroyed. In some situation however, such as
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_acc.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_acc.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_acc.c
+@@ -1203,6 +1203,12 @@ PJ_DEF(pj_status_t) pjsua_acc_modify( pj
+ 
+ 	update_reg = PJ_TRUE;
+     }
++	if (acc->cfg.register_tsx_timeout != cfg->register_tsx_timeout){
++		acc->cfg.register_tsx_timeout = cfg->register_tsx_timeout;
++		if (acc->regc != NULL) {
++			pjsip_regc_set_tsx_timeout(acc->regc, acc->cfg.register_tsx_timeout);
++		}
++	}
+     acc->cfg.unreg_timeout = cfg->unreg_timeout;
+     acc->cfg.allow_contact_rewrite = cfg->allow_contact_rewrite;
+     acc->cfg.reg_retry_interval = cfg->reg_retry_interval;
+@@ -2470,6 +2476,7 @@ static pj_status_t pjsua_regc_init(int a
+ 	pjsip_regc_add_headers(acc->regc, &hdr_list);
+     }
+ 
++	pjsip_regc_set_tsx_timeout(acc->regc, acc->cfg.register_tsx_timeout);
+     pj_pool_release(pool);
+ 
+     return PJ_SUCCESS;

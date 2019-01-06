@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="prefs">Կառավարում</string>
+<string name="prefs_connectivity">Ցանց</string>
+<string name="prefs_media">Մեդիա</string>
+<string name="prefs_ui">Օգտվողի միջերեսը</string>
+<string name="prefs_security">Անվտանգություն</string>
+<string name="transport">Ավտոմոբիլային տրանսպորտին</string>
+<string name="network_watchdog">Network կազմակերպությունը</string>
+<string name="network_watchdog_desc">Վերսկսվում ծառայությունների դեպքում ոչ միայն. Վայրկյաններով. 0 = անջատելու</string>
+<string name="audio_quality">Աուդիո որակը</string>
+<string name="audio_volume">Ծավալ</string>
+<string name="codecs">Codecs</string>
+<string name="echo_cancellation">Echo չեղյալացում</string>
+<string name="echo_cancellation_desc">Ակտիվացնել ECHO չեղյալ</string>
+<string name="disable_vad">Voice ձայնային հայտնաբերման</string>
+<string name="disable_vad_desc">Ակտիվացրեք ձայնային ձայնային հայտնաբերման</string>
+<string name="enable_noise_reduction">Աղմուկի նվազեցման</string>
+<string name="enable_noise_reduction_desc">Works եթե echo չեղյալ ակտիվացված է եւ WebRTC ECHO canceller backend համար</string>
+<string name="sound_mic_volume">Micro ուժեղացում</string>
+<string name="sound_speaker_volume">Բարձրախոսներ ուժեղացում</string>
+<string name="sound_bt_mic_volume">Bluetooth mic ուժեղացում</string>
+<string name="media_quality">Մեդիա որակը</string>
+<string name="media_quality_desc">Որակի լրատվության հոսքի (փոփոխությունները միայն եթե դուք գիտեք, թե ինչ եք անում):</string>
+<string name="sound_clock_rate">Ժամացույց տոկոսադրույքը</string>
+<string name="sound_clock_rate_desc">Աուդիո ալիք հաճախականությունը</string>
+<string name="echo_cancellation_mode">Echo ռեժիմ</string>
+<string name="echo_cancellation_mode_desc">Ալգորիթմ համար echo</string>
+<string name="enable_focus_audio">Ֆոկուս Աուդիո</string>
+<string name="auto">Ավտոմոբիլ</string>
+<string name="simple">Պարզ</string>
+<string name="slow">Դանդաղ</string>
+<string name="fast">Արագ</string>
+<string name="general_ui">General ինտերֆեյսի</string>
+<string name="keep_awake_incall">Պահպանեք արթուն իսկ կանչի</string>
+<string name="keep_awake_incall_desc">Ամրացում, եթե դուք ստանում ուժգին ձայնը, երբ էկրանի անջատել իսկ WIFI կանչի</string>
+<string name="log_level">Մուտք մակարդակը</string>
+<string name="ringtone">Avatar Անձնագիր</string>
+<string name="prevent_screen_rotation">Կանխել էկրանի ռոտացիա</string>
+<string name="invert_proximity_sensor">Շրջել մոտիկություն սենսոր</string>
+<string name="normal_preferences">Նորմալ ռեժիմով</string>
+<string name="security_messages">Հաղորդագրություններ</string>
+<string name="messages_delete_period_desc">Որքան պահել Ձեր հաղորդագրությունները արխիվում</string>
+<string name="messages_delete_period">Messages archivation</string>
+<string name="just_session">Just այս նիստը</string>
+<string name="one_day">1 օր</string>
+<string name="three_days">3 օր</string>
+<string name="week">Շաբաթ</string>
+<string name="month">Ամիս</string>
+<string name="forever">Ընդմիշտ</string>
+</resources>

@@ -1,0 +1,119 @@
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_core.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_core.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_core.c
+@@ -113,6 +113,8 @@ PJ_DEF(void) pjsua_config_default(pjsua_
+     cfg->hangup_forked_call = PJ_TRUE;
+ 
+     cfg->use_timer = PJSUA_SIP_TIMER_OPTIONAL;
++    cfg->resolver_delay = PJ_DNS_RESOLVER_QUERY_RETRANSMIT_DELAY;
++    cfg->resolver_retry = PJ_DNS_RESOLVER_QUERY_RETRANSMIT_COUNT;
+     pjsip_timer_setting_default(&cfg->timer_setting);
+ }
+ 
+@@ -687,6 +689,58 @@ PJ_DEF(pj_status_t) pjsua_reconfigure_lo
+     return PJ_SUCCESS;
+ }
+ 
++/*
++ * Reconfigures DNS servers.
++ */
++PJ_DEF(pj_status_t) pjsua_reconfigure_dns(unsigned count, const pj_str_t servers[])
++{
++    pj_status_t status = PJ_SUCCESS;
++#if PJSIP_HAS_RESOLVER
++    if (pjsua_var.resolver == NULL){
++        PJ_LOG(2, (THIS_FILE, "DNS resolver is NULL"));
++        return PJ_EINVAL;
++    }
++
++    /* Configure nameserver for the DNS resolver */
++    status = pj_dns_resolver_set_ns(pjsua_var.resolver,
++                                    count,
++                                    servers, NULL);
++    if (status != PJ_SUCCESS) {
++        pjsua_perror(THIS_FILE, "Error setting nameserver", status);
++    }
++
++#endif
++    return status;
++}
++
++PJ_DEF(pj_status_t) pjsua_reconfigure_resolver(unsigned delay, unsigned retry_cnt)
++{
++    pj_status_t status = PJ_SUCCESS;
++#if PJSIP_HAS_RESOLVER
++    if (pjsua_var.resolver == NULL){
++        PJ_LOG(2, (THIS_FILE, "DNS resolver is NULL"));
++        return PJ_EINVAL;
++    }
++
++    pj_dns_settings st;
++    status = pj_dns_resolver_get_settings(pjsua_var.resolver, &st);
++    if (status != PJ_SUCCESS){
++        pjsua_perror(THIS_FILE, "Could not obtain current resolver settings", status);
++        return status;
++    }
++
++    st.qretr_delay = delay;
++    st.qretr_count = retry_cnt;
++    status = pj_dns_resolver_set_settings(pjsua_var.resolver, &st);
++    if (status != PJ_SUCCESS) {
++        pjsua_perror(THIS_FILE, "Error updating DNS resolver settings nameserver", status);
++    } else {
++        PJ_LOG(4, (THIS_FILE, "DNS resolver was updated, delay=%u, retry=%u", delay, retry_cnt));
++    }
++
++#endif
++    return status;
++}
+ 
+ /*****************************************************************************
+  * PJSUA Base API.
+@@ -941,6 +995,9 @@ PJ_DEF(pj_status_t) pjsua_init( const pj
+ 	    goto on_error;
+ 	}
+ 
++    /* Configure resolver values */
++    pjsua_reconfigure_resolver(ua_cfg->resolver_delay, ua_cfg->resolver_retry);
++
+ 	/* Print nameservers */
+ 	for (ii=0; ii<ua_cfg->nameserver_count; ++ii) {
+ 	    PJ_LOG(4,(THIS_FILE, "Nameserver %.*s added",
+Index: pjsip/sources/pjsip/include/pjsua-lib/pjsua.h
+===================================================================
+--- pjsip.orig/sources/pjsip/include/pjsua-lib/pjsua.h
++++ pjsip/sources/pjsip/include/pjsua-lib/pjsua.h
+@@ -1729,6 +1729,16 @@ typedef struct pjsua_config
+      */
+     pj_bool_t	     hangup_forked_call;
+ 
++    /**
++     * DNS resolver delay for one query (timeout time in milliseconds).
++     */
++    unsigned    resolver_delay;
++
++    /**
++     * Number of attempt to try query DNS to mark query as failed.
++     */
++    unsigned    resolver_retry;
++
+ } pjsua_config;
+ 
+ 
+@@ -2015,7 +2025,15 @@ PJ_DECL(pjmedia_endpt*) pjsua_get_pjmedi
+  */
+ PJ_DECL(pj_pool_factory*) pjsua_get_pool_factory(void);
+ 
++/**
++ * Reconfigures DNS servers for DNS resolver used in pjsua.
++ */
++PJ_DECL(pj_status_t) pjsua_reconfigure_dns(unsigned count, const pj_str_t servers[]);
+ 
++/**
++ * Reconfigures DNS resolver for timeout delay and retrycounts for DNS queries.
++ */
++PJ_DECL(pj_status_t) pjsua_reconfigure_resolver(unsigned delay, unsigned retry_cnt);
+ 
+ /*****************************************************************************
+  * Utilities.

@@ -1,0 +1,19 @@
+Index: pjsip/sources/pjsip/src/pjsip/sip_config.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_config.c
++++ pjsip/sources/pjsip/src/pjsip/sip_config.c
+@@ -53,12 +53,12 @@ pjsip_cfg_t pjsip_sip_cfg_var =
+ 
+     /* TCP transport settings */
+     {
+-        PJSIP_TCP_KEEP_ALIVE_INTERVAL
++        PJSIP_TCP_KEEP_ALIVE_INTERVAL_DEFAULT
+     },
+ 
+     /* TLS transport settings */
+     {
+-        PJSIP_TLS_KEEP_ALIVE_INTERVAL
++        PJSIP_TLS_KEEP_ALIVE_INTERVAL_DEFAULT
+     }
+ };
+ 

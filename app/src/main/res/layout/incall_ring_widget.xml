@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<net.frakbot.glowpadbackport.GlowPadView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/incomingCallWidget"
+    android:gravity="center"
+    android:layout_gravity="center_vertical"
+    android:layout_centerHorizontal="true"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+
+    app:gravity="fill"
+    app:targetDrawables="@array/incoming_call_widget_2way_targets"
+    app:handleDrawable="@drawable/ic_in_call_touch_handle"
+    app:innerRadius="@dimen/glowpadview_inner_radius"
+    app:outerRadius="@dimen/glowpadview_target_placement_radius"
+    app:outerRingDrawable="@drawable/ic_lockscreen_outerring"
+    app:snapMargin="@dimen/glowpadview_snap_margin"
+    app:vibrationDuration="20"
+    app:feedbackCount="1"
+    app:glowRadius="@dimen/glowpadview_glow_radius"
+    app:pointDrawable="@drawable/ic_lockscreen_glowdot"/>

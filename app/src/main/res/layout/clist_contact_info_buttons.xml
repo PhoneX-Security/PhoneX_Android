@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/validation_bar"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:orientation="horizontal" >
+    <!--style="@style/ButtonBar"-->
+        
+    <Button
+        android:id="@+id/check_certificate"
+
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:text="@string/recheck_certificate" />
+    <!--style="@style/ButtonBarButton"-->
+</LinearLayout>
+

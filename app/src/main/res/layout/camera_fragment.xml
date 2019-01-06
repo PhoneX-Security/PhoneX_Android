@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/camera_background"
+    android:orientation="vertical">
+
+    <include layout="@layout/camera_camera" />
+
+    <!-- the photo preview is displayed over the camera when picture was taken -->
+
+    <include layout="@layout/camera_photo_preview" />
+
+    <RelativeLayout
+        android:id="@+id/splash_screen"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/camera_background"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/splash_size"
+            android:layout_height="@dimen/splash_size"
+            android:layout_centerInParent="true"
+            android:src="@drawable/camera_capture"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

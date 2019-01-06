@@ -1,0 +1,73 @@
+# Call info getters, no sync as it has own sync.
+PJ_DECL.*?\s+((pjsua_(call_get_vid_stream_idx))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_(call_vid_stream_is_running))\s*\([^)]+\));##  Warning: original code does not use PJSUA_LOCK here.
+PJ_DECL.*?\s+((pjsua_(call_get_info))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_(call_[A-Za-z1-9_\-]+))\s*\([^)]+\));## Even stronger rule for all call getters.
+
+# Conference bridge - well locked inside.
+PJ_DECL.*?\s+((pjsua_(conf_[A-Za-z1-9_\-]+))\s*\([^)]+\));
+
+# Message manipulation
+PJ_DECL.*?\s+((pjsua_(msg_[A-Za-z1-9_\-]+))\s*\([^)]+\));
+
+# Memory pool
+PJ_DECL.*?\s+((pjsua_(pool_[A-Za-z1-9_\-]+))\s*\([^)]+\));
+
+# Verification methods
+PJ_DECL.*?\s+((pjsua_(verify_sip_url))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_(verify_url))\s*\([^)]+\));
+
+# Error reporting
+PJ_DECL.*?\s+((pjsua_(perror))\s*\([^)]+\));
+
+# Transport related stuff
+PJ_DECL.*?\s+((pjsua_(transport_[A-Za-z1-9_\-]+))\s*\([^)]+\));
+
+# Account related stuff
+PJ_DECL.*?\s+((pjsua_(acc_[A-Za-z1-9_\-]+))\s*\([^)]+\));
+
+# Sound device
+PJ_DECL.*?\s+((pjsua_([A-Za-z1-9_\-]*snd_dev[A-Za-z1-9_\-]*))\s*\([^)]+\));
+
+# Sound
+PJ_DECL.*?\s+((pjsua_(snd_[A-Za-z1-9_\-]*))\s*\([^)]+\));
+
+# Codecs
+PJ_DECL.*?\s+((pjsua_([A-Za-z1-9_\-]*codec[A-Za-z1-9_\-]*))\s*\([^)]+\));
+
+# Video device
+PJ_DECL.*?\s+((pjsua_([A-Za-z1-9_\-]*vid_dev[A-Za-z1-9_\-]*))\s*\([^)]+\));
+
+# Video
+PJ_DECL.*?\s+((pjsua_(vid_[A-Za-z1-9_\-]*))\s*\([^)]+\));
+
+# Messaging
+PJ_DECL.*?\s+((pjsua_(im_[A-Za-z1-9_\-]+))\s*\([^)]+\));
+
+# Media
+PJ_DECL.*?\s+((pjsua_([A-Za-z1-9_\-]*media_config_default[A-Za-z1-9_\-]*))\s*\([^)]+\));
+
+# Echo cancellation
+PJ_DECL.*?\s+((pjsua_(set_ec))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_(get_ec_tail))\s*\([^)]+\));
+
+# Enums
+PJ_DECL.*?\s+((pjsua_(enum_[A-Za-z1-9_\-]+))\s*\([^)]+\));
+
+# ICE & TURN
+PJ_DECL.*?\s+((pjsua_(ice_[A-Za-z1-9_\-]+))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_(turn_[A-Za-z1-9_\-]+))\s*\([^)]+\));
+
+# Configuration default & duplication, should not block on mutex.
+PJ_DECL.*?\s+((pjsua_([A-Za-z1-9_\-]*config_dup[A-Za-z1-9_\-]*))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_([A-Za-z1-9_\-]*config_default[A-Za-z1-9_\-]*))\s*\([^)]+\));
+
+# Detect & get NAT
+PJ_DECL.*?\s+((pjsua_(detect_nat_type))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_(get_nat_type))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_(resolve_stun_servers))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_(cancel_stun_resolution))\s*\([^)]+\));
+
+# Misc
+PJ_DECL.*?\s+((pjsua_(dump))\s*\([^)]+\));
+PJ_DECL.*?\s+((pjsua_(get_state))\s*\([^)]+\));

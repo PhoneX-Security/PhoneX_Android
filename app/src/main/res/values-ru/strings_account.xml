@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="account_name">Название аккаунта</string>
+    <string name="account_name_desc">Показать название аккаунта</string>
+</resources>

@@ -1,0 +1,10 @@
+(PJ_DECL.*?\s+pjsua_media_transports_attach\s*[^)]+\);)
+typedef struct pjsua_media_config pjsua_media_config;
+(PJ_DECL.*?\s+pjsua_init\s*[^)]+\);)
+(PJ_DECL.*?\s+pjsua_destroy\s*[^)]+\);)
+(PJ_DECL.*?\s+pjsua_buddy_[A-Za-z1-9_\-]+\s*[^)]+\);)
+(PJ_DECL.*?\s+pjsua_get_buddy_[A-Za-z1-9_\-]+\s*[^)]+\);)
+(PJ_DECL.*?\s+pjsua_pres_[A-Za-z1-9_\-]+\s*[^)]+\);)
+(PJ_DECL.*?\s+pjsua_get_pres_[A-Za-z1-9_\-]+\s*[^)]+\);)
+(PJ_DECL.*?\s+pjsua_player_[A-Za-z1-9_\-]+\s*[^)]+\);)
+(PJ_DECL.*?\s+pjsua_recorder_[A-Za-z1-9_\-]+\s*[^)]+\);)

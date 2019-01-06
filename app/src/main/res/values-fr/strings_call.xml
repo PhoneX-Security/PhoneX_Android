@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">Répondre</string>
+  <string name="end_call">Raccrocher</string>
+  <string name="speaker">Ht. parleur</string>
+  <string name="mute">Muet</string>
+  <string name="call_state_calling">Appel…</string>
+  <string name="call_state_disconnected">Fin d\'appel</string>
+  <string name="call_state_incoming">Appel entrant…</string>
+  <string name="hold_call">Mettre en attente</string>
+  <string name="on_hold">En attente</string>
+  <!-- ##automatically translated below -->
+
+<string name="transport_secure_to_server">Le transport TLS est utilisé pour hop immédiate</string>
+<string name="transport_secure_full">La signalisation de bout-en-bout est censé sécurisé</string>
+</resources>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/call_card_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:ignore="Overdraw">
+   
+    <RelativeLayout
+        android:id="@+id/contact_name_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"  
+        android:layout_marginTop="20dp"              
+        android:gravity="center_vertical|center" >
+
+        <net.phonex.ui.customViews.FocusTextView
+            android:id="@+id/contact_name_display_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="1dp"
+            android:gravity="center"
+            android:padding="5dip"
+            android:singleLine="true"
+            android:textColor="@color/phonex_white"
+            android:textSize="32sp" />
+
+       
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/call_status_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contact_name_bar"        
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="3dp"
+        android:paddingLeft="3dp"
+        android:paddingBottom="3dp"
+        android:paddingRight="1dp"
+        android:text="@string/call_state_calling"
+        android:textAllCaps="true"
+        android:textColor="@color/phonex_white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/threeDots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/call_status_text"
+        android:layout_below="@+id/contact_name_bar"
+        android:paddingTop="3dp"
+        android:text=""
+        android:textAllCaps="true"
+        android:textColor="@color/phonex_white"
+        android:textSize="18sp" />
+
+
+    <RelativeLayout
+        android:id="@+id/call_secure_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/call_status_text"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/call_secure_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"            
+            android:padding="2dip"
+            android:textColor="@color/phonex_white"
+            android:textSize="15sp" />
+    
+    </RelativeLayout>    
+    
+    
+     <ImageView
+        android:id="@+id/callIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_below="@+id/contact_name_bar"        
+        android:layout_centerHorizontal="true"            
+        android:layout_marginTop="55dp"        
+        android:src="@drawable/svg_logo_large_call" />
+
+    <TextView
+        android:id="@+id/elapsedTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24sp"
+        android:textColor="@color/text_orange"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="0dp"
+        android:layout_below="@+id/callIcon"
+        />
+
+    <TextView
+        android:id="@+id/remainingTime"
+        android:layout_below="@+id/elapsedTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="18sp"
+        android:gravity="center"
+         />
+    
+    <LinearLayout
+        android:id="@+id/end_call_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true" 
+        android:gravity="bottom"       
+        android:orientation="horizontal" 
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">    
+
+        <ImageButton
+            android:id="@+id/endButton"
+            style="@style/button_flat_orange"
+            android:textSize="@dimen/dialog_button_text_size"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:contentDescription="@string/done"
+            android:src="@drawable/ic_end_call" />
+    </LinearLayout>
+
+   
+
+</RelativeLayout>

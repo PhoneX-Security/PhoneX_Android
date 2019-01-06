@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="connection_not_valid">La ruta de red seleccionada no es compatible con los ajustes que tienes configurados</string>
+  <string name="save">Guardar</string>
+  <string name="cancel">Cancelar</string>
+  <string name="delete_account">Eliminar la cuenta</string>
+  <string name="add_account">Añadir una cuenta</string>
+  <string name="ongoing_call">Llamada en curso</string>
+  <string name="missed_call">Llamada perdida</string>
+  <string name="messages_tab_name_text">Mensajes</string>
+  <string name="menu_disconnect">Desconectar</string>
+  <string name="service_notification_registered">PhoneX registrado</string>
+  <string name="faq">FAQ Preguntas frecuentes</string>
+  <string name="help">Ayuda</string>
+  <string name="ok">OK</string>
+  <string name="quit_info">Usted ha configurado la aplicación para estar disponible en esta red!!! Al presionar OK confirma que no desea estar disponible hasta que inicie la aplicación de nuevo.</string>
+  <string name="voice_mail">Mensaje de voz</string>
+  <string name="not_configured_multiple_calls">La aplicación no está configurada para permitir llamadas múltiples</string>
+  <string name="loading">Cargando</string>
+  <string name="info">Información</string>
+  <!--Presence stuff-->
+  <string name="online">En linea</string>
+  <string name="offline">Fuera de linea</string>
+  <string name="away">Ausente</string>
+  <string name="busy">Ocupado</string>
+  </resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <net.phonex.ui.customViews.CheckboxCheckableLinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/list_detail_item_padding"
+        android:paddingRight="@dimen/list_detail_item_padding"
+        android:orientation="horizontal">
+
+        <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:visibility="visible"
+        android:focusableInTouchMode="false"
+         />
+
+        <ImageView
+            android:id="@+id/photo"
+            android:padding="3dp"
+            android:layout_width="@dimen/list_detail_image_size"
+            android:layout_height="@dimen/list_detail_image_size"/>
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/list_detail_image_size"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/list_font"
+            android:ellipsize="marquee"
+            android:paddingLeft="9dip"
+            android:paddingRight="9dip"
+            android:text="Ahoj"
+            android:textColor="@color/text_whitesmoke"
+            />
+
+    </net.phonex.ui.customViews.CheckboxCheckableLinearLayout>

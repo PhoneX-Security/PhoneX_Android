@@ -1,0 +1,274 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <style name="DarkTheme.NoTitle" parent="android:Theme.Holo.NoActionBar">
+        <item name="android:actionBarItemBackground">@drawable/abs__item_background_holo_dark</item>
+    </style>
+
+    <style name="PhoneXTheme.ActionBarStyle" parent="android:Widget.Holo.ActionBar">
+        <item name="android:displayOptions">useLogo|showHome</item>
+        <item name="android:height">50dip</item>
+    </style>
+
+    <style name="PhoneXTheme.ActionBarTabStyle" parent="android:Widget.Holo.ActionBar.TabView">
+        <item name="android:paddingLeft">2dip</item>
+        <item name="android:paddingRight">2dip</item>
+        <item name="android:background">@drawable/abs_tab_selector</item>
+    </style>
+
+    <style name="PhoneXTheme.ActionBarTabBarStyle" parent="android:Widget.Holo.ActionBar.TabBar">
+        <item name="android:showDividers">none</item>
+        <item name="android:dividerPadding">5dip</item>
+    </style>
+    <style name="PhoneXTheme.Widget.ActionMode" parent="android:Widget.Holo.ActionMode">
+        <item name="android:height">50dip</item>
+    </style>
+
+
+    <style name="GenericProgressBackground" parent="android:Theme">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="GenericProgressIndicator" parent="@android:style/Widget.ProgressBar.Small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminate">true</item>
+    </style>
+
+    <style name="sas_code_text" parent="android:TextAppearance.Large">
+        <item name="android:textColor">#ffffff</item>
+    </style>
+
+    <style name="sas_code">
+        <item name="android:paddingBottom">10dp</item>-->
+        <item name="android:textAppearance">@style/sas_code_text</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:shadowColor">#dd000000</item>
+        <item name="android:shadowDx">2</item>
+        <item name="android:shadowDy">2</item>
+        <item name="android:shadowRadius">4</item>
+    </style>
+
+    <style name="sas_head" parent="sas_code">
+        <item name="android:paddingRight">0dp</item>-->
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="sas_tail" parent="sas_code">
+        <item name="android:paddingRight">10dp</item>-->
+        <item name="android:textSize">32sp</item>
+    </style>
+
+    <style name="sas_word">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:paddingLeft">6dp</item>
+        <item name="android:paddingRight">6dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:layout_weight">2</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="IntroActivityTheme" parent="MaterialTheme">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+    
+    <style name="MaterialTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorAccent">@color/phonex_color_accent</item>
+        <item name="colorPrimary">@color/phonex_color_primary</item>
+        <item name="colorPrimaryDark">@color/phonex_color_primary</item>
+        <item name="android:windowBackground">@color/phonex_background</item>
+
+        <item name="android:actionModeCloseDrawable">@drawable/ic_menu_back</item>
+        <!--For action mode of action bar to correctly overlay-->
+        <item name="windowActionModeOverlay">true</item>
+        <item name="android:actionModeStyle">@style/action_mode_style</item>
+
+        <!--Material dialogs library styling-->
+        <!--https://github.com/afollestad/material-dialogs-->
+        <item name="md_dark_theme">true</item>
+        <item name="md_background_color">#282828</item>
+        <item name="md_neutral_color">@color/phonex_white</item>
+        <item name="md_negative_color">@color/phonex_white</item>
+    </style>
+
+    <!-- Block touches going to underlying toolbar-->
+    <style name="action_mode_style" parent="@style/Widget.AppCompat.ActionMode">
+        <item name="android:clickable">true</item>
+    </style>
+
+    <!--Preferences style-->
+    <style name="MaterialTheme.Preference" parent="MaterialTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="toolbarStyle">@style/MaterialTheme.Toolbar2</item>
+        <item name="android:textColor">?android:attr/textColorPrimary</item>
+
+    </style>
+    <style name="MaterialTheme.Toolbar2" parent="@style/Widget.AppCompat.Toolbar">
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:navigationIcon">?attr/homeAsUpIndicator</item>
+        <item name="navigationIcon">?attr/homeAsUpIndicator</item>
+    </style>
+
+
+
+    <style name="MaterialTheme.Toolbar" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+    </style>
+
+    <style name="MaterialTheme.NoTitleAndTransparent" parent="MaterialTheme">
+        <item name="actionBarItemBackground">@drawable/abs__item_background_holo_dark</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- Margins according to https://petrnohejl.github.io/Android-Cheatsheet-For-Graphic-Designers/ -->
+    <style name="button_flat_orange" parent="button_flat">
+        <item name="android:background">@drawable/button_orange</item>
+    </style>
+
+    <style name="button_flat_orange_stroke" parent="button_flat">
+        <item name="android:background">@drawable/button_orange_stroke</item>
+        <item name="android:textColor">@drawable/color_button_flat_white</item>
+    </style>
+
+    <style name="button_flat_black_stroke" parent="button_flat">
+        <item name="android:background">@drawable/button_black_stroke</item>
+        <item name="android:textColor">@drawable/color_button_flat_black</item>
+    </style>
+
+    <style name="button_flat">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="edit_text_flat">
+        <item name="android:singleLine">true</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:background">@drawable/edit_text_white_flat</item>
+    </style>
+
+    <style name="activity_side_margins">
+        <item name="android:paddingLeft">@dimen/activity_horizontal_margin</item>
+        <item name="android:paddingRight">@dimen/activity_horizontal_margin</item>
+    </style>
+    <!-- Camera -->
+
+
+    <style name="SlideButtonFlatOrange" parent="SlideButtonFlat">
+        <item name="android:background">@drawable/slider_button_orange</item>
+    </style>
+
+    <style name="SlideButtonFlat">
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:paddingLeft">24dp</item>
+        <item name="android:paddingRight">24dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <!--RelativeLayout-->
+    <style name="RelativeLayout"/>
+
+    <style name="RelativeLayout.SettingsItem" parent="RelativeLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/base_padding</item>
+    </style>
+
+    <!--Switch-->
+    <style name="Switch"/>
+
+    <style name="Switch.SettingsItem" parent="Switch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!--Spinner-->
+    <style name="Spinner"/>
+
+    <style name="Spinner.CameraParamsItem" parent="Spinner">
+        <item name="android:layout_width">@dimen/camera_screen_dialog_spinner_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <!-- TextView-->
+    <style name="TextView"/>
+
+    <style name="TextView.SettingsItemTitle" parent="TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/settings_item_padding</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="TextView.SettingsItemValue" parent="TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">@dimen/settings_item_padding</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="TextView.CameraSettingsItemTitle" parent="TextView.SettingsItemTitle">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- LinearLayout-->
+    <style name="LinearLayout"/>
+
+    <style name="LinearLayout.ActionsDialog" parent="LinearLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@drawable/input</item>
+        <item name="android:padding">@dimen/base_padding</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Button-->
+    <style name="Button"/>
+
+    <style name="Button.ActionDialog" parent="Button">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="ImageButton" parent="Button">
+        <item name="android:layout_width">@dimen/image_button_size</item>
+        <item name="android:layout_height">@dimen/image_button_size</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="@style/Theme.AppCompat">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

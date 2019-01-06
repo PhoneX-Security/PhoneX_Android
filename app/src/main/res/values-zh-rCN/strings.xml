@@ -1,0 +1,485 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="application_name">PhoneX</string>
+    <string name="permission_phonex_desc">PhoneX的一般访问限制，应用于插件及分机。</string>
+    <string name="registered">已注册</string>
+    <string name="unregistered">未注册</string>
+    <string name="about">关于</string>
+    <string name="connection_not_valid">已选网络路由器在现有设置中禁用。</string>
+    <string name="invalid_sip_uri">无法接通指定联系人。无效。</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="delete_account">注销账户</string>
+    <string name="add_account">添加联系人</string>
+    <string name="call">拨号</string>
+    <string name="message_notification">来信</string>
+    <string name="ongoing_call">通话中</string>
+    <string name="missed_call">未接来电</string>
+    <string name="messages_tab_name_text">信息</string>
+    <string name="notifications_tab_name_text">通知</string>
+    <string name="menu_disconnect">通话中断</string>
+    <string name="service_notification_registered">PhoneX已注册</string>
+    <string name="service_notification_unregistered">PhoneX未注册</string>
+    <string name="faq">常见问题</string>
+    <string name="help">求助</string>
+    <string name="ok">OK</string>
+    <string name="logout">注销</string>
+    <string name="quit_info">下线后您将无法接听电话和接收信息，确定下线吗？</string>
+    <string name="another_application_use_sip_port">错误。另一个应用程序正在运行SIP端口。无法启动！</string>
+    <string name="voice_mail">语音信箱</string>
+    <string name="not_configured_multiple_calls">PhoneX目前不支持多方谈话。</string>
+    <string name="downloading_text">下载中</string>
+    <string name="loading">载入中</string>
+    <string name="info">信息</string>
+    <!-- Presence stuff -->
+    <string name="online">在线</string>
+    <string name="offline">脱机 </string>
+    <string name="away">离线</string>
+    <string name="busy">忙碌</string>
+    <string name="pinconfirm">确认</string>
+    <string name="pin_block_info">应用程序被锁定</string>
+    <string name="pin_block_reason_retries">尝试过于频繁</string>
+    <string name="clist_add_title">添加联系人</string>
+    <string name="clist_add_sip">用户名</string>
+    <string name="clist_add_choosealias">选择昵称</string>
+    <string name="clist_add_displayname">昵称</string>
+    <string name="clist_add_inwhitelist">在“白名单”中</string>
+    <string name="clist_add_add">附加</string>
+    <string name="empty_messages">没有信息</string>
+    <string name="empty_notifications">没有通知</string>
+    <string name="contact_details">详情</string>
+    <string name="contacts_tab_name_text">联系人</string>
+    <string name="rename_account">重命名</string>
+    <string name="rename_account_title">重命名昵称</string>
+    <string name="rename_account_new">新绰号:</string>
+    <string name="presence_online">在线</string>
+    <string name="presence_away">离线</string>
+    <string name="presence_invisible">隐身</string>
+    <string name="intro_login">用户名</string>
+    <string name="intro_pass">密码</string>
+    <string name="intro_pass_confirmation">密码确认：</string>
+    <string name="intro_pass_change">修改密码</string>
+    <string name="intro_connect">签到</string>
+    <string name="intro_set_new_password">设置新密码（至少8位字符）</string>
+    <string name="intro_remember_me">记住密码</string>
+    <string name="p_authentication">身份认证</string>
+    <string name="p_authentication_failed">认证失败</string>
+    <string name="p_error_empty_login">登录名不能为空</string>
+    <string name="p_error_empty_password">密码不能为空</string>
+    <string name="p_success">成功</string>
+    <string name="p_error">出现错误</string>
+    <string name="p_almost_there">请稍等。此操作即将完成......</string>
+    <string name="p_not_before_certificate">您的帐户即将准备好！\n\n但因为设备时间与服务器时间存在偏差，所以您的身份认证无效。请您稍候，即将能够登录。剩余时间：%1$s 分钟、 %2$s 秒钟</string>
+    <string name="p_problem">出现问题</string>
+    <string name="p_problem_nonspecific">出现问题。也许由于网络连接发生错误。请稍后再试。</string>
+    <string name="p_problem_resolv">登录到PhoneX应用程序需要连接到互联网。\ n\ n请检查您的连接，然后再试一次。</string>
+    <string name="p_problem_socket">出现问题。服务器连接失败。\n\n也许与网络连接有关。请稍后再试。</string>
+    <string name="p_problem_auth_bad_response">出现问题。服务器返回意外的结果。\n\n也许您的应用程序版本已过时。请尝试更新。</string>
+    <string name="p_problem_bad_response">出现问题。服务器返回意外的结果。</string>
+    <string name="p_problem_bad_certificate">出现问题。您的身份认证无效。</string>
+    <string name="p_problem_badcredential">您的登录名或密码无效。</string>
+    <string name="p_problem_account_disabled">您的帐户已失效。请您联系支撑服务。</string>
+    <string name="p_problem_trial_expired">该试用版已到期。</string>
+    <string name="p_problem_trial_about_to_expire">该试用版即将到期。\n\n您的身份认证将失效。剩余时间：%1$s 天、 %2$s 小时</string>
+    <string name="p_problem_time_drift">您的系统时间与服务器时间不同。因此，您的登录发生问题。\n\n服务器时间: %1$s</string>
+    <string name="p_problem_db_general">在打开加密数据库过程中出现问题。无法继续操作。若此问题重复，请您考虑删除所有的应用程序数据，或者考虑重新安装应用程序。</string>
+    <string name="p_generating_keypair">生成密钥对</string>
+    <string name="p_getting_token">获取服务器标记</string>
+    <string name="p_sending_csr">向服务器发送CSR以签名。</string>
+    <string name="p_storing_csr">证书存储进行中</string>
+    <string name="p_generating_key">生成加密密钥</string>
+    <string name="p_rekey_keystore">使用新的密码来加密私钥。</string>
+    <string name="p_rekey_database">使用新的密码来加密数据库。</string>
+    <string name="p_testing_db">在测试加密数据库过程中。</string>
+    <string name="p_getting_client_csr">获取用户身份认证。</string>
+    <string name="p_sending_clist">将联系人名单存储在服务器上。</string>
+    <string name="p_saving_csr">正在存储到本地</string>
+    <string name="p_getting_clist">从服务器获取联系人名单。</string>
+    <string name="p_processing_clist">正在处理收到的列表…</string>
+    <string name="p_processing_csr">正在处理证书</string>
+    <string name="p_getting_local_clist">在加载本地身份认证中</string>
+    <string name="p_getting_missing_csr">正在下载丢失的证书</string>
+    <string name="p_synchronizing_clist">正在同步联系人名单</string>
+    <string name="p_deleting_contact">从服务器删除联系人</string>
+    <string name="p_deleting_contact_localy">从本地删除</string>
+    <string name="p_deleting_contact_artifacts">删除联系人的冗余数据。</string>
+    <string name="p_renaming_contact_localy">本地重命名</string>
+    <string name="p_sending_request">发送服务器的请求</string>
+    <string name="p_getting_response">获取回复</string>
+    <string name="p_rename_success">联系人%1$s 被重命名为%2$s。</string>
+    <string name="p_add_success">联系人%s 被添加。</string>
+    <string name="p_delete_success">联系人 %s被删除。</string>
+    <string name="p_encrypting_pass">密码在加密中</string>
+    <string name="p_encrypting_csr">CSR在加密中</string>
+    <string name="p_renaming">重命名联系人</string>
+    <string name="p_deleting">删除联系人</string>
+    <string name="p_rename_confirm">您是否要删除该帐户？</string>
+    <string name="p_loading_personal_credential">个人证书加载中</string>
+    <string name="p_synchronizing_csr">证书同步中</string>
+    <string name="p_unknown_error">内部错误。</string>
+    <string name="p_different_passwords">密码不一致</string>
+    <string name="p_short_password">密码太短。长度最少要求为8位字符。</string>
+    <string name="p_changing_password">密码更换</string>
+    <string name="p_password_change_err">密码更换失败。</string>
+    <string name="p_password_change_ok">密码被更换。</string>
+    <!-- these 2 strings will be join -->
+    <string name="p_loading_view">在加载应用程序视图中。请稍候......</string>
+    <string name="p_generating_dh_keys">正在生成文件加密密钥</string>
+    <string name="p_wait_for_cert">请等待，直到您的身份认证生效。\n\n剩余时间：%s 秒钟</string>
+    <!-- call errors -->
+    <string name="call_error_403">您无权拨打该号码。</string>
+    <string name="call_error_404">您拨打的用户已不在线上。</string>
+    <string name="call_error_408">请求已过期。服务器或您拨叫的用户未能及时接听。请您稍后再拨。</string>
+    <string name="call_error_410">您拨叫的用户已下线。拨叫的用户刚还存在于服务器上，但现在已联系不上他。</string>
+    <string name="call_error_477">呼叫请求无法接通目标用户，请稍后再试。</string>
+    <string name="call_error_480">暂时不可用。无法同目标用户建立直接联系或请求已超时，请稍后再试。</string>
+    <string name="call_error_486">您拨打的用户正忙。</string>
+    <string name="call_error_487">呼叫请求已终止。</string>
+    <string name="call_error_503">服务不可用。服务器可能过于繁忙，请稍后重试。</string>
+    <string name="call_error_603">你拨打的用户拒绝接听您的呼叫。</string>
+    <string name="call_error_not_valid">您还未在网上注册，无法进行呼叫。</string>
+    <string name="call_error_generic">呼叫时出现未知错误，请重试。如果问题依然存在，请尝试重新启动PhoneX。</string>
+    <string name="missed_call_title">未接电话</string>
+    <string name="missed_call_body">你有一个来自于%1$s的未接来电，来电时间为 at %2$s。</string>
+    <string name="intro_init_title">初始化…</string>
+    <string name="intro_init_msg">正在启动应用程序，请稍候。</string>
+    <string name="intro_resurrect_msg">恢复应用程序状态，请稍候。</string>
+    <string name="msg_offline_message_title">脱机</string>
+    <string name="msg_enc_tit_signature_invalid">警告：未授权</string>
+    <string name="msg_enc_tit_encrypted">加密成功</string>
+    <string name="msg_enc_tit_decrypted">解密成功</string>
+    <string name="msg_enc_tit_encrypted_file">加密文件</string>
+    <string name="msg_enc_tit_decryption_error">解密错误</string>
+    <string name="msg_enc_tit_inv_mime">警告：可能是欺骗性内容</string>
+    <string name="msg_resend">重新发送</string>
+    <string name="msg_sent_date">发送</string>
+    <string name="msg_received">收到</string>
+    <string name="msg_sent_failed">发送失败。</string>
+    <string name="msg_sent_failed_477">在加密过程中发生错误。</string>
+    <string name="msg_sending">发送。。。</string>
+    <string name="msg_no_cert">无法找到证书</string>
+    <string name="msg_file_rejected">文件被拒绝</string>
+    <string name="msg_error">错误</string>
+    <string name="msg_error_recv">下载错误</string>
+    <!-- in call -->
+    <string name="incall_zrtphash_nomatch_error">ZRTP hash不符 (SDP vs. ZRTP hello)。攻击者可能在媒体上。错误代码：</string>
+    <string name="incall_incoming_gsm_call">您错过一个该号码来电</string>
+    <!-- settings -->
+    <string name="security">安全</string>
+    <string name="change_password">密码更换</string>
+    <string name="change_password_desc">更换PhoneX的登录密码。</string>
+    <!-- mod sign error codes -->
+    <string name="modsign_err_user_cert_missing">"用户\""%s\""证书未找到，无法验证签名"</string>
+    <string name="modsign_err_user_cert_invalid">"用户\""%s\""证书无效，无法验证签名"</string>
+    <string name="modsign_err_signature_invalid">"用户\""%s\""签名验证失败"</string>
+    <string name="modsign_err_generic">"在对用户\""%s\""进行签名验证时出现未知错误"</string>
+    <string name="modsign_err_remote_user_unknown">"未知远程用户\""%s\"""</string>
+    <string name="modsign_err_success">签名验证成功</string>
+    <!-- certificate error -->
+    <string name="cert_status_ok">OK</string>
+    <string name="cert_status_invalid">无效</string>
+    <string name="cert_status_revoked">撤销</string>
+    <string name="cert_status_forbidden">禁用</string>
+    <string name="cert_status_missing">丢失</string>
+    <string name="cert_status_nouser">该用户不存在</string>
+    <string name="p_refreshing_certificate">更新证书</string>
+    <string name="clist_cat_user">用户</string>
+    <string name="clist_display_name">昵称</string>
+    <string name="clist_sip">用户名</string>
+    <string name="has_certificate">有本地证书</string>
+    <string name="cert_status">证书状态</string>
+    <string name="cert_owner">所有者</string>
+    <string name="cert_date_created">创建日期</string>
+    <string name="cert_date_last_refresh">最后更新日期</string>
+    <string name="cert_hash">证书hash值</string>
+    <string name="cert_serial">证书系列号</string>
+    <string name="cert_validity">证书有效性</string>
+    <string name="cert_issuer">证书颁发者</string>
+    <string name="cert_cn">CN证书</string>
+    <string name="cert_raw">原始证书</string>
+    <string name="cert_yes">是</string>
+    <string name="cert_no">不是</string>
+    <string name="cert_public_key">公共密钥</string>
+    <string name="cert_public_key_alg">公开密钥算法</string>
+    <string name="cert_public_key_length">公共密钥比特长度</string>
+    <string name="my_certificate">我的身份认证</string>
+    <string name="my_certificate_desc">显示证书详情。</string>
+    <string name="sync_certificates">同步身份认证</string>
+    <string name="sync_certificates_desc">检查联系人新的证书。</string>
+    <string name="sync_certificates_toast">同步已经在计划中，将进入后台运作。</string>
+    <string name="sync_dhkeys">同步密钥</string>
+    <string name="sync_dhkeys_desc">检查加密密钥以用于文件传输。</string>
+    <string name="sync_dhkeys_toast">同步已经在计划中，将进入后台运作。</string>
+    <string name="progress_loading_msg">请稍后......</string>
+    <string name="progress_loading_title">数据加载中......</string>
+    <string name="language">语言</string>
+    <string name="language_desc">请选择应用语言。</string>
+    <string name="warning_signature">带有无效签名的SIP信息警告。</string>
+    <string name="my_profile">我的帐户</string>
+    <string name="project_page">项目页面</string>
+    <string name="obtain_trial">运行七天试用版</string>
+    <string name="intro_info">引言</string>
+    <string name="options">选项</string>
+    <string name="about_phonex">PhoneX</string>
+    <string name="firstlaunch_welcome">欢迎来到。。。</string>
+    <string name="firstlaunch_text">PhoneX是一款致力于安全通信的应用程序，对用户间的通话、信息和文件传输进行加密。</string>
+    <string name="firstlaunch_text2">您可以免费使用七天试用版，或在我们的网站www.phone-x.net上购买正式版。</string>
+    <string name="continue_to_app">继续登录</string>
+    <string name="conversation_call_button">打电话</string>
+    <string name="registration_warning">注册到网络</string>
+    <string name="notification_keygen">检查PhoneX文件加密密钥</string>
+    <string name="notification_certupd">PhoneX证书更新</string>
+    <string name="notification_appupd">PhoneX已更新</string>
+    <string name="notification_appupd_text">修正%s，请登录。</string>
+    <string name="notification_device_reboot_text">启动设备，请登录。</string>
+
+    <string name="certupd_done">完成</string>
+    <string name="certupd_none">错误</string>
+    <string name="certupd_in_queue">排队等待中......</string>
+    <string name="certupd_started">已开始</string>
+    <string name="certupd_local_loading">加载中......</string>
+    <string name="certupd_server_call">从服务器下载</string>
+    <string name="certupd_post_server_call">正在处理反馈</string>
+    <string name="certupd_saving">存储中......</string>
+    <string name="certupd_header">同步身份认证</string>
+    <string name="certupd_header_description">同步您联系人的证书</string>
+    <string name="keygen_done">完成</string>
+    <string name="keygen_none">错误</string>
+    <string name="keygen_in_queue">排队等待中......</string>
+    <string name="keygen_started">已开始</string>
+    <string name="keygen_cleaning">清理密钥存储</string>
+    <string name="keygen_generating_key">密钥生成中 %1$d/%2$d</string>
+    <string name="keygen_generated">密钥生成，请等待</string>
+    <string name="keygen_server_call_save">在服务器上存储密钥</string>
+    <string name="keygen_post_server_call_save">正在对服务器的反馈进行处理</string>
+    <string name="keygen_deleting">移除密钥</string>
+    <string name="keygen_server_call_delete">从服务器上移除密钥</string>
+    <string name="keygen_post_server_call_delete">正在对服务器的反馈进行处理</string>
+    <string name="keygen_header">密钥生成中</string>
+    <string name="keygen_header_description">文件传输需要生成密钥。</string>
+
+    <!-- Help Add Account fragment -->
+    <string name="help_ac_how_to_add">如何添加新的联系人？</string>
+    <string name="help_ac_add_1"><![CDATA[假设您是用户“Alice”，想要在您的联系人名单中添加一个叫做“Eve”的新用户，您需要在主屏上登录。请点击<b>位于右下角的键</b>，然后点击<b>添加帐户</b>。]]></string>
+    <string name="help_ac_add_2"><![CDATA[你可以在对话框中键入第二个用户“Eve”的用户名。或者您也可以填写屏幕上显示的名称栏，这是您联系人的昵称。如果您不想输入任何昵称，他的用户名将会显示出来。选择“加入白名单”选项。最后，同时点击<b>添加</b>按键。]]></string>
+    <string name="help_ac_add_3"><![CDATA[成功添加新用户以后，联系名单中将会出现他/她的名字。联系人名单中，每个用户的状态也将会显示。两个状态选项是<b>在线</b>和<b>脱机</b>（在这里，用户Eve Hidden的状态显示为“脱机”)。]]></string>
+    <string name="help_ac_add_4"><![CDATA[<b>重要信息：用户Alice和Eve需要将对方添加到他们的联系人名单中以便能够和对方进行通话或向对方发送信息。</b>这可以防止用户收到来自于他们不认识的用户的来电或信息，以防止收到垃圾信息或骚扰。]]></string>
+
+    <!-- Send file -->
+    <string name="open_file">打开文件</string>
+    <string name="download_file">下載</string>
+    <string name="reject_file">拒绝</string>
+    <string name="open_directory">打开目录</string>
+    <plurals name="delete_file">
+        <item quantity="one">刪除文件</item>
+        <item quantity="other">刪除文件</item>
+    </plurals>
+
+    <string name="filepicker_title">选择文件</string>
+    <string name="filepicker_toast_sort_asc">名单将按照从A到Z的顺序排列</string>
+    <string name="filepicker_toast_sort_desc">名单将按照从Z到A的顺序排列</string>
+    <string name="filepicker_camera">照相机</string>
+    <string name="filepicker_camera_2">照相机的SD</string>
+    <string name="filepicker_download">下载</string>
+    <string name="filepicker_documents">文档</string>
+    <string name="filepicker_pictures">图片</string>
+    <string name="filepicker_music">音乐</string>
+    <string name="filepicker_storage">存储空间</string>
+    <string name="filepicker_external_sd">外部的SD</string>
+    <string name="dwn_p_error">错误</string>
+    <string name="dwn_p_cancelled">取消</string>
+    <string name="dwn_p_in_queue">排队中</string>
+    <string name="dwn_p_retrieving_details">详细检索</string>
+    <string name="dwn_p_deleting">正在从服务器上删除</string>
+    <string name="dwn_p_deleted">已删除</string>
+    <string name="dwn_p_loading_info">服务器的加载信息</string>
+    <string name="dwn_p_enc_keys">计算加密密钥</string>
+    <string name="dwn_p_key_load">加载个人密钥</string>
+    <string name="dwn_p_connecting">联系服务器</string>
+    <string name="dwn_p_downloading">下载中</string>
+    <string name="dwn_p_extracting">文件解压中</string>
+    <string name="dwn_p_done">完成</string>
+    <string name="dwn_failed">文件下载失败</string>
+    <string name="dwn_failed_download">文件下载错误，请稍后重试。</string>
+    <string name="dwn_failed_recoverable">出现通用下载错误，请稍后重试。</string>
+    <string name="dwn_failed_generic">出现通用下载错误，文件可能失效。</string>
+    <string name="dwn_no_file">未发现该信息的下载文件。</string>
+    <string name="dwn_file_not_found">下载文件未找到，可能已被删除。\n\n原始文件名:\n%s</string>
+    <string name="upd_p_cancelled">已取消</string>
+    <string name="upd_p_in_queue">排队中</string>
+    <string name="upd_p_initialization">初始化</string>
+    <string name="upd_p_downloading_keys">正在从服务器下载密钥</string>
+    <string name="upd_p_key_verification">密钥验证</string>
+    <string name="upd_p_uploading">在上传中</string>
+    <string name="upd_p_gen_enc_keys">生成加密密钥</string>
+    <string name="upd_p_processing_input">文件加密中</string>
+    <string name="upd_p_enc_notif">通告机制加密中</string>
+    <string name="upd_p_sending_notif">发送通知</string>
+    <string name="upd_p_done">完成</string>
+    <string name="upd_failed">文件上传失败</string>
+    <string name="upd_failed_full_mailbox">上传文件太大。</string>
+    <string name="upd_failed_too_big">文件过大，无法上传。</string>
+    <string name="upd_failed_no_keys">目标用户的文件存储空间不足。</string>
+    <string name="upd_failed_generic">出现通用上传错误。</string>
+    <string name="ft_err_timeout">连接错误</string>
+    <string name="intro_phonex">PhoneX %s —— 安全通信</string>
+    <string name="intro_copyright">© 2012-2015版权所有</string>
+    <string name="dummy_username">username@phone-x.net</string>
+    <string name="dummy_displayname">例如：约翰 史密斯</string>
+    <string name="phonex_restart_title">重启应用程序</string>
+    <string name="phonex_restart_info">请等候PhoneX重启</string>
+    <string name="notif_delete">删除</string>
+    <string name="notif_delete_type">全部删除</string>
+
+    <!-- Trial Request -->
+    <string name="trial_license">试用许可证</string>
+    <string name="trial_error_401">验证码输入错误。</string>
+    <string name="trial_error_402">您已经使用了一个试用许可证，一台手机上只能使用一个试用许可证。</string>
+    <string name="trial_error_404">用户名已存在。</string>
+    <string name="trial_fragment_title">激活许可证</string>
+    <string name="trial_fragment_message">正在验证您的请求</string>
+    <string name="trial_created_title">成功</string>
+    <string name="trial_created_message">您已成功建立账户。</string>
+    <string name="trial_created_login">登录：</string>
+    <string name="trial_created_expiration">到期：</string>
+    <string name="trial_button_submit">提交</string>
+    <string name="trial_button_reset">重新加载</string>
+    <string name="trial_captcha_loading">生成验证码</string>
+    <string name="trial_security_check">安全检查</string>
+    <string name="trial_security_check_desc">请在下面的框中输入验证码以验证您的请求。</string>
+    <string name="trial_continue_login">登录</string>
+
+    <string name="clist_add_error_nonexisting_user">无法添加用户，该用户不存在。</string>
+    <string name="msg_seen">可见的%s</string>
+    <string name="pin_timer">定时上锁</string>
+    <string name="lock_asap">10秒</string>
+    <string name="lock_30s">30秒</string>
+    <string name="lock_1m">1分钟</string>
+    <string name="lock_2m">2分钟</string>
+    <string name="lock_3m">3分钟</string>
+    <string name="lock_5m">5分钟</string>
+    <string name="lock_10m">10分钟</string>
+    <string name="lock_15m">15分钟</string>
+    <string name="lock_30m">30分钟</string>
+    <string name="lock_45m">45分钟</string>
+    <string name="lock_60m">60分钟</string>
+
+    <string name="add_contact_empty_alias">昵称为空</string>
+    <string name="call_error_number">错误 %d</string>
+    <string name="call_error_unspecific_msg">内部呼叫错误。</string>
+    <string name="call_error_481">呼叫被迫终止。</string>
+
+    <string name="file_picker_sorting_prompt">排序方式</string>
+    <string name="file_picker_sorting_alphabet">名称</string>
+    <string name="file_picker_sorting_date">日期</string>
+
+    <string name="p_waiting_for_service">开始服务</string>
+    <string name="app_update_release_notes">最新</string>
+    <string name="app_update_available_title">新版本可用</string>
+    <string name="app_update_get_now">现在更新</string>
+    <string name="app_update_remind_me_later">稍后提醒我</string>
+    <string name="app_update_ignore_this_version_label">忽略该版本</string>
+    <string name="app_update_updated_to">PhoneX更新至版本%d</string>
+    <string name="app_update_generic_release_notes">PhoneX %1$s 版本 %2$d可用。您想更新吗？</string>
+
+
+    <string name="intro_pass_title">修改默认密码</string>
+    <string name="intro_pass_description">请重新设置密码。</string>
+    <string name="password_requirements">要求：\n•至少8位字符。\n• 包含字母和数字。</string>
+    <string name="pass_validator_short">密码太短。</string>
+    <string name="pass_validator_confirmed_password_differs">密码与确认密码必须一致。</string>
+    <string name="pass_validator_missing_number">密码必须包含至少1个数字。</string>
+    <string name="pass_validator_missing_letter">密码必须包含至少1个字母。</string>
+
+    <string name="msg_sending_failed">发送失败！</string>
+    <string name="some_files_were_deleted">某些选中的文件无法找到。</string>
+
+    <string name="select_file">选择文件</string>
+    <string name="send_message">发送短信</string>
+
+    <string name="broadcast_title">广播信息</string>
+    <string name="broadcast_recipients">收件人</string>
+    <string name="broadcast_message">信息</string>
+    <string name="broadcast_note">信息会分别发送给每个收件人。</string>
+    <string name="broadcast_limit_exceeded">可以使用信息广播的用户数量上限为%d.</string>
+    <string name="broadcast_empty_recipients_list">空白收件人名单</string>
+    <string name="broadcast_message_is_being_sent">信息正被发送给指定收件人。</string>
+
+    <string name="option_broadcast_message">发送广播信息</string>
+
+    <string name="msg_forward">转发信息</string>
+
+    <plurals name="clist_actionmode_selected">
+        <item quantity="one">選 %d</item>
+        <item quantity="few">選 %d</item>
+        <item quantity="other">選 %d</item>
+    </plurals>
+
+    <string name="received_files">收到的文件</string>
+    <string name="upd_failed_internal_error">内部错误，文件上传失败。</string>
+    <string name="upd_failed_some_files_missing_title">丢失的文件</string>
+    <string name="upd_failed_some_files_missing_desc">有些信息的文件无法在文件系统找到:\n</string>
+    <string name="upd_failed_all_files_missing">文件系统上的所有文件均已丢失，无法转发信息。</string>
+    <string name="broadcast_files">文件</string>
+    <string name="no_files_selected">未选择任何文件。</string>
+
+    <string name="file_deleted">文件已被删除.</string>
+    <string name="file_rejected">文件拒绝。</string>
+    <plurals name="files_preview">
+        <item quantity="other">文件预览</item>
+    </plurals>
+    <plurals name="files_rejected">
+        <item quantity="other">拒绝的文件</item>
+    </plurals>
+    <string name="msg_delete">删除信息</string>
+    <string name="saved_username">保存用户名</string>
+
+    <string name="create_trial_account">创建试用账号</string>
+    <string name="create_account">创建账号</string>
+    <!--it's trial but psst-->
+    <string name="sign_in">登录</string>
+    <string name="phonex_subtitle">呼叫加密，信息\n 和附件。</string>
+    <string name="enter_captcha">验证码</string>
+    <string name="account_creation">账户设置</string>
+    <string name="second_device_detected_title">用户注销</string>
+    <string name="second_device_detected_desc">您的验证信息在另一台设备上登录，您被迫下线。</string>
+
+    <string name="pref_p2p_disable">禁用P2P</string>
+    <string name="pref_p2p_enabled">呼叫中的P2P会话已中断，所有流量需通过中继服务器传输。降低通话效果以保护您的IP地址。</string>
+    <string name="pref_p2p_disabled">P2P通话可使用。增强通话效果，但会向通话人泄露您的IP地址。</string>
+    <string name="enter_username_description">请设置您的用户名，它将成为您的唯一识别符号。</string>
+    <string name="your_username">您的用户名</string>
+    <string name="invalid_username">用户名仅能包括字母、数字、破折号、下划线，长度为3-18位字符。</string>
+
+    <string name="link_terms_of_use">或者建立一个</string>
+    <string name="intro_new_account">新账户</string>
+    <string name="intro_server" translatable="false"/>
+    <string name="recheck_certificate">复查证书</string>
+    <string name="warn_sig_detail_cat_action">行动</string>
+    <string name="warn_sig_detail_cat_cert">详情</string>
+    <string name="intro_bcode_non_valid">提供的业务代码无效。</string>
+    <string name="intro_bcode_already_used">提供的业务代码已经被使用。</string>
+    <string name="intro_enter_code">清输入代码</string>
+    <string name="intro_apply_code">使用代码</string>
+    <string name="intro_credentials">凭证</string>
+    <string name="intro_code">代码</string>
+    <string name="intro_back">返回</string>
+
+    <string name="settings">設置</string>
+    <string name="my_account">我的賬戶</string>
+    <string name="license_type_trial">试用许可证</string>
+    <string name="license_type_full">证照齐全</string>
+    <string name="expires_at">到期 %s</string>
+
+    <string name="notification_license_updated">PhoneX 许可证更新</string>
+    <string name="notification_license_updated_text">%1$s, 到期 %2$s</string>
+
+    <string name="trial_message_limit_explanation">极限是每天 %d 的消息</string>
+    <string name="license_expired">过期的许可证</string>
+    <string name="phonex_revision">修正%s</string>
+
+    <string name="files_were_deleted">文件被删除。</string>
+    <!--TODO:translate<string name="files_were_not_sent">Files were not sent.</string>-->
+
+</resources>

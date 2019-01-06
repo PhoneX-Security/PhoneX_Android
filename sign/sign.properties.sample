@@ -1,0 +1,5 @@
+keystore=sign/android.jks
+keystore.password=PASSWORD
+keystore.keyalias=android
+keystore.keypass=PASSWORD
+

@@ -1,0 +1,57 @@
+package net.phonex.pub.proto;
+option java_outer_classname = "Messages";
+option optimize_for = SPEED;
+
+message MessageProtocolEnvelope {
+    optional int32 protocolType=1;
+    optional int32 protocolVersion=2;
+    optional uint32 sequenceNumber=3; // OPT.
+    optional bytes payload=4;
+}
+
+// Secure Transfer Protocol
+message STPSimple {
+    optional int32 ampType=1;
+    optional int32 ampVersion=2;
+
+    optional uint32 sequenceNumber=3; // OPT
+    optional uint64 messageSentMiliUTC=4;
+    optional uint32 randomNonce=5;
+    optional string sender=6;
+    optional string destination=7;
+    optional int32 destinationType=8; // OPT
+
+    optional bytes signature=9;
+    optional int32 signatureVersion=10; // OPT
+    optional string certificateVersion=11;
+
+    optional bytes iv=12;
+    optional bytes eAsymBlock=13;
+    optional int32 eAsymBlockVersion=14;
+
+    optional bytes eSymBlock=15;
+    optional int32 eSymBlockVersion=16;
+
+    optional bytes hmac=17;
+    optional int32 hmacVersion=18;
+
+    // used for AsymBlock, MAC and signature
+    optional bytes encKey=19;
+    optional bytes macKey=20;
+    optional bytes payload=21;
+
+    // used for HMAC and Signature only
+    optional int32 protocolType = 22;
+    optional int32 protocolVersion = 23;
+
+}
+
+// Application Message Protocol
+// Simple text messages
+message AMPSimple {
+    optional bytes message=1;
+    optional uint32 nonce=2;
+}
+
+// General notifications
+// see filetransfer.proto GeneralMsgNotification

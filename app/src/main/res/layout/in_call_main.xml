@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainFrame"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    >
+    <!--android:background="@drawable/app_layered_background"-->
+
+    <LinearLayout
+        android:id="@+id/inCallContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:orientation="horizontal" >
+
+            <net.phonex.ui.call.CallCard
+                android:id="@+id/callCard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingBottom="4dp"
+                android:paddingTop="4dp"
+                />
+        </LinearLayout>
+
+        <net.phonex.pub.a.CallAnswerView
+            android:id="@+id/inCallAnswerControls"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+
+        <net.phonex.ui.call.CallMenu
+            android:id="@+id/inCallMenu"            
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+</RelativeLayout>

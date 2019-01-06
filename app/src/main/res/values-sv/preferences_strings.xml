@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">Inställningar</string>
+  <string name="prefs_connectivity">Nätverk</string>
+  <string name="prefs_media">Media</string>
+  <string name="prefs_ui">Användargränssnitt</string>
+  <!--Network-->
+  <string name="transport">Transport</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">Ljudkvalitet</string>
+  <string name="audio_volume">Volym</string>
+  <string name="codecs">Kodekar</string>
+  <string name="echo_cancellation">Ekoannulering</string>
+  <string name="echo_cancellation_desc">Aktivera ekoannulering</string>
+  <string name="disable_vad">Detektering av röstljud</string>
+  <string name="disable_vad_desc">Aktivera detektering av röstljud</string>
+  <string name="enable_noise_reduction">Brusreducering</string>
+  <string name="enable_noise_reduction_desc">Fungerar om ekoannulering är aktiverad och WebRTC ekoannulering används</string>
+  <string name="sound_mic_volume">Förstärkning av mikrofon</string>
+  <string name="sound_speaker_volume">Förstärkning av högtalare</string>
+  <string name="sound_bt_mic_volume">Förstärkning av blåtandsmikrofon</string>
+  <string name="media_quality">Kvalitet för media</string>
+  <string name="media_quality_desc">Kvalitet för mediaströmmen (ändra enbart om du vet vad du håller på med)</string>
+  <string name="sound_clock_rate">Klockfrekvens</string>
+  <string name="sound_clock_rate_desc">Frekvens för ljudkanal</string>
+  <string name="echo_cancellation_mode">Ekoläge</string>
+  <string name="echo_cancellation_mode_desc">Algoritm för eko</string>
+  <string name="enable_focus_audio">Fokusera ljud</string>
+  <string name="auto">Automatisk</string>
+  <string name="simple">Enkel</string>
+  <string name="slow">Långsam</string>
+  <string name="fast">Snabb</string>
+  <!--UI-->
+  <string name="general_ui">Allmänt användargränssnitt</string>
+  <string name="keep_awake_incall">Håll vaken medan samtal</string>
+  <string name="keep_awake_incall_desc">Fixar om du får hackig ljud när skärmen stängs av medan gör samtal via WIFI</string>
+  <string name="log_level">Loggningsnivå</string>
+  <string name="ringtone">Ringsignal</string>
+  <string name="prevent_screen_rotation">Förhindra rotation av skärm</string>
+  <string name="invert_proximity_sensor">Invertera rörelsesensor</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <string name="normal_preferences">Vanligt läge</string>
+  <!--Generic-->
+  </resources>

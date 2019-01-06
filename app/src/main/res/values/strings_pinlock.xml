@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="verify_n_digit_pin">Enter your PIN</string>
+    <string name="create_n_digit_pin">Create new PIN</string>
+    <string name="confirm_n_digit_pin">Confirm your PIN</string>
+    <string name="pin_mismatch">PIN did not match</string>
+    <string name="pin_created">PIN created</string>
+    <string name="saving_pin">Saving PIN</string>
+    <string name="pin_tries_depleted">Incorrect PIN entered %d times, logging out.</string>
+</resources>

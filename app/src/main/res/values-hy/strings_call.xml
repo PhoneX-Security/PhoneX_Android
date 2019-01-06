@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="answer_call">Պատասխան</string>
+<string name="end_call">Վերջ</string>
+<string name="speaker">Բարձրախոսներ</string>
+<string name="mute">Համր</string>
+<string name="call_state_calling">Հեռախոսային ...</string>
+<string name="call_state_disconnected">Կախել</string>
+<string name="call_state_incoming">Մուտքային զանգի ...</string>
+<string name="hold_call">Անցկացնել</string>
+<string name="on_hold">Սպասում</string>
+<string name="transport_secure_to_server">TLS տրանսպորտի համար օգտագործվում է անհապաղ hop</string>
+<string name="transport_secure_full">End-to-end ազդանշանային պետք ապահով</string>
+</resources>

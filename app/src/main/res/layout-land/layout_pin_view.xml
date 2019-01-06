@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:pin="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/fragment_padding"
+    android:orientation="horizontal"
+    android:layout_marginBottom="@dimen/fragment_padding">
+
+    <GridLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:columnCount="1"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignBounds"
+        >
+
+        <ImageView
+            android:id="@+id/pin_phonex_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/svg_logo_medium_l"
+            android:padding="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/pin_logo_margin"
+            android:layout_marginBottom="@dimen/pin_logo_margin"
+            android:layout_gravity="center_horizontal|center_vertical"/>
+
+        <TextView
+            android:id="@+id/pin_header_label"
+            android:textSize="@dimen/pin_header_label_size"
+            android:text="Enter your PIN"
+            android:layout_gravity="center_horizontal|center_vertical"
+            android:textColor="@color/pin_gray"
+            android:gravity="center" />
+
+        <net.phonex.ui.lock.view.PinputView
+            android:id="@+id/pin_pinputview"
+            android:cursorVisible="false"
+            android:padding="10dp"
+            android:textSize="@dimen/pinputview_default_text_size"
+            android:layout_gravity="center"
+            pin:backgroundColor="@color/pin_light_gray_50"
+            pin:foregroundColor="@color/orange" />
+
+        <ProgressBar
+            android:id="@+id/pin_progress_spinner"
+            android:layout_width="@dimen/pin_view_progressbar_size"
+            android:layout_height="@dimen/pin_view_progressbar_size"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:layout_alignTop="@id/pin_pinputview" />
+    </GridLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <net.phonex.ui.lock.view.PinKeyboardView
+            android:id="@+id/pin_keyboard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:layout_centerInParent="true"
+            pin:textColor="@color/text_whitesmoke"
+            pin:keyBackground="@drawable/pin_key_selector" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+

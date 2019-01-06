@@ -1,0 +1,207 @@
+Index: pjproject/sources/pjlib/include/pj/assert.h
+===================================================================
+--- pjproject.orig/sources/pjlib/include/pj/assert.h
++++ pjproject/sources/pjlib/include/pj/assert.h
+@@ -45,10 +45,20 @@
+  *
+  * @param expr	    The expression to be evaluated.
+  */
++#ifndef PJ_LOG
++#define PJ_LOG(level,arg) do { } while (0)
++#endif
++
++#ifdef PH_ASSERT
++#define pj_assert(expr)  \
++	    do { \
++		if (!(expr)) { PJ_LOG(0, (__FILE__, "Assertion error; file,line: %s:%d Condition:[%s]", __FILE__, __LINE__, #expr)); assert(expr); } \
++	    } while (0)
++#else
+ #ifndef pj_assert
+ #   define pj_assert(expr)   assert(expr)
+ #endif
+-
++#endif
+ 
+ /**
+  * @hideinitializer
+Index: pjproject/sources/pjlib/include/pj/log.h
+===================================================================
+--- pjproject.orig/sources/pjlib/include/pj/log.h
++++ pjproject/sources/pjlib/include/pj/log.h
+@@ -104,6 +104,8 @@ enum pj_log_decoration
+    \endverbatim
+  * @hideinitializer
+  */
++
++#undef PJ_LOG
+ #define PJ_LOG(level,arg)	do { \
+ 				    if (level <= pj_log_get_level()) \
+ 					pj_log_wrapper_##level(arg); \
+@@ -363,6 +365,20 @@ pj_status_t pj_log_init(void);
+  */
+ 
+ /**
++ * @def pj_log_wrapper_0(arg)
++ * Internal function to write log with verbosity 0. Will evaluate to
++ * empty expression if PJ_LOG_MAX_LEVEL is below 0.
++ * @param arg       Log expression.
++ */
++#if PJ_LOG_MAX_LEVEL >= 0
++    #define pj_log_wrapper_0(arg)	pj_log_0 arg
++    /** Internal function. */
++    PJ_DECL(void) pj_log_0(const char *src, const char *format, ...);
++#else
++    #define pj_log_wrapper_0(arg)
++#endif
++
++/**
+  * @def pj_log_wrapper_1(arg)
+  * Internal function to write log with verbosity 1. Will evaluate to
+  * empty expression if PJ_LOG_MAX_LEVEL is below 1.
+Index: pjproject/sources/pjsip/src/pjsip/sip_transaction.c
+===================================================================
+--- pjproject.orig/sources/pjsip/src/pjsip/sip_transaction.c
++++ pjproject/sources/pjsip/src/pjsip/sip_transaction.c
+@@ -430,6 +430,9 @@ PJ_DEF(pj_status_t) pjsip_tsx_layer_init
+     pj_pool_t *pool;
+     pj_status_t status;
+ 
++    if (mod_tsx_layer.endpt!=NULL){
++    	PJ_LOG(1,(THIS_FILE, "Endpoint is not null! %p", mod_tsx_layer.endpt));
++    }
+ 
+     PJ_ASSERT_RETURN(mod_tsx_layer.endpt==NULL, PJ_EINVALIDOP);
+ 
+@@ -457,8 +460,10 @@ PJ_DEF(pj_status_t) pjsip_tsx_layer_init
+     pool = pjsip_endpt_create_pool(endpt, "tsxlayer", 
+ 				   PJSIP_POOL_TSX_LAYER_LEN,
+ 				   PJSIP_POOL_TSX_LAYER_INC );
+-    if (!pool)
++    if (!pool){
++    PJ_LOG(2,(THIS_FILE, "Cannot create a pool, no memory! %d", __LINE__));
+ 	return PJ_ENOMEM;
++    }
+ 
+     
+     /* Initialize some attributes. */
+@@ -470,6 +475,7 @@ PJ_DEF(pj_status_t) pjsip_tsx_layer_init
+     mod_tsx_layer.htable = pj_hash_create( pool, pjsip_cfg()->tsx.max_count );
+     if (!mod_tsx_layer.htable) {
+ 	pjsip_endpt_release_pool(endpt, pool);
++	PJ_LOG(2,(THIS_FILE, "Cannot create a hash table, no memory! %d", __LINE__));
+ 	return PJ_ENOMEM;
+     }
+ 
+@@ -985,8 +991,10 @@ static pj_status_t tsx_create( pjsip_mod
+ 
+     pool = pjsip_endpt_create_pool( mod_tsx_layer.endpt, "tsx", 
+ 				    PJSIP_POOL_TSX_LEN, PJSIP_POOL_TSX_INC );
+-    if (!pool)
+-	return PJ_ENOMEM;
++    if (!pool) {
++    	PJ_LOG(2,(THIS_FILE, "Cannot create a pool, no memory! %d", __LINE__));
++    	return PJ_ENOMEM;
++    }
+ 
+     tsx = PJ_POOL_ZALLOC_T(pool, pjsip_transaction);
+     tsx->pool = pool;
+@@ -1142,10 +1150,19 @@ static void tsx_timer_callback( pj_timer
+     } else {
+ 	pjsip_event event;
+ 
++	//entry->id = 0;
++	if (entry==&tsx->retransmit_timer){
++		PJ_LOG(5,(tsx->obj_name, "Retransmit timer event; entryID=%d", entry->id));
++	} else if (entry==&tsx->timeout_timer){
++		PJ_LOG(5,(tsx->obj_name, "Timeout timer event; entryID=%d", entry->id));
++	} else {
++		PJ_LOG(5,(tsx->obj_name, "UNKNOWN timer event; entryID=%d", entry->id));
++	}
++
++	//PJ_LOG(5,(tsx->obj_name, "%s timer event; entryID=%d", entry->id,
++	//	 (entry==&tsx->retransmit_timer ? "Retransmit":"Timeout")));
+ 	entry->id = 0;
+ 
+-	PJ_LOG(5,(tsx->obj_name, "%s timer event",
+-		 (entry==&tsx->retransmit_timer ? "Retransmit":"Timeout")));
+ 	pj_log_push_indent();
+ 
+ 
+@@ -1234,6 +1251,7 @@ static void tsx_set_state( pjsip_transac
+ 	    tsx->transport_flag &= ~(TSX_HAS_PENDING_TRANSPORT);
+ 	}
+ 
++	PJ_LOG(4,(tsx->obj_name, "Starting timeout timer with 0 ms on %d", __LINE__));
+ 	lock_timer(tsx);
+ 	tsx_cancel_timer(tsx, &tsx->timeout_timer);
+ 	tsx_schedule_timer( tsx, &tsx->timeout_timer, &timeout, TIMEOUT_TIMER);
+@@ -1698,6 +1716,7 @@ PJ_DEF(pj_status_t) pjsip_tsx_set_timeou
+     timeout.msec = millisec;
+     pj_time_val_normalize(&timeout);
+ 
++
+     tsx_schedule_timer(tsx, &tsx->timeout_timer, &timeout, TIMEOUT_TIMER);
+ 
+     unlock_timer(tsx);
+@@ -1887,9 +1906,9 @@ static void send_msg_callback( pjsip_sen
+ 	    err =pj_strerror((pj_status_t)-sent, errmsg, sizeof(errmsg));
+ 
+ 	    PJ_LOG(2,(tsx->obj_name,
+-		      "Failed to send %s! err=%d (%s)",
++		      "Failed to send %s! err=%d (%s), cont=%d",
+ 		      pjsip_tx_data_get_info(send_state->tdata), -sent,
+-		      errmsg));
++		      errmsg, *cont));
+ 
+ 	    /* Clear pending transport flag. */
+ 	    tsx->transport_flag &= ~(TSX_HAS_PENDING_TRANSPORT);
+Index: pjproject/sources/pjsip/src/pjsip-ua/sip_inv.c
+===================================================================
+--- pjproject.orig/sources/pjsip/src/pjsip-ua/sip_inv.c
++++ pjproject/sources/pjsip/src/pjsip-ua/sip_inv.c
+@@ -2431,6 +2431,10 @@ PJ_DEF(pj_status_t) pjsip_inv_end_sessio
+ 
+     /* Set cause code. */
+     inv_set_cause(inv, st_code, st_text);
++    pj_str_t NA = pj_str("NA");
++    PJ_LOG(4, (THIS_FILE, "ending session; code=%d; reason=[%*.s]", st_code,
++                            (st_text == NULL ? NA.slen : st_text->slen),
++                            (st_text == NULL ? NA.ptr  : st_text->ptr)));
+ 
+     /* Create appropriate message. */
+     switch (inv->state) {
+Index: pjproject/sources/pjsip/src/pjsip-ua/sip_timer.c
+===================================================================
+--- pjproject.orig/sources/pjsip/src/pjsip-ua/sip_timer.c
++++ pjproject/sources/pjsip/src/pjsip-ua/sip_timer.c
+@@ -509,6 +509,8 @@ static void start_timer(pjsip_inv_sessio
+ 	delay.sec = timer->setting.sess_expires - 
+ 		    timer->setting.sess_expires/3;
+ 	delay.sec = PJ_MAX((long)timer->setting.sess_expires-32, delay.sec);
++	PJ_LOG(4, (inv->pool->obj_name,
++			   "Scheduling refresh timer; delay=%ds", delay.sec));
+     }
+ 
+     /* Schedule the timer */
+Index: pjproject/sources/pjlib/src/pj/log.c
+===================================================================
+--- pjproject.orig/sources/pjlib/src/pj/log.c
++++ pjproject/sources/pjlib/src/pj/log.c
+@@ -478,7 +478,7 @@ PJ_DEF(void) pj_log( const char *sender,
+ 	(*log_writer)(level, log_buffer, len);
+ }
+ 
+-/*
++
+ PJ_DEF(void) pj_log_0(const char *obj, const char *format, ...)
+ {
+     va_list arg;
+@@ -486,7 +486,7 @@ PJ_DEF(void) pj_log_0(const char *obj, c
+     pj_log(obj, 0, format, arg);
+     va_end(arg);
+ }
+-*/
++
+ 
+ PJ_DEF(void) pj_log_1(const char *obj, const char *format, ...)
+ {

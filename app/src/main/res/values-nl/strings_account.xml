@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="account_name">Account-naam</string>
+  <string name="account_name_desc">Weergavenaam voor dit account</string>
+  </resources>

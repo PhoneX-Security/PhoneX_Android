@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="prefs">Impostazioni</string>
+    <string name="prefs_connectivity">Rete</string>
+    <string name="prefs_media">Audio</string>
+    <string name="prefs_ui">Interfaccia utente</string>
+    <!-- Network -->
+    <string name="transport">Trasporto</string>
+    <!--
+    <string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>
+    -->
+    <!-- Security -->
+    <!-- Media -->
+    <string name="audio_quality">Qualità audio</string>
+    <string name="audio_volume">Volume</string>
+    <string name="codecs">Codec</string>
+    <string name="echo_cancellation">Cancellazione echo</string>
+    <string name="echo_cancellation_desc">Attiva la cancellazione dell\'echo</string>
+    <string name="disable_vad">Rilevamento della voce</string>
+    <string name="disable_vad_desc">Attiva il rilevamento della voce</string>
+    <string name="enable_noise_reduction">Riduzione del rumore</string>
+    <string name="enable_noise_reduction_desc">Funziona se la cancellazione dell\'eco è attivata ed è impiegato il backend  WebRTC </string>
+    <string name="sound_mic_volume">Amplificazione del microfono</string>
+    <string name="sound_speaker_volume">Amplificazione dell\'altoparlante</string>
+    <string name="sound_bt_mic_volume">Amplificazione microfono Bluetooth</string>
+    <string name="media_quality">Qualità audio</string>
+    <string name="media_quality_desc">Qualità dell\'audio (modifica solo se sai cosa stai facendo)</string>
+    <string name="sound_clock_rate">Clock rate</string>
+    <string name="sound_clock_rate_desc">Frequenza del canale audio</string>
+    <string name="echo_cancellation_mode">Modalità eco</string>
+    <string name="echo_cancellation_mode_desc">Algoritmo per l\'eco</string>
+    <string name="enable_focus_audio">Focus audio</string>
+    <string name="auto">Automatico</string>
+    <string name="simple">Semplice</string>
+    <string name="slow">Lento</string>
+    <string name="fast">Veloce</string>
+    <!-- UI -->
+    <string name="general_ui">Interfaccia utente generale</string>
+    <string name="keep_awake_incall">Resta attivo durante una chiamata</string>
+    <string name="keep_awake_incall_desc">Corregge se si ottiene suono disturbato quando lo schermo si spegne durante una chiamata WIFI</string>
+    <string name="log_level">Livello di log</string>
+    <string name="ringtone">Suoneria</string>
+    <string name="prevent_screen_rotation">Previene rotazione dello schermo</string>
+    <string name="invert_proximity_sensor">Inverte il sensore di prossimità</string>
+    <!-- Fast settings -->
+    <!-- Calls settings -->
+    <!-- Settings modes -->
+    <string name="normal_preferences">Modo normale</string>
+    <!-- Generic -->
+    <!-- ##automatically translated below -->
+
+<string name="prefs_security">Sicurezza</string>
+<string name="network_watchdog">Watchdog Network</string>
+<string name="network_watchdog_desc">Servizio viene riavviato in caso di mancata registrazione. In pochi secondi. 0 = disabilita</string>
+<string name="security_messages">Messaggi</string>
+<string name="messages_delete_period_desc">Quanto tempo conservare i messaggi in archivio</string>
+<string name="messages_delete_period">Messaggi archivation</string>
+<string name="just_session">Proprio questa sessione</string>
+<string name="one_day">1 giorno</string>
+<string name="three_days">3 giorni</string>
+<string name="week">Settimana</string>
+<string name="month">Mese</string>
+<string name="forever">Per sempre</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="menu_delete_all">Διαγραφή θέματα</string>
+<string name="menu_delete">Διαγραφή νήματος</string>
+<string name="menu_view">Δείτε το νήμα</string>
+<string name="undelivered_msg_dialog_title">Μήνυμα που δεν παραδόθηκε</string>
+<string name="copy_message_text">Αντιγράψτε το κείμενο του μηνύματος</string>
+<string name="done">Έγινε</string>
+<string name="compose_title">Συνθέτω</string>
+<string name="send">Αποστολή</string>
+<string name="type_to_compose_text_enter_to_send">Πληκτρολογήστε για να συνθέσετε</string>
+<string name="yes">Καλά</string>
+<string name="no">Ακύρωση</string>
+<string name="edit">Επεξεργασία</string>
+<string name="restore_default">"Επαναφορά προεπιλεγμένων ρυθμίσεων"</string>
+<string name="confirm_dialog_title">Διαγραφή</string>
+<string name="confirm_delete_conversation">Το ολόκληρο το νήμα θα διαγραφεί.</string>
+<string name="confirm_delete_all_conversations">Όλα τα νήματα θα διαγραφούν.</string>
+<string name="delete">Διαγραφή</string>
+<string name="status_pending">Εκκρεμής</string>
+<string name="status_failed">Ανεπιτυχής</string>
+</resources>

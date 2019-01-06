@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">応答</string>
+  <string name="end_call">終了</string>
+  <string name="speaker">スピーカー</string>
+  <string name="mute">ミュート</string>
+  <string name="call_state_calling">発信中...</string>
+  <string name="call_state_disconnected">通話終了</string>
+  <string name="call_state_incoming">着信中...</string>
+  <string name="hold_call">保留</string>
+  <string name="on_hold">保留</string>
+  <!-- ##automatically translated below -->
+
+<string name="transport_secure_to_server">TLS輸送は、即時ホップに使用される</string>
+<string name="transport_secure_full">エンド·ツー·エンドのシグナリングは安全なものとする</string>
+</resources>

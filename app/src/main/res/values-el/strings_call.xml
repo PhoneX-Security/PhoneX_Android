@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="answer_call">Απάντηση</string>
+<string name="end_call">Τέλος</string>
+<string name="speaker">Ομιλητής</string>
+<string name="mute">Σίγαση</string>
+<string name="call_state_calling">Κλήση ...</string>
+<string name="call_state_disconnected">Hung up</string>
+<string name="call_state_incoming">Εισερχόμενη κλήση ...</string>
+<string name="hold_call">Κρατήστε</string>
+<string name="on_hold">On Hold</string>
+<string name="transport_secure_to_server">TLS μεταφοράς χρησιμοποιείται για άμεση hop</string>
+<string name="transport_secure_full">End-to-end σηματοδότησης υποτίθεται ασφαλή</string>
+</resources>

@@ -1,0 +1,138 @@
+# built application files
+*.apk
+*.ap_
+
+# jks signing key
+android.jks
+*.jks
+sign/sign.properties
+sign/android.jks
+
+# Python compiled code
+*.pyc
+
+# Proguard files
+dump.txt
+mapping.txt
+seeds.txt
+usage.txt
+
+# Latex help files
+*.aux
+*.bbl
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/
+out/
+build/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# Eclipse project files
+.classpath
+.project
+
+# Windows thumbnail db
+.DS_Store
+
+# IDEA/Android Studio project files, because
+# the project can be imported from settings.gradle
+.idea
+*.iml
+
+# Old-style IDEA project files
+*.ipr
+*.iws
+
+# Local IDEA workspace
+.idea/workspace.xml
+
+# Gradle cache
+.gradle
+
+# Sandbox stuff
+_sandbox
+
+# jni
+.patched_sources
+#app/jni/webrtc
+#app/jni/ffmpeg
+#app/jni/codec2
+#app/jni/silk
+#app/jni/pjsip.orig
+#app/jni/pjsip/sources
+#app/jni/pjsip/.pc
+#app/jni/pjsip/.patched_sources
+#app/jni/third_party
+#app/jni/libvpx
+#app/jni/fdk_aac
+#app/jni/openssl
+#app/jni/opus
+app/jni/swig-glue/nativesrc/**
+app/jni/zrtp4pj
+app/libs/armeabi**
+app/src_old
+app/jni/pjsip-old
+app/jni/webrtc/webrtc
+*.pc
+
+app/jni/pjsip/sources
+app/jni/CMakeLists.txt
+app/jni/fdk_aac/sources/
+app/jni/ffmpeg/ffmpeg_src/
+app/jni/ffmpeg/x264_src/
+app/jni/libvpx/sources/
+app/jni/nbproject/
+app/jni/openssl/sources/
+app/jni/opus/sources/
+app/jni/silk/sources/
+
+# SWIG generated stuff
+app/src/net/phonex/xv
+app/src/org/pjsip/pjsua
+app/src/net/phonex/xv
+
+# other stuff
+.svn/
+_oldSymbols
+obj/
+libs_*
+__MACOSX
+SQLCipher for Android 2.1.1
+SQLCipher for Android 2.1.1.zip
+*.logcat
+*.swp
+*~
+res.orig
+logs/
+app/jni/pjsip/nbproject
+captures/
+matros/
+groups/
+screenshots/
+no-git/
+ant.properties
+.cproject
+/.nb-gradle/private/
+PhoneXCrypto**
+PhoneXVideo**
+PhoneXAudio**
+logger/**
+gallery/**
+phooo/*
+proguard/*
+proguard_history/*
+build*.log
+translations/*
+pytools/tranFiles/*.csv
+app/jni/openssl-deprecated
+
+

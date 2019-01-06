@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/toolbar"/>
+
+    <View
+        android:id="@+id/popup_menu_anchor"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        android:layout_below="@id/my_toolbar"
+        android:layout_alignEnd="@id/my_toolbar"
+        android:layout_alignRight="@id/my_toolbar"
+        />
+
+    <FrameLayout
+        android:id="@+id/warning_container"
+        android:layout_width="match_parent"
+        android:layout_below="@id/my_toolbar"
+        android:layout_height="wrap_content">
+
+        <include layout="@layout/message_limit_warning" />
+
+    </FrameLayout>
+
+    <include layout="@layout/generic_list_progress_view" />
+
+    <FrameLayout
+        android:id="@+id/listContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/bottom_panel"
+        android:layout_below="@+id/warning_container"
+        android:visibility="gone" >
+
+        <ListView
+            android:id="@android:id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:cacheColorHint="#00000000"
+            android:drawSelectorOnTop="true"
+            android:fadingEdge="none"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
+            android:scrollbarStyle="insideInset"
+            android:stackFromBottom="true"
+            android:transcriptMode="alwaysScroll"
+            android:visibility="visible" />
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottom_panel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/send_button"
+        android:layout_alignParentBottom="true"
+         >
+
+        <net.phonex.ui.customViews.SecurePasteEditText
+            android:id="@+id/embedded_text_editor"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:imeOptions="actionSend"
+            android:hint="@string/type_to_compose_text_enter_to_send"
+
+            android:inputType="textAutoCorrect|textCapSentences|textMultiLine"
+            android:singleLine="false"
+            android:padding="10dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+
+            android:layout_centerVertical="true"
+            android:maxLength="3000"
+            android:scrollbars="vertical"
+            android:isScrollContainer="true"
+            style="@style/edit_text_flat"
+            android:nextFocusRight="@+id/send_button" />
+
+    </RelativeLayout>
+
+    <ImageButton
+        android:nextFocusLeft="@+id/embedded_text_editor"
+        android:id="@+id/send_button"
+
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_send_white_24px"
+
+        android:layout_height="50dp"
+        android:layout_width="50dp"
+        android:layout_margin="6dp"
+        android:contentDescription="@string/send_message"
+        android:background="@drawable/button_rounded_orange"
+        />
+
+</RelativeLayout>

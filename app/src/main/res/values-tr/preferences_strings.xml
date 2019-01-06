@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">Ayarlar</string>
+  <string name="prefs_connectivity">Ağ</string>
+  <string name="prefs_media">Medya</string>
+  <string name="prefs_ui">Kullanıcı arayüzü</string>
+  <!--Network-->
+  <string name="transport">Taşıma</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_volume">Ses</string>
+  <string name="codecs">Çözücüler</string>
+  <string name="media_quality">Medya kalitesi</string>
+  <string name="sound_clock_rate_desc">Ses kanal frekansı</string>
+  <string name="auto">Otomatik</string>
+  <!--UI-->
+  <string name="general_ui">Genel kullanıcı arayüzü</string>
+  <string name="ringtone">Melodi</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <!--Generic-->
+
+
+
+<!-- ##automatically translated below -->
+
+<string name="prefs_security">Güvenlik</string>
+<string name="network_watchdog">Ağ izleme</string>
+<string name="network_watchdog_desc">Hiçbir kayıt durumunda yeniden hizmet. Saniye içinde. 0 = devre dışı</string>
+<string name="audio_quality">Ses kalitesi</string>
+<string name="echo_cancellation">Yankı</string>
+<string name="echo_cancellation_desc">Yankı etkinleştirin</string>
+<string name="disable_vad">Ses ses algılama</string>
+<string name="disable_vad_desc">Ses ses algılama etkinleştirin</string>
+<string name="enable_noise_reduction">Gürültü azaltma</string>
+<string name="enable_noise_reduction_desc">Yankı eğer İşleri aktif ve WebRTC yankı kullanılan arka uç bir</string>
+<string name="sound_mic_volume">Mikro amplifikasyon</string>
+<string name="sound_speaker_volume">Hoparlör amplifikasyon</string>
+<string name="sound_bt_mic_volume">Bluetooth mikrofon amplifikasyon</string>
+<string name="media_quality_desc">Medya akışı kalitesi (size ne yaptığınızı biliyorum sadece değiştirme)</string>
+<string name="sound_clock_rate">Saat hızı</string>
+<string name="echo_cancellation_mode">Echo modu</string>
+<string name="echo_cancellation_mode_desc">Yankı için Algoritma</string>
+<string name="enable_focus_audio">Ses Odak</string>
+<string name="simple">Basit</string>
+<string name="slow">Yavaş</string>
+<string name="fast">Hızlı</string>
+<string name="keep_awake_incall">Çağrı sırasında uyanık tutmak</string>
+<string name="keep_awake_incall_desc">Düzeltmeler ekranını kapatmak zaman dalgalı ses alırsanız WIFI arama sırasında</string>
+<string name="log_level">Seviyesi Log</string>
+<string name="prevent_screen_rotation">Ekran döndürme önlemek</string>
+<string name="invert_proximity_sensor">Yakınlık sensörü ters</string>
+<string name="normal_preferences">Normal mod</string>
+<string name="security_messages">Mesajlar</string>
+<string name="messages_delete_period_desc">Arşiv Mesajlarınızı tutmak için ne kadar</string>
+<string name="messages_delete_period">Mesajlar Arsivleme</string>
+<string name="just_session">Sadece bu oturumda</string>
+<string name="one_day">1 gün</string>
+<string name="three_days">3 gün</string>
+<string name="week">Hafta</string>
+<string name="month">Ay</string>
+<string name="forever">Sonsuza dek</string>
+</resources>

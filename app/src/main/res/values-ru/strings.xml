@@ -1,0 +1,636 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="application_name">PhoneX</string>
+    <string name="permission_phonex_desc">Общее разрешение Phonex, используемое для плагинов и расширений.</string>
+    <string name="registered">Зарегистрированный</string>
+    <string name="unregistered">Не зарегистрирован</string>
+    <string name="about">О приложении</string>
+    <string name="connection_not_valid">Сетевое соединение не может быть использовано.</string>
+    <string name="invalid_sip_uri">Не возможно совершить звонок по данному номеру. Номер недействителен.</string>
+    <string name="save">Сохранить</string>
+    <string name="cancel">Отменить</string>
+    <string name="delete_account">Удалить аккаунт</string>
+    <string name="add_account">Добавить контакт</string>
+    <string name="call">Вызов</string>
+    <string name="message_notification">Новое сообщение</string>
+    <string name="ongoing_call">Совершается звонок</string>
+    <string name="missed_call">Пропущенный звонок</string>
+    <string name="messages_tab_name_text">Сообщения</string>
+    <string name="notifications_tab_name_text">Уведомление</string>
+    <string name="menu_disconnect">Отключить</string>
+    <string name="service_notification_registered">PhoneX зарегистрирован</string>
+    <string name="service_notification_unregistered">PhoneX не зарегистрирован</string>
+    <string name="faq">Часто задаваемые вопросы</string>
+    <string name="help">Помощь</string>
+    <string name="ok">ОК</string>
+    <string name="logout">Выйти</string>
+    <string name="quit_info">После выхода из системы Вы не сможете принимать звонки и сообщения, Вы действительно хотите выйти?</string>
+    <string name="another_application_use_sip_port">Ошибка: другое приложение использует порт SIP.</string>
+    <string name="voice_mail">Голосовая почта</string>
+    <string name="not_configured_multiple_calls">Приложение не настроено для поддержки множественных звонков</string>
+    <string name="downloading_text">Скачивание</string>
+    <string name="loading">Загрузка</string>
+    <string name="info">Информация</string>
+    <!-- Presence stuff -->
+    <string name="online">Онлайн </string>
+    <string name="offline">Офлайн</string>
+    <string name="away">Прочь</string>
+    <string name="busy">Занят</string>
+    <string name="pinconfirm">Подтвердить</string>
+    <string name="pin_block_info">Приложение заблокировано</string>
+    <string name="pin_block_reason_retries">Слишком много попыток</string>
+    <string name="clist_add_title">Добавить контакт</string>
+    <string name="clist_add_sip">Имя пользователя</string>
+    <string name="clist_add_choosealias">Выбрать ник</string>
+    <string name="clist_add_displayname">Ник</string>
+    <string name="clist_add_inwhitelist">В белый список</string>
+    <string name="clist_add_add">Добавить</string>
+    <!--TODO:translate<string name="___TO_TRANSLATE___;clist_add_description">Type a unique username of the contact you want to add. Ask your contact for his username.</string>-->
+    <string name="empty_messages">Нет сообщений</string>
+    <string name="empty_notifications">Нет уведомлений</string>
+    <string name="contact_details">Подробно</string>
+    <string name="contacts_tab_name_text">Контакты</string>
+    <string name="rename_account">Переименовать</string>
+    <string name="rename_account_title">Переименовать пользователя</string>
+    <string name="rename_account_new">Ник:</string>
+    <string name="presence_online">Онлайн</string>
+    <string name="presence_away">Прочь</string>
+    <string name="presence_invisible">Невидимый</string>
+    <string name="intro_login">Имя пользователя</string>
+    <string name="intro_pass">Пароль</string>
+    <string name="intro_pass_confirmation">Подтверждение пароля</string>
+    <string name="intro_pass_change">Сохранить пароль</string>
+    <string name="intro_connect">Войти</string>
+    <string name="intro_set_new_password">Пожалуйста, настройте новый пароль (не менее 8 символов)</string>
+    <string name="intro_remember_me">Запомнить логин</string>
+    <string name="p_authentication">Аутентификация</string>
+    <string name="p_authentication_failed">Ошибка аутентификации</string>
+    <string name="p_error_empty_login">Логин не заполнен </string>
+    <string name="p_error_empty_password">Пароль не заполнен</string>
+    <string name="p_success">Успех</string>
+    <string name="p_error">Ошибка</string>
+    <string name="p_almost_there">Почти готово ...</string>
+    <string name="p_not_before_certificate">Ваш аккаунт готов к использованию!\n\nОднако время Вашего устройства немного позади по сравнению с временем сервера, поэтому Ваш сертификат пока не действителен. Пожалуйста, подождите, пока Ваш сертификат не вступит в силу. \n\nОжидаемое время: %1$s минут %2$s секунд</string>
+    <string name="p_problem">Ошибка</string>
+    <string name="p_problem_nonspecific">Произошла ошибка, вероятно, в процессе подключения к Интернету. Повторите попытку позже.</string>
+    <string name="p_problem_resolv">Произошла ошибка, невозможно найти сервер. \n\nВозможно, Вы не подключены к Интернету. Повторите попытку позже.</string>
+    <string name="p_problem_socket">Произошла ошибка, не удалось соединить с сервером. \n\nВозможно, Вы не подключены к Интернету. Повторите попытку позже.</string>
+    <string name="p_problem_auth_bad_response">Произошла ошибка, сервер вернул неожиданный ответ. \n\n\Возможно, у Вас устаревшая версия приложения. Пожалуйста, попробуйте обновить приложение.</string>
+    <string name="p_problem_bad_response">Произошла ошибка, сервер вернул неожиданный ответ.</string>
+    <string name="p_problem_bad_certificate">Произошла ошибка, сертификат недействителен.</string>
+    <string name="p_problem_badcredential">Ваш логин или пароль неправильный </string>
+    <string name="p_problem_account_disabled">Ваш аккаунт заблокирован. Пожалуйста, свяжитесь со службой поддержки.</string>
+    <string name="p_problem_trial_expired">Срок действия пробной версии Вашего аккаунта истек.</string>
+    <string name="p_problem_trial_about_to_expire">Срок действия пробной версии Вашего аккаунта незадолго истечет. \n\nАккаунт будет закрыт через %1$s дней %2$s часов</string>
+    <string name="p_problem_time_drift">Время Вашей системы не синхронизируется со временем сервера. Это может вызвать проблемы при входе. \n\nВремя сервера: %1$s</string>
+    <!--TODO:translate<string name="___TO_TRANSLATE___;p_problem_time_drift_forward">Your time is shifted forward by %1$s.</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;p_problem_time_drift_backward">Your time is shifted backward by %1$s.</string>-->
+    <string name="p_problem_db_general">Произошла ошибка при открытии зашифрованной базы данных. \n\nЕсли проблема повторяется, пожалуйста, рассмотрите возможность удаления всех данных приложения или переустановки приложения.</string>
+    <string name="p_generating_keypair">Создаю ключи</string>
+    <string name="p_getting_token">Получаю токен</string>
+    <string name="p_sending_csr">Отправляю сертификат для его подписания</string>
+    <string name="p_storing_csr">Сохраняю сертификат</string>
+    <string name="p_generating_key">Создаю ключи шифрования</string>
+    <string name="p_rekey_keystore">Зашифровка личного ключа при помощи нового пароля</string>
+    <string name="p_rekey_database">Зашифровка базы данных при помощи нового пароля</string>
+    <string name="p_testing_db">Тестирую зашифрованную базу данных</string>
+    <string name="p_getting_client_csr">Получаю сертификат</string>
+    <string name="p_sending_clist">Сохраняю контакты на сервере</string>
+    <string name="p_saving_csr">Сохраняю локально</string>
+    <string name="p_getting_clist">Скачиваю контакты с сервера</string>
+    <string name="p_processing_clist">Обработка списка контактов</string>
+    <string name="p_processing_csr">Обработка сертификатов</string>
+    <string name="p_getting_local_clist">Загружаю контакты</string>
+    <string name="p_getting_missing_csr">Скачиваю недостающие сертификаты</string>
+    <string name="p_synchronizing_clist">Синхронизирую список контактов</string>
+    <string name="p_deleting_contact">Удаляю пользователя</string>
+    <string name="p_deleting_contact_localy">Удаляю локально</string>
+    <string name="p_deleting_contact_artifacts">Удаляю ненужные данные от пользователя!</string>
+    <string name="p_renaming_contact_localy">Переименовываю локально</string>
+    <string name="p_sending_request">Отправляю серверу запрос </string>
+    <string name="p_getting_response">Получаю ответ</string>
+    <string name="p_rename_success">Контакт %1$s переименован в %2$s.</string>
+    <string name="p_add_success">Контакт %s добавлен.</string>
+    <string name="p_delete_success">Контакт %s удален.</string>
+    <string name="p_encrypting_pass">Шифрование пароля</string>
+    <string name="p_encrypting_csr">Шифрование сертификата</string>
+    <string name="p_renaming">Переименовываю контакт</string>
+    <string name="p_deleting">Удаляю пользователя</string>
+    <string name="p_rename_confirm">Вы действительно хотите удалить этого пользователя?</string>
+    <string name="p_loading_personal_credential">Загружаю сертификат</string>
+    <string name="p_synchronizing_csr">Синхронизация сертификата</string>
+    <string name="p_unknown_error">Внутренняя ошибка приложения</string>
+    <string name="p_different_passwords">Пароли не совпадают.</string>
+    <string name="p_short_password">Пароль слишком короткий. Минимальная длина составляет 8 символов.</string>
+    <string name="p_changing_password">Изменение пароля</string>
+    <string name="p_password_change_err">Изменение пароля не удалось.</string>
+    <string name="p_password_change_ok">Пароль был изменен</string>
+    <!-- these 2 strings will be join -->
+    <string name="p_loading_view">Загрузка, пожалуйста, подождите ...</string>
+    <string name="p_generating_dh_keys">Создание ключей шифрования </string>
+    <string name="p_wait_for_cert">Пожалуйста, подождите, пока ваш сертификат не вступит в силу.\n\nОжидаемое время: %s секунд.</string>
+    <!-- call errors -->
+    <string name="call_error_403">У вас не имеется разрешения звонить по этому номеру.</string>
+    <string name="call_error_404">Абонент офлайн.</string>
+    <string name="call_error_408">Время запроса истекло. Сервер или абонент не ответил вовремя. Пожалуйста, повторите попытку позже.</string>
+    <string name="call_error_410">Абонента не удается застичь. С ним не удается соединиться, вероятно, он недавно вышел из сети. </string>
+    <string name="call_error_477">Запрос вызова не может достичь цели назначения. Пожалуйста, повторите попытку позже.</string>
+    <string name="call_error_480">Временно недоступен. Вероятно, не удалось установить прямое соединение или связь разъединилась. Пожалуйста, повторите попытку позже.</string>
+    <string name="call_error_486">Абонент занят.</string>
+    <string name="call_error_487">Запрос вызова отменен.</string>
+    <string name="call_error_503">В настоящее время услуга недоступна, сервер может быть занят. Пожалуйста, повторите попытку позже.</string>
+    <string name="call_error_603">Абонент отклонил принятие звонка.</string>
+    <string name="call_error_not_valid">Phonex не зарегистрирован в сети, звонок не может быть совершен.</string>
+    <string name="call_error_generic">Неизвестная ошибка, звонок не может быть совершен. Пожалуйста, повторите попытку позже. Если проблема не будет устранена, попробуйте перезагрузить Phonex.</string>
+    <string name="missed_call_title">Пропущенный звонок</string>
+    <string name="missed_call_body">У Вас пропущен звонок от %1$s в %2$s.</string>
+    <string name="intro_init_title">Инициализация ...</string>
+    <string name="intro_init_msg">Запуск приложения, пожалуйста, подождите</string>
+    <string name="intro_resurrect_msg">Совершается обновление приложения, пожалуйста, подождите.</string>
+    <string name="msg_offline_message_title">Офлайн</string>
+    <string name="msg_enc_tit_signature_invalid">Предупреждение: неправильная подпись</string>
+    <string name="msg_enc_tit_encrypted">Зашифровано</string>
+    <string name="msg_enc_tit_decrypted">Расшифровано</string>
+    <string name="msg_enc_tit_encrypted_file">Зашифрованный файл</string>
+    <string name="msg_enc_tit_decryption_error">Ошибка расшифровки</string>
+    <string name="msg_enc_tit_inv_mime">Предупреждение: возможно подделано</string>
+    <string name="msg_resend">Переслать</string>
+    <string name="msg_sent_date">Отправлено</string>
+    <string name="msg_received">Получено</string>
+    <string name="msg_sent_failed">Отправка не удалась</string>
+    <string name="msg_sent_failed_477">Ошибка шифрования</string>
+    <string name="msg_sending">Отправка</string>
+    <string name="msg_no_cert">Сертификат не найден</string>
+    <string name="msg_file_rejected">Файл отклонен</string>
+    <string name="msg_error">Ошибка</string>
+    <string name="msg_error_recv">Ошибка скачивания</string>
+    <!-- in call -->
+    <string name="incall_zrtphash_nomatch_error">ZRTP хэш не соответствует (SDP против ZRTP hello). В среде может присутствовать злоумышленник! Код ошибки:</string>
+    <string name="incall_incoming_gsm_call">Пропущен звонок от абонента:</string>
+    <!-- settings -->
+    <string name="security">Безопасность</string>
+    <string name="change_password">Изменить пароль</string>
+    <string name="change_password_desc">Изменить пароль для входа в систему Phonex.</string>
+    <!-- mod sign error codes -->
+    <string name="modsign_err_user_cert_missing">Сертификат пользователя %s не найден, подпись не может быть проверена</string>
+    <string name="modsign_err_user_cert_invalid">Сертификат пользователя %s недействителен, подпись не может быть проверена</string>
+    <string name="modsign_err_signature_invalid">"Проверка подписи не прошла для пользователя \""%s\"""</string>
+    <string name="modsign_err_generic">"Неопределенная ошибка при проверки подписи для пользователя \""%s\"""</string>
+    <string name="modsign_err_remote_user_unknown">"Неизвестный удаленный пользователь \""%s\"""</string>
+    <string name="modsign_err_success">Проверка подписи была успешной</string>
+    <!-- certificate error -->
+    <string name="cert_status_ok">ОК</string>
+    <string name="cert_status_invalid">Неверно</string>
+    <string name="cert_status_revoked">Отменено</string>
+    <string name="cert_status_forbidden">Запрещено</string>
+    <string name="cert_status_missing">Отсутствует</string>
+    <string name="cert_status_nouser">Несуществующий пользователь</string>
+    <string name="p_refreshing_certificate">Обновление сертификата</string>
+    <string name="clist_cat_user">Пользователь</string>
+    <string name="clist_display_name">Ник</string>
+    <string name="clist_sip">Имя пользователя</string>
+    <string name="has_certificate">Есть локальный сертификат</string>
+    <string name="cert_status">Состояние сертификата</string>
+    <string name="cert_owner">Владелец</string>
+    <string name="cert_date_created">Дата создания</string>
+    <string name="cert_date_last_refresh">Дата последнего обновления</string>
+    <string name="cert_hash">Хэш сертификата</string>
+    <string name="cert_serial">Серийный номер сертификата</string>
+    <string name="cert_validity">Действительность сертификата</string>
+    <string name="cert_issuer">Издатель сертификата</string>
+    <string name="cert_cn">CN сертификата</string>
+    <string name="cert_raw">Неформатированный сертификат</string>
+    <string name="cert_yes">Да</string>
+    <string name="cert_no">Нет</string>
+    <string name="cert_public_key">Публичный ключ</string>
+    <string name="cert_public_key_alg">Алгоритм публичного  ключа</string>
+    <string name="cert_public_key_length">Длина публичного ключа</string>
+    <string name="my_certificate">Мой сертификат</string>
+    <string name="my_certificate_desc">Просмотреть детали сертификата</string>
+    <string name="sync_certificates">Синхронизация сертификатов</string>
+    <string name="sync_certificates_desc">Проверка обновление сертификатов контактов </string>
+    <string name="sync_certificates_toast">Синхронизация будет работать в фоновом режиме приложения</string>
+    <string name="sync_dhkeys">Синхронизировать ключи</string>
+    <string name="sync_dhkeys_desc">Проверка ключей шифрования для передачи файлов</string>
+    <string name="sync_dhkeys_toast">Синхронизация ключей будет работать в фоновом режиме приложения</string>
+    <string name="progress_loading_msg">Пожалуйста, подождите...</string>
+    <string name="progress_loading_title">Загрузка данных</string>
+    <string name="language">Язык</string>
+    <string name="language_desc">Установка языка приложения. Необходим перезапуск приложения</string>
+    <string name="warning_signature">SIP-сообщение с неправильной подписью</string>
+    <string name="my_profile">Мой аккаунт</string>
+    <string name="project_page">Сайт проекта</string>
+    <string name="obtain_trial">7-дневная пробная версия</string>
+    <string name="intro_info">Введение</string>
+    <string name="options">Опции</string>
+    <string name="about_phonex">PhoneX</string>
+    <string name="firstlaunch_welcome">Добро пожаловать</string>
+    <string name="firstlaunch_text">Phonex является мобильным приложением для безопасной связи, которая позволяет зашифрованные звонки, передачу сообщений и файлов между пользователями.</string>
+    <string name="firstlaunch_text2">Вы можете попробовать 7-дневную бесплатную пробную версию или приобрести полную лицензию на сайте www.phone-x.net.</string>
+    <string name="continue_to_app">Продолжить к регистрации</string>
+    <string name="conversation_call_button">Вызов</string>
+    <string name="registration_warning">Регистрация в сети</string>
+    <string name="notification_keygen">PhoneХ проверка ключей шифрования</string>
+    <string name="notification_certupd">PhoneХ обновление сертификата</string>
+    <string name="notification_appupd">PhoneХ обновлен</string>
+    <string name="notification_appupd_text">Версия %s, войти.</string>
+    <string name="notification_device_reboot_text">Устройство включено, войти.</string>
+
+    <string name="certupd_done">Готово</string>
+    <string name="certupd_none">Ошибка</string>
+    <string name="certupd_in_queue">В очереди</string>
+    <string name="certupd_started">Начало загрузки</string>
+    <string name="certupd_local_loading">Загрузка</string>
+    <string name="certupd_server_call">Загрузка с сервера</string>
+    <string name="certupd_post_server_call">Обработка ответа</string>
+    <string name="certupd_saving">Сохранение </string>
+    <string name="certupd_header">Синхронизация сертификатов</string>
+    <string name="certupd_header_description">Синхронизация сертификатов контактов.</string>
+    <string name="keygen_done">Готово</string>
+    <string name="keygen_none">Ошибка</string>
+    <string name="keygen_in_queue">В очереди</string>
+    <string name="keygen_started">Начало обработки</string>
+    <string name="keygen_cleaning">Очистка старых ключей</string>
+    <string name="keygen_generating_key">Создание ключа %1$d/%2$d</string>
+    <string name="keygen_generated">Ключи созданы, подождите</string>
+    <string name="keygen_server_call_save">Отправка ключей на сервер</string>
+    <string name="keygen_post_server_call_save">Обработка ответов </string>
+    <string name="keygen_deleting">Удаление ключей</string>
+    <string name="keygen_server_call_delete">Удаление ключей из сервера</string>
+    <string name="keygen_post_server_call_delete">Обработка ответов </string>
+    <string name="keygen_header">Создание ключей   </string>
+    <string name="keygen_header_description">Создание ключей, необходимых для передачи файлов.</string>
+
+    <!-- Help Add Account fragment -->
+    <string name="help_ac_how_to_add">Как добавить новый контакт?</string>
+    <string name="help_ac_add_1"><![CDATA["Эта процедура показывает, как два пользователи могут добавить один другого в список контактов. Вы пользователь ""ALF 1"" и вы хотите добавить нового пользователя с именем ""Ева"" в свой список контактов. Во-первых, вы должны быть авторизованы на главном экране. Нажмите <b> в нижнем правом углу </b>, а затем нажмите кнопку  <b>Добавить</b>."]]></string>
+    <string name="help_ac_add_2"><![CDATA["В диалоговом окне введите имя пользователя контакта - ""Ева"". Вы также можете заполнить поля Ник / псевдоним (т.е.. имя, под которым вы хотите иметь контакт). В заключение нажмите кнопку  <b>Добавить</b>."]]></string>
+    <string name="help_ac_add_3"><![CDATA[После того, как пользователь добавлен вы увидите его имя в списке контактов вместе с его статусом. Статус вам показывает, если пользователь <b>Online</b> или <b>Offline</b>]]></string>
+    <string name="help_ac_add_4"><![CDATA[<b>Когда два пользователи хотят общаться (позвонить или отправить сообщение), они должны быть добавлены один у другого в списке контактов. &nbsp;</b> Этот параметр не позволяет незапрошенных телефонных звонков от пользователей, которых вы не знаете </p>]]></string>
+
+    <!-- Send file -->
+    <string name="open_file">Открыть</string>
+    <string name="download_file">Скачать</string>
+    <string name="reject_file">Отказаться</string>
+    <string name="open_directory">Открыть каталог</string>
+    <plurals name="delete_file">
+        <item quantity="one">Удалить файл %d</item>
+        <item quantity="few">Удалить файл</item>
+        <item quantity="many">Удалить файлы</item>
+    </plurals>
+
+    <string name="filepicker_title">Выберите файл</string>
+    <string name="filepicker_toast_sort_asc">Сортировка списка: А..Я</string>
+    <string name="filepicker_toast_sort_desc">Сортировка списка: Я..A</string>
+    <string name="filepicker_camera">Фотографии</string>
+    <string name="filepicker_camera_2">Фотографии SD</string>
+    <string name="filepicker_download">Загруженные файлы</string>
+    <string name="filepicker_documents">Документы</string>
+    <string name="filepicker_pictures">Картинки</string>
+    <string name="filepicker_music">Музыка</string>
+    <string name="filepicker_storage">Хранилище</string>
+    <string name="filepicker_external_sd">Внешняя SD</string>
+    <string name="dwn_p_error">Ошибка</string>
+    <string name="dwn_p_cancelled">Отменено</string>
+    <string name="dwn_p_in_queue">В очереди</string>
+    <string name="dwn_p_retrieving_details">Скачивание</string>
+    <string name="dwn_p_deleting">Удаление с сервера</string>
+    <string name="dwn_p_deleted">Удалены с сервера</string>
+    <string name="dwn_p_loading_info">Загрузка мета-данных</string>
+    <string name="dwn_p_enc_keys">Вычисление ключей шифрования</string>
+    <string name="dwn_p_key_load">Запись секретных ключей</string>
+    <string name="dwn_p_connecting">Подключение к серверу</string>
+    <string name="dwn_p_downloading">Загрузка</string>
+    <string name="dwn_p_extracting">Распаковка файлов</string>
+    <string name="dwn_p_decryption">Расшифровка</string>
+    <string name="dwn_p_done">Закончено</string>
+    <string name="dwn_failed">Загрузка не удалась</string>
+    <string name="dwn_failed_download">Ошибка загрузки файла, пожалуйста, повторите попытку позже.</string>
+    <string name="dwn_failed_recoverable">Произошла ошибка при загрузке файла. Пожалуйста, повторите попытку позже.</string>
+    <string name="dwn_failed_generic">Общая ошибка при загрузке файла. Файл может быть поврежден.</string>
+    <string name="dwn_no_file">Загруженный файл не найден для данного сообшения</string>
+    <string name="dwn_file_not_found">Файл не найден. Возможно был удален.\n\nНазвайие файла:\n%s</string>
+    <string name="upd_p_cancelled">Отменено</string>
+    <string name="upd_p_in_queue">В очереди</string>
+    <string name="upd_p_initialization">Инициализация загрузки </string>
+    <string name="upd_p_downloading_keys">Загрузка ключей из сервера</string>
+    <string name="upd_p_key_verification">Проверка ключей   </string>
+    <string name="upd_p_uploading">Загрузка на сервер</string>
+    <string name="upd_p_gen_enc_keys">Создание ключей шифрования</string>
+    <string name="upd_p_processing_input">Шифрование файлов</string>
+    <string name="upd_p_enc_notif">Шифрование уведомления</string>
+    <string name="upd_p_sending_notif">Отправка уведомления</string>
+    <string name="upd_p_done">Закончено</string>
+    <string name="upd_failed">Загрузка не удалась</string>
+    <string name="upd_failed_full_mailbox">Почтовый ящик получателя переполнен.</string>
+    <string name="upd_failed_too_big">Файл слишком велик.</string>
+    <string name="upd_failed_no_keys">Адресат не имеет бесплатный ключ шифрования для передачи файлов.</string>
+    <string name="upd_failed_generic">Случилась общая ошибка во время загрузки файла.</string>
+    <string name="ft_err_timeout">Ошибка соединения</string>
+    <string name="intro_phonex">PhoneХ %s - Безопасная связь</string>
+    <string name="intro_copyright">© 2012-2015 Все права защищены</string>
+    <string name="dummy_username">uzivatel@phone-x.net</string>
+    <string name="dummy_displayname">например Иван Волков</string>
+    <string name="phonex_restart_title">Перезапуск приложения</string>
+    <string name="phonex_restart_info">Пожалуйста, подождите на возобновление PhoneХ</string>
+    <string name="notif_delete">Удалить</string>
+    <string name="notif_delete_type">Удалить все</string>
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;filepicker_decrypt">Decrypt</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;filepicker_decrypt_open">Decrypt &amp; open</string>-->
+
+    <!-- File Manager -->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_manager">File manager</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;filepicker_secure_storage">Secure storage</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;filepicker_secure_photo_storage">Secure camera</string>-->
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_menu_decrypt">Decrypt file</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_menu_delete">Delete file</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_menu_delete_multi">Delete selected files</string>-->
+
+    <!--TODO:translate<plurals name="file_dialog_delete_title">
+        <item quantity="one">Delete file</item>
+        <item quantity="other">Delete files</item>
+    </plurals>-->
+    <!--TODO:translate<plurals name="file_dialog_delete_confirm">
+        <item quantity="one">This file will be deleted:</item>
+        <item quantity="other">These files will be deleted:</item>
+    </plurals>-->
+
+    <!--TODO:translate<plurals name="file_dialog_decrypt_title">
+        <item quantity="one">Decrypt file</item>
+        <item quantity="other">Decrypt files</item>
+    </plurals>-->
+    <!--TODO:translate<plurals name="file_dialog_decrypt_confirm">
+        <item quantity="one">This file will be decrypted to the Download directory.\n\nPlease note, that after decrypting the file will be accessible by all installed applications.</item>
+        <item quantity="other">These files will be decrypted to the Download directory.\n\nPlease note, that after decrypting the files will be accessible by all installed applications.</item>
+    </plurals>-->
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_dialog_open_title">Decrypt file before opening</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_dialog_open_confirm">This file will be decrypted to the Download directory in order to open it in third party app.\n\nPlease note, that after decrypting the file will be accessible by all installed applications.</string>-->
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_dialog_title">Decrypting</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_dialog_to">to:</string>-->
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_delete_error">Deletion error</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_delete_error_message">Some files were not deleted</string>-->
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_decrypt_error">Decryption error</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_decrypt_fail">These files were not decrypted because of an error:</string>-->
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;chat_delete_message_body">Do you really want to delete this message?</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;chat_delete_message_delete_files_prompt">Delete files from this message</string>-->
+
+    <!-- Trial Request -->
+    <string name="trial_license">Пробная версия</string>
+    <string name="trial_error_401">Вы ввели неправильный код валидации.</string>
+    <string name="trial_error_402">Пользователь уже создал тестовый аккаунт. Разрешена только одна тестовая лицензия на телефон.</string>
+    <string name="trial_error_404">Имя пользователя уже существует.</string>
+    <string name="trial_fragment_title">Создание пробной лицензии</string>
+    <string name="trial_fragment_message">Проверка запроса</string>
+    <string name="trial_created_title">Успех</string>
+    <string name="trial_created_message">Ваш аккаунт был успешно создан</string>
+    <string name="trial_created_login">Имя пользователя:</string>
+    <string name="trial_created_expiration">Действителен до:</string>
+    <string name="trial_button_submit">Отправить</string>
+    <string name="trial_button_reset">Другое изображение</string>
+    <string name="trial_captcha_loading">Генерация кода</string>
+    <string name="trial_security_check">Проверка запроса</string>
+    <string name="trial_security_check_desc">Чтобы проверить ваш запрос, пожалуйста, введите captcha код в поле ниже.</string>
+    <string name="trial_continue_login">Войти</string>
+
+    <string name="clist_add_error_nonexisting_user">Невозможно добавить пользователя, пользователь не существует.</string>
+    <string name="msg_seen">Показано %s</string>
+    <string name="pin_timer">Время до блокировки</string>
+    <string name="lock_asap">10 секунд</string>
+    <string name="lock_30s">30 секунд</string>
+    <string name="lock_1m">1 минута</string>
+    <string name="lock_2m">2 минуты</string>
+    <string name="lock_3m">3 минуты</string>
+    <string name="lock_5m">5 минут</string>
+    <string name="lock_10m">10 минут</string>
+    <string name="lock_15m">15 минут</string>
+    <string name="lock_30m">30 минут</string>
+    <string name="lock_45m">45 минут</string>
+    <string name="lock_60m">60 минут</string>
+
+    <string name="add_contact_empty_alias">Пустой ник</string>
+    <string name="call_error_number">Ошибка %d</string>
+    <string name="call_error_unspecific_msg">Внутренная ошибка вызова </string>
+    <string name="call_error_481">Принудительное прекращение вызова</string>
+    <string name="call_error_501">Другая сторона не поддерживает голосовой вызов.</string>
+
+    <string name="file_picker_sorting_prompt">Сортировать по</string>
+    <string name="file_picker_sorting_alphabet">Название</string>
+    <string name="file_picker_sorting_date">Дата</string>
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_picker_sorting_alphabet_asc">Name A..Z</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_picker_sorting_alphabet_desc">Name Z..A</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_picker_sorting_date_asc">Date oldest first</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_picker_sorting_date_desc">Date newest first</string>-->
+
+    <string-array name="file_picker_sorting_array">
+        <item>@string/file_picker_sorting_alphabet_asc</item>
+        <item>@string/file_picker_sorting_alphabet_desc</item>
+        <item>@string/file_picker_sorting_date_asc</item>
+        <item>@string/file_picker_sorting_date_desc</item>
+    </string-array>
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;file_picker_selected_files">Selected files</string>-->
+
+    <string name="p_waiting_for_service">Запуск услуги</string>
+    <string name="app_update_release_notes">Новости</string>
+    <string name="app_update_available_title">Новая версия доступна</string>
+    <string name="app_update_get_now">Обновить</string>
+    <string name="app_update_remind_me_later">Напомнить позже</string>
+    <string name="app_update_ignore_this_version_label">Игнорировать</string>
+    <string name="app_update_updated_to">Phonex обновлен в течении ревизии %d</string>
+    <string name="app_update_generic_release_notes">Phonex %1$s ревизия %2$d доступен. Хотите обновить?</string>
+
+
+    <string name="intro_pass_title">Изменить пароль по умолчанию</string>
+    <string name="intro_pass_description">Пожалуйста, установите новый пароль. Требования:\n• Как минимум 8 символов.\n• Содержит буквы и цифры.</string>
+    <string name="password_requirements">Требования:\n• Минимум 8 символов.\n• Содержит буквы и цифры.</string>
+    <string name="pass_validator_short">Пароль слишком короткий</string>
+    <string name="pass_validator_confirmed_password_differs">Пароль и подтверждение пароля должны совпадать</string>
+    <string name="pass_validator_missing_number">Пароль должен содержать хотя бы одну цифру.</string>
+    <string name="pass_validator_missing_letter">Пароль должен содержать хотя бы одну букву.</string>
+
+    <string name="msg_sending_failed">Отправка не удалась!</string>
+    <string name="some_files_were_deleted">Некоторые из выбранных файлов невозможно найти. </string>
+
+    <string name="select_file">Выбрать файл</string>
+    <string name="send_message">Отправить сообщение</string>
+
+    <string name="broadcast_title">Рассылка сообщения</string>
+    <string name="broadcast_recipients">Получатели</string>
+    <string name="broadcast_message">Сообщение  </string>
+    <string name="broadcast_note">Сообщение будет отправлено каждому адресату отдельно</string>
+    <string name="broadcast_limit_exceeded">Максимальное число пользователей  для  сообщения является %d.</string>
+    <string name="broadcast_empty_recipients_list">Очистить список получателей</string>
+    <string name="broadcast_message_is_being_sent">Сообщение направляется указанным адресатам</string>
+
+    <string name="option_broadcast_message">Рассылка сообщения</string>
+
+    <string name="msg_forward">Переслать сообщение</string>
+
+    <plurals name="clist_actionmode_selected">
+        <item quantity="one">Выбран %d</item>
+        <item quantity="few">Выбраны %d</item>
+        <item quantity="many">Выбрано %d</item>
+    </plurals>
+
+    <string name="received_files">Полученные файлы:</string>
+    <string name="upd_failed_internal_error">Загрузка файлов не удалась, внутренняя ошибка</string>
+    <string name="upd_failed_some_files_missing_title">Отсутствующие файлы</string>
+    <string name="upd_failed_some_files_missing_desc">Некоторые файлы отчета невозможно найти в файловой системе:\n</string>
+    <string name="upd_failed_all_files_missing">Файлы отсутствуют в файловой системе, сообщение не может быть переслано.</string>
+    <string name="broadcast_files">Файлы </string>
+    <string name="no_files_selected">Не выбрано никаких файлов</string>
+
+    <string name="file_deleted">Удален.</string>
+    <string name="file_rejected">Отклонен.</string>
+    <plurals name="files_preview">
+        <item quantity="one">Просмотр файла %d</item>
+        <item quantity="few">Просмотр файлов</item>
+        <item quantity="many">Просмотр файлов</item>
+    </plurals>
+    <plurals name="files_rejected">
+        <item quantity="one">Файл отклонен %d</item>
+        <item quantity="few">Файлы отклонены</item>
+        <item quantity="many">Файлы отклонены</item>
+    </plurals>
+    <string name="msg_delete">Удалить сообщение</string>
+    <string name="saved_username">Сохраненный ник</string>
+
+    <string name="create_trial_account">Создать тестовый аккаунт</string>
+    <string name="create_account">Создать аккаунт</string>
+    <!--it's trial but psst-->
+    <string name="sign_in">Войти</string>
+    <string name="phonex_subtitle">Зашифрованные вызовы, сообщения, передача файлов.</string>
+    <string name="enter_captcha">Captcha код</string>
+    <string name="account_creation">Создание аккаунта</string>
+    <string name="second_device_detected_title">Выход пользователя</string>
+    <string name="second_device_detected_desc">Вы были отключены, потому что кто-то использует тот же логин на другом устройстве</string>
+
+    <string name="pref_p2p_disable">Отключить P2P</string>
+    <string name="pref_p2p_enabled">P2P соединение заблокировано для вызова. Данные проходят через наш сервер, качество связи может ухудшиться, другая сторона не видит ваш IP-адрес.</string>
+    <string name="pref_p2p_disabled">P2P соединение разрешено для вызова. Если это возможно, поток данных реализуется прямо с вызываемой стороной. Улучшает качество вызова, другая сторона видит ваш IP-адрес.</string>
+    <string name="enter_username_description">Выберите имя пользователя, которое будет служить в качестве уникального идентификатора в сети PhoneХ</string>
+    <string name="your_username">Имя пользователя</string>
+    <string name="invalid_username">Имя пользователя может содержать только буквы, цифры, тире и подчеркивание и должно иметь 3-18 символов</string>
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;link_terms_of_use1">By continuing, you agree to</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;link_terms_of_use2">terms of use</string>-->
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;intro_new_account">New account</string>-->
+    <string name="intro_server" translatable="false"/>
+    <string name="recheck_certificate">Обновление сертификата</string>
+    <string name="warn_sig_detail_cat_action">Действие</string>
+    <string name="warn_sig_detail_cat_cert">Деталь</string>
+    <string name="intro_bcode_non_valid">Код введен неверно</string>
+    <string name="intro_bcode_already_used">Код уже был использован</string>
+    <!--TODO:translate<string name="___TO_TRANSLATE___;intro_bcode_error_409_expired">Provided code has expired and is no longer valid.</string>-->
+    <string name="intro_enter_code">Ввести код</string>
+    <string name="intro_apply_code">Применить код</string>
+    <string name="intro_credentials">Логин</string>
+    <string name="intro_code">Код</string>
+    <string name="intro_back">Назад</string>
+
+    <string name="settings">Настройки</string>
+    <string name="my_account">Мой аккаунт</string>
+    <string name="reject_confirm">Вы действительно хотите отказаться от этого файла? После отказа он будет навсегда удален.</string>
+    <string name="license_type_trial">Пробная лицензия</string>
+    <string name="license_type_full">Полная лицензия</string>
+    <string name="expires_at">Действительно до %s</string>
+
+    <string name="notification_license_updated">Лицензия PhoneX обновлена</string>
+    <string name="notification_license_updated_text">%1$s, срок действия до %2$s</string>
+
+    <string name="old_password">Старый пароль</string>
+    <string name="new_password">Новый пароль</string>
+    <string name="new_password_confirmation">Подтверждение пароля</string>
+    <string name="old_password_incorrect">Старый пароль неправильный.</string>
+    <string name="trial_message_limit_explanation">Лимит %d сообщений в день.</string>
+    <string name="license_expired">Истекшая лицензия</string>
+
+    <string name="get_premium_explanation"><![CDATA[Срок действия Вашей лицензии истек. Купите новую лицензию, чтобы получить доступ к <b>премиум-функциям </b>, таким как <b> безопасные голосовые вызовы</b>, <b>отправка файлов </b> и <b> неограниченная отправка сообщений </b>.]]></string>
+    <string name="purchase_license">Продлить лицензию</string>
+    <string name="licenses_types">Виды лицензий:</string>
+    <string name="business_license">Бизнес-лицензия</string>
+    <string name="business_license_desc">Для безопасного общения с коллегами, деловыми партнерами и клиентами. Индивидуальные цены.</string>
+    <string name="see_the_examples">Примеры</string>
+    <string name="personal_license">Персональная лицензия</string>
+    <string name="get_premium_interested">Вы заинтересованы? Вам нужно больше информации?</string>
+    <string name="get_premium_contact_support">Обратитесь в службу поддержки аккаунта.</string>
+    <string name="get_premium_contact_support_highlight">Поддержка аккаунта</string>
+    <string name="get_premium_visit_web">Заказать лицензию на нашем сайте.</string>
+    <string name="get_premium_visit_web_highlight">Веб-сайт</string>
+    <string name="price_individual_month">%s/месяц</string>
+    <string name="price_individual_year">или %s/год</string>
+
+    <string name="notification_license_expired">Срок действия PhoneX лицензии истек</string>
+    <string name="notification_license_expired_text">Купите новую лицензию или продолжайте в ограниченном режиме.</string>
+
+    <string name="notification_license_expires_title">Истечение срока действия лицензии Phonex</string>
+    <string name="notification_license_expires_week_text">Ваша лицензия истечет менее чем через неделю.</string>
+    <string name="notification_license_expires_week_text_full"><![CDATA[Срок действия Вашей лицензии истечет через <b>%s</ b>. Если хотите продолжать использовать <b> премиум-функции</b> (голосовые звонки, отправка файлов, неограниченная отправка сообщений) после истечения срока действия, приобретите новую лицензию.]]></string>
+    <string name="notification_license_expires_day_text">Ваша лицензия истечет менее чем через сутки.</string>
+    <string name="notification_license_expires_day_text_full"><![CDATA[Срок действия Вашей лицензии истечет через <b>дней</ b>. Если хотите продолжать использовать <b> премиум-функции</b> (голосовые звонки, отправка файлов, неограниченная отправка сообщений) после истечения срока действия, приобретите новую лицензию.]]></string>
+
+    <string name="dialog_license_expired_title">Срок действия лицензии истек</string>
+    <string name="dialog_license_expired_msg">Срок действия Вашей лицензии истек. В настоящее время PhoneX находится в ограниченном режиме (%d исходящих сообщений в день). Принятие звонков и сообщений/файлов не ограничено. Чтобы продолжить использование приложения без ограничений, необходимо приобрести новую лицензию.</string>
+    <string name="dialog_license_expired_negative">Продолжать в ограниченном режиме</string>
+
+    <!--TODO:translate<plurals name="day">
+        <item quantity="one">day</item>
+        <item quantity="other">days</item>
+    </plurals>-->
+    <!--TODO:translate<plurals name="hour">
+        <item quantity="one">hour</item>
+        <item quantity="other">hours</item>
+    </plurals>-->
+    <!--TODO:translate<plurals name="minute">
+        <item quantity="one">minute</item>
+        <item quantity="other">minutes</item>
+    </plurals>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;attach_file">Send files</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;attach_picture">Send images</string>-->
+
+    <!-- pairing request progress -->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;prp_refreshing">Refreshing pairing request list</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;processing">Processing</string>-->
+
+    <!--Camera-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;camera_take_picture">Take a picture</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;camera_secure">Secure camera</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;camera_photo_saved">Photo has been saved to secure storage as %s</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;lbl_camera_unavailable">Camera is not available.\nPlease close applications, that may be using camera.</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;lbl_camera_instance">Use front camera</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;lbl_close">Close</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;lbl_focus_mode">Focus mode</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;lbl_resolution">Resolution</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;lbl_saving">Saving</string>-->
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;filepicker_display_mode">Change display mode</string>-->
+
+    <!-- pairing request -->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;pairing_requests">Contact requests</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;pairing_request_accept">Add contact</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;pairing_request_reject">Reject request</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;pairing_request_block">Block</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;pairing_request_count">Contact requests: %d</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;pairing_request_notif_title">New contact request</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;pairing_request_notif_text">%s wants you to add him to contact list.</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;pairing_request_prompt">Contact request from %s</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;no_contact_requests">No contact requests</string>-->
+
+    <!--TODO:translate<string name="___TO_TRANSLATE___;add_license_code">I have a license code</string>-->
+    <!--TODO:translate<string name="___TO_TRANSLATE___;license_code">License code</string>-->
+
+    <string name="phonex_revision">Версия %s</string>
+    <string name="files_were_deleted">Файлы были удалены</string>
+    <!--TODO:translate<string name="files_were_not_sent">Files were not sent.</string>-->
+
+</resources>

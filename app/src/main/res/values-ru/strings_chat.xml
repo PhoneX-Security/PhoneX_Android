@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="menu_delete_all">Удалить разговоры</string>
+    <string name="menu_delete">Удалить разговор</string>
+    <string name="menu_view">Посмотреть разговор</string>
+
+    <string name="undelivered_msg_dialog_title">Невозможно доставить сообщение</string>
+    <string name="msg_backoff_resend">Следующая попытка через  %s секунд</string>
+
+    <string name="copy_message_text">Копировать текст сообщения</string>
+    <string name="done">Закончено</string>
+
+    <string name="compose_title">Написать</string>
+    <string name="send">Отправить</string>
+    <string name="type_to_compose_text_enter_to_send">Написать сообщение</string>
+    <string name="yes">ОК</string>
+    <string name="no">Отмена</string>
+    <string name="edit">Изменить</string>
+    <string name="restore_default">Восстановить настройки по умолчанию</string>
+    <string name="confirm_dialog_title">Удалить</string>
+    <string name="confirm_delete_conversation">Переписка будет удалена</string>
+    <string name="confirm_delete_all_conversations">Все переписки будут удалены</string>
+    <string name="delete">Удалить</string>
+
+    <string name="status_pending">В ожидании</string>
+    <string name="status_failed">Неоконченно</string>
+</resources>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="answer_call">Antwoord</string>
+    <string name="end_call">Einde</string>
+    <string name="call_state_calling">Bel tans…</string>
+
+
+    <string name="speaker">Speaker</string>
+    <string name="mute">Stom</string>
+    <string name="call_state_disconnected">Hang</string>
+    <string name="call_state_incoming">Inkomende oproep ...</string>
+    <string name="hold_call">Hou</string>
+    <string name="on_hold">Op te hou</string>
+    <string name="transport_secure_to_server">TLS vervoer word gebruik vir die onmiddellike hop</string>
+    <string name="transport_secure_full">End-to-end sein veronderstel is om veilige</string>
+</resources>

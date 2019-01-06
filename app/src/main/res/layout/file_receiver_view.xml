@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/acceptFileButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/btn_ftransfer"
+        android:drawableLeft="@drawable/accept_big"
+        android:drawablePadding="-5dp"
+        android:focusable="false"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:gravity="center"
+        android:text="@string/download_file"
+        android:textColor="@color/text_black"
+        android:textSize="12sp"/>
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="fill_parent"
+        android:background="@android:color/darker_gray"/>
+
+    <Button
+        android:id="@+id/rejectFileButton"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/btn_ftransfer"
+        android:drawableLeft="@drawable/cancel_big"
+        android:drawablePadding="-5dp"
+        android:focusable="false"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:text="@string/reject_file"
+        android:textColor="@color/text_black"
+        android:textSize="12sp" />
+</LinearLayout>

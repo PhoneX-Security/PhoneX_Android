@@ -1,0 +1,34 @@
+{
+  "project_info": {
+    "project_number": "359501645451",
+    "project_id": "phonex---secure-communication"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:359501645451:android:484c1c9bf0b18ba8",
+        "android_client_info": {
+          "package_name": "net.phonex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-67027014-1"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

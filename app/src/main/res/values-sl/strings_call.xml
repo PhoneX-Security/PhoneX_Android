@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">Odgovori</string>
+  <string name="end_call">Zaključi</string>
+  <string name="speaker">Zvočnik</string>
+  <string name="mute">Nemo</string>
+  <string name="call_state_calling">Klicanje …</string>
+  <string name="call_state_disconnected">Prekini</string>
+  <string name="call_state_incoming">Dohodni klic …</string>
+  <!-- ##automatically translated below -->
+
+<string name="hold_call">Držite</string>
+<string name="on_hold">Na čakanju</string>
+<string name="transport_secure_to_server">TLS transport se uporablja za takojšnjo hop</string>
+<string name="transport_secure_full">End-to-end signalizacijo naj varno</string>
+</resources>

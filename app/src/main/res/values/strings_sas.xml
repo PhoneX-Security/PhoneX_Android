@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sas_confirm">Confirm</string>
+    <string name="sas_reject">Reject</string>
+    <string name="sas_title">Security code</string>
+    <string name="sas_say">Say to contact:</string>
+    <string name="sas_verify">Contact should say:</string>
+    <string name="sas_more_info">More information</string>
+    <string name="sas_more_desc">Security code verification is another layer of eavesdropping protection.<br/><br/>\n\nBy mutual verification of the security code with the call contact you verify that there is no eavesdropper in the communication channel and thus your communication is secure.<br/><br/>\n\nThis check is needed to be performed for the first time you call with given contact.<br/><br/>\n\n<b>Recommended verification:</b><br/>\nFollow the commands on the screen. If it states <b>Say to contact</b>, say the code in the orange box to the contact on the other side so he can verify it. Then let contact to say it\'s code and verify if it matches with code in grey box. <br/><br/>\n\nIf the first displayed command is <b>Contact should say</b> then wait for contact to say it\'s code and verify it against yours. Then proceed to the next step and say your code to the contact so he can verify it.<br/><br/>\n\nWhen this procedure is done the code should be same on the both sides. If it is so, press <b>Confirm</b>.</string>
+
+</resources>

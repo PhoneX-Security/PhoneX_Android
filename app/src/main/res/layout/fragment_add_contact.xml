@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:orientation="vertical"
+    android:animateLayoutChanges="true"
+
+    >
+    <!--android:background="@drawable/app_layered_background"-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clist_add_description"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"
+        android:textColor="@color/text_gray"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/sip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/edit_text_flat"
+        android:hint="@string/intro_login"
+        android:layout_marginTop="4dp"
+        android:imeOptions="actionNext"
+        android:layout_marginBottom="4dp">
+    </EditText>
+
+    <CheckBox
+        android:id="@+id/chooseAlias"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/text_gray"
+        android:textSize="16sp"
+        android:text="@string/clist_add_choosealias" />
+
+    <EditText
+        android:id="@+id/alias"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        style="@style/edit_text_flat"
+        android:hint="@string/dummy_displayname"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:imeOptions="actionNext">
+    </EditText>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:textAllCaps="false"
+        android:text="@string/clist_add_add"
+        android:layout_height="40dp"
+        style="@style/button_flat_orange"
+        />
+</LinearLayout>

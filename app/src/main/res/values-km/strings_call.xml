@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">ឆ្លើយតប</string>
+  <string name="end_call">បញ្ចប់</string>
+  <string name="speaker">អូប៉ាល័រ</string>
+  <string name="mute">បិទ​សំឡេង</string>
+  <string name="call_state_calling">កំពុង​ហៅ…</string>
+  <string name="call_state_disconnected">ឈប់​និយាយ</string>
+  <string name="call_state_incoming">កំពុង​ហៅ​ចូល…</string>
+  <string name="hold_call">រង់ចាំ</string>
+  <string name="on_hold">កំពុង​រង់ចាំ</string>
+  <!-- ##automatically translated below -->
+
+<string name="transport_secure_to_server">TLS &amp; ការ​ដឹកជញ្ជូន​ត្រូវ​បាន​ប្រើ​សម្រាប់​ប​ហ​ប​ជា​បន្ទាន់</string>
+<string name="transport_secure_full">សញ្ញា​បញ្ចប់​ទៅ​ចុង​បញ្ចប់​ត្រូវ​បាន​ស​ន្ម​ត់​ថា​មាន​សុវត្ថិភាព</string>
+</resources>

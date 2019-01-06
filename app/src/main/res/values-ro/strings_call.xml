@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">Răspunde</string>
+  <string name="end_call">Sfârşit</string>
+  <string name="speaker">Difuzor</string>
+  <string name="mute">Mut</string>
+  <string name="call_state_calling">Se apelează…</string>
+  <string name="call_state_disconnected">Deconectare</string>
+  <string name="call_state_incoming">Intrare apel…</string>
+  <!-- ##automatically translated below -->
+
+<string name="hold_call">Deține</string>
+<string name="on_hold">În așteptare</string>
+<string name="transport_secure_to_server">Transportul TLS este folosit pentru hamei imediat</string>
+<string name="transport_secure_full">Semnalizare end-to-end se presupune sigur</string>
+</resources>

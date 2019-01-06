@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">응답</string>
+  <string name="end_call">종료</string>
+  <string name="speaker">스피커</string>
+  <string name="mute">정숙 모드</string>
+  <string name="call_state_calling">통화 중…</string>
+  <string name="call_state_disconnected">통화 종료</string>
+  <string name="call_state_incoming">전화 수신…</string>
+  <!-- ##automatically translated below -->
+
+<string name="hold_call">보유</string>
+<string name="on_hold">보류</string>
+<string name="transport_secure_to_server">TLS 전송이 즉시 홉에 사용됩니다</string>
+<string name="transport_secure_full">엔드 - 투 - 엔드 신호는 안전한되어있다</string>
+</resources>

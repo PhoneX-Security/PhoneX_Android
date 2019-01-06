@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <net.phonex.ui.customViews.EmptyRecyclerView
+        android:id="@+id/recycler_view"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/right_panel_margin_vertical"
+        android:layout_marginLeft="@dimen/right_panel_margin_left"
+        android:layout_marginTop="@dimen/right_panel_margin_vertical"
+        android:fadingEdge="none"
+        android:fadingEdgeLength="@dimen/right_panel_fading_edge"
+        />
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/no_contact_requests"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:id="@+id/empty_view"
+        />
+
+</FrameLayout>

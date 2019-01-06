@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">הגדרות</string>
+  <string name="prefs_connectivity">רשת</string>
+  <string name="prefs_media">מדיה</string>
+  <string name="prefs_ui">ממשק משתמש</string>
+  <!--Network-->
+  <string name="transport">תעבורה</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">איכות השמע</string>
+  <string name="audio_volume">עוצמת שמע</string>
+  <string name="codecs">מקודדים</string>
+  <string name="echo_cancellation">ביטול הד</string>
+  <string name="echo_cancellation_desc">הפעל ביטול הד</string>
+  <string name="disable_vad">זיהוי קולי</string>
+  <string name="disable_vad_desc">הפעל זיהוי קולי</string>
+  <string name="sound_mic_volume">עוצמת מיקרופון</string>
+  <string name="sound_speaker_volume">עצמת רמקול</string>
+  <string name="sound_bt_mic_volume">בלוטות\' מיקרו הגברה</string>
+  <string name="media_quality">איכות המדיה</string>
+  <string name="media_quality_desc">האיכות של תעבורת התקשורת (שנה רק אם אתה יודע מה אתה עושה)</string>
+  <string name="sound_clock_rate">קצב שעון</string>
+  <string name="sound_clock_rate_desc">תדר ערוץ השמע</string>
+  <string name="echo_cancellation_mode">מצב ההד</string>
+  <string name="echo_cancellation_mode_desc">שיטת חישוב עבור ההד</string>
+  <string name="enable_focus_audio">מיקוד השמע</string>
+  <string name="auto">אוטומטי</string>
+  <string name="simple">ספיקס</string>
+  <string name="slow">לאט</string>
+  <string name="fast">ר</string>
+  <!--UI-->
+  <string name="general_ui">ממשק משתמש כללי</string>
+  <string name="keep_awake_incall">הישאר ער בזמן שיחה</string>
+  <string name="keep_awake_incall_desc">מתקן אם אתה מקבל קול קטוע כאשר המסך כבה בעת שיחת WIFI</string>
+  <string name="log_level">שלב ההתחברות</string>
+  <string name="ringtone">צליל</string>
+  <string name="prevent_screen_rotation">מנע סיבוב המסך</string>
+  <string name="invert_proximity_sensor">הפוך חיישן הקירבה</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <!--Generic-->
+
+
+
+<!-- ##automatically translated below -->
+
+<string name="prefs_security">ביטחון</string>
+<string name="network_watchdog">כלב שמירה של רשת</string>
+<string name="network_watchdog_desc">שירות מופעל מחדש במקרה של אי רישום. בשניות. 0 = להשבית</string>
+<string name="enable_noise_reduction">הפחתת רעש</string>
+<string name="enable_noise_reduction_desc">עובד אם ביטול הד מופעל ומבטל הדהוד WebRTC backend משמש</string>
+<string name="normal_preferences">במצב רגיל</string>
+<string name="security_messages">הודעות</string>
+<string name="messages_delete_period_desc">כמה זמן כדי לשמור את ההודעות שלך בארכיון</string>
+<string name="messages_delete_period">archivation הודעות</string>
+<string name="just_session">רק פגישה זו</string>
+<string name="one_day">יום 1</string>
+<string name="three_days">3 ימים</string>
+<string name="week">שבוע</string>
+<string name="month">חודש</string>
+<string name="forever">לנצח</string>
+</resources>

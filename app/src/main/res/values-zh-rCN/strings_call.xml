@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="answer_call">回复操作</string>
+    <string name="end_call">结束</string>
+    <string name="speaker">扬声器</string>
+    <string name="mute">静音</string>
+    <string name="call_state_calling">通话中</string>
+    <string name="call_state_disconnected">挂断</string>
+    <string name="call_state_incoming">来电</string>
+    <string name="call_state_preparing">准备中</string>
+    <string name="call_state_encrypting">语音加密</string>
+    <string name="hold_call">待机</string>
+    <string name="on_hold">在待机中</string>
+    </resources>

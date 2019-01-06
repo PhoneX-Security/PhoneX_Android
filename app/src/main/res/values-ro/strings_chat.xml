@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="menu_delete_all">Șterge fire</string>
+<string name="menu_delete">Ștergeți fir</string>
+<string name="menu_view">Vezi fir</string>
+<string name="undelivered_msg_dialog_title">Mesajul nelivrate</string>
+<string name="copy_message_text">Copierea mesaj text</string>
+<string name="done">Făcut</string>
+<string name="compose_title">Compune</string>
+<string name="send">Trimite</string>
+<string name="type_to_compose_text_enter_to_send">Tastați pentru a compune</string>
+<string name="yes">Bine</string>
+<string name="no">Anula</string>
+<string name="edit">Edita</string>
+<string name="restore_default">"Revenirea la setările implicite"</string>
+<string name="confirm_dialog_title">Șterge</string>
+<string name="confirm_delete_conversation">Întreaga thread vor fi șterse.</string>
+<string name="confirm_delete_all_conversations">Toate subiectele vor fi șterse.</string>
+<string name="delete">Șterge</string>
+<string name="status_pending">Până la</string>
+<string name="status_failed">Nereușit</string>
+</resources>

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="menu_delete_all">Brisanje teme</string>
+<string name="menu_delete">Izbriši nit</string>
+<string name="menu_view">Pogledajte nit</string>
+<string name="undelivered_msg_dialog_title">Neisporučene poruke</string>
+<string name="copy_message_text">Kopirajte tekst poruke</string>
+<string name="done">Sastavljeno</string>
+<string name="compose_title">Sastaviti</string>
+<string name="send">Poslati</string>
+<string name="type_to_compose_text_enter_to_send">Upišite se sastaviti</string>
+<string name="yes">OK</string>
+<string name="no">Otkazati</string>
+<string name="edit">Uredi</string>
+<string name="restore_default">"Vraćanje zadanih postavki"</string>
+<string name="confirm_dialog_title">Izbrisati</string>
+<string name="confirm_delete_conversation">Cijeli nit će biti izbrisani.</string>
+<string name="confirm_delete_all_conversations">Sve teme će se brisati.</string>
+<string name="delete">Izbrisati</string>
+<string name="status_pending">Na čekanju</string>
+<string name="status_failed">Neuspješan</string>
+</resources>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">Options</string>
+  <string name="prefs_connectivity">Réseau</string>
+  <string name="prefs_media">Média</string>
+  <string name="prefs_ui">Interface et intégration</string>
+  <!--Network-->
+  <string name="transport">Transport</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">Qualité audio</string>
+  <string name="audio_volume">Volume</string>
+  <string name="codecs">Codecs</string>
+  <string name="echo_cancellation">Annulation de l\'echo</string>
+  <string name="echo_cancellation_desc">Activer l\'annulation d\'echo</string>
+  <string name="disable_vad">Détection de silence</string>
+  <string name="disable_vad_desc">Activer la détection active de voix (réduit la bande passante utilisée)</string>
+  <string name="enable_noise_reduction">Réduction du bruit</string>
+  <string name="enable_noise_reduction_desc">Marche si l\'annulation d\'echo activé et que le mode d\'annulation WebRTC est utilisé.</string>
+  <string name="sound_mic_volume">Amplification du micro</string>
+  <string name="sound_speaker_volume">Amplification de l\'écoute</string>
+  <string name="sound_bt_mic_volume">Amplification du micro Bluetooth</string>
+  <string name="media_quality">Qualité du média</string>
+  <string name="media_quality_desc">Qualité du flux média (à ne modifier que si vous savez exactement ce que vous faites)</string>
+  <string name="sound_clock_rate">Fréquence</string>
+  <string name="sound_clock_rate_desc">Fréquence du canal audio</string>
+  <string name="echo_cancellation_mode">Mode de l\'écho</string>
+  <string name="echo_cancellation_mode_desc">Algorithme pour réduire l\'écho</string>
+  <string name="enable_focus_audio">Acquisition audio</string>
+  <string name="auto">Auto</string>
+  <string name="simple">Simple</string>
+  <string name="slow">Lent</string>
+  <string name="fast">Rapide</string>
+  <!--UI-->
+  <string name="general_ui">Interface utilisateur générale</string>
+  <string name="keep_awake_incall">Rester allumer lorsqu\'en cours d\'appel</string>
+  <string name="keep_awake_incall_desc">Corrige le son haché lorsque le téléphone est en WIFI (par exemple pour le Nexus One)</string>
+  <string name="log_level">Niveau de traces</string>
+  <string name="ringtone">Sonnerie</string>
+  <string name="prevent_screen_rotation">Empêcher la rotation d\'écran</string>
+  <string name="invert_proximity_sensor">Inverser le capteur de proximité</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <string name="normal_preferences">Mode normal</string>
+  <!--Generic-->
+  <!-- ##automatically translated below -->
+
+<string name="prefs_security">Sécurité</string>
+<string name="network_watchdog">surveillance du réseau</string>
+<string name="network_watchdog_desc">service redémarre en cas de non inscription. En quelques secondes. 0 = Désactivé</string>
+<string name="security_messages">Messages</string>
+<string name="messages_delete_period_desc">Combien de temps garder vos messages dans l\'archive</string>
+<string name="messages_delete_period">Messages archivation</string>
+<string name="just_session">Juste cette session</string>
+<string name="one_day">Un jour</string>
+<string name="three_days">3 jours</string>
+<string name="week">Semaine</string>
+<string name="month">Mois</string>
+<string name="forever">Toujours</string>
+</resources>

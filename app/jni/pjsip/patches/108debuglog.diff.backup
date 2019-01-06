@@ -1,0 +1,594 @@
+Index: pjsip/sources/pjsip/src/pjsip/sip_dialog.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_dialog.c	(revision 4823)
++++ pjsip/sources/pjsip/src/pjsip/sip_dialog.c	(working copy)
+@@ -1132,20 +1132,21 @@
+ 	cseq = dlg->local.cseq + 1;
+ 
+     /* Keep compiler happy */
+     status = PJ_EBUG;
+ 
+     /* Create the request. */
+     PJ_TRY {
+ 	status = dlg_create_request_throw(dlg, method, cseq, &tdata);
+     }
+     PJ_CATCH_ANY {
++    PJ_LOG(1,(dlg->obj_name, "Cannot create an request, exception thrown"));
+ 	status = PJ_ENOMEM;
+     }
+     PJ_END;
+ 
+     /* Failed! Delete transmit data. */
+     if (status != PJ_SUCCESS && tdata) {
+ 	pjsip_tx_data_dec_ref( tdata );
+ 	tdata = NULL;
+     }
+ 
+Index: pjsip/sources/pjsip/src/pjsip/sip_transport.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_transport.c	(revision 4823)
++++ pjsip/sources/pjsip/src/pjsip/sip_transport.c	(working copy)
+@@ -503,20 +503,21 @@
+ {
+     /* Allocate buffer if necessary. */
+     if (tdata->buf.start == NULL) {
+ 	PJ_USE_EXCEPTION;
+ 
+ 	PJ_TRY {
+ 	    tdata->buf.start = (char*) 
+ 			       pj_pool_alloc(tdata->pool, PJSIP_MAX_PKT_LEN);
+ 	}
+ 	PJ_CATCH_ANY {
++		PJ_LOG(2,("sip_transport", "pj_pool_alloc exception"));
+ 	    return PJ_ENOMEM;
+ 	}
+ 	PJ_END
+ 
+ 	tdata->buf.cur = tdata->buf.start;
+ 	tdata->buf.end = tdata->buf.start + PJSIP_MAX_PKT_LEN;
+     }
+ 
+     /* Do we need to reprint? */
+     if (!pjsip_tx_data_is_valid(tdata)) {
+@@ -639,22 +640,24 @@
+     pjsip_rx_data *dst;
+     pjsip_hdr *hdr;
+ 
+     PJ_ASSERT_RETURN(src && flags==0 && p_rdata, PJ_EINVAL);
+ 
+     pool = pj_pool_create(src->tp_info.pool->factory,
+                           "rtd%p",
+                           PJSIP_POOL_RDATA_LEN,
+                           PJSIP_POOL_RDATA_INC,
+                           NULL);
+-    if (!pool)
++    if (!pool){
++    PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_rx_data_clone; line=%d", __LINE__));
+ 	return PJ_ENOMEM;
++    }
+ 
+     dst = PJ_POOL_ZALLOC_T(pool, pjsip_rx_data);
+ 
+     /* Parts of tp_info */
+     dst->tp_info.pool = pool;
+     dst->tp_info.transport = (pjsip_transport*)src->tp_info.transport;
+ 
+     /* pkt_info can be memcopied */
+     pj_memcpy(&dst->pkt_info, &src->pkt_info, sizeof(src->pkt_info));
+ 
+@@ -1253,22 +1256,24 @@
+ 
+     /* Create and initialize transport manager. */
+     mgr = PJ_POOL_ZALLOC_T(pool, pjsip_tpmgr);
+     mgr->endpt = endpt;
+     mgr->on_rx_msg = rx_cb;
+     mgr->on_tx_msg = tx_cb;
+     pj_list_init(&mgr->factory_list);
+     pj_list_init(&mgr->tdata_list);
+ 
+     mgr->table = pj_hash_create(pool, PJSIP_TPMGR_HTABLE_SIZE);
+-    if (!mgr->table)
++    if (!mgr->table){
++    PJ_LOG(1,("sip_transport", "Cannot create a hash table"));
+ 	return PJ_ENOMEM;
++    }
+ 
+     status = pj_lock_create_recursive_mutex(pool, "tmgr%p", &mgr->lock);
+     if (status != PJ_SUCCESS)
+ 	return status;
+ 
+ #if defined(PJ_DEBUG) && PJ_DEBUG!=0
+     status = pj_atomic_create(pool, 0, &mgr->tdata_counter);
+     if (status != PJ_SUCCESS) {
+     	pj_lock_destroy(mgr->lock);
+     	return status;
+Index: pjsip/sources/pjsip/src/pjsip/sip_ua_layer.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_ua_layer.c	(revision 4823)
++++ pjsip/sources/pjsip/src/pjsip/sip_ua_layer.c	(working copy)
+@@ -116,22 +116,24 @@
+     mod_ua.pool = pjsip_endpt_create_pool( endpt, "ua%p", PJSIP_POOL_LEN_UA,
+ 					   PJSIP_POOL_INC_UA);
+     if (mod_ua.pool == NULL)
+ 	return PJ_ENOMEM;
+ 
+     status = pj_mutex_create_recursive(mod_ua.pool, " ua%p", &mod_ua.mutex);
+     if (status != PJ_SUCCESS)
+ 	return status;
+ 
+     mod_ua.dlg_table = pj_hash_create(mod_ua.pool, PJSIP_MAX_DIALOG_COUNT);
+-    if (mod_ua.dlg_table == NULL)
++    if (mod_ua.dlg_table == NULL){
++    PJ_LOG(1,("sip_ua_layer", "Cannot create a hash table"));
+ 	return PJ_ENOMEM;
++    }
+ 
+     pj_list_init(&mod_ua.free_dlgset_nodes);
+ 
+     /* Initialize dialog lock. */
+     status = pj_thread_local_alloc(&pjsip_dlg_lock_tls_id);
+     if (status != PJ_SUCCESS)
+ 	return status;
+ 
+     pj_thread_local_set(pjsip_dlg_lock_tls_id, NULL);
+ 
+Index: pjsip/sources/pjsip/src/pjsip/sip_util.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_util.c	(revision 4823)
++++ pjsip/sources/pjsip/src/pjsip/sip_util.c	(working copy)
+@@ -377,20 +377,21 @@
+ 
+ 	/* Method */
+ 	pjsip_method_copy(tdata->pool, &cseq->method, method);
+ 
+ 	/* Create the request. */
+ 	init_request_throw( endpt, tdata, &cseq->method, target, from, to, 
+                             contact, call_id, cseq, param_text);
+     }
+     PJ_CATCH_ANY {
+ 	status = PJ_ENOMEM;
++	PJ_LOG(1,("sip_util", "Cannot init request %d", __LINE__));
+ 	goto on_error;
+     }
+     PJ_END
+ 
+     *p_tdata = tdata;
+     return PJ_SUCCESS;
+ 
+ on_error:
+     pjsip_tx_data_dec_ref(tdata);
+     return status;
+@@ -454,20 +455,21 @@
+ 	else
+ 	    cseq->cseq = pj_rand() % 0xFFFF;
+ 	pjsip_method_copy(tdata->pool, &cseq->method, method);
+ 
+ 	/* Copy headers to the request. */
+ 	init_request_throw(endpt, tdata, &cseq->method, target, from, to, 
+                            contact, call_id, cseq, param_text);
+     }
+     PJ_CATCH_ANY {
+ 	status = PJ_ENOMEM;
++	PJ_LOG(1,("sip_util", "Cannot init request %d", __LINE__));
+ 	goto on_error;
+     }
+     PJ_END;
+ 
+     *p_tdata = tdata;
+     return PJ_SUCCESS;
+ 
+ on_error:
+     pjsip_tx_data_dec_ref(tdata);
+     return status;
+@@ -1087,34 +1089,36 @@
+ 
+ /* Transport callback for sending stateless request. 
+  * This is one of the most bizzare function in pjsip, so
+  * good luck if you happen to debug this function!!
+  */
+ static void stateless_send_transport_cb( void *token,
+ 					 pjsip_tx_data *tdata,
+ 					 pj_ssize_t sent )
+ {
+     pjsip_send_state *stateless_data = (pjsip_send_state*) token;
+-
++    unsigned tmpi=0;
+     PJ_UNUSED_ARG(tdata);
+     pj_assert(tdata == stateless_data->tdata);
+ 
+-    for (;;) {
++    for (tmpi=0;;tmpi++) {
+ 	pj_status_t status;
+ 	pj_bool_t cont;
+ 
+ 	pj_sockaddr_t *cur_addr;
+ 	pjsip_transport_type_e cur_addr_type;
+ 	int cur_addr_len;
+ 
+ 	pjsip_via_hdr *via;
+ 
++	PJ_LOG(4,(THIS_FILE, "stateless_send_transport_cb, iter=%u, tdata=%p, tok=%p, line=%d",tmpi, tdata, token, __LINE__));
++
+ 	if (sent == -PJ_EPENDING) {
+ 	    /* This is the initial process.
+ 	     * When the process started, this function will be called by
+ 	     * stateless_send_resolver_callback() with sent argument set to
+ 	     * -PJ_EPENDING.
+ 	     */
+ 	    cont = PJ_TRUE;
+ 	} else {
+ 	    /* There are two conditions here:
+ 	     * (1) Message is sent (i.e. sent > 0),
+@@ -1134,20 +1138,21 @@
+ 
+ 	/* Finished with this transport. */
+ 	if (stateless_data->cur_transport) {
+ 	    pjsip_transport_dec_ref(stateless_data->cur_transport);
+ 	    stateless_data->cur_transport = NULL;
+ 	}
+ 
+ 	/* Done if application doesn't want to continue. */
+ 	if (sent > 0 || !cont) {
+ 	    pjsip_tx_data_dec_ref(tdata);
++	    PJ_LOG(4,(THIS_FILE, "stateless_send_transport_cb, iter=%u, tdata=%p, tok=%p, cont=%d, line=%d",tmpi, tdata, token, cont, __LINE__));
+ 	    return;
+ 	}
+ 
+ 	/* Try next address, if any, and only when this is not the 
+ 	 * first invocation. 
+ 	 */
+ 	if (sent != -PJ_EPENDING) {
+ 	    tdata->dest_info.cur_addr++;
+ 	}
+ 
+@@ -1171,20 +1176,21 @@
+ 	/* Acquire transport. */
+ 	status = pjsip_endpt_acquire_transport2(stateless_data->endpt,
+ 						cur_addr_type,
+ 						cur_addr,
+ 						cur_addr_len,
+ 						&tdata->tp_sel,
+ 						tdata,
+ 						&stateless_data->cur_transport);
+ 	if (status != PJ_SUCCESS) {
+ 	    sent = -status;
++	    PJ_LOG(2,(THIS_FILE, "stateless_send_transport_cb, cannot acquire transport status=%d, tdata=%p, tok=%p, line=%d",status, tdata, token, __LINE__));
+ 	    continue;
+ 	}
+ 
+ 	/* Modify Via header. */
+ 	via = (pjsip_via_hdr*) pjsip_msg_find_hdr( tdata->msg,
+ 						   PJSIP_H_VIA, NULL);
+ 	if (!via) {
+ 	    /* Shouldn't happen if request was created with PJSIP API! 
+ 	     * But we handle the case anyway for robustness.
+ 	     */
+@@ -1249,20 +1255,21 @@
+ 	if (status == PJ_SUCCESS) {
+ 	    /* Recursively call this function. */
+ 	    sent = tdata->buf.cur - tdata->buf.start;
+ 	    stateless_send_transport_cb( stateless_data, tdata, sent );
+ 	    return;
+ 	} else if (status == PJ_EPENDING) {
+ 	    /* This callback will be called later. */
+ 	    return;
+ 	} else {
+ 	    /* Recursively call this function. */
++		PJ_LOG(2,(THIS_FILE, "stateless_send_transport_cb, cannot send; status=%d, tdata=%p, tok=%p, line=%d",status, tdata, token, __LINE__));
+ 	    sent = -status;
+ 	    stateless_send_transport_cb( stateless_data, tdata, sent );
+ 	    return;
+ 	}
+     }
+ 
+ }
+ 
+ /* Resolver callback for sending stateless request. */
+ static void 
+@@ -1273,20 +1280,21 @@
+     pjsip_send_state *stateless_data = (pjsip_send_state*) token;
+     pjsip_tx_data *tdata = stateless_data->tdata;
+ 
+     /* Fail on server resolution. */
+     if (status != PJ_SUCCESS) {
+ 	if (stateless_data->app_cb) {
+ 	    pj_bool_t cont = PJ_FALSE;
+ 	    (*stateless_data->app_cb)(stateless_data, -status, &cont);
+ 	}
+ 	pjsip_tx_data_dec_ref(tdata);
++	PJ_LOG(2,(THIS_FILE, "stateless_send_resolver_callback status=%d",status));
+ 	return;
+     }
+ 
+     /* Copy server addresses */
+     if (addr && addr != &tdata->dest_info.addr) {
+ 	pj_memcpy( &tdata->dest_info.addr, addr, 
+ 	           sizeof(pjsip_server_addresses));
+     }
+     pj_assert(tdata->dest_info.addr.count != 0);
+ 
+@@ -1304,20 +1312,21 @@
+ 	int len;
+ 
+ 	/* Encode the request */
+ 	status = pjsip_tx_data_encode(tdata);
+ 	if (status != PJ_SUCCESS) {
+ 	    if (stateless_data->app_cb) {
+ 		pj_bool_t cont = PJ_FALSE;
+ 		(*stateless_data->app_cb)(stateless_data, -status, &cont);
+ 	    }
+ 	    pjsip_tx_data_dec_ref(tdata);
++	    PJ_LOG(2,(THIS_FILE, "stateless_send_resolver_callback status=%d, line=%d",status, __LINE__));
+ 	    return;
+ 	}
+ 
+ 	/* Check if request message is larger than 1300 bytes. */
+ 	len = (int)(tdata->buf.cur - tdata->buf.start);
+ 	if (len >= PJSIP_UDP_SIZE_THRESHOLD) {
+ 	    int i;
+ 	    int count = tdata->dest_info.addr.count;
+ 
+ 	    PJ_LOG(5,(THIS_FILE, "%s exceeds UDP size threshold (%u), "
+@@ -1358,22 +1367,24 @@
+ 				   pjsip_send_callback cb)
+ {
+     pjsip_host_info dest_info;
+     pjsip_send_state *stateless_data;
+     pj_status_t status;
+ 
+     PJ_ASSERT_RETURN(endpt && tdata, PJ_EINVAL);
+ 
+     /* Get destination name to contact. */
+     status = pjsip_process_route_set(tdata, &dest_info);
+-    if (status != PJ_SUCCESS)
++    if (status != PJ_SUCCESS){
++	PJ_LOG(2,(THIS_FILE, "Cannot process route set"));
+ 	return status;
++    }
+ 
+     /* Keep stateless data. */
+     stateless_data = PJ_POOL_ZALLOC_T(tdata->pool, pjsip_send_state);
+     stateless_data->token = token;
+     stateless_data->endpt = endpt;
+     stateless_data->tdata = tdata;
+     stateless_data->app_cb = cb;
+ 
+     /* If destination info has not been initialized (this applies for most
+      * all requests except CANCEL), resolve destination host. The processing
+Index: pjsip/sources/pjsip/src/pjsip/sip_util_proxy.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_util_proxy.c	(revision 4823)
++++ pjsip/sources/pjsip/src/pjsip/sip_util_proxy.c	(working copy)
+@@ -223,20 +223,21 @@
+ 	    pjsip_msg_add_hdr(tdata->msg, (pjsip_hdr*)hmaxfwd);
+ 	}
+ 
+ 	/* Clone request body */
+ 	if (src->body) {
+ 	    dst->body = pjsip_msg_body_clone(tdata->pool, src->body);
+ 	}
+ 
+     }
+     PJ_CATCH_ANY {
++    PJ_LOG(1,("sip_util_proxy", "Cannot clone msg body"));
+ 	status = PJ_ENOMEM;
+ 	goto on_error;
+     }
+     PJ_END
+ 
+ 
+     /* Done */
+     *p_tdata = tdata;
+     return PJ_SUCCESS;
+ 
+@@ -303,20 +304,21 @@
+ 	    hsrc = hsrc->next;
+ 	}
+ 
+ 	/* Clone message body */
+ 	if (src->body)
+ 	    dst->body = pjsip_msg_body_clone(tdata->pool, src->body);
+ 
+ 
+     }
+     PJ_CATCH_ANY {
++    PJ_LOG(1,("sip_util_proxy", "Cannot clone msg body %d", __LINE__));
+ 	status = PJ_ENOMEM;
+ 	goto on_error;
+     }
+     PJ_END;
+ 
+     *p_tdata = tdata;
+     return PJ_SUCCESS;
+ 
+ on_error:
+     pjsip_tx_data_dec_ref(tdata);
+Index: pjsip/sources/pjsip/src/pjsip-simple/presence.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip-simple/presence.c	(revision 4823)
++++ pjsip/sources/pjsip/src/pjsip-simple/presence.c	(working copy)
+@@ -210,24 +210,36 @@
+     /* Create presence */
+     pres = PJ_POOL_ZALLOC_T(dlg->pool, pjsip_pres);
+     pres->dlg = dlg;
+     pres->sub = sub;
+     if (user_cb)
+ 	pj_memcpy(&pres->user_cb, user_cb, sizeof(pjsip_evsub_user));
+ 
+     pj_ansi_snprintf(obj_name, PJ_MAX_OBJ_NAME, "pres%p", dlg->pool);
+     pres->status_pool = pj_pool_create(dlg->pool->factory, obj_name, 
+ 				       512, 512, NULL);
++    if (!pres->status_pool){
++    	PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_pres_create_uac; line=%d", __LINE__));
++    	status = PJ_ENOMEM;
++    	goto on_return;
++    }
++
+     pj_ansi_snprintf(obj_name, PJ_MAX_OBJ_NAME, "tmpres%p", dlg->pool);
+     pres->tmp_pool = pj_pool_create(dlg->pool->factory, obj_name, 
+ 				    512, 512, NULL);
+ 
++    if (!pres->tmp_pool){
++		PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_pres_create_uac; line=%d", __LINE__));
++		status = PJ_ENOMEM;
++		goto on_return;
++    }
++
+     /* Attach to evsub */
+     pjsip_evsub_set_mod_data(sub, mod_presence.id, pres);
+ 
+     *p_evsub = sub;
+ 
+ on_return:
+     pjsip_dlg_dec_lock(dlg);
+     return status;
+ }
+ 
+@@ -311,23 +323,34 @@
+     pres = PJ_POOL_ZALLOC_T(dlg->pool, pjsip_pres);
+     pres->dlg = dlg;
+     pres->sub = sub;
+     pres->content_type = content_type;
+     if (user_cb)
+ 	pj_memcpy(&pres->user_cb, user_cb, sizeof(pjsip_evsub_user));
+ 
+     pj_ansi_snprintf(obj_name, PJ_MAX_OBJ_NAME, "pres%p", dlg->pool);
+     pres->status_pool = pj_pool_create(dlg->pool->factory, obj_name, 
+ 				       512, 512, NULL);
++    if (!pres->status_pool){
++		PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_pres_create_uas; line=%d", __LINE__));
++		status = PJ_ENOMEM;
++		goto on_return;
++    }
++
+     pj_ansi_snprintf(obj_name, PJ_MAX_OBJ_NAME, "tmpres%p", dlg->pool);
+     pres->tmp_pool = pj_pool_create(dlg->pool->factory, obj_name, 
+ 				    512, 512, NULL);
++    if (!pres->tmp_pool){
++		PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_pres_create_uas; line=%d", __LINE__));
++		status = PJ_ENOMEM;
++		goto on_return;
++    }
+ 
+     /* Attach to evsub */
+     pjsip_evsub_set_mod_data(sub, mod_presence.id, pres);
+ 
+     /* Done: */
+     *p_evsub = sub;
+ 
+ on_return:
+     pjsip_dlg_dec_lock(dlg);
+     return status;
+@@ -463,22 +486,24 @@
+ static pj_status_t pres_create_msg_body( pjsip_pres *pres, 
+ 					 pjsip_tx_data *tdata)
+ {
+     pj_str_t entity;
+ 
+     /* Get publisher URI */
+     entity.ptr = (char*) pj_pool_alloc(tdata->pool, PJSIP_MAX_URL_SIZE);
+     entity.slen = pjsip_uri_print(PJSIP_URI_IN_REQ_URI,
+ 				  pres->dlg->local.info->uri,
+ 				  entity.ptr, PJSIP_MAX_URL_SIZE);
+-    if (entity.slen < 1)
++    if (entity.slen < 1){
++    PJ_LOG(1,("presence", "entity len is < 1; line=%d", __LINE__));
+ 	return PJ_ENOMEM;
++    }
+ 
+     if (pres->content_type == CONTENT_TYPE_PIDF) {
+ 
+ 	return pjsip_pres_create_pidf(tdata->pool, &pres->status,
+ 				      &entity, &tdata->msg->body);
+ 
+     } else if (pres->content_type == CONTENT_TYPE_XPIDF) {
+ 
+ 	return pjsip_pres_create_xpidf(tdata->pool, &pres->status,
+ 				       &entity, &tdata->msg->body);
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_pres.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_pres.c	(revision 4823)
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_pres.c	(working copy)
+@@ -1788,20 +1788,25 @@
+ 	      buddy_id, acc_id));
+     pj_log_push_indent();
+ 
+     /* Generate suitable Contact header unless one is already set in
+      * the account
+      */
+     if (acc->contact.slen) {
+ 	contact = acc->contact;
+     } else {
+ 	tmp_pool = pjsua_pool_create("tmpbuddy", 512, 256);
++	if (tmp_pool==NULL){
++		pjsua_perror(THIS_FILE, "Unable to allocate tmpbuddy pool", 0);
++		pj_log_pop_indent();
++		return;
++	}
+ 
+ 	status = pjsua_acc_create_uac_contact(tmp_pool, &contact,
+ 					      acc_id, &buddy->uri);
+ 	if (status != PJ_SUCCESS) {
+ 	    pjsua_perror(THIS_FILE, "Unable to generate Contact header", 
+ 		         status);
+ 	    pj_pool_release(tmp_pool);
+ 	    pj_log_pop_indent();
+ 	    return;
+ 	}
+@@ -1881,48 +1886,56 @@
+ 					acc->cred_cnt, acc->cred);
+     }
+ 
+     /* Set authentication preference */
+     pjsip_auth_clt_set_prefs(&buddy->dlg->auth_sess, &acc->cfg.auth_pref);
+ 
+     pjsip_evsub_set_mod_data(buddy->sub, pjsua_var.mod.id, buddy);
+ 
+     status = pjsip_pres_initiate(buddy->sub, -1, &tdata);
+     if (status != PJ_SUCCESS) {
++    pjsua_perror(THIS_FILE, "Unable to create initial SUBSCRIBE 1", status);
+ 	if (buddy->dlg) pjsip_dlg_dec_lock(buddy->dlg);
+ 	if (buddy->sub) {
+ 	    pjsip_pres_terminate(buddy->sub, PJ_FALSE);
+ 	}
+ 	buddy->sub = NULL;
+ 	pjsua_perror(THIS_FILE, "Unable to create initial SUBSCRIBE", 
+ 		     status);
+ 	if (tmp_pool) pj_pool_release(tmp_pool);
+ 	pj_log_pop_indent();
+ 	return;
+     }
+ 
++    PJ_LOG(4,(THIS_FILE, "Buddy %d: process msg data", buddy_id));
++
+     pjsua_process_msg_data(tdata, NULL);
+ 
++    PJ_LOG(4,(THIS_FILE, "Buddy %d: send request", buddy_id));
++
+     status = pjsip_pres_send_request(buddy->sub, tdata);
+     if (status != PJ_SUCCESS) {
++    pjsua_perror(THIS_FILE, "Unable to send initial SUBSCRIBE, 1", status);
+ 	if (buddy->dlg) pjsip_dlg_dec_lock(buddy->dlg);
+ 	if (buddy->sub) {
+ 	    pjsip_pres_terminate(buddy->sub, PJ_FALSE);
+ 	}
+ 	buddy->sub = NULL;
+ 	pjsua_perror(THIS_FILE, "Unable to send initial SUBSCRIBE", 
+ 		     status);
+ 	if (tmp_pool) pj_pool_release(tmp_pool);
+ 	pj_log_pop_indent();
+ 	return;
+     }
+ 
++    PJ_LOG(4,(THIS_FILE, "Buddy %d: send done", buddy_id));
++
+     pjsip_dlg_dec_lock(buddy->dlg);
+     if (tmp_pool) pj_pool_release(tmp_pool);
+     pj_log_pop_indent();
+ }
+ 
+ 
+ /* It does what it says... */
+ static void unsubscribe_buddy_presence(pjsua_buddy_id buddy_id)
+ {
+     pjsua_buddy *buddy;

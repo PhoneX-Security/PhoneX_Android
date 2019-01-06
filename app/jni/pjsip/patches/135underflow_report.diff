@@ -1,0 +1,470 @@
+Index: pjsip/sources/pjmedia/include/pjmedia/event.h
+===================================================================
+--- pjsip.orig/sources/pjmedia/include/pjmedia/event.h
++++ pjsip/sources/pjmedia/include/pjmedia/event.h
+@@ -82,7 +82,12 @@ typedef enum pjmedia_event_type
+     /**
+      * Video orientation has been changed event.
+      */
+-    PJMEDIA_EVENT_ORIENT_CHANGED = PJMEDIA_FOURCC('O', 'R', 'N', 'T')
++    PJMEDIA_EVENT_ORIENT_CHANGED = PJMEDIA_FOURCC('O', 'R', 'N', 'T'),
++
++    /**
++     * Underflow happened in delay buffer.
++    */
++    PJMEDIA_EVENT_UNDERFLOW = PJMEDIA_FOURCC('U', 'D', 'F', 'L'),
+ 
+ } pjmedia_event_type;
+ 
+@@ -141,6 +146,14 @@ typedef pjmedia_event_dummy_data pjmedia
+ /** Additional parameters for keyframe missing event */
+ typedef pjmedia_event_dummy_data pjmedia_event_keyframe_missing_data;
+ 
++/** Additional parameters for underflow event */
++typedef struct pjmedia_event_underflow_data
++{
++    double underflow_ratio;
++    int underflow_status;
++    int conf_port_idx;
++} pjmedia_event_underflow_data;
++
+ /**
+  * Maximum size of additional parameters section in pjmedia_event structure
+  */
+@@ -211,6 +224,9 @@ typedef struct pjmedia_event
+ 	/** Keyframe missing event data */
+ 	pjmedia_event_keyframe_missing_data	keyframe_missing;
+ 
++	/** Underflow event data */
++	pjmedia_event_underflow_data	underflow;
++
+ 	/** Storage for user event data */
+ 	pjmedia_event_user_data			user;
+ 
+Index: pjsip/sources/pjmedia/include/pjmedia/delaybuf.h
+===================================================================
+--- pjsip.orig/sources/pjmedia/include/pjmedia/delaybuf.h
++++ pjsip/sources/pjmedia/include/pjmedia/delaybuf.h
+@@ -60,10 +60,27 @@
+ 
+ PJ_BEGIN_DECL
+ 
++#ifndef PJMEDIA_UNDERFLOW_ALPHA
++#    define PJMEDIA_UNDERFLOW_ALPHA 0.015
++#endif //PJMEDIA_UNDERFLOW_ALPHA
++
++#ifndef PJMEDIA_UNDERFLOW_LO_BOUND
++#    define PJMEDIA_UNDERFLOW_LO_BOUND 0.45
++#endif //PJMEDIA_UNDERFLOW_LO_BOUND
++
++#ifndef PJMEDIA_UNDERFLOW_HI_BOUND
++#    define PJMEDIA_UNDERFLOW_HI_BOUND 0.65
++#endif //PJMEDIA_UNDERFLOW_HI_BOUND
++
+ /** Opaque declaration for delay buffer. */
+ typedef struct pjmedia_delay_buf pjmedia_delay_buf;
+ 
+ /**
++ * Underflow callback
++ */
++typedef pj_status_t pjmedia_delay_underflow_cb(pjmedia_delay_buf *p_b, void * user_data1, void * user_data2);
++
++/**
+  * Delay buffer options.
+  */
+ typedef enum pjmedia_delay_buf_flag
+@@ -130,6 +147,15 @@ PJ_DECL(pj_status_t) pjmedia_delay_buf_c
+ PJ_DECL(pj_status_t) pjmedia_delay_buf_put(pjmedia_delay_buf *b,
+ 					   pj_int16_t frame[]);
+ 
++PJ_DECL(int) pjmedia_delay_buf_is_underflow(pjmedia_delay_buf *b);
++
++PJ_DECL(double) pjmedia_delay_buf_get_underflow(pjmedia_delay_buf *b);
++
++PJ_DECL(pj_status_t) pjmedia_delay_buf_set_underflow_cb(pjmedia_delay_buf *b,
++														pjmedia_delay_underflow_cb * cb,
++														void * data1,
++														void * data2);
++
+ /**
+  * Get one frame from the buffer.
+  *
+Index: pjsip/sources/pjmedia/src/pjmedia/delaybuf.c
+===================================================================
+--- pjsip.orig/sources/pjmedia/src/pjmedia/delaybuf.c
++++ pjsip/sources/pjmedia/src/pjmedia/delaybuf.c
+@@ -83,6 +83,13 @@ struct pjmedia_delay_buf
+ 
+     /* Drift handler */
+     pjmedia_wsola   *wsola;		/**< Drift handler		     */
++
++    /* Underflow monitoring */
++    double underflow_counter;
++    int underflow_do_trigger;
++    pjmedia_delay_underflow_cb * underflow_cb;
++    void * underflow_cb_data1;
++    void * underflow_cb_data2;
+ };
+ 
+ 
+@@ -118,6 +125,11 @@ PJ_DEF(pj_status_t) pjmedia_delay_buf_cr
+     b->max_cnt = samples_per_frame * max_delay / b->ptime;
+     b->eff_cnt = b->max_cnt >> 1;
+     b->recalc_timer = RECALC_TIME;
++    b->underflow_counter = 0.0;
++    b->underflow_do_trigger = 1;
++    b->underflow_cb = NULL;
++    b->underflow_cb_data1 = NULL;
++    b->underflow_cb_data2 = NULL;
+ 
+     /* Create circular buffer */
+     status = pjmedia_circ_buf_create(pool, b->max_cnt, &b->circ_buf);
+@@ -318,6 +330,25 @@ PJ_DEF(pj_status_t) pjmedia_delay_buf_pu
+     return PJ_SUCCESS;
+ }
+ 
++PJ_DEF(int) pjmedia_delay_buf_is_underflow(pjmedia_delay_buf *b) {
++    return pjmedia_circ_buf_get_len(b->circ_buf) < b->samples_per_frame;
++}
++
++PJ_DEF(double) pjmedia_delay_buf_get_underflow(pjmedia_delay_buf *b) {
++    return b->underflow_counter;
++}
++
++PJ_DEF(pj_status_t) pjmedia_delay_buf_set_underflow_cb(pjmedia_delay_buf *b,
++                                                       pjmedia_delay_underflow_cb * cb,
++                                                       void * data1,
++                                                       void * data2)
++{
++    b->underflow_cb = cb;
++    b->underflow_cb_data1 = data1;
++    b->underflow_cb_data2 = data2;
++    return PJ_SUCCESS;
++}
++
+ PJ_DEF(pj_status_t) pjmedia_delay_buf_get( pjmedia_delay_buf *b,
+ 					   pj_int16_t frame[])
+ {
+@@ -333,8 +364,20 @@ PJ_DEF(pj_status_t) pjmedia_delay_buf_ge
+     /* Starvation checking */
+     if (pjmedia_circ_buf_get_len(b->circ_buf) < b->samples_per_frame) {
+ 
+-	PJ_LOG(4,(b->obj_name,"Underflow, buf_cnt=%d, will generate 1 frame",
+-		  pjmedia_circ_buf_get_len(b->circ_buf)));
++	PJ_LOG(4,(b->obj_name,"Underflow, buf_cnt=%d, samples=%d, will generate 1 frame",
++		  pjmedia_circ_buf_get_len(b->circ_buf), b->samples_per_frame));
++
++        /* Underflow check - fail */
++        const double underflow_ratio = b->samples_per_frame > 0 ? 1.0 - (pjmedia_circ_buf_get_len(b->circ_buf) / b->samples_per_frame) : 1;
++        b->underflow_counter = PJMEDIA_UNDERFLOW_ALPHA * (underflow_ratio) + (1.0-PJMEDIA_UNDERFLOW_ALPHA) * b->underflow_counter;
++        if (b->underflow_counter > PJMEDIA_UNDERFLOW_HI_BOUND){
++            if (b->underflow_cb && b->underflow_do_trigger==1){
++                b->underflow_cb(b, b->underflow_cb_data1, b->underflow_cb_data2);
++            }
++
++            /* Block underflow event triggering next time until it gets back to normal */
++            b->underflow_do_trigger = 0;
++        }
+ 
+         if (b->wsola) {
+             status = pjmedia_wsola_generate(b->wsola, frame);
+@@ -373,6 +416,17 @@ PJ_DEF(pj_status_t) pjmedia_delay_buf_ge
+ 	}
+     }
+ 
++    /* Underflow check - no underflow */
++    b->underflow_counter = (1.0-PJMEDIA_UNDERFLOW_ALPHA) * b->underflow_counter;
++    if (b->underflow_counter < PJMEDIA_UNDERFLOW_LO_BOUND){
++        if (b->underflow_cb && b->underflow_do_trigger==0){
++            b->underflow_cb(b, b->underflow_cb_data1, b->underflow_cb_data2);
++        }
++
++        /* Allow to trigger underflow event again */
++        b->underflow_do_trigger = 1;
++    }
++
+     pjmedia_circ_buf_read(b->circ_buf, frame, b->samples_per_frame);
+ 
+     pj_lock_release(b->lock);
+@@ -388,6 +442,8 @@ PJ_DEF(pj_status_t) pjmedia_delay_buf_re
+     pj_lock_acquire(b->lock);
+ 
+     b->recalc_timer = RECALC_TIME;
++    b->underflow_counter = 0.0;
++    b->underflow_do_trigger = 1;
+ 
+     /* Reset buffer */
+     pjmedia_circ_buf_reset(b->circ_buf);
+Index: pjsip/sources/pjmedia/include/pjmedia/conference.h
+===================================================================
+--- pjsip.orig/sources/pjmedia/include/pjmedia/conference.h
++++ pjsip/sources/pjmedia/include/pjmedia/conference.h
+@@ -435,6 +435,7 @@ PJ_DECL(pj_status_t) pjmedia_conf_get_si
+ 						   unsigned *tx_level,
+ 						   unsigned *rx_level);
+ 
++PJ_DECL(double) pjmedia_conf_get_underflow_ratio(pjmedia_conf *conf, unsigned slot);
+ 
+ /**
+  * Adjust the level of signal received from the specified port.
+@@ -495,7 +496,10 @@ PJ_DECL(pj_status_t) pjmedia_conf_adjust
+ 						   unsigned slot,
+ 						   int adj_level );
+ 
+-
++/**
++ * Sets event manager to the conference bridge to be used when needed.
++ */
++PJ_DECL(pj_status_t) pjmedia_conf_set_event_manager(pjmedia_conf *conf, pjmedia_event_mgr * event_manager);
+ 
+ PJ_END_DECL
+ 
+Index: pjsip/sources/pjmedia/src/pjmedia/conference.c
+===================================================================
+--- pjsip.orig/sources/pjmedia/src/pjmedia/conference.c
++++ pjsip/sources/pjmedia/src/pjmedia/conference.c
+@@ -31,6 +31,7 @@
+ #include <pj/log.h>
+ #include <pj/pool.h>
+ #include <pj/string.h>
++#include <pjmedia/include/pjmedia/event.h>
+ 
+ #if !defined(PJMEDIA_CONF_USE_SWITCH_BOARD) || PJMEDIA_CONF_USE_SWITCH_BOARD==0
+ 
+@@ -235,6 +236,7 @@ struct pjmedia_conf
+     unsigned		  channel_count;/**< Number of channels (1=mono).   */
+     unsigned		  samples_per_frame;	/**< Samples per frame.	    */
+     unsigned		  bits_per_sample;	/**< Bits per sample.	    */
++	pjmedia_event_mgr * event_manager; /**< Event manager to use */
+ };
+ 
+ 
+@@ -410,6 +412,53 @@ static pj_status_t create_conf_port( pj_
+     return PJ_SUCCESS;
+ }
+ 
++/*
++ * Underflow callback
++ */
++pj_status_t on_delaybuf_underflow(pjmedia_delay_buf *p_b, void *user_data1, void *user_data2)
++{
++	pjmedia_conf *conf;
++	struct conf_port *conf_port;
++	int port_idx = -1, i = 0;
++	double underflow_ratio = 0.0;
++	int underflow_status = 0;
++	pjmedia_event event;
++
++	if (user_data1 == NULL || user_data2 == NULL || p_b == NULL)
++	{
++		PJ_LOG(2,(THIS_FILE, "Null objects on delay buf underflow cb"));
++		return PJ_SUCCESS;
++	}
++
++	conf = (pjmedia_conf *) user_data1;
++	conf_port = (struct conf_port *) user_data2;
++
++	/* Find port index */
++	for (i=0; i<conf->max_ports; ++i) {
++		if (conf_port == conf->ports[i]){
++			port_idx = i;
++			break;
++		}
++	}
++
++	underflow_ratio = pjmedia_delay_buf_get_underflow(p_b);
++	underflow_status = pjmedia_delay_buf_is_underflow(p_b);
++	PJ_LOG(5,(THIS_FILE, "Underflow detected on port %d. Overflow ratio: %f is underflow: %d", port_idx, underflow_ratio, underflow_status));
++
++	/* Broadcast event */
++	if (conf->event_manager) {
++		pjmedia_event_init(&event, PJMEDIA_EVENT_UNDERFLOW, NULL, conf);
++		event.data.underflow.underflow_ratio = underflow_ratio;
++		event.data.underflow.underflow_status = underflow_status;
++		event.data.underflow.conf_port_idx = port_idx;
++		pjmedia_event_publish(conf->event_manager, conf, &event, PJMEDIA_EVENT_PUBLISH_DEFAULT);
++		PJ_LOG(5, (THIS_FILE, "Event publish"));
++	} else {
++		PJ_LOG(2, (THIS_FILE, "Event manager is null"));
++	}
++
++	return PJ_SUCCESS;
++}
+ 
+ /*
+  * Add passive port.
+@@ -442,6 +491,9 @@ static pj_status_t create_pasv_port( pjm
+     if (status != PJ_SUCCESS)
+ 	return status;
+ 
++	/* Register underflow callback for delay buffer on this port */
++	pjmedia_delay_buf_set_underflow_cb(conf_port->delay_buf, on_delaybuf_underflow, conf, conf_port);
++
+     *p_conf_port = conf_port;
+ 
+     return PJ_SUCCESS;
+@@ -1309,6 +1361,34 @@ PJ_DEF(pj_status_t) pjmedia_conf_get_sig
+     return PJ_SUCCESS;
+ }
+ 
++/*
++ * Get underflow ratio.
++ */
++PJ_DEF(double) pjmedia_conf_get_underflow_ratio(pjmedia_conf *conf, unsigned slot)
++{
++	struct conf_port *conf_port;
++	double to_return = -1.0;
++
++	/* Check arguments */
++	PJ_ASSERT_RETURN(conf && slot<conf->max_ports, PJ_EINVAL);
++
++	/* Lock mutex */
++	pj_mutex_lock(conf->mutex);
++
++	/* Port must be valid. */
++	conf_port = conf->ports[slot];
++	if (conf_port == NULL) {
++		pj_mutex_unlock(conf->mutex);
++		return -2.0;
++	}
++
++	to_return = conf_port->delay_buf != NULL ? pjmedia_delay_buf_get_underflow(conf_port->delay_buf) : -1.0;
++
++	/* Unlock mutex */
++	pj_mutex_unlock(conf->mutex);
++
++	return to_return;
++}
+ 
+ /*
+  * Adjust RX level of individual port.
+@@ -1385,6 +1465,15 @@ PJ_DEF(pj_status_t) pjmedia_conf_adjust_
+     return PJ_SUCCESS;
+ }
+ 
++PJ_DEF(pj_status_t) pjmedia_conf_set_event_manager(pjmedia_conf *conf, pjmedia_event_mgr * event_manager)
++{
++	if (!conf){
++		return PJ_EINVAL;
++	}
++
++	conf->event_manager = event_manager;
++	return PJ_SUCCESS;
++}
+ 
+ /*
+  * Read from port.
+Index: pjsip/sources/pjsip/include/pjsua-lib/pjsua.h
+===================================================================
+--- pjsip.orig/sources/pjsip/include/pjsua-lib/pjsua.h
++++ pjsip/sources/pjsip/include/pjsua-lib/pjsua.h
+@@ -6225,6 +6225,7 @@ PJ_DECL(pj_status_t) pjsua_conf_get_sign
+ 						 unsigned *tx_level,
+ 						 unsigned *rx_level);
+ 
++PJ_DECL(double) pjsua_conf_get_underflow_ratio(pjsua_conf_port_id slot);
+ 
+ /*****************************************************************************
+  * File player and playlist.
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_aud.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_aud.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_aud.c
+@@ -371,6 +371,18 @@ pj_status_t pjsua_aud_subsys_init()
+ 				      &pjsua_var.null_port);
+     PJ_ASSERT_RETURN(status == PJ_SUCCESS, status);
+ 
++    /* Create event manager singleton instance */
++    if (!pjsua_var.event_manager) {
++        status = pjmedia_event_mgr_create(pjsua_var.pool, 0, &pjsua_var.event_manager);
++        if (status != PJ_SUCCESS) {
++            PJ_PERROR(1, (THIS_FILE, status, "Error creating PJMEDIA event manager"));
++            goto on_error;
++        }
++    }
++
++    /* Set event manager to the conference bridge */
++    pjmedia_conf_set_event_manager(pjsua_var.mconf, pjsua_var.event_manager);
++
+     return status;
+ 
+ on_error:
+@@ -481,6 +493,12 @@ pj_status_t pjsua_aud_subsys_destroy()
+ 
+     close_snd_dev();
+ 
++    /* Destroy event manager */
++    if (pjsua_var.event_manager) {
++	pjmedia_event_mgr_destroy(pjsua_var.event_manager);
++	pjsua_var.event_manager = NULL;
++    }
++
+     if (pjsua_var.mconf) {
+ 	pjmedia_conf_destroy(pjsua_var.mconf);
+ 	pjsua_var.mconf = NULL;
+@@ -544,6 +562,11 @@ void pjsua_aud_stop_stream(pjsua_call_me
+ 	                                            strm, call_med->idx);
+ 	}
+ 
++    /* Unsubscribe from media events for this call media (underflow) */
++    if (pjsua_var.event_manager){
++        pjmedia_event_unsubscribe(pjsua_var.event_manager, &call_media_on_event, call_med, pjsua_var.mconf);
++    }
++
+ 	pjmedia_stream_destroy(strm);
+ 	call_med->strm.a.stream = NULL;
+     }
+@@ -694,6 +717,11 @@ pj_status_t pjsua_aud_channel_update(pjs
+ 		goto on_return;
+ 	    }
+ 	}
++
++    /* Subscribe from media events for this call media (underflow) */
++    if (pjsua_var.event_manager) {
++        pjmedia_event_subscribe(pjsua_var.event_manager, &call_media_on_event, call_med, pjsua_var.mconf);
++    }
+     }
+ 
+ on_return:
+@@ -1008,6 +1036,14 @@ PJ_DEF(pj_status_t) pjsua_conf_get_signa
+ 					 tx_level, rx_level);
+ }
+ 
++/*
++ * Get underflow counter and current underflow value
++ */
++PJ_DEF(double) pjsua_conf_get_underflow_ratio(pjsua_conf_port_id slot)
++{
++    return pjmedia_conf_get_underflow_ratio(pjsua_var.mconf, slot);
++}
++
+ /*****************************************************************************
+  * File player.
+  */
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_media.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_media.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_media.c
+@@ -1262,7 +1262,9 @@ pj_status_t call_media_on_event(pjmedia_
+     if (pjsua_var.ua_cfg.cb.on_call_media_event && call) {
+ 	(*pjsua_var.ua_cfg.cb.on_call_media_event)(call->index,
+ 						   call_med->idx, event);
+-    }
++    } else if (pjsua_var.ua_cfg.cb.on_call_media_event){
++		(*pjsua_var.ua_cfg.cb.on_call_media_event)(-1, 0, event);
++	}
+ 
+     return status;
+ }
+Index: pjsip/sources/pjsip/include/pjsua-lib/pjsua_internal.h
+===================================================================
+--- pjsip.orig/sources/pjsip/include/pjsua-lib/pjsua_internal.h
++++ pjsip/sources/pjsip/include/pjsua-lib/pjsua_internal.h
+@@ -478,6 +478,7 @@ struct pjsua_data
+     pjmedia_master_port	*null_snd;  /**< Master port for null sound.	*/
+     pjmedia_port	*null_port; /**< Null port.			*/
+     pj_bool_t		 snd_is_on; /**< Media flow is currently active */
++    pjmedia_event_mgr * event_manager;
+ 
+     /* Video device */
+     pjmedia_vid_dev_index vcap_dev;  /**< Capture device ID.		*/

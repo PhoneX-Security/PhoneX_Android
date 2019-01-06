@@ -1,0 +1,53 @@
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_core.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_core.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_core.c
+@@ -1878,8 +1878,14 @@ PJ_DEF(pj_pool_t*) pjsua_pool_create( co
+ 				      pj_size_t increment)
+ {
+     /* Pool factory is thread safe, no need to lock */
+-    return pj_pool_create(&pjsua_var.cp.factory, name, init_size, increment, 
++    pj_pool_t * pool = pj_pool_create(&pjsua_var.cp.factory, name, init_size, increment,
+ 			  NULL);
++
++    if (!pool){
++    	PJ_LOG(1,(THIS_FILE, "Empty pool in pjsua_pool_create; line=%d; name=%s", __LINE__, name));
++    }
++
++    return pool;
+ }
+ 
+ 
+@@ -2057,7 +2063,7 @@ static pj_status_t create_sip_udp_sock(i
+ 			 pj_ntohs(pjsua_var.stun_srv.ipv4.sin_port);
+ 	status = pjstun_get_mapped_addr2(&pjsua_var.cp.factory, &stun_opt,
+ 					 1, &sock, &p_pub_addr->ipv4);
+-	if (status != PJ_SUCCESS) {
++	if (status != PJ_SUCCESS && !pjsua_var.ua_cfg.stun_ignore_failure) {
+ 	    pjsua_perror(THIS_FILE, "Error contacting STUN server", status);
+ 	    pj_sock_close(sock);
+ 	    return status;
+@@ -2798,7 +2804,10 @@ PJ_DEF(pj_status_t) pjsua_verify_url(con
+     if (!len) return PJSIP_EINVALIDURI;
+ 
+     pool = pj_pool_create(&pjsua_var.cp.factory, "check%p", 1024, 0, NULL);
+-    if (!pool) return PJ_ENOMEM;
++    if (!pool){
++    	PJ_LOG(1,(THIS_FILE, "Empty pool in pjsua_verify_url; line=%d", __LINE__));
++    	return PJ_ENOMEM;
++    }
+ 
+     url = (char*) pj_pool_alloc(pool, len+1);
+     pj_ansi_strcpy(url, c_url);
+@@ -2822,7 +2831,10 @@ PJ_DEF(pj_status_t) pjsua_verify_sip_url
+     if (!len) return PJSIP_EINVALIDURI;
+ 
+     pool = pj_pool_create(&pjsua_var.cp.factory, "check%p", 1024, 0, NULL);
+-    if (!pool) return PJ_ENOMEM;
++    if (!pool) {
++    	PJ_LOG(1,(THIS_FILE, "Empty pool in pjsua_verify_sip_url; line=%d", __LINE__));
++    	return PJ_ENOMEM;
++    }
+ 
+     url = (char*) pj_pool_alloc(pool, len+1);
+     pj_ansi_strcpy(url, c_url);

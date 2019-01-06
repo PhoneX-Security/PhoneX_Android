@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">Svara</string>
+  <string name="end_call">Avsluta</string>
+  <string name="speaker">Högtalare</string>
+  <string name="mute">Dämpa</string>
+  <string name="call_state_calling">Ringer upp...</string>
+  <string name="call_state_disconnected">Lade på</string>
+  <string name="call_state_incoming">Inkommade samtal...</string>
+  <string name="hold_call">Håll kvar</string>
+  <string name="on_hold">Parkerad</string>
+  </resources>

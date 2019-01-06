@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<net.phonex.ui.customViews.CheckableRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pairing_request_container"
+    android:layout_width="match_parent"
+    android:layout_height="56dp"
+    android:orientation="horizontal"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:paddingTop="@dimen/contact_list_inner_margin_top"
+
+    >
+    <!--android:longClickable="true"-->
+    <!--android:paddingBottom="4dp"-->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:src="@drawable/ic_person_add_black_24px"
+        android:layout_centerVertical="true"
+        />
+
+    <!--android:clickable="false"-->
+    <!--android:focusable="false"-->
+    <!--android:focusableInTouchMode="false"-->
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="true"
+        android:layout_marginLeft="72dp"
+        android:layout_marginStart="72dp"
+        android:layout_centerVertical="true"
+        android:text="test-internal"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textSize="16sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_alignParentRight="true"
+        android:gravity="right|center_vertical"
+
+        android:layout_alignParentEnd="true"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="14sp"
+
+            android:text="2015-08-28"
+            />
+    </LinearLayout>
+
+</net.phonex.ui.customViews.CheckableRelativeLayout>

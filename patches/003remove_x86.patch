@@ -1,0 +1,9 @@
+Index: phonexAnd/app/dispatch_shared_libs.sh
+===================================================================
+--- phonexAnd.orig/app/dispatch_shared_libs.sh
++++ phonexAnd/app/dispatch_shared_libs.sh
+@@ -31,3 +31,4 @@ move_generic_lib "libssl" "PhoneXCrypto"
+ move_generic_lib "libpj_video_android" "PhoneXVideo"
+ move_generic_lib "libpj_screen_capture_android" "PhoneXVideo"
+ move_generic_lib "libpj_vpx" "PhoneXVideo"
++rm -rf libs/x86

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">Ustawienia</string>
+  <string name="prefs_connectivity">Sieć</string>
+  <string name="prefs_media">Media</string>
+  <string name="prefs_ui">Interfejs użytkownika</string>
+  <!--Network-->
+  <string name="transport">Transport</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">Jakość dźwięku</string>
+  <string name="audio_volume">Głośność</string>
+  <string name="codecs">Kodeki</string>
+  <string name="echo_cancellation">Wycinanie echa</string>
+  <string name="echo_cancellation_desc">Włącza wycinanie echa</string>
+  <string name="disable_vad">Wykrywanie głosu</string>
+  <string name="disable_vad_desc">Włącza wykrywanie gosu</string>
+  <string name="enable_noise_reduction">Redukcja szumów</string>
+  <string name="enable_noise_reduction_desc">Działa, jeśli eliminacja echa jest aktywna i używany będzie eliminator echa WebRTC</string>
+  <string name="sound_mic_volume">Wzmocnienie mikrofonu</string>
+  <string name="sound_speaker_volume">Wzmocnienie głośnika</string>
+  <string name="sound_bt_mic_volume">Wzmocnienie mikrofonu Bluetooth</string>
+  <string name="media_quality">Jakość medium</string>
+  <string name="media_quality_desc">Jakość strumienia mediów (zmień tylko mając pojęcie co czynisz)</string>
+  <string name="sound_clock_rate">Częstotliwość zegara</string>
+  <string name="sound_clock_rate_desc">Częstotliwość kanału dźwiękowego</string>
+  <string name="echo_cancellation_mode">Tryb echa</string>
+  <string name="echo_cancellation_mode_desc">Rodzaj algorytmu wycinania echa</string>
+  <string name="enable_focus_audio">Skupiaj dźwięk</string>
+  <string name="auto">Automatyczny</string>
+  <string name="simple">Prosta</string>
+  <string name="slow">Wolno</string>
+  <string name="fast">Szybko</string>
+  <!--UI-->
+  <string name="general_ui">Ogólny interfejs użytkownika</string>
+  <string name="keep_awake_incall">Nie wygaszaj ekranu podczas połączenia</string>
+  <string name="keep_awake_incall_desc">Pomaga przy rwącym dźwięku po wygaszeniu ekranu podczas połączenia WiFi</string>
+  <string name="log_level">Poziom logowania</string>
+  <string name="ringtone">Dzwonek</string>
+  <string name="prevent_screen_rotation">Zapobiegaj obracaniu ekranu</string>
+  <string name="invert_proximity_sensor">Odwróć sensor bliskości</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <string name="normal_preferences">Tryb normalny</string>
+  <!--Generic-->
+  <!-- ##automatically translated below -->
+
+<string name="prefs_security">Bezpieczeństwo</string>
+<string name="network_watchdog">Watchdog Network</string>
+<string name="network_watchdog_desc">Ponowne uruchomienie usługi w przypadku nie zarejestrowania. W ciągu kilku sekund. 0 = wyłącz</string>
+<string name="security_messages">Wiadomości</string>
+<string name="messages_delete_period_desc">Jak długo przechowywać wiadomości w archiwum</string>
+<string name="messages_delete_period">Archiwizacja wiadomości</string>
+<string name="just_session">Tylko w tej sesji</string>
+<string name="one_day">1 dzień</string>
+<string name="three_days">3 dni</string>
+<string name="week">Tydzień</string>
+<string name="month">Miesiąc</string>
+<string name="forever">Na zawsze</string>
+</resources>

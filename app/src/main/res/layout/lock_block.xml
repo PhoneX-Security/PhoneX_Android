@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pinBlockContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/infoTitle"
+        android:background="@drawable/dialpad_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="center_vertical|center_horizontal"
+        android:shadowColor="#BB000000"
+        android:shadowRadius="2.75"
+        android:singleLine="false"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textStyle="bold"
+        android:layout_weight="1"
+        android:text="@string/pin_block_info"
+        android:textSize="@dimen/pin_header" />
+
+    <TextView
+        android:id="@+id/infoText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="10"
+        android:background="@android:color/transparent"
+        android:ellipsize="start"
+        android:maxLines="1"
+        android:padding="6dip"
+        android:singleLine="true"
+        android:textColor="@android:color/white"
+        android:textSize="15dip" />
+
+</LinearLayout>

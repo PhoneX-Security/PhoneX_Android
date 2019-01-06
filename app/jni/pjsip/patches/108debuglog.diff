@@ -1,0 +1,276 @@
+Index: pjsip/sources/pjsip/src/pjsip/sip_dialog.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_dialog.c
++++ pjsip/sources/pjsip/src/pjsip/sip_dialog.c
+@@ -1145,6 +1145,7 @@ PJ_DEF(pj_status_t) pjsip_dlg_create_req
+ 	status = dlg_create_request_throw(dlg, method, cseq, &tdata);
+     }
+     PJ_CATCH_ANY {
++    PJ_LOG(1,(dlg->obj_name, "Cannot create an request, exception thrown"));
+ 	status = PJ_ENOMEM;
+     }
+     PJ_END;
+Index: pjsip/sources/pjsip/src/pjsip/sip_transport.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_transport.c
++++ pjsip/sources/pjsip/src/pjsip/sip_transport.c
+@@ -524,6 +524,7 @@ PJ_DEF(pj_status_t) pjsip_tx_data_encode
+ 			       pj_pool_alloc(tdata->pool, PJSIP_MAX_PKT_LEN);
+ 	}
+ 	PJ_CATCH_ANY {
++		PJ_LOG(2,("sip_transport", "pj_pool_alloc exception"));
+ 	    return PJ_ENOMEM;
+ 	}
+ 	PJ_END
+@@ -660,8 +661,10 @@ PJ_DEF(pj_status_t) pjsip_rx_data_clone(
+                           PJSIP_POOL_RDATA_LEN,
+                           PJSIP_POOL_RDATA_INC,
+                           NULL);
+-    if (!pool)
++    if (!pool){
++    PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_rx_data_clone; line=%d", __LINE__));
+ 	return PJ_ENOMEM;
++    }
+ 
+     dst = PJ_POOL_ZALLOC_T(pool, pjsip_rx_data);
+ 
+Index: pjsip/sources/pjsip/src/pjsip/sip_ua_layer.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_ua_layer.c
++++ pjsip/sources/pjsip/src/pjsip/sip_ua_layer.c
+@@ -123,8 +123,10 @@ static pj_status_t mod_ua_load(pjsip_end
+ 	return status;
+ 
+     mod_ua.dlg_table = pj_hash_create(mod_ua.pool, PJSIP_MAX_DIALOG_COUNT);
+-    if (mod_ua.dlg_table == NULL)
++    if (mod_ua.dlg_table == NULL){
++    PJ_LOG(1,("sip_ua_layer", "Cannot create a hash table"));
+ 	return PJ_ENOMEM;
++    }
+ 
+     pj_list_init(&mod_ua.free_dlgset_nodes);
+ 
+Index: pjsip/sources/pjsip/src/pjsip/sip_util.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_util.c
++++ pjsip/sources/pjsip/src/pjsip/sip_util.c
+@@ -384,6 +384,7 @@ PJ_DEF(pj_status_t) pjsip_endpt_create_r
+     }
+     PJ_CATCH_ANY {
+ 	status = PJ_ENOMEM;
++	PJ_LOG(1,("sip_util", "Cannot init request %d", __LINE__));
+ 	goto on_error;
+     }
+     PJ_END
+@@ -461,6 +462,7 @@ PJ_DEF(pj_status_t) pjsip_endpt_create_r
+     }
+     PJ_CATCH_ANY {
+ 	status = PJ_ENOMEM;
++	PJ_LOG(1,("sip_util", "Cannot init request %d", __LINE__));
+ 	goto on_error;
+     }
+     PJ_END;
+@@ -1094,11 +1096,11 @@ static void stateless_send_transport_cb(
+ 					 pj_ssize_t sent )
+ {
+     pjsip_send_state *stateless_data = (pjsip_send_state*) token;
+-
++    unsigned tmpi=0;
+     PJ_UNUSED_ARG(tdata);
+     pj_assert(tdata == stateless_data->tdata);
+ 
+-    for (;;) {
++    for (tmpi=0;;tmpi++) {
+ 	pj_status_t status;
+ 	pj_bool_t cont;
+ 
+@@ -1108,6 +1110,8 @@ static void stateless_send_transport_cb(
+ 
+ 	pjsip_via_hdr *via;
+ 
++	PJ_LOG(4,(THIS_FILE, "stateless_send_transport_cb, iter=%u, tdata=%p, tok=%p, line=%d",tmpi, tdata, token, __LINE__));
++
+ 	if (sent == -PJ_EPENDING) {
+ 	    /* This is the initial process.
+ 	     * When the process started, this function will be called by
+@@ -1141,6 +1145,7 @@ static void stateless_send_transport_cb(
+ 	/* Done if application doesn't want to continue. */
+ 	if (sent > 0 || !cont) {
+ 	    pjsip_tx_data_dec_ref(tdata);
++	    PJ_LOG(4,(THIS_FILE, "stateless_send_transport_cb, iter=%u, tdata=%p, tok=%p, cont=%d, line=%d",tmpi, tdata, token, cont, __LINE__));
+ 	    return;
+ 	}
+ 
+@@ -1178,6 +1183,7 @@ static void stateless_send_transport_cb(
+ 						&stateless_data->cur_transport);
+ 	if (status != PJ_SUCCESS) {
+ 	    sent = -status;
++	    PJ_LOG(2,(THIS_FILE, "stateless_send_transport_cb, cannot acquire transport status=%d, tdata=%p, tok=%p, line=%d",status, tdata, token, __LINE__));
+ 	    continue;
+ 	}
+ 
+@@ -1256,6 +1262,7 @@ static void stateless_send_transport_cb(
+ 	    return;
+ 	} else {
+ 	    /* Recursively call this function. */
++		PJ_LOG(2,(THIS_FILE, "stateless_send_transport_cb, cannot send; status=%d, tdata=%p, tok=%p, line=%d",status, tdata, token, __LINE__));
+ 	    sent = -status;
+ 	    stateless_send_transport_cb( stateless_data, tdata, sent );
+ 	    return;
+@@ -1280,6 +1287,7 @@ stateless_send_resolver_callback( pj_sta
+ 	    (*stateless_data->app_cb)(stateless_data, -status, &cont);
+ 	}
+ 	pjsip_tx_data_dec_ref(tdata);
++	PJ_LOG(2,(THIS_FILE, "stateless_send_resolver_callback status=%d",status));
+ 	return;
+     }
+ 
+@@ -1311,6 +1319,7 @@ stateless_send_resolver_callback( pj_sta
+ 		(*stateless_data->app_cb)(stateless_data, -status, &cont);
+ 	    }
+ 	    pjsip_tx_data_dec_ref(tdata);
++	    PJ_LOG(2,(THIS_FILE, "stateless_send_resolver_callback status=%d, line=%d",status, __LINE__));
+ 	    return;
+ 	}
+ 
+@@ -1365,8 +1374,10 @@ PJ_DEF(pj_status_t) pjsip_endpt_send_req
+ 
+     /* Get destination name to contact. */
+     status = pjsip_process_route_set(tdata, &dest_info);
+-    if (status != PJ_SUCCESS)
++    if (status != PJ_SUCCESS){
++	PJ_LOG(2,(THIS_FILE, "Cannot process route set"));
+ 	return status;
++    }
+ 
+     /* Keep stateless data. */
+     stateless_data = PJ_POOL_ZALLOC_T(tdata->pool, pjsip_send_state);
+Index: pjsip/sources/pjsip/src/pjsip/sip_util_proxy.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_util_proxy.c
++++ pjsip/sources/pjsip/src/pjsip/sip_util_proxy.c
+@@ -230,6 +230,7 @@ PJ_DEF(pj_status_t) pjsip_endpt_create_r
+ 
+     }
+     PJ_CATCH_ANY {
++    PJ_LOG(1,("sip_util_proxy", "Cannot clone msg body"));
+ 	status = PJ_ENOMEM;
+ 	goto on_error;
+     }
+@@ -310,6 +311,7 @@ PJ_DEF(pj_status_t) pjsip_endpt_create_r
+ 
+     }
+     PJ_CATCH_ANY {
++    PJ_LOG(1,("sip_util_proxy", "Cannot clone msg body %d", __LINE__));
+ 	status = PJ_ENOMEM;
+ 	goto on_error;
+     }
+Index: pjsip/sources/pjsip/src/pjsip-simple/presence.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip-simple/presence.c
++++ pjsip/sources/pjsip/src/pjsip-simple/presence.c
+@@ -217,10 +217,22 @@ PJ_DEF(pj_status_t) pjsip_pres_create_ua
+     pj_ansi_snprintf(obj_name, PJ_MAX_OBJ_NAME, "pres%p", dlg->pool);
+     pres->status_pool = pj_pool_create(dlg->pool->factory, obj_name, 
+ 				       512, 512, NULL);
++    if (!pres->status_pool){
++    	PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_pres_create_uac; line=%d", __LINE__));
++    	status = PJ_ENOMEM;
++    	goto on_return;
++    }
++
+     pj_ansi_snprintf(obj_name, PJ_MAX_OBJ_NAME, "tmpres%p", dlg->pool);
+     pres->tmp_pool = pj_pool_create(dlg->pool->factory, obj_name, 
+ 				    512, 512, NULL);
+ 
++    if (!pres->tmp_pool){
++		PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_pres_create_uac; line=%d", __LINE__));
++		status = PJ_ENOMEM;
++		goto on_return;
++    }
++
+     /* Attach to evsub */
+     pjsip_evsub_set_mod_data(sub, mod_presence.id, pres);
+ 
+@@ -318,9 +330,20 @@ PJ_DEF(pj_status_t) pjsip_pres_create_ua
+     pj_ansi_snprintf(obj_name, PJ_MAX_OBJ_NAME, "pres%p", dlg->pool);
+     pres->status_pool = pj_pool_create(dlg->pool->factory, obj_name, 
+ 				       512, 512, NULL);
++    if (!pres->status_pool){
++		PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_pres_create_uas; line=%d", __LINE__));
++		status = PJ_ENOMEM;
++		goto on_return;
++    }
++
+     pj_ansi_snprintf(obj_name, PJ_MAX_OBJ_NAME, "tmpres%p", dlg->pool);
+     pres->tmp_pool = pj_pool_create(dlg->pool->factory, obj_name, 
+ 				    512, 512, NULL);
++    if (!pres->tmp_pool){
++		PJ_LOG(1,(THIS_FILE, "Empty pool in pjsip_pres_create_uas; line=%d", __LINE__));
++		status = PJ_ENOMEM;
++		goto on_return;
++    }
+ 
+     /* Attach to evsub */
+     pjsip_evsub_set_mod_data(sub, mod_presence.id, pres);
+@@ -470,8 +493,10 @@ static pj_status_t pres_create_msg_body(
+     entity.slen = pjsip_uri_print(PJSIP_URI_IN_REQ_URI,
+ 				  pres->dlg->local.info->uri,
+ 				  entity.ptr, PJSIP_MAX_URL_SIZE);
+-    if (entity.slen < 1)
++    if (entity.slen < 1){
++    PJ_LOG(1,("presence", "entity len is < 1; line=%d", __LINE__));
+ 	return PJ_ENOMEM;
++    }
+ 
+     if (pres->content_type == CONTENT_TYPE_PIDF) {
+ 
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_pres.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_pres.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_pres.c
+@@ -1799,6 +1799,11 @@ static void subscribe_buddy_presence(pjs
+ 	contact = acc->contact;
+     } else {
+ 	tmp_pool = pjsua_pool_create("tmpbuddy", 512, 256);
++	if (tmp_pool==NULL){
++		pjsua_perror(THIS_FILE, "Unable to allocate tmpbuddy pool", 0);
++		pj_log_pop_indent();
++		return;
++	}
+ 
+ 	status = pjsua_acc_create_uac_contact(tmp_pool, &contact,
+ 					      acc_id, &buddy->uri);
+@@ -1892,6 +1897,7 @@ static void subscribe_buddy_presence(pjs
+ 
+     status = pjsip_pres_initiate(buddy->sub, -1, &tdata);
+     if (status != PJ_SUCCESS) {
++    pjsua_perror(THIS_FILE, "Unable to create initial SUBSCRIBE 1", status);
+ 	if (buddy->dlg) pjsip_dlg_dec_lock(buddy->dlg);
+ 	if (buddy->sub) {
+ 	    pjsip_pres_terminate(buddy->sub, PJ_FALSE);
+@@ -1904,10 +1910,15 @@ static void subscribe_buddy_presence(pjs
+ 	return;
+     }
+ 
++    PJ_LOG(4,(THIS_FILE, "Buddy %d: process msg data", buddy_id));
++
+     pjsua_process_msg_data(tdata, NULL);
+ 
++    PJ_LOG(4,(THIS_FILE, "Buddy %d: send request", buddy_id));
++
+     status = pjsip_pres_send_request(buddy->sub, tdata);
+     if (status != PJ_SUCCESS) {
++    pjsua_perror(THIS_FILE, "Unable to send initial SUBSCRIBE, 1", status);
+ 	if (buddy->dlg) pjsip_dlg_dec_lock(buddy->dlg);
+ 	if (buddy->sub) {
+ 	    pjsip_pres_terminate(buddy->sub, PJ_FALSE);
+@@ -1920,6 +1931,8 @@ static void subscribe_buddy_presence(pjs
+ 	return;
+     }
+ 
++    PJ_LOG(4,(THIS_FILE, "Buddy %d: send done", buddy_id));
++
+     pjsip_dlg_dec_lock(buddy->dlg);
+     if (tmp_pool) pj_pool_release(tmp_pool);
+     pj_log_pop_indent();

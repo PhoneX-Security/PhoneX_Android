@@ -1,0 +1,135 @@
+Index: pjsip/sources/pjnath/include/pjnath/ice_session.h
+===================================================================
+--- pjsip.orig/sources/pjnath/include/pjnath/ice_session.h
++++ pjsip/sources/pjnath/include/pjnath/ice_session.h
+@@ -599,6 +599,13 @@ typedef struct pj_ice_sess_options
+      */
+     int			controlled_agent_want_nom_timeout;
+ 
++    /**
++     * Candidate blacklist map.
++     * If candidate with type from pj_ice_cand_type enum has bit 1 << cand set to 1 in this
++     * map it must be excluded from consideration in ICE.
++     */
++    unsigned    cand_blacklist_map;
++
+ } pj_ice_sess_options;
+ 
+ 
+@@ -716,6 +723,14 @@ PJ_DECL(void) pj_ice_calc_foundation(pj_
+ PJ_DECL(void) pj_ice_sess_options_default(pj_ice_sess_options *opt);
+ 
+ /**
++ * Returns 1 if given candidate type is blocked in current settings.
++ *
++ * @param opt		ICE session options.
++ * @param cand_type Candidate type.
++ */
++PJ_DECL(int) pj_ice_is_cand_blocked(pj_ice_sess_options *opt, pj_ice_cand_type cand_type);
++
++/**
+  * Create ICE session with the specified role and number of components.
+  * Application would typically need to create an ICE session before
+  * sending an offer or upon receiving one. After the session is created,
+Index: pjsip/sources/pjnath/src/pjnath/ice_session.c
+===================================================================
+--- pjsip.orig/sources/pjnath/src/pjnath/ice_session.c
++++ pjsip/sources/pjnath/src/pjnath/ice_session.c
+@@ -323,6 +323,12 @@ PJ_DEF(void) pj_ice_sess_options_default
+     opt->nominated_check_delay = PJ_ICE_NOMINATED_CHECK_DELAY;
+     opt->controlled_agent_want_nom_timeout = 
+ 	ICE_CONTROLLED_AGENT_WAIT_NOMINATION_TIMEOUT;
++	opt->cand_blacklist_map = 0u;
++}
++
++PJ_DEF(int) pj_ice_is_cand_blocked(pj_ice_sess_options *opt, pj_ice_cand_type cand_type)
++{
++    return (opt->cand_blacklist_map & (1 << cand_type)) > 0;
+ }
+ 
+ /*
+@@ -736,6 +742,22 @@ PJ_DEF(pj_status_t) pj_ice_sess_add_cand
+ 	goto on_error;
+     }
+ 
++    // Check for blacklisting.
++    if (pj_ice_is_cand_blocked(&ice->opt, type)){
++        LOG4((ice->obj_name,
++        	 "Candidate blocked: type=%s, "
++        	 "addr=%s:%d, base=%s:%d",
++        	 cand_type_names[type],
++        	 ice->tmp.txt,
++        	  pj_sockaddr_get_port(&addr),
++        	  pj_sockaddr_print(&base_addr, address, sizeof(address), 0),
++        	  pj_sockaddr_get_port(&base_addr)));
++
++        // Return EINVAL so caller does not count with ICE continuation with this candidate.
++        status = PJ_EINVAL;
++        goto on_error;
++    }
++
+     lcand = &ice->lcand[ice->lcand_cnt];
+     lcand->comp_id = (pj_uint8_t)comp_id;
+     lcand->transport_id = (pj_uint8_t)transport_id;
+@@ -2662,6 +2684,11 @@ static void handle_incoming_check(pj_ice
+ 		  "candidates already (%d)", PJ_ICE_MAX_CAND));
+ 	    return;
+ 	}
++	if (pj_ice_is_cand_blocked(&ice->opt, PJ_ICE_CAND_TYPE_PRFLX)){
++	    LOG4((ice->obj_name,
++        	          "Unable to add new peer reflexive candidate: blocked "));
++	    return;
++	}
+ 
+ 	rcand = &ice->rcand[ice->rcand_cnt++];
+ 	rcand->comp_id = (pj_uint8_t)rcheck->comp_id;
+Index: pjsip/sources/pjnath/src/pjnath/ice_strans.c
+===================================================================
+--- pjsip.orig/sources/pjnath/src/pjnath/ice_strans.c
++++ pjsip/sources/pjnath/src/pjnath/ice_strans.c
+@@ -438,7 +438,7 @@ static pj_status_t create_comp(pj_ice_st
+ 	/* Start STUN Binding resolution and add srflx candidate
+ 	 * only if server is set
+ 	 */
+-	if (ice_st->cfg.stun.server.slen) {
++	if (ice_st->cfg.stun.server.slen && !pj_ice_is_cand_blocked(&(ice_st->cfg.opt), PJ_ICE_CAND_TYPE_SRFLX)) {
+ 	    pj_stun_sock_info stun_sock_info;
+ 
+ 	    /* Add pending job */
+@@ -485,12 +485,15 @@ static pj_status_t create_comp(pj_ice_st
+ 	    comp->default_cand = (unsigned)(cand - comp->cand_list);
+ 
+ 	    pj_log_pop_indent();
++	} else {
++	    PJ_LOG(4,(ice_st->obj_name,
++            		  "ICE SRFLX candidate not added"));
+ 	}
+ 
+ 	/* Add local addresses to host candidates, unless max_host_cands
+ 	 * is set to zero.
+ 	 */
+-	if (ice_st->cfg.stun.max_host_cands) {
++	if (ice_st->cfg.stun.max_host_cands && !pj_ice_is_cand_blocked(&ice_st->cfg.opt, PJ_ICE_CAND_TYPE_HOST)) {
+ 	    pj_stun_sock_info stun_sock_info;
+ 	    unsigned i;
+ 
+@@ -561,12 +564,18 @@ static pj_status_t create_comp(pj_ice_st
+ 			  comp_id, pj_sockaddr_print(&cand->addr, addrinfo,
+ 						     sizeof(addrinfo), 3)));
+ 	    }
++	} else {
++	    PJ_LOG(4,(ice_st->obj_name,
++            		  "ICE host candidate not added"));
+ 	}
+     }
+ 
+     /* Create TURN relay if configured. */
+-    if (ice_st->cfg.turn.server.slen) {
++    if (ice_st->cfg.turn.server.slen && !pj_ice_is_cand_blocked(&ice_st->cfg.opt, PJ_ICE_CAND_TYPE_RELAYED)) {
+ 	add_update_turn(ice_st, comp);
++    } else {
++    PJ_LOG(4,(ice_st->obj_name,
++    		  "ICE relay candidate not added"));
+     }
+ 
+     /* It's possible that we end up without any candidates */

@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="menu_delete_all">Konuları sil</string>
+  <string name="menu_delete">Konu sil</string>
+  <string name="undelivered_msg_dialog_title">Teslim edilmemiş mesaj</string>
+  <string name="done">Bitti</string>
+  <string name="send">Gönder</string>
+  <string name="yes">TAMAM</string>
+  <string name="no">İptal</string>
+  <string name="edit">Düzenle</string>
+  <string name="confirm_dialog_title">Sil</string>
+  <string name="delete">Sil</string>
+  <string name="status_pending">Beklemede</string>
+  <string name="status_failed">Başarısız</string>
+  <!-- ##automatically translated below -->
+
+<string name="menu_view">Konu bilgileri</string>
+<string name="copy_message_text">Mesaj metni kopyalamak</string>
+<string name="compose_title">Oluşturmak</string>
+<string name="type_to_compose_text_enter_to_send">Oluşturmak için yazın</string>
+<string name="restore_default">"Varsayılan ayarları geri yükle"</string>
+<string name="confirm_delete_conversation">Tüm iplik silinecektir.</string>
+<string name="confirm_delete_all_conversations">Tüm konuları silinecektir.</string>
+</resources>

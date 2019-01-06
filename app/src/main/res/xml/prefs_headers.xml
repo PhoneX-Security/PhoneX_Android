@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <header
+        android:fragment="net.phonex.ui.preferences.PreferencesContainer11"
+        android:icon="@drawable/ic_prefs_network"
+        android:title="@string/prefs_connectivity">
+        <extra
+            android:name="preference_group"
+            android:value="20" />
+    </header>
+    <header
+        android:fragment="net.phonex.ui.preferences.PreferencesContainer11"
+        android:icon="@drawable/ic_prefs_media"
+        android:title="@string/prefs_media">
+        <extra
+            android:name="preference_group"
+            android:value="10" />
+    </header>
+    <header
+        android:fragment="net.phonex.ui.preferences.PreferencesContainer11"
+        android:icon="@drawable/ic_prefs_ui"
+        android:title="@string/prefs_ui">
+        <extra
+            android:name="preference_group"
+            android:value="60" />
+    </header>
+
+    <header
+        android:fragment="net.phonex.ui.preferences.PreferencesContainer11"
+        android:icon="@drawable/ic_prefs_security"
+        android:title="@string/prefs_security">
+        <extra
+            android:name="preference_group"
+            android:value="70" />
+    </header>
+
+</preference-headers>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+	<Spinner  
+    	android:id="@+id/status_spinner"
+        android:layout_width="40dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="5dp"
+        android:paddingRight="5dp"
+        android:spinnerMode="dropdown"        
+        android:visibility="gone"
+        />
+
+	<RelativeLayout
+    	style="@style/GenericProgressBackground"
+    	android:id="@+id/loadingPanel"
+        android:layout_marginRight="16dp"
+        >
+    	<ProgressBar
+            style="@style/GenericProgressIndicator"
+    	/>
+	</RelativeLayout>
+ </merge>

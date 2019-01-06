@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    android:paddingBottom="4dp"
+    android:paddingTop="4dp">
+
+    <LinearLayout
+        android:id="@+id/message_block"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical"
+        android:textColor="@color/text_black">
+
+        <LinearLayout
+            android:id="@+id/message_wrapper"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/message_item_text_padding_top"
+                android:textAppearance="?android:attr/textAppearance"
+                android:textColor="@color/text_black"
+                android:textSize="16sp" />
+
+            <!-- To be filled out with files. Alternatives: net.phonex.ui.customViews.FlowLayout, GridLayout, LinearLayout -->
+            <net.phonex.ui.customViews.FlowLayout
+                android:id="@+id/downloaded_files"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </net.phonex.ui.customViews.FlowLayout>
+
+            <net.phonex.ui.chat.compounds.FileTransferProgressView
+                android:id="@+id/progress_block"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="right"
+                android:layout_gravity="right">
+
+                <!--Status view - contains information about the message (time,delivery information)-->
+                <TextView
+                    android:id="@+id/status_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_gray_chat"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/delivered_indicator"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/ic_check_black_24px"
+                    android:contentDescription="@string/empty_description"
+                    android:scaleType="centerInside"
+                    />
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/msg_status_box"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="right"
+                android:layout_marginBottom="4dip">
+
+                <TextView
+                    android:id="@+id/crypto_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/message_item_text_padding_left_right"
+                    android:textColor="@color/text_gray_chat"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+                <Button
+                    android:id="@+id/resendButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_alignLeft="@+id/crypto_view"
+                    android:layout_below="@+id/crypto_view"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/btn_glossy_orange"
+                    android:drawableLeft="@drawable/re_butt_off"
+                    android:drawablePadding="10dp"
+                    android:focusable="false"
+                    android:linksClickable="true"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="@string/msg_resend"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+        <net.phonex.ui.chat.compounds.FileReceiverView
+            android:id="@+id/file_receiver_block"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <!--<TextView-->
+        <!--android:id="@+id/messageSeenText"-->
+        <!--android:layout_below="@+id/message_block"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="3dp"-->
+        <!--android:layout_marginRight="17dp"-->
+        <!--android:textSize="12sp"-->
+        <!--android:visibility="gone"-->
+        <!--android:textColor="@color/text_whitesmoke"-->
+        <!--/>-->
+
+</RelativeLayout>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="answer_call">Ответ</string>
+    <string name="end_call">Выйти</string>
+    <string name="speaker">Динамик</string>
+    <string name="mute">Отключение звука</string>
+    <string name="call_state_calling">Вызов</string>
+    <string name="call_state_disconnected">Положить трубку</string>
+    <string name="call_state_incoming">Входящий вызов</string>
+    <string name="call_state_preparing">Подготовка</string>
+    <string name="call_state_encrypting">Шифрование речи</string>
+    <string name="hold_call">Удержать</string>
+    <string name="on_hold">Удержание вызова</string>
+    </resources>

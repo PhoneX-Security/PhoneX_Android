@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="crash_dialog_title">PhoneХ был прекращен</string>
+    <string name="crash_dialog_text">Произошла непредвиденная ошибка, которая остановила приложение. Пожалуйста, помогите нам решить проблему быстро, отправив сообщение об ошибке.</string>
+    <string name="crash_dialog_comment_prompt">Пожалуйста, введите здесь свой комментарий об ошибке:</string>
+    <string name="crash_dialog_ok_toast">Спасибо!</string>
+    <string name="crash_dialog_positive_button">Отправить сообщение об ошибке</string>
+</resources>

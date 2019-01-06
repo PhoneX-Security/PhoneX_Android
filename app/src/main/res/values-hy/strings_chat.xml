@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="menu_delete_all">Ջնջել թեմաները</string>
+<string name="menu_delete">Ջնջել շարանը</string>
+<string name="menu_view">Դիտել շարանը</string>
+<string name="undelivered_msg_dialog_title">Undelivered հաղորդագրությունը</string>
+<string name="copy_message_text">Պատճենել հաղորդագրության տեքստը</string>
+<string name="done">Կատարած</string>
+<string name="compose_title">Կազմել</string>
+<string name="send">Ուղարկել</string>
+<string name="type_to_compose_text_enter_to_send">Մուտքագրեք ստեղծագործել</string>
+<string name="yes">Լավ</string>
+<string name="no">Վերացնել</string>
+<string name="edit">Խմբագրել</string>
+<string name="restore_default">«Վերականգնել լռելյայն կայանքները"</string>
+<string name="confirm_dialog_title">Ջնջել</string>
+<string name="confirm_delete_conversation">Ամբողջ թեմա կհանվեն:</string>
+<string name="confirm_delete_all_conversations">Բոլոր թեմաները կհանվեն:</string>
+<string name="delete">Ջնջել</string>
+<string name="status_pending">Մինչեւ</string>
+<string name="status_failed">Անհաջող</string>
+</resources>

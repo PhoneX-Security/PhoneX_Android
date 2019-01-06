@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">Beállítások</string>
+  <string name="prefs_connectivity">Hálózat</string>
+  <string name="prefs_media">Média</string>
+  <string name="prefs_ui">Felhasználói felület</string>
+  <!--Network-->
+  <string name="transport">Átvitel</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">Hangminőség</string>
+  <string name="audio_volume">Hangerő</string>
+  <string name="codecs">Kodekek</string>
+  <string name="echo_cancellation">Visszhang csillapítás</string>
+  <string name="echo_cancellation_desc">Visszhang mcsillapítás bekapcsolása</string>
+  <string name="disable_vad">Beszédfelismerés</string>
+  <string name="disable_vad_desc">Beszédfelismerés bekapcsolása</string>
+  <string name="sound_mic_volume">Mikrofon erősítés</string>
+  <string name="sound_speaker_volume">Hangszőrő erősítés</string>
+  <string name="media_quality">Média minőség</string>
+  <string name="media_quality_desc">A médiafolyam minősége (csak hozzáértő módosítsa)</string>
+  <string name="sound_clock_rate">Órajel</string>
+  <string name="sound_clock_rate_desc">Hangcsatorna frekvenciája</string>
+  <string name="auto">Autómatikus</string>
+  <!--UI-->
+  <string name="general_ui">Általános felhasználói felület</string>
+  <string name="keep_awake_incall">Előtérben beszélgetéskor</string>
+  <string name="keep_awake_incall_desc">Ha WiFi-s hívás közben érdes a hang, ez javítja</string>
+  <string name="log_level">Naplózási szint:</string>
+  <string name="ringtone">Csengőhang</string>
+  <string name="prevent_screen_rotation">Képforgatás tiltása</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <!--Generic-->
+
+
+
+<!-- ##automatically translated below -->
+
+<string name="prefs_security">Biztonság</string>
+<string name="network_watchdog">Hálózati watchdog</string>
+<string name="network_watchdog_desc">Újraindítja szolgáltatást, ha nincs regisztráció. Másodpercben. 0 = kikapcsolva</string>
+<string name="enable_noise_reduction">Zajcsökkentés</string>
+<string name="enable_noise_reduction_desc">Működik, ha visszhang van kapcsolva, és WebRTC visszhangközömbösítőt backend használt</string>
+<string name="sound_bt_mic_volume">Bluetooth mikrofon erősítés</string>
+<string name="echo_cancellation_mode">Echo mód</string>
+<string name="echo_cancellation_mode_desc">Algoritmus echo</string>
+<string name="enable_focus_audio">Fókusz audio</string>
+<string name="simple">Egyszerű</string>
+<string name="slow">Lassú</string>
+<string name="fast">Gyors</string>
+<string name="invert_proximity_sensor">Invert közelség érzékelő</string>
+<string name="normal_preferences">Normál mód</string>
+<string name="security_messages">Üzenetek</string>
+<string name="messages_delete_period_desc">Mennyi ideig kell megőrizni az üzeneteket az archívumban</string>
+<string name="messages_delete_period">Üzenetek archiválás</string>
+<string name="just_session">Csak ezen az ülésen</string>
+<string name="one_day">1 nap</string>
+<string name="three_days">3 nap</string>
+<string name="week">Hét</string>
+<string name="month">Hónap</string>
+<string name="forever">Örökre</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/sort_order"
+        android:icon="@drawable/ic_swap_vert_24px"
+        android:visible="false"
+        app:showAsAction="always"
+        android:title="@string/file_picker_sorting_prompt" />
+
+    <item
+        android:id="@+id/display_mode"
+        app:showAsAction="always"
+        android:title="@string/filepicker_display_mode" />
+</menu>

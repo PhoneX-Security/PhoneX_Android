@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="menu_delete_all">Verwijder discussies</string>
+    <string name="menu_delete">Verwijder discussie</string>
+    <string name="menu_view">Toon discussie</string>
+    <string name="undelivered_msg_dialog_title">Bericht niet afgeleverd</string>
+    <string name="copy_message_text">Kopieer berichttekst</string>
+    <string name="done">Gereed</string>
+    <string name="compose_title">Samenstellen</string>
+    <string name="send">Verzenden</string>
+    <string name="type_to_compose_text_enter_to_send">Type om samen te stellen</string>
+    <string name="yes">Bevestigen</string>
+    <string name="no">Annuleren</string>
+    <string name="edit">Bewerken</string>
+    <string name="restore_default">Standaardwaarden herstellen</string>
+    <string name="confirm_dialog_title">Verwijderen</string>
+    <string name="confirm_delete_conversation">De hele discussie zal worden verwijderd</string>
+    <string name="confirm_delete_all_conversations">Alle discussies zullen worden verwijderd</string>
+    <string name="delete">Verwijderen</string>
+    <string name="status_pending">In behandeling</string>
+    <string name="status_failed">Niet succesvol</string>
+    </resources>

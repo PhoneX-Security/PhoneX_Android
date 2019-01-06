@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="answer_call">Одговор</string>
+<string name="end_call">Крај</string>
+<string name="speaker">Звучник</string>
+<string name="mute">Муте</string>
+<string name="call_state_calling">Позивање ...</string>
+<string name="call_state_disconnected">Хунг уп</string>
+<string name="call_state_incoming">Долазни позив ...</string>
+<string name="hold_call">Држати</string>
+<string name="on_hold">На чекању</string>
+<string name="transport_secure_to_server">ТЛС се користи за превоз одмах хопу</string>
+<string name="transport_secure_full">Енд-то-енд сигнализација треба сигурно</string>
+</resources>

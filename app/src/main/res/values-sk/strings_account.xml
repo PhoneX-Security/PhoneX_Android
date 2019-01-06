@@ -1,0 +1,6 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="account_name">Názov účtu</string>
+    <string name="account_name_desc">Zobrazované meno pre tento účet</string>
+</resources>

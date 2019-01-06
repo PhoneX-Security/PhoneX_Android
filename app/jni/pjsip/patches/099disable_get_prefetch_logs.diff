@@ -1,0 +1,19 @@
+Index:  pjsip/sources/pjsip/src/pjsua-lib/pjsua_core.c
+===================================================================
+Index: pjsip/sources/pjmedia/src/pjmedia/jbuf.c
+===================================================================
+--- pjsip.orig/sources/pjmedia/src/pjmedia/jbuf.c	2014-11-10 23:23:16.333932330 +0100
++++ pjsip/sources/pjmedia/src/pjmedia/jbuf.c	2014-11-10 23:23:16.333932330 +0100
+@@ -1066,10 +1066,10 @@
+ 	*p_frame_type = PJMEDIA_JB_ZERO_PREFETCH_FRAME;
+ 	if (size)
+ 	    *size = 0;
+-
++#ifdef PJMEDIA_GET_PREFETCH_LOG
+ 	TRACE__((jb->jb_name.ptr, "GET prefetch_cnt=%d/%d",
+ 		 jb_framelist_eff_size(&jb->jb_framelist), jb->jb_prefetch));
+-
++#endif
+ 	jb->jb_empty++;
+ 
+     } else {

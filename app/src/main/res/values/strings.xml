@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="application_name">PhoneX</string>
+    <string name="permission_phonex" translatable="false">PhoneX</string>
+    <string name="permission_phonex_desc">General PhoneX permission, used for plugins and extensions.</string>
+    <string name="registered">Registered</string>
+    <string name="unregistered">Unregistered</string>
+    <string name="about">About</string>
+    <string name="connection_not_valid">Selected network route not allowed with current settings you have setup</string>
+    <string name="invalid_sip_uri">Cannot make call to the given contact. It is invalid.</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete_account">Delete account</string>
+    <string name="add_account">Add contact</string>
+    <string name="call">Call</string>
+    <string name="message_notification">New message</string>
+    <string name="ongoing_call">Call in Progress</string>
+    <string name="missed_call">Missed call</string>
+    <string name="messages_tab_name_text">Messages</string>
+    <string name="notifications_tab_name_text">Notifications</string>
+    <string name="menu_disconnect">Disconnect</string>
+    <string name="service_notification_registered">PhoneX registered</string>
+    <string name="service_notification_unregistered">PhoneX not registered</string>
+    <string name="faq">FAQ</string>
+    <string name="help">Help</string>
+    <string name="ok">OK</string>
+    <string name="logout">Log out</string>
+    <string name="quit_info">By logging off, you won\'t be able to take calls and receive messages, are you sure?</string>
+    <string name="another_application_use_sip_port">Error: Another application is using SIP port. Can\'t start !</string>
+    <string name="voice_mail">Voice mail</string>
+    <string name="not_configured_multiple_calls">PhoneX currently does not support multiple calls</string>
+    <string name="downloading_text">Downloading</string>
+    <string name="loading">Loading</string>
+    <string name="info">Info</string>
+    <!-- Presence stuff -->
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="away">Away</string>
+    <string name="busy">Busy</string>
+    <string name="pinconfirm">Confirm</string>
+    <string name="pin_block_info">Application is blocked</string>
+    <string name="pin_block_reason_retries">Too many attempts</string>
+    <string name="clist_add_title">Add contact</string>
+    <string name="clist_add_sip">Username</string>
+    <string name="clist_add_choosealias">Choose alias</string>
+    <string name="clist_add_displayname">Alias</string>
+    <string name="clist_add_inwhitelist">In whitelist</string>
+    <string name="clist_add_add">Add</string>
+    <string name="clist_add_description">Type a unique username of the contact you want to add. Ask your contact for his username.</string>
+    <string name="empty_messages">No messages</string>
+    <string name="empty_notifications">No notifications</string>
+    <string name="contact_details">Details</string>
+    <string name="contacts_tab_name_text">Contacts</string>
+    <string name="rename_account">Rename</string>
+    <string name="rename_account_title">Rename alias</string>
+    <string name="rename_account_new">New alias:</string>
+    <string name="presence_online">Online</string>
+    <string name="presence_away">Away</string>
+    <string name="presence_invisible">Invisible</string>
+    <string name="intro_login">Username</string>
+    <string name="intro_pass">Password</string>
+    <string name="intro_pass_confirmation">Password confirmation</string>
+    <string name="intro_pass_change">Change password</string>
+    <string name="intro_connect">Sign in</string>
+    <string name="intro_set_new_password">Set new password (8 characters min)</string>
+    <string name="intro_remember_me">Remember login</string>
+    <string name="p_authentication">Authentication</string>
+    <string name="p_authentication_failed">Authentication failed</string>
+    <string name="p_error_empty_login">Login name is empty</string>
+    <string name="p_error_empty_password">Password is empty</string>
+    <string name="p_success">Success</string>
+    <string name="p_error">Error</string>
+    <string name="p_almost_there">Almost there...</string>
+    <string name="p_not_before_certificate">Your account is prepared!\n\nBut there is some time skew in your device clock and server clock so your certificate is not yet valid. You have to wait some time until you will be able to login. \n\nPlease wait: %1$s minutes, %2$s seconds</string>
+    <string name="p_problem">Problem</string>
+    <string name="p_problem_nonspecific">Problem occurred, probably due to Internet connection, please try again later.</string>
+    <string name="p_problem_resolv">An internet connection is required to sign in PhoneX. Check your connection and try again.</string>
+    <string name="p_problem_socket">Connection to the server cannot be established, probably due to Internet connection. Please try again later.</string>
+    <string name="p_problem_auth_bad_response">Problem occurred, server returned unexpected result. \n\nYou have probably outdated application version, try update please.</string>
+    <string name="p_problem_bad_response">Problem occurred, server returned unexpected result.</string>
+    <string name="p_problem_bad_certificate">Problem occurred, returned certificate is invalid.</string>
+    <string name="p_problem_badcredential">Your login or password is invalid.</string>
+    <string name="p_problem_account_disabled">Your account is disabled. Please contact your manager.</string>
+    <string name="p_problem_trial_expired">Trial version for your account expired.</string>
+    <string name="p_problem_trial_about_to_expire">Your trial account is about to expire.\n\nAccount will be invalid in %1$s days, %2$s hours</string>
+    <string name="p_problem_time_drift">Your system time is not synchronized with server time. This causes problems with login.\n\nServer time: %1$s\n</string>
+    <string name="p_problem_time_drift_forward">Your time is shifted forward by %1$s.</string>
+    <string name="p_problem_time_drift_backward">Your time is shifted backward by %1$s.</string>
+    <string name="p_problem_db_general">Problem with opening encrypted database. Cannot continue. \n\nIf problem repeats, please consider removing all application data or reinstalling application.</string>
+    <string name="p_generating_keypair">Generating key-pair</string>
+    <string name="p_getting_token">Obtaining server token</string>
+    <string name="p_sending_csr">Sending CSR to server to sign</string>
+    <string name="p_storing_csr">Storing certificate</string>
+    <string name="p_generating_key">Generating encryption key</string>
+    <string name="p_rekey_keystore">Encrypting private key with new password</string>
+    <string name="p_rekey_database">Encrypting database with new password</string>
+    <string name="p_testing_db">Testing encrypted database</string>
+    <string name="p_getting_client_csr">Obtaining client certificate</string>
+    <string name="p_sending_clist">Storing contact list on server</string>
+    <string name="p_saving_csr">Storing locally</string>
+    <string name="p_getting_clist">Fetching contact list from server</string>
+    <string name="p_processing_clist">Processing received list</string>
+    <string name="p_processing_csr">Processing certificates</string>
+    <string name="p_getting_local_clist">Loading local certificates</string>
+    <string name="p_getting_missing_csr">Downloading missing certificates</string>
+    <string name="p_synchronizing_clist">Synchronizing contact list</string>
+    <string name="p_deleting_contact">Deleting contact from to server</string>
+    <string name="p_deleting_contact_localy">Deleting locally</string>
+    <string name="p_deleting_contact_artifacts">Deleting contact artefacts</string>
+    <string name="p_renaming_contact_localy">Renaming locally</string>
+    <string name="p_sending_request">Sending server request</string>
+    <string name="p_getting_response">Getting response</string>
+    <string name="p_rename_success">Contact %1$s has been renamed to %2$s.</string>
+    <string name="p_add_success">Contact %s has been added.</string>
+    <string name="p_delete_success">Contact %s has been deleted.</string>
+    <string name="p_encrypting_pass">Encrypting password</string>
+    <string name="p_encrypting_csr">Encrypting CSR</string>
+    <string name="p_renaming">Renaming contact</string>
+    <string name="p_deleting">Deleting contact</string>
+    <string name="p_rename_confirm">Do you really want to delete this account?</string>
+    <string name="p_loading_personal_credential">Loading personal credentials</string>
+    <string name="p_synchronizing_csr">Synchronizing certificate</string>
+    <string name="p_unknown_error">Internal error.</string>
+    <string name="p_different_passwords">Passwords are not the same.</string>
+    <string name="p_short_password">Password is too short. Minimum length is 8 characters.</string>
+    <string name="p_changing_password">Changing password</string>
+    <string name="p_password_change_err">Password change has failed.</string>
+    <string name="p_password_change_ok">Password has been changed.</string>
+    <!-- these 2 strings will be join -->
+    <string name="p_loading_view">Loading application View, please wait...</string>
+    <string name="p_generating_dh_keys">Generating file encryption keys</string>
+    <string name="p_wait_for_cert">Please wait until your certificate becomes valid.\n\nTime to wait: %s seconds.</string>
+    <!-- call errors -->
+    <string name="call_error_403">You are not allowed to call this number.</string>
+    <string name="call_error_404">Callee is offline.</string>
+    <string name="call_error_408">Request timeout. Server or callee didn\'t respond in time. Try again later please.</string>
+    <string name="call_error_410">Callee is gone, it existed on server but is not available here any more.</string>
+    <string name="call_error_477">Call request cannot reach destination. Try again later please.</string>
+    <string name="call_error_480">Temporarily Unavailable. It was unable to establish direct connection to destination or it was timeouted. Try again later please.</string>
+    <string name="call_error_486">Callee is busy right now.</string>
+    <string name="call_error_487">Call request was terminated.</string>
+    <string name="call_error_503">Service unavailable, server is probably too busy right now. Try again later please</string>
+    <string name="call_error_603">Call was rejected by callee.</string>
+    <string name="call_error_not_valid">Call cannot be made because you are not registered in the network.</string>
+    <string name="call_error_generic">Unknown error in establishing a call. Please try again. If problem persists, please try to restart PhoneX.</string>
+    <string name="missed_call_title">Missed call</string>
+    <string name="missed_call_body">You have a missed call from %1$s at %2$s.</string>
+    <string name="intro_init_title">Initializing...</string>
+    <string name="intro_init_msg">Starting application, please wait</string>
+    <string name="intro_resurrect_msg">Recovering application state, please wait.</string>
+    <string name="msg_offline_message_title">offline</string>
+    <string name="msg_enc_tit_signature_invalid">WARNING: not authenticated</string>
+    <string name="msg_enc_tit_encrypted">Encrypted</string>
+    <string name="msg_enc_tit_decrypted">Decrypted</string>
+    <string name="msg_enc_tit_encrypted_file">Encrypted file</string>
+    <string name="msg_enc_tit_decryption_error">Decryption error</string>
+    <string name="msg_enc_tit_inv_mime">WARNING: probably spoofed</string>
+    <string name="msg_resend">Resend</string>
+    <string name="msg_sent_date">Sent</string>
+    <string name="msg_received">Received</string>
+    <string name="msg_sent_failed">Sending failed</string>
+    <string name="msg_sent_failed_477">Encryption error</string>
+    <string name="msg_sending">Sending</string>
+    <string name="msg_no_cert">Certificate not found</string>
+    <string name="msg_file_rejected">File rejected</string>
+    <string name="msg_error">Error</string>
+    <string name="msg_error_recv">Download error</string>
+    <!-- in call -->
+    <string name="incall_zrtphash_nomatch_error">ZRTP hash does not match (SDP vs. ZRTP hello). Attacker may be in the media! Error code: </string>
+    <string name="incall_incoming_gsm_call">You\'ve missed a call from the number: </string>
+    <!-- settings -->
+    <string name="security">Security</string>
+    <string name="change_password">Change password</string>
+    <string name="change_password_desc">Change login password into PhoneX.</string>
+    <!-- mod sign error codes -->
+    <string name="modsign_err_user_cert_missing">Certificate for user \"%s\" was not found, cannot verify signature</string>
+    <string name="modsign_err_user_cert_invalid">Certificate for user \"%s\" is invalid, cannot verify signature</string>
+    <string name="modsign_err_signature_invalid">Signature verification failed for user \"%s\"</string>
+    <string name="modsign_err_generic">Unspecified error during signature verification for user \"%s\"</string>
+    <string name="modsign_err_remote_user_unknown">Unknown remote user \"%s\"</string>
+    <string name="modsign_err_success">Signature verification was successful</string>
+    <!-- certificate error -->
+    <string name="cert_status_ok">OK</string>
+    <string name="cert_status_invalid">invalid</string>
+    <string name="cert_status_revoked">revoked</string>
+    <string name="cert_status_forbidden">forbidden</string>
+    <string name="cert_status_missing">missing</string>
+    <string name="cert_status_nouser">no such user</string>
+    <string name="warning_tab_name" translatable="false">Warnings</string>
+    <string name="warning_signature_tab_name" translatable="false">Signatures</string>
+    <string name="p_refreshing_certificate">Refreshing certificate</string>
+    <string name="clist_cat_user">User</string>
+    <string name="clist_display_name">Alias</string>
+    <string name="clist_sip">Username</string>
+    <string name="has_certificate">Has local certificate</string>
+    <string name="cert_status">Certificate status</string>
+    <string name="cert_owner">Owner</string>
+    <string name="cert_date_created">Date created</string>
+    <string name="cert_date_last_refresh">Date last refresh</string>
+    <string name="cert_hash">Certificate hash</string>
+    <string name="cert_serial">Certificate serial number</string>
+    <string name="cert_validity">Certificate validity</string>
+    <string name="cert_issuer">Certificate issuer</string>
+    <string name="cert_cn">Certificate CN</string>
+    <string name="cert_raw">Raw certificate</string>
+    <string name="cert_yes">Yes</string>
+    <string name="cert_no">No</string>
+    <string name="cert_public_key">Public key</string>
+    <string name="cert_public_key_alg">Public key algorithm</string>
+    <string name="cert_public_key_length">Public key bit length</string>
+    <string name="my_certificate">My certificate</string>
+    <string name="my_certificate_desc">Shows certificate in detail.</string>
+    <string name="sync_certificates">Synchronize certificates</string>
+    <string name="sync_certificates_desc">Checks for new certificates of contacts.</string>
+    <string name="sync_certificates_toast">Synchronization is scheduled. Will be performed on the background.</string>
+    <string name="sync_dhkeys">Synchronize keys</string>
+    <string name="sync_dhkeys_desc">Checks encryption keys for file transfer.</string>
+    <string name="sync_dhkeys_toast">Synchronization is scheduled. Will be performed on the background.</string>
+    <string name="progress_loading_msg">Please wait...</string>
+    <string name="progress_loading_title">Loading data</string>
+    <string name="language">Language</string>
+    <string name="language_desc">Select language of application.</string>
+    <string name="warning_signature">SIP message with invalid signature</string>
+    <string name="my_profile">My account</string>
+    <string name="project_page">Project page</string>
+    <string name="obtain_trial">Start 7-days Trial</string>
+    <string name="intro_info">Introduction</string>
+    <string name="options">Options</string>
+    <string name="about_phonex">PhoneX</string>
+    <string name="firstlaunch_welcome">Welcome to <b>PhoneX</b></string>
+    <string name="firstlaunch_text">PhoneX is an application for secure communication - encrypted calls, messages and file transfer between users.</string>
+    <string name="firstlaunch_text2">You can try 7-days Trial license for free or buy a Full license on our website www.phone-x.net.</string>
+    <string name="continue_to_app">Continue to login</string>
+    <string name="conversation_call_button">Call</string>
+    <string name="registration_warning">Registration to the network</string>
+    <string name="notification_keygen">PhoneX file encryption keys check</string>
+    <string name="notification_certupd">PhoneX certificate update</string>
+    <string name="notification_appupd">PhoneX updated</string>
+    <string name="notification_appupd_text">Revision %s, please log in.</string>
+    <string name="notification_device_reboot" translatable="false">PhoneX</string>
+    <string name="notification_device_reboot_text">Device started, please log in.</string>
+
+    <string name="certupd_done">Done</string>
+    <string name="certupd_none">Error</string>
+    <string name="certupd_in_queue">Waiting in queue</string>
+    <string name="certupd_started">Started</string>
+    <string name="certupd_local_loading">Loading</string>
+    <string name="certupd_server_call">Downloading from server</string>
+    <string name="certupd_post_server_call">Processing response</string>
+    <string name="certupd_saving">Saving</string>
+    <string name="certupd_header">Certificate synchronization</string>
+    <string name="certupd_header_description">Synchronizing certificates of your contacts.</string>
+    <string name="keygen_done">Done</string>
+    <string name="keygen_none">Error</string>
+    <string name="keygen_in_queue">Waiting in queue</string>
+    <string name="keygen_started">Started</string>
+    <string name="keygen_cleaning">Cleaning key store</string>
+    <string name="keygen_generating_key">Generating key %1$d/%2$d</string>
+    <string name="keygen_generated">Keys generated, waiting</string>
+    <string name="keygen_server_call_save">Storing keys on server</string>
+    <string name="keygen_post_server_call_save">Processing server response</string>
+    <string name="keygen_deleting">Removing keys</string>
+    <string name="keygen_server_call_delete">Removing keys from server</string>
+    <string name="keygen_post_server_call_delete">Processing server response</string>
+    <string name="keygen_header">Generating keys</string>
+    <string name="keygen_header_description">Generating keys needed for file transfer.</string>
+
+    <!-- Help Add Account fragment -->
+    <string name="help_ac_how_to_add">How to add a new contact?</string>
+    <string name="help_ac_add_1"><![CDATA[Say you are user "alice" and want to add a new user called "eve" to your contact list. You have to be logged in on the main screen. Click on the <b>button in the lower right corner</b> and then click <b>Add account</b>.]]></string>
+    <string name="help_ac_add_2"><![CDATA[In the dialog box, enter the user name of the second user - "eve". You also may fill the Display name text, this is an alias for your contact. If you don\'t put any alias, his user name will be displayed instead. Let "In whitelist" be ticked for now. At the end, click <b>Add</b> button.]]></string>
+    <string name="help_ac_add_3"><![CDATA[After the user has been added, he/she will be shown in the contact list. In the contact list also status of each user is displayed. Two possible statuses are <b>Online</b> and <b>Offline</b> (here user Eve Hidden is offline).]]></string>
+    <string name="help_ac_add_4"><![CDATA[<b>Important: Both user (Alice and Eve) have to add each other into their contact lists to be able to call or send messages to each other.</b> This prevents any user from receiving calls or messages from users he/she doesn\'t know - protection from SPAMing and unwanted behaviour.]]></string>
+
+    <!-- Send file -->
+    <string name="open_file">Open</string>
+    <string name="download_file">Download</string>
+    <string name="reject_file">Reject</string>
+    <string name="open_directory">Open directory</string>
+    <plurals name="delete_file">
+        <item quantity="one">Delete file</item>
+        <item quantity="other">Delete files</item>
+    </plurals>
+
+    <string name="filepicker_title">Choose a directory</string>
+    <string name="filepicker_up" translatable="false">..</string>
+    <string name="filepicker_toast_sort_asc">List will be sorted A..Z</string>
+    <string name="filepicker_toast_sort_desc">List will be sorted Z..A</string>
+    <string name="filepicker_camera">Camera</string>
+    <string name="filepicker_camera_2">Camera SD</string>
+    <string name="filepicker_download">Download</string>
+    <string name="filepicker_documents">Documents</string>
+    <string name="filepicker_pictures">Pictures</string>
+    <string name="filepicker_music">Music</string>
+    <string name="filepicker_storage">Storage</string>
+    <string name="filepicker_external_sd">External SD</string>
+    <string name="dwn_p_error">Error</string>
+    <string name="dwn_p_cancelled">Cancelled</string>
+    <string name="dwn_p_in_queue">In queue</string>
+    <string name="dwn_p_retrieving_details">Retrieving details</string>
+    <string name="dwn_p_deleting">Deleting from server</string>
+    <string name="dwn_p_deleted">Deleted</string>
+    <string name="dwn_p_loading_info">Loading information from server</string>
+    <string name="dwn_p_enc_keys">Computing encryption keys</string>
+    <string name="dwn_p_key_load">Loading private keys</string>
+    <string name="dwn_p_connecting">Connecting to the server</string>
+    <string name="dwn_p_downloading">Downloading</string>
+    <string name="dwn_p_extracting">Extracting files</string>
+    <string name="dwn_p_decryption">Decrypting</string>
+    <string name="dwn_p_done">Done</string>
+    <string name="dwn_failed">File download failed</string>
+    <string name="dwn_failed_download">File download error, please, try again later.</string>
+    <string name="dwn_failed_recoverable">Generic download error occurred. Please, try again later.</string>
+    <string name="dwn_failed_generic">Generic download error occurred. File is probably invalid.</string>
+    <string name="dwn_no_file">No downloaded file found for this message.</string>
+    <string name="dwn_file_not_found">Downloaded file was not found. It was probably deleted. \n\nOriginal file name:\n%s</string>
+    <string name="upd_p_cancelled">Cancelled</string>
+    <string name="upd_p_in_queue">In queue</string>
+    <string name="upd_p_initialization">Initialization</string>
+    <string name="upd_p_downloading_keys">Downloading keys from server</string>
+    <string name="upd_p_key_verification">Key verification</string>
+    <string name="upd_p_uploading">Uploading</string>
+    <string name="upd_p_gen_enc_keys">Generating encryption keys</string>
+    <string name="upd_p_processing_input">Encrypting files</string>
+    <string name="upd_p_enc_notif">Encrypting notification</string>
+    <string name="upd_p_sending_notif">Sending notification</string>
+    <string name="upd_p_done">Done</string>
+    <string name="upd_failed">File upload failed</string>
+    <string name="upd_failed_full_mailbox">Destination user mailbox is full.</string>
+    <string name="upd_failed_too_big">File to upload is too big.</string>
+    <string name="upd_failed_no_keys">Destination user has no free file slots.</string>
+    <string name="upd_failed_generic">Generic upload error occurred.</string>
+    <string name="ft_err_timeout">Connection error</string>
+    <string name="intro_phonex">PhoneX %s – Secure communication</string>
+    <string name="intro_copyright">© 2012-2015 All rights reserved</string>
+    <string name="dummy_username">username@phone-x.net</string>
+    <string name="dummy_displayname">e.g., John Smith</string>
+    <string name="phonex_restart_title">Restarting application</string>
+    <string name="phonex_restart_info">Please wait until PhoneX restarts</string>
+    <string name="notif_delete">Delete</string>
+    <string name="notif_delete_type">Delete all</string>
+
+    <string name="filepicker_decrypt">Decrypt</string>
+    <string name="filepicker_decrypt_open">Decrypt &amp; open</string>
+
+    <!-- File Manager -->
+    <string name="file_manager">File manager</string>
+    <string name="filepicker_secure_storage">Secure storage</string>
+    <string name="filepicker_secure_photo_storage">Secure camera</string>
+
+    <string name="file_menu_decrypt">Decrypt file</string>
+    <string name="file_menu_delete">Delete file</string>
+    <string name="file_menu_delete_multi">Delete selected files</string>
+
+    <plurals name="file_dialog_delete_title">
+        <item quantity="one">Delete file</item>
+        <item quantity="other">Delete files</item>
+    </plurals>
+    <plurals name="file_dialog_delete_confirm">
+        <item quantity="one">This file will be deleted:</item>
+        <item quantity="other">These files will be deleted:</item>
+    </plurals>
+
+    <plurals name="file_dialog_decrypt_title">
+        <item quantity="one">Decrypt file</item>
+        <item quantity="other">Decrypt files</item>
+    </plurals>
+    <plurals name="file_dialog_decrypt_confirm">
+        <item quantity="one">This file will be decrypted to the Download directory.\n\nPlease note, that after decrypting the file will be accessible by all installed applications.</item>
+        <item quantity="other">These files will be decrypted to the Download directory.\n\nPlease note, that after decrypting the files will be accessible by all installed applications.</item>
+    </plurals>
+
+    <string name="file_dialog_open_title">Decrypt file before opening</string>
+    <string name="file_dialog_open_confirm">This file will be decrypted to the Download directory in order to open it in third party app.\n\nPlease note, that after decrypting the file will be accessible by all installed applications.</string>
+
+    <string name="file_dialog_title">Decrypting</string>
+    <string name="file_dialog_to">to:</string>
+
+    <string name="file_delete_error">Deletion error</string>
+    <string name="file_delete_error_message">Some files were not deleted</string>
+
+    <string name="file_decrypt_error">Decryption error</string>
+    <string name="file_decrypt_fail">These files were not decrypted because of an error:</string>
+
+    <string name="chat_delete_message_body">Do you really want to delete this message?</string>
+    <string name="chat_delete_message_delete_files_prompt">Delete files from this message</string>
+
+    <!-- Trial Request -->
+    <string name="trial_license">Trial license</string>
+    <string name="trial_error_401">Wrong captcha entered.</string>
+    <string name="trial_error_402">You have already been issued a Trial license. Only one Trial license per phone is allowed.</string>
+    <string name="trial_error_404">Username already exists.</string>
+    <string name="trial_fragment_title">Activating license</string>
+    <string name="trial_fragment_message">Verifying your request</string>
+    <string name="trial_created_title">Success</string>
+    <string name="trial_created_message">Your account has been successfully created.</string>
+    <string name="trial_created_login">Login:</string>
+    <string name="trial_created_expiration">Expires:</string>
+    <string name="trial_created_pass">Password:</string>
+    <string name="trial_button_submit">Submit</string>
+    <string name="trial_button_reset">Reload</string>
+    <string name="trial_captcha_loading">Generating captcha</string>
+    <string name="trial_security_check">Security check</string>
+    <string name="trial_security_check_desc">To verify your request, please type captcha code in the box below.</string>
+    <string name="trial_continue_login">Log in</string>
+
+    <string name="clist_add_error_nonexisting_user">Unable to add user, no such user exists.</string>
+    <string name="msg_seen">Seen %s</string>
+    <string name="pin_timer">Time to lock</string>
+    <string name="lock_asap">10 sec</string>
+    <string name="lock_30s">30 sec</string>
+    <string name="lock_1m">1 min</string>
+    <string name="lock_2m">2 min</string>
+    <string name="lock_3m">3 min</string>
+    <string name="lock_5m">5 min</string>
+    <string name="lock_10m">10 min</string>
+    <string name="lock_15m">15 min</string>
+    <string name="lock_30m">30 min</string>
+    <string name="lock_45m">45 min</string>
+    <string name="lock_60m">60 min</string>
+
+    <string name="add_contact_empty_alias">Empty alias</string>
+    <string name="call_error_number">Error %d</string>
+    <string name="call_error_unspecific_msg">Internal call error.</string>
+    <string name="call_error_481">Call was ended forcefully.</string>
+    <string name="call_error_501">Voice call is not supported on the remote device.</string>
+
+    <string name="file_picker_sorting_prompt">Sort by</string>
+    <string name="file_picker_sorting_alphabet">Name</string>
+    <string name="file_picker_sorting_date">Date</string>
+
+    <string name="file_picker_sorting_alphabet_asc">Name A..Z</string>
+    <string name="file_picker_sorting_alphabet_desc">Name Z..A</string>
+    <string name="file_picker_sorting_date_asc">Date oldest first</string>
+    <string name="file_picker_sorting_date_desc">Date newest first</string>
+
+    <string-array name="file_picker_sorting_array">
+        <item>@string/file_picker_sorting_alphabet_asc</item>
+        <item>@string/file_picker_sorting_alphabet_desc</item>
+        <item>@string/file_picker_sorting_date_asc</item>
+        <item>@string/file_picker_sorting_date_desc</item>
+    </string-array>
+
+    <string name="file_picker_selected_files">Selected files</string>
+
+    <string name="p_waiting_for_service">Starting service</string>
+    <string name="app_update_release_notes">What\'s new</string>
+    <string name="app_update_available_title">New version available</string>
+    <string name="app_update_get_now">Update now</string>
+    <string name="app_update_remind_me_later">Remind me later</string>
+    <string name="app_update_ignore_this_version_label">Ignore this version</string>
+    <string name="app_update_updated_to">PhoneX updated to revision %d</string>
+    <string name="app_update_generic_release_notes">PhoneX %1$s revision %2$d is available. Do you want to update?</string>
+
+
+    <string name="intro_pass_title">Change default password</string>
+    <string name="intro_pass_description">Please set up a new password.</string>
+    <string name="password_requirements">Requirements:\n&#8226; Min 8 characters.\n&#8226; Contains letters and numbers.</string>
+    <string name="pass_validator_short">Password is too short.</string>
+    <string name="pass_validator_confirmed_password_differs">Password and confirmed password must match.</string>
+    <string name="pass_validator_missing_number">Password has to contain at least one number.</string>
+    <string name="pass_validator_missing_letter">Password has to contain at least one letter.</string>
+
+    <string name="msg_sending_failed">Sending failed!</string>
+    <string name="some_files_were_deleted">Some of the selected files could not be found.</string>
+
+    <string name="select_file">Select file</string>
+    <string name="send_message">Send message</string>
+
+    <string name="broadcast_title">Broadcast message</string>
+    <string name="broadcast_recipients">Recipients</string>
+    <string name="broadcast_message">Message</string>
+    <string name="broadcast_note">The message will be sent to each recipient separately.</string>
+    <string name="broadcast_limit_exceeded">Maximum number of users for message broadcast is %d.</string>
+    <string name="broadcast_empty_recipients_list">Empty recipients list</string>
+    <string name="broadcast_message_is_being_sent">Message is being sent to provided recipients.</string>
+
+    <string name="option_broadcast_message">Send broadcast message</string>
+
+    <string name="msg_forward">Forward message</string>
+
+    <plurals name="clist_actionmode_selected">
+        <item quantity="one">Selected %d</item>
+        <item quantity="few">Selected %d</item>
+        <item quantity="other">Selected %d</item>
+    </plurals>
+
+    <string name="received_files">Received files</string>
+    <string name="upd_failed_internal_error">File upload failed, internal error.</string>
+    <string name="upd_failed_some_files_missing_title">Missing files</string>
+    <string name="upd_failed_some_files_missing_desc">Some files from message cannot be found on file system:\n</string>
+    <string name="upd_failed_all_files_missing">All files missing on file system, cannot forward the message.</string>
+    <string name="broadcast_files">Files</string>
+    <string name="no_files_selected">No files selected.</string>
+
+    <string name="file_deleted">Deleted.</string>
+    <string name="file_rejected">Rejected.</string>
+    <plurals name="files_preview">
+        <item quantity="one">File preview</item>
+        <item quantity="other">Files preview</item>
+    </plurals>
+    <plurals name="files_rejected">
+        <item quantity="one">File rejected</item>
+        <item quantity="other">Files rejected</item>
+    </plurals>
+    <string name="msg_delete">Delete message</string>
+    <string name="saved_username">Saved username</string>
+
+    <string name="create_trial_account">Create trial account</string>
+    <string name="create_account">Create account</string>
+    <!--it's trial but psst-->
+    <string name="sign_in">Sign in</string>
+    <string name="phonex_subtitle">Encrypted calls, messages \nand attachments.</string>
+    <string name="enter_captcha">Captcha code</string>
+    <string name="account_creation">Account creation</string>
+    <string name="second_device_detected_title">User logged out</string>
+    <string name="second_device_detected_desc">You have been logged out because someone has logged in using same credentials on a different device.</string>
+
+    <string name="pref_p2p_disable">Forbid P2P</string>
+    <string name="pref_p2p_enabled">P2P sessions are blocked in call session forcing all traffic go through relay server. Degrades call performance, protects your IP.</string>
+    <string name="pref_p2p_disabled">P2P is allowed for call. Increases call performance but reveals your IP to the callee.</string>
+    <string name="enter_username_description">Please select your username, which will serve as your unique identifier.</string>
+    <string name="your_username">Your username</string>
+    <string name="invalid_username">Username can contain only letters, numbers, dash and underscore characters and has to be 3-18 characters long.</string>
+
+    <string name="link_terms_of_use">By continuing, you agree to terms of use.</string>
+    <string name="link_terms_of_use_highlight">terms of use</string>
+    <string name="terms_of_use">Terms of use</string>
+
+    <string name="intro_new_account">New account</string>
+    <string name="intro_server" translatable="false"></string>
+    <string name="recheck_certificate">Recheck certificate</string>
+    <string name="warn_sig_detail_cat_action">Action</string>
+    <string name="warn_sig_detail_cat_cert">Detail</string>
+    <string name="intro_bcode_non_valid">Provided code is not valid.</string>
+    <string name="intro_bcode_already_used">Provided code has already been used.</string>
+    <string name="intro_bcode_error_409_expired">Provided code has expired and is no longer valid.</string>
+    <string name="intro_enter_code">Enter code</string>
+    <string name="intro_apply_code">Apply code</string>
+    <string name="intro_credentials">Credentials</string>
+    <string name="intro_code">Code</string>
+    <string name="intro_back">Back</string>
+
+    <string name="settings">Settings</string>
+    <string name="my_account">My account</string>
+    <string name="reject_confirm">Do you really want to reject this file? It will be deleted permanently.</string>
+    <string name="license_type_trial">Trial license</string>
+    <string name="license_type_full">Full license</string>
+    <string name="expires_at">Expires %s</string>
+
+    <string name="notification_license_updated">PhoneX license update</string>
+    <string name="notification_license_updated_text">%1$s, expiration %2$s</string>
+
+    <string name="old_password">Old password</string>
+    <string name="new_password">New password</string>
+    <string name="new_password_confirmation">New password confirmation</string>
+    <string name="old_password_incorrect">Old password is not correct.</string>
+    <string name="trial_message_limit_explanation">Your limit is %d messages per day.</string>
+    <string name="license_expired">Expired license</string>
+
+    <string name="get_premium_explanation"><![CDATA[Your license has expired. Purchase a new license to get access to <b>premium features</b> such as <b>secure voice calls</b>, <b>file transfer</b> and <b>unlimited messaging</b>.]]></string>
+    <string name="purchase_license">Purchase license</string>
+    <string name="licenses_types">Types of licenses:</string>
+    <string name="business_license">Business license</string>
+    <string name="business_license_desc">For secure communication with your colleagues, business partners and clients. Individual pricing provided.</string>
+    <string name="see_the_examples">See the examples</string>
+    <string name="personal_license">Personal license</string>
+    <string name="get_premium_interested">Interested? Need more information?</string>
+    <string name="get_premium_contact_support">Contact your support account.</string>
+    <string name="get_premium_contact_support_highlight">support account</string>
+    <string name="get_premium_visit_web">Order at our web site.</string>
+    <string name="get_premium_visit_web_highlight">web site</string>
+    <string name="price_individual_month">%s/month</string>
+    <string name="price_individual_year">or %s/year</string>
+
+    <string name="notification_license_expired">PhoneX license expired</string>
+    <string name="notification_license_expired_text">Purchase a new license or continue in limited mode.</string>
+
+    <string name="notification_license_expires_title">PhoneX license expiration</string>
+    <string name="notification_license_expires_week_text">Your license expires in less than a week.</string>
+    <string name="notification_license_expires_week_text_full"><![CDATA[Your license expires at <b>%s</b>. If you wish to use <b>premium features</b> (calls, file transfer, unlimited messaging) after the expiration, purchase a new license.]]></string>
+    <string name="notification_license_expires_day_text">Your license expires in less than a day.</string>
+    <string name="notification_license_expires_day_text_full"><![CDATA[Your license expires in less than a <b>day</b>. If you wish to use <b>premium features</b> (calls, file transfer, unlimited messaging) after the expiration, purchase a new license.]]></string>
+
+    <string name="dialog_license_expired_title">License expired</string>
+    <string name="dialog_license_expired_msg">Your license has expired. PhoneX is now in limited mode (%d outgoing messages per day). Receiving calls or messages is not restricted. If you wish to continue using PhoneX without limitations, please purchase a new license.</string>
+    <string name="dialog_license_expired_negative">Continue in limited mode</string>
+
+    <plurals name="day">
+        <item quantity="one">day</item>
+        <item quantity="other">days</item>
+    </plurals>
+    <plurals name="hour">
+        <item quantity="one">hour</item>
+        <item quantity="other">hours</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="one">minute</item>
+        <item quantity="other">minutes</item>
+    </plurals>
+    <string name="attach_file">Send files</string>
+    <string name="attach_picture">Send images</string>
+
+    <string-array name="attachment_array">
+        <item>@string/camera_take_picture</item>
+        <item>@string/attach_picture</item>
+        <item>@string/attach_file</item>
+    </string-array>
+
+    <!-- pairing request progress -->
+    <string name="prp_refreshing">Refreshing pairing request list</string>
+
+    <string name="processing">Processing</string>
+
+    <!--Camera-->
+    <string name="camera_take_picture">Take a picture</string>
+    <string name="camera_secure">Secure camera</string>
+    <string name="camera_photo_saved">Photo has been saved to secure storage as %s</string>
+    <string name="lbl_camera_unavailable">Camera is not available.\nPlease close applications, that may be using camera.</string>
+    <string name="lbl_camera_instance">Use front camera</string>
+    <string name="lbl_close">Close</string>
+    <string name="lbl_focus_mode">Focus mode</string>
+    <string name="lbl_resolution">Resolution</string>
+    <string name="lbl_saving">Saving</string>
+
+    <string name="filepicker_display_mode">Change display mode</string>
+
+    <!-- pairing request -->
+    <string name="pairing_requests">Contact requests</string>
+    <string name="pairing_request_accept">Add contact</string>
+    <string name="pairing_request_reject">Reject request</string>
+    <string name="pairing_request_block">Block</string>
+    <string name="pairing_request_count">Contact requests: %d</string>
+    <string name="pairing_request_notif_title">New contact request</string>
+    <string name="pairing_request_notif_text">%s wants you to add him to contact list.</string>
+    <string name="pairing_request_prompt">Contact request from %s</string>
+    <string name="no_contact_requests">No contact requests</string>
+    <string name="no_contacts">No contacts</string>
+
+    <string name="add_license_code">I have a license code</string>
+    <string name="license_code">License code</string>
+    <string translatable="false" name="send_logs">Send logs</string>
+    <string translatable="false" name="send_logs_explanation">Logs help us to solve issues faster. The sent logs do not contain any private information. The process may take up to a minute.</string>
+    <string translatable="false" name="send_logs_user_message_hint">Describe your issue here…</string>
+    <string translatable="false" name="send_logs_progress">Logs are being sent.</string>
+
+    <string name="phonex_revision">Revision %s</string>
+
+    <string name="remaining_time">Remaining time: %s</string>
+    <string name="call_out_of_minutes">Out of minutes.</string>
+    <string name="manage_license">Manage license</string>
+    <string name="unlimited">unlimited</string>
+    <string name="day_limit">%d per day</string>
+    <string name="no_packages">No packages</string>
+    <string name="limit_reached_outgoing_msgs">You have reached your outgoing messages limit. If you\'d like to send more messages, please purchase one of the applications packages available in to store.</string>
+    <string name="limit_reached_outgoing_calls">You have no more outgoing call minutes. To purchase more minutes, please check our call packages or subscriptions available in to store.</string>
+    <string name="limit_reached_outgoing_files">You have reached your outgoing files limit. If you\'d like to send more files, please purchase one of the applications packages available in to store.</string>
+    <string name="see_offer">See the offer</string>
+
+    <string name="files_limit_explanation">Your limit is %d outgoing files.</string>
+    <string name="current_state">Current state</string>
+    <string name="current_state_desc">Overview of units you have available.</string>
+    <string name="available_products">Available products</string>
+    <string name="product_detail">Product detail</string>
+    <string name="calls_limit">Calls:</string>
+    <string name="messages_limit">Messages:</string>
+    <string name="files_limit">Files:</string>
+    <string name="details">Details</string>
+    <string name="price">Price</string>
+    <string name="description">Description</string>
+    <string name="messages_daily_limit">Messages (daily limit):</string>
+    <string name="valid_until">Valid until: %s</string>
+    <string name="error_loading_purchased_products">Error while loading purchased products. Please check your internet connection or try again later please.</string>
+    <string name="no_purchased_packages">No purchased packages.</string>
+    <string name="subscriptions">Subscriptions</string>
+    <string name="subscriptions_desc">Currently activated subscriptions.</string>
+    <string name="packages">Packages</string>
+    <string name="packages_desc">Packages you have purchased.</string>
+    <string name="error_loading_available_products">Error while loading available products. Please check your internet connection or try again later please.</string>
+
+    <!--todo-->
+    <string name="single_package">Single package</string>
+    <string name="month_subscription">Month subscription</string>
+    <string name="no_purchased_license">No purchased license</string>
+    <plurals name="subscription_count_plural">
+        <item quantity="one">%d subscription</item>
+        <item quantity="other">%d subscriptions</item>
+    </plurals>
+    <plurals name="packages_count_plural">
+        <item quantity="one">%d package</item>
+        <item quantity="other">%d packages</item>
+    </plurals>
+    <string name="default_permission">Default</string>
+    <string name="product_full_license_name">PhoneX Premium</string>
+    <string name="call_error_gsm_remote">Call was terminated because remote side has an incoming cellular call.\n\nPhoneX cannot control cellular calls thus they take priority over PhoneX calls. On cellular activity PhoneX is blocked from microphone and internet connection may be innaccessible (e.g., on 3G).\n\nYou can retry the call when the remote contact is available again.</string>
+    <string name="call_error_gsm_local">Call had to be terminated because of an incoming cellular call.\n\nPhoneX cannot control cellular calls thus they take priority over PhoneX calls. On cellular activity PhoneX is blocked from microphone and internet connection may be innaccessible (e.g., on 3G).\n\nWhen you finish cellular call you can try to make PhoneX call again.</string>
+    <string name="error_purchase_generic">Unable to finish purchase operation, try again later please.</string>
+    <string name="product_purchase_success">Your purchase of \'%s\' has been successfully completed.</string>
+    <string name="files_were_not_sent">Files were not sent.</string>
+    <string name="files_were_deleted">Files were deleted.</string>
+
+    <string name="restore_error_nothing_to_restore">There are no new licenses to load.</string>
+    <string name="restore_success_with_no_change">Licenses were successfully reloaded.</string>
+    <string name="restore_new_licenses_loaded">Licenses were successfully reloaded. The number of new licenses is %d.</string>
+    <string name="restore_error_generic">Unknown error while loading licenses. Try again later please.</string>
+    <string name="restore_purchases">Restore purchases</string>
+
+    <string name="invite_friend">Invite friends</string>
+    <string name="invite_friend_header">Protect communication with your contacts and invite them to use PhoneX:</string>
+    <string name="invite_friend_text">Let\'s switch to encrypted communication using PhoneX: %s</string>
+    <string name="share">Share</string>
+    <string name="invite_to_phonex">Invite to PhoneX</string>
+    <string name="phonex_invitation">PhoneX invitation</string>
+
+
+    <string name="slide_calls_title">Secure voice calls</string>
+    <string name="slide_calls_desc">Make truly private voice calls with other PhoneX users. PhoneX uses internet connection only.</string>
+    <string name="slide_msg_title">Secure messaging and file transfers</string>
+    <string name="slide_msg_desc">All in one application.</string>
+    <string name="slide_cl_title">Private contact list</string>
+    <string name="slide_cl_desc">PhoneX contact list is separated from system\'s contact list. Add new contact by simply clicking add button and entering a username.</string>
+    <string name="slide_pin_title">PIN protection</string>
+    <string name="slide_pin_desc">Lock your application with PIN and prevent data leak in case your phone is lost or stolen.</string>
+    <string name="slide_secstorage_title">Private storage</string>
+    <string name="slide_secstorage_desc">Files you send or receive are automatically stored in encrypted storage and cannot be opened outside the application.</string>
+    <string name="get_started">Get started</string>
+    <string name="secure_communication" translatable="false">secure communication</string>
+    <string name="or_text">or</string>
+    <string name="slide_start_title">Start now</string>
+    <string name="slide_start_desc">Select username and password and create your PhoneX account, no phone number is required.</string>
+    <string name="create_new_account">Create new account</string>
+    <string name="skip_question">Would you like to skip the introduction?</string>
+    <string name="skip">Skip</string>
+    <string name="continue_button">continue</string>
+
+    <string name="link_password_reset">I forgot my password.</string>
+    <string name="password_reset">Password reset</string>
+
+    <string name="pass_reset_err_general">General error occurred during the operation. Please contact PhoneX support for your password recovery.</string>
+    <string name="pass_reset_err_no_email_or_user">No recovery email is associated with given username. For further help recovering your password, please contact PhoneX support.</string>
+    <string name="pass_reset_err_too_often">Recovery code has been sent recently. Try again later.</string>
+    <string name="pass_reset_err_verification_too_often">You have to wait 5 seconds before trying again.</string>
+    <string name="pass_reset_err_invalid_code">Recovery code you entered is not valid. Please try again or generate a new one.</string>
+    <string name="pass_reset_success">Recovery code has been sent to your email. Code is valid for next %s.</string>
+    <string name="pass_reset_desc">To reset your password, enter your username. You will receive an email with your recovery code for one-time login and password reset.</string>
+    <string name="send_recovery_code">Send recovery code</string>
+    <string name="enter_recovery_code">Enter recovery code</string>
+    <string name="apply_recovery_code">Apply code</string>
+    <string name="recovery_email">Recovery email</string>
+    <string name="recovery_email_desc">Email to send a recovery code in case of forgotten password.</string>
+    <string name="enter_recovery_email">Enter recovery email</string>
+    <string name="recovery_email_missing_warning">No recovery email is set up! In case of forgotten password, you may lose access to your account.</string>
+    <string name="recover_email_explanation">Recovery email is used in case of forgotten password. It won\'t be shared with other third parties.</string>
+    <string name="recovery_email_has_not_changed">Recovery email has not changed.</string>
+    <string name="incorrect_password">Incorrect password entered.</string>
+    <string name="invalid_email">Provided email is not valid.</string>
+    <string name="recovery_email_saved">Recovery email was successfully saved.</string>
+    <string name="missing_recovery_email">Missing recovery email</string>
+    <string name="missing_recovery_email_desc">Please fill-in your recovery email.</string>
+    <string name="bluetooth_connect_failed">System was not able to connect to any Bluetooth headset.</string>
+    <string name="application_is_being_closed">Aplikácia sa zatvára ...</string>
+</resources>

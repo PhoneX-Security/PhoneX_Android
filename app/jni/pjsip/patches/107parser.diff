@@ -1,0 +1,127 @@
+Index: pjsip/sources/pjsip/src/pjsip/sip_endpoint.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_endpoint.c	2014-11-10 23:24:06.977933240 +0100
++++ pjsip/sources/pjsip/src/pjsip/sip_endpoint.c	2014-11-10 23:24:06.977933240 +0100
+@@ -122,8 +122,8 @@
+ 				 pjsip_module *mod);
+ 
+ /* Defined in sip_parser.c */
+-void init_sip_parser(void);
+-void deinit_sip_parser(void);
++pj_status_t init_sip_parser(void);
++pj_status_t deinit_sip_parser(void);
+ 
+ /* Defined in sip_tel_uri.c */
+ pj_status_t pjsip_tel_uri_subsys_init(void);
+@@ -446,8 +446,10 @@
+     pool = pj_pool_create(pf, "pept%p", 
+ 			  PJSIP_POOL_LEN_ENDPT, PJSIP_POOL_INC_ENDPT,
+ 			  &pool_callback);
+-    if (!pool)
++    if (!pool){
++    PJ_LOG(1,(THIS_FILE, "Endpoint pool init problem"));
+ 	return PJ_ENOMEM;
++    }
+ 
+     /* Create endpoint. */
+     endpt = PJ_POOL_ZALLOC_T(pool, pjsip_endpoint);
+@@ -466,7 +468,11 @@
+ 	goto on_error;
+ 
+     /* Init parser. */
+-    init_sip_parser();
++    status = init_sip_parser();
++    if (status != PJ_SUCCESS){
++    	PJ_LOG(1,(THIS_FILE, "Parser init problem"));
++    	goto on_error;
++    }
+ 
+     /* Init tel: uri */
+     pjsip_tel_uri_subsys_init();
+@@ -623,7 +629,9 @@
+     pj_mutex_destroy(endpt->mutex);
+ 
+     /* Deinit parser */
+-    deinit_sip_parser();
++    if (deinit_sip_parser() != PJ_SUCCESS){
++    	PJ_LOG(1,(THIS_FILE, "Parser deinit problem"));
++    }
+ 
+     /* Delete module's mutex */
+     pj_rwmutex_destroy(endpt->mod_mutex);
+@@ -668,7 +676,7 @@
+      */
+ 
+     if (!pool) {
+-	PJ_LOG(4, (THIS_FILE, "Unable to create pool %s!", pool_name));
++	PJ_LOG(2, (THIS_FILE, "Unable to create pool %s!", pool_name));
+     }
+ 
+     return pool;
+Index: pjsip/sources/pjsip/src/pjsip/sip_parser.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_parser.c	2014-11-10 23:24:06.977933240 +0100
++++ pjsip/sources/pjsip/src/pjsip/sip_parser.c	2014-11-10 23:24:06.977933240 +0100
+@@ -74,7 +74,7 @@
+ } handler_rec;
+ 
+ static handler_rec handler[PJSIP_MAX_HEADER_TYPES];
+-static unsigned handler_count;
++static unsigned handler_count = 0;
+ static int parser_is_initialized;
+ 
+ /*
+@@ -87,7 +87,7 @@
+ } uri_parser_rec;
+ 
+ static uri_parser_rec uri_handler[PJSIP_MAX_URI_TYPES];
+-static unsigned uri_handler_count;
++static unsigned uri_handler_count = 0;
+ 
+ /*
+  * Global vars (also extern).
+@@ -275,6 +275,9 @@
+ static pj_status_t init_parser()
+ {
+     pj_status_t status;
++    uri_handler_count = 0;
++    handler_count = 0;
++
+ 
+     /*
+      * Syntax error exception number.
+@@ -478,17 +481,20 @@
+     return status;
+ }
+ 
+-void init_sip_parser(void)
++pj_status_t init_sip_parser(void)
+ {
++	pj_status_t st = !PJ_SUCCESS;
+     pj_enter_critical_section();
+     if (++parser_is_initialized == 1) {
+-	init_parser();
++	st = init_parser();
+     }
+     pj_leave_critical_section();
++    return st;
+ }
+ 
+-void deinit_sip_parser(void)
++pj_status_t deinit_sip_parser(void)
+ {
++	pj_status_t st = !PJ_SUCCESS;
+     pj_enter_critical_section();
+     if (--parser_is_initialized == 0) {
+ 	/* Clear header handlers */
+@@ -502,8 +508,10 @@
+ 	/* Deregister exception ID */
+ 	pj_exception_id_free(PJSIP_SYN_ERR_EXCEPTION);
+ 	PJSIP_SYN_ERR_EXCEPTION = -1;
++	st = PJ_SUCCESS;
+     }
+     pj_leave_critical_section();
++    return st;
+ }
+ 
+ /* Compare the handler record with header name, and return:

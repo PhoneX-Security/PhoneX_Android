@@ -1,0 +1,25 @@
+=== PJSIP update ===
+Current revision: 4580
+
+=== PJSIP Basics ===
+SVN repo: http://svn.pjsip.org/repos/pjproject/trunk
+Changesets: https://trac.pjsip.org/repos/changeset/4506
+
+=== How to update PJSIP ===
+cd root-of-the-project
+make update  (will remove custom all patches from jni/...)
+cd jni/pjsip/sources
+svn update -rDESIRED_REVISION
+cd root-of-the-project
+make (will apply custom patches to jni/..., build libraries, generate SWIG counterparts, ...)
+
+=== Patch management ===
+For patch management, "quilt" is used.
+It can refresh patch if something went wrong (original source was updated)
+
+How To Repair 2nd patch:
+quilt push 
+quilt push
+quilt refresh
+quilt pop
+quilt pop

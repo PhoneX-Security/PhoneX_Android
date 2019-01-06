@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="account_name">Kontonavn</string>
+<string name="account_name_desc">Display navn for denne konto</string>
+</resources>

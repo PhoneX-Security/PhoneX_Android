@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="prefs">Подешавања</string>
+<string name="prefs_connectivity">Мрежа</string>
+<string name="prefs_media">Медиј</string>
+<string name="prefs_ui">Кориснички интерфејс</string>
+<string name="prefs_security">Безбедност</string>
+<string name="transport">Транспорт</string>
+<string name="network_watchdog">Мрежа организација за праћење</string>
+<string name="network_watchdog_desc">Поново покреће сервис у случају да не буде регистрације. У секунди. 0 = онемогући</string>
+<string name="audio_quality">Квалитет звука</string>
+<string name="audio_volume">Запремина</string>
+<string name="codecs">Кодеци</string>
+<string name="echo_cancellation">Еха</string>
+<string name="echo_cancellation_desc">Активирајте еха</string>
+<string name="disable_vad">Глас Аудио детекција</string>
+<string name="disable_vad_desc">Активирање Аудио детекција</string>
+<string name="enable_noise_reduction">Смањење буке</string>
+<string name="enable_noise_reduction_desc">Ради ако еха се активира и ВебРТЦ ЕЦХО канцелар бацкенд користи</string>
+<string name="sound_mic_volume">Микро појачање</string>
+<string name="sound_speaker_volume">Звучник појачање</string>
+<string name="sound_bt_mic_volume">Блуетоотх микрофон појачање</string>
+<string name="media_quality">Медији квалитет</string>
+<string name="media_quality_desc">Квалитет медија потока (промени само ако знате шта радите)</string>
+<string name="sound_clock_rate">Сат стопа</string>
+<string name="sound_clock_rate_desc">Аудио канала фреквенција</string>
+<string name="echo_cancellation_mode">Ехо режим</string>
+<string name="echo_cancellation_mode_desc">Алгоритам за ехо</string>
+<string name="enable_focus_audio">Фокус аудио</string>
+<string name="auto">Ауто</string>
+<string name="simple">Једноставан</string>
+<string name="slow">Успорите</string>
+<string name="fast">Брзо</string>
+<string name="general_ui">Опште кориснички интерфејс</string>
+<string name="keep_awake_incall">Имајте будан док на позив</string>
+<string name="keep_awake_incall_desc">Поправке ако добијете налетима звук када искључите екран док у ВИФИ позива</string>
+<string name="log_level">Лог ниво</string>
+<string name="ringtone">Рингтоне</string>
+<string name="prevent_screen_rotation">Спречите ротацију екрана</string>
+<string name="invert_proximity_sensor">Обрни сензор растојања</string>
+<string name="normal_preferences">Нормални режим</string>
+<string name="security_messages">Поруке</string>
+<string name="messages_delete_period_desc">Колико дуго да задржи своје поруке у архиви</string>
+<string name="messages_delete_period">Поруке арцхиватион</string>
+<string name="just_session">Управо ова сесија</string>
+<string name="one_day">1 дан</string>
+<string name="three_days">3 дана</string>
+<string name="week">Недеља</string>
+<string name="month">Месец</string>
+<string name="forever">Заувек</string>
+</resources>

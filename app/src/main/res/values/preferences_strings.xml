@@ -1,0 +1,204 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="prefs">Settings</string>
+    <string name="prefs_connectivity">Connectivity</string>
+    <string name="prefs_media">Media</string>
+    <string name="prefs_ui">User interface</string>
+    <string name="prefs_security">Security</string>
+
+    <string name="transport">Transport</string>
+    <string name="network_watchdog">Network watchdog</string>
+    <string name="network_watchdog_desc">Restarts service in case of no registration. In seconds. 0=disable</string>
+
+    <!-- Media -->
+    <string name="audio_quality">Audio quality</string>
+    <string name="audio_volume">Volume</string>
+    <string name="codecs">Codecs</string>
+    <string name="echo_cancellation">Echo cancellation</string>
+    <string name="echo_cancellation_desc">Enable echo cancellation</string>
+    <string name="disable_vad">Disable voice detection</string>
+    <string name="disable_vad_desc">Disable voice audio detection</string>
+    <string name="enable_noise_reduction">Noise reduction</string>
+    <string name="enable_noise_reduction_desc">Only if echo cancellation is enabled and WebRTC mode is used.</string>
+    <string name="sound_mic_volume">Mic volume</string>
+    <string name="sound_mic_volume_desc">Set microphone volume</string>
+    <string name="sound_speaker_volume">Speaker volume</string>
+    <string name="sound_speaker_volume_desc">Set speaker volume</string>
+    <string name="sound_bt_mic_volume">Bluetooth mic volume</string>
+    <string name="sound_bt_speaker_volume">Bluetooth speaker volume</string>
+    <string name="sound_init_volume">Initial sound volume</string>
+    <string name="sound_init_volume_desc">Set the initial sound volume</string>
+    <string name="sound_auto_close_time" translatable="false">Auto close time</string>
+    <string name="sound_auto_close_time_desc" translatable="false">Number of seconds to wait for close of audio</string>
+    <string name="sound_clock_rate">Audio sampling</string>
+    <string name="sound_clock_rate_desc">Audio channel frequency</string>
+    <string name="media_quality">Media quality</string>
+    <string name="media_quality_desc">Quality of the media stream (modify only if you know what you are doing)</string>
+    <string name="echo_cancellation_mode">Echo cancellation</string>
+    <string name="echo_cancellation_mode_desc">Algorithm for echo cancellation</string>
+    <string name="use_sw_volume" translatable="false">Use software volume</string>
+    <string name="use_sw_volume_desc" translatable="false">Use software volume instead of android volume</string>
+    <string name="use_routing_api" translatable="false">Use routing API</string>
+    <string name="use_routing_api_desc" translatable="false">May fix problem with switched front and rear speaker</string>
+    <string name="use_mode_api" translatable="false">Use Mode audio API</string>
+    <string name="use_mode_api_desc" translatable="false">May fix problem with switched front and rear speaker</string>
+    <string name="use_webrtc_hack" translatable="false">Use WebRTC implementation</string>
+    <string name="use_webrtc_hack_desc" translatable="false">Alternative audio implementation</string>
+    <string name="enable_focus_audio">Focus audio</string>
+    <string name="enable_focus_audio_desc">Focus mutes music player during call</string>
+    <string name="micro_source">Mic source</string>
+    <string name="micro_source_desc">Source for microphone</string>
+    <string name="has_io_queue">IO Queue</string>
+    <string name="has_io_queue_desc">Separate Queue for input/output</string>
+    <string name="set_audio_generate_tone" translatable="false">Tone init</string>
+    <string name="set_audio_generate_tone_desc" translatable="false">Play a test tone before call</string>
+    <string name="restart_aud_on_routing_change" translatable="false">Restart stream on routing change</string>
+    <string name="restart_aud_on_routing_change_desc" translatable="false">Mandatory for Bluetooth when default sampling frequency is not 8kHz. Disabling could improve responsiveness.</string>
+    <string name="band_for_wifi" translatable="false">Band type for wifi</string>
+    <string name="band_for_3g" translatable="false">Band type for 3G</string>
+    <string name="band_for_gprs" translatable="false">Band type for GPRS</string>
+    <string name="band_for_edge" translatable="false">Band type for EDGE</string>
+    <string name="band_for_other" translatable="false">Band type for other</string>
+    <string name="codecs_band_types">Bandwidth types for codecs</string>
+    <string name="audio_implementation">Audio implementation</string>
+    <string name="audio_implementation_desc">Audio engine</string>
+    <string name="auto">Auto</string>
+    <string name="speex">Speex</string>
+    <string name="simple">Simple</string>
+    <string name="webrtc" translatable="false">WebRTC</string>
+    <string name="slow">Slow</string>
+    <string name="fast">Fast</string>
+    <string name="audio_troubleshooting">Audio problems</string>
+    <string name="audio_troubleshooting_desc">Settings for problems with audio</string>
+    <string name="media_thread_count">Media thread count</string>
+    <string name="media_thread_count_desc">Number of media threads</string>
+    <string name="setup_audio_before_init" translatable="false">Setup audio before init</string>
+    <string name="setup_audio_before_init_desc" translatable="false">Put audio in correct mode before audio stream initialization</string>
+    <string name="general_media">General</string>
+    <string name="bluetooth_on">Bluetooth On</string>
+    <string name="bluetooth_on_desc">Default bluetooth headset state</string>
+
+
+    <!-- UI -->
+    <string name="general_ui">General user interface</string>
+    <string name="advanced_ui">Advanced settings</string>
+    <string name="keep_awake_incall">Keep awake during call</string>
+    <string name="keep_awake_incall_desc">Can fix freezing during call.</string>
+    <string name="use_partial_wake_lock" translatable="false">Lock CPU</string>
+    <string name="use_partial_wake_lock_desc" translatable="false">Locks CPU by wakelock. Increases battery consumption.</string>
+    <string name="log_level">Log level</string>
+    <string name="log_level_desc">0 nothing, 5 verbose</string>
+    <string name="ringtone">Ringtone</string>
+    <string name="ringtone_desc">Default ringtone for incomming calls</string>
+    <string name="prevent_screen_rotation">Prevent screen rotation</string>
+    <string name="prevent_screen_rotation_desc">Block rotating screen. Keeps portrait rotation.</string>
+    <string name="invert_proximity_sensor">Invert proximity sensor</string>
+    <string name="invert_proximity_sensor_desc">Try if you have problems with screen during call</string>
+    <string name="log_to_file">Copy logcat to a file</string>
+    <string name="log_to_file_desc">All logs to external file</string>
+
+
+    <!-- Fast settings -->
+    <string name="codecs_availability_text">Codec list</string>
+
+    <!-- Calls settings -->
+    <!-- Settings modes -->
+    <string name="devel_preferences">Developer mode</string>
+    <string name="normal_preferences">Normal mode</string>
+
+    <!-- Generic -->
+    <!-- Contact list settings -->
+    <!-- Security -->
+    <string name="security_messages">Messages</string>
+    <string name="security_calls">Calls</string>
+
+    <string name="messages_delete_period_desc">How long to keep your messages in the archive</string>
+    <string name="messages_delete_period">Messages archivation</string>
+
+
+    <string name="just_session">Just this session</string><!--Unused-->
+    <string name="one_hour">1 hour</string>
+    <string name="six_hours">6 hours</string>
+    <string name="twelve_hours">12 hours</string>
+    <string name="one_day">1 day</string>
+    <string name="three_days">3 days</string>
+    <string name="week">Week</string>
+    <string name="month">Month</string>
+    <string name="forever">Forever</string>
+
+    <string name="sip_signature">SIP digital signature</string>
+    <string name="sip_signature_desc">Digital signature verification settings.</string>
+    <string name="sipsig_drop" translatable="false">Packet drop</string>
+    <string name="sipsig_misc" translatable="false">Miscellaneous</string>
+
+    <string name="drop_bad_invite">Drop bad INVITE</string>
+    <string name="drop_bad_invite_desc">Ignore INVITE (start call) message with invalid signature.</string>
+    <string name="drop_bad_bye">Drop bad BYE</string>
+    <string name="drop_bad_bye_desc">Ignore BYE (end call) message with invalid signature.</string>
+    <string name="show_sipsig_warnings" translatable="false">Show warnings</string>
+    <string name="security_reports">Error reporting</string>
+    <string name="pref_disable_acra">Disable error reporting</string>
+    <string name="pref_acra_disabled">Error reporting is disabled</string>
+    <string name="pref_acra_enabled">Error reporting is enabled</string>
+    <string name="pref_acra_syslog">Allow syslog</string>
+    <string name="pref_acra_syslog_enabled">System log will be attached to an error report</string>
+    <string name="pref_acra_syslog_disabled">System log is not allowed to be attached to an error report. Please, reconsider this option, it may help developers solving your issues.</string>
+    <string name="pref_acra_deviceid">Allow device id</string>
+    <string name="pref_acra_deviceid_enabled">Device identification will be attached to an error report</string>
+    <string name="pref_acra_deviceid_disabled">Device identification is not allowed to be attached to an error report. Please, reconsider this option, it may help developers solving your issues.</string>
+
+    <string name="category_debug">Debugging</string>
+    <string name="use_devel_data_server" translatable="false">Use devel server</string>
+    <string name="use_devel_data_server_desc" translatable="false">Connect to developer data server instead of production one. Only for beta testers.</string>
+
+    <string name="pref_updates_section">Updates</string>
+    <string name="pref_updates">Allow PhoneX updates</string>
+    <string name="pref_updates_enabled">PhoneX updates using PhoneX servers are allowed. This option requires having Installation from unknown sources allowed in your Android.</string>
+    <string name="pref_updates_disabled">PhoneX updates are disabled.</string>
+
+    <string name="pref_misc_section">Misc</string>
+    <string name="pref_misc_screenshot">Block screenshots</string>
+    <string name="pref_misc_screenshot_enabled">Screenshot attempts are blocked.</string>
+    <string name="pref_misc_screenshot_disabled">Screenshots of PhoneX application is allowed.</string>
+
+    <string name="pref_incall">Enable "In call" status</string>
+    <string name="pref_incall_enabled">"In call" status will be set during active call. Privacy warning: Other users can discover when you are on call.</string>
+    <string name="pref_incall_disabled">"In call" status is disabled.</string>
+
+    <string name="restart_stack">Restart application</string>
+    <string name="restart_stack_desc">Restarts application engine. Use if you feel application has some problems, e.g., to register.</string>
+    <string name="restart_stack_toast">Application is being restarted.</string>
+
+    <string name="contactlist_sort_online">Online contacts first</string>
+    <string name="contactlist_sort_online_desc">Online contacts will be at the top of the contact list.</string>
+
+    <string name="alert_new_message_during_chat">Alert new message</string>
+    <string name="alert_new_message_during_chat_desc">Notifies about a new message from the user you are chatting with at the moment (chat window is opened with the contact).</string>
+
+    <string name="pin_lock">PIN lock</string>
+    <string name="pin_lock_desc">Screen locking with PIN code</string>
+    <string name="pin_enable">Enable screen locking</string>
+    <string name="pin_change">Change PIN</string>
+    <string name="pin_reset">PIN reset</string>
+    <string name="pin_reset_desc">In case of forgotten PIN, pick up a new one.</string>
+    <string name="pin_reset_enter_pass">Enter your password</string>
+    <string name="pin_reset_wrong_pass">Incorrect password</string>
+
+    <string name="contactlist_show_username_desc">Show usernames along aliases in contact list.</string>
+    <string name="contactlist_show_username">Show usernames</string>
+
+    <string name="pref_google_analytics">Enable Google Analytics</string>
+    <string name="pref_google_analytics_enabled">Google Analytics anonymous logging is enabled.</string>
+    <string name="pref_google_analytics_disabled">Google Analytics anonymous logging is disabled.</string>
+
+    <!-- File transfer and photo resizing options-->
+    <string name="category_file_transfer">File transfer</string>
+
+    <string name="ft_resize">Resize images before upload</string>
+    <string name="ft_resize_disable">Do not resize images</string>
+    <string name="ft_resize_pixels_640">Scale down to 640 pixels</string>
+    <string name="ft_resize_pixels_800">Scale down to 800 pixels</string>
+    <string name="ft_resize_pixels_1024">Scale down to 1024 pixels</string>
+    <string name="ft_resize_pixels_1280">Scale down to 1280 pixels</string>
+
+</resources>

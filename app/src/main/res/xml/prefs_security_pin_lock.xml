@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="pinlock.enable"
+        android:title="@string/pin_enable" />
+
+    <ListPreference
+        android:defaultValue="-1"
+        android:entries="@array/pinlock_timer_choices"
+        android:entryValues="@array/pinlock_timer_values"
+        android:key="pinlock.timer"
+        android:title="@string/pin_timer" />
+
+    <Preference
+        android:title="@string/pin_change"
+        android:key="pinlock.change_pin">
+        <intent
+            android:targetPackage="net.phonex"
+            android:targetClass="net.phonex.ui.lock.PinActivity"
+            android:launchMode="singleTop"
+            android:action="android.intent.action.EDIT"/>
+    </Preference>
+
+    <net.phonex.ui.preferences.PinResetPreference
+        android:title="@string/pin_reset"
+        android:summary="@string/pin_reset_desc"
+        android:key="pinlock.reset_pin"
+        android:dialogTitle="@string/pin_reset"/>
+
+</PreferenceScreen>

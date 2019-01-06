@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="answer_call">जवाब</string>
+<string name="end_call">अंत</string>
+<string name="speaker">वक्ता</string>
+<string name="mute">म्यूट करें</string>
+<string name="call_state_calling">कॉलिंग ...</string>
+<string name="call_state_disconnected">रख दिया</string>
+<string name="call_state_incoming">इनकमिंग कॉल ...</string>
+<string name="hold_call">पकड़</string>
+<string name="on_hold">पकड़ो पर</string>
+<string name="transport_secure_to_server">टीएलएस परिवहन तत्काल हॉप के लिए प्रयोग किया जाता है</string>
+<string name="transport_secure_full">अंत करने के लिए अंत संकेतन सुरक्षित माना जाता है</string>
+</resources>

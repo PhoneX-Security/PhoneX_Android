@@ -1,0 +1,182 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/phonex_background"
+    tools:context="net.phonex.ui.intro.CreateAccountFragment">
+
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/my_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/phonex_color_primary"
+        />
+
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/my_toolbar"
+        >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:animateLayoutChanges="true"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/enter_username_description"
+                />
+
+            <EditText
+                android:id="@+id/username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/your_username"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                style="@style/edit_text_flat"
+                android:imeOptions="actionGo" />
+
+            <CheckBox
+                android:id="@+id/add_license_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/add_license_code" />
+
+            <EditText
+                android:id="@+id/license_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/license_code"
+                android:visibility="gone"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                style="@style/edit_text_flat"
+                android:imeOptions="actionGo" />
+
+            <!--&lt;!&ndash;Separator&ndash;&gt;-->
+            <!--<View android:id="@+id/separator"-->
+                <!--android:background="#4Dffffff"-->
+                <!--android:layout_width = "fill_parent"-->
+                <!--android:layout_marginTop="4dp"-->
+                <!--android:layout_marginBottom="4dp"-->
+                <!--android:layout_height="1dip"-->
+                <!--android:layout_centerVertical ="true"-->
+                <!--android:layout_alignParentTop="true"/>-->
+
+            <!--Second part-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:textSize="16sp"
+                android:visibility="gone"
+                android:fontFamily="sans-serif-light"
+                android:text="@string/trial_security_check_desc"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:minWidth="220dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/captchaFrame">
+
+                    <ImageView
+                        android:id="@+id/webCaptcha"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_height="wrap_content"/>
+
+                    <LinearLayout
+                        android:id="@+id/loading_progress"
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:gravity="center">
+
+                        <ProgressBar
+                            android:id="@+id/progress"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:gravity="center">
+                        </ProgressBar>
+                    </LinearLayout>
+
+                </FrameLayout>
+
+                <ImageButton
+                    android:id="@+id/resetButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_menu_refresh"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_gravity="center_vertical|right"
+                    />
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/captchaText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_captcha"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:inputType="textNoSuggestions"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+
+                style="@style/edit_text_flat"
+                android:imeOptions="actionGo" />
+
+
+            <Button
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:id="@+id/submitButton"
+                android:layout_width="match_parent"
+                android:text="@string/create_account"
+                android:textColor="@color/phonex_white"
+
+                style="@style/button_flat_orange" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

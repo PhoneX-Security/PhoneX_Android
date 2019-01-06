@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="crash_dialog_title">PhoneX has crashed</string>
+    <string name="crash_dialog_text">An unexpected error occurred forcing the application to stop. Please help us fix this faster, by sending us error data.</string>
+    <string name="crash_dialog_comment_prompt">Please add your comments about the issue below, to help us narrow the problem down:</string>
+    <string name="crash_dialog_ok_toast">Thank you!</string>
+    <string name="crash_dialog_positive_button">Send report</string>
+</resources>

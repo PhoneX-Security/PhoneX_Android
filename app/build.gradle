@@ -1,0 +1,204 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.trello.victor'
+apply plugin: 'me.tatarka.retrolambda'
+apply plugin: 'com.google.gms.google-services'
+apply from: 'user.gradle'
+
+victor {
+    // Any assets defined in relative terms needs a base DPI specified
+    svgDpi = 160
+
+    // Do not generate these densities for SVG assets
+    excludeDensities = ['ldpi', 'mdpi', 'xxxhdpi']
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion '23.0.2'
+
+    defaultConfig {
+        applicationId "net.phonex"
+        minSdkVersion 14
+        targetSdkVersion 22
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        // Multi-dex is required (we are over 65k methods even with ProGuard)
+        multiDexEnabled true
+    }
+
+    /**
+     * Required for SSLSOAP.java imports from 'org.apache.http.conn.scheme'
+     * Apache HTTP client was removed from API 23+
+     * https://developer.android.com/about/versions/marshmallow/android-6.0-changes.html#behavior-apache-http-client
+     */
+    useLibrary 'org.apache.http.legacy'
+
+    sourceSets {
+        main {
+            // mapping from standard gradle directory structure to ours:
+            // src/main/jniLibs/->  libs/ -- where jni libraries are compiled
+            // src/main/libs/   ->  something_non_existing/
+            jniLibs.srcDirs = ['libs']
+            // we need this so gradle doesn't find libs directory so it won't run ndk-build
+            // instead of ndk-build-ing from gradle, we run makefile
+            jni.srcDirs = ['non_existing']
+
+            // trello/victor svg
+            svg.srcDir 'svg'
+        }
+    }
+
+    if (project.hasProperty("sign.properties") && new File(project.property("sign.properties")).exists()) {
+        Properties props = new Properties()
+        props.load(new FileInputStream(new File(project.property("sign.properties"))))
+
+        signingConfigs {
+            debug {
+                storeFile file('../' + props['keystore'])
+                storePassword props['keystore.password']
+                keyAlias props['keystore.keyalias']
+                keyPassword props['keystore.keypass']
+            }
+
+            release {
+                storeFile file('../' + props['keystore'])
+                storePassword props['keystore.password']
+                keyAlias props['keystore.keyalias']
+                keyPassword props['keystore.keypass']
+            }
+        }
+    } else {
+        throw new GradleException('Cannot find signing files')
+    }
+
+//    productFlavors {
+//        basic {
+//            multiDexEnabled false
+//
+//        }
+//        multidex {
+//            // dev utilizes minSDKVersion = 21 to allow the Android gradle plugin
+//            // to pre-dex each module and produce an APK that can be tested on
+//            // Android Lollipop without time consuming dex merging processes.
+//            minSdkVersion 21
+//            multiDexEnabled true
+//        }
+//    }
+
+    buildTypes {
+        debug {
+            // disabled (doesn't work with tests at the moment)
+            minifyEnabled true
+            proguardFiles 'proguard.cfg', 'proguard_debug.cfg'
+            testProguardFiles 'proguard.cfg', 'proguard_debug.cfg'
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            proguardFiles 'proguard.cfg', 'proguard_release.cfg'
+            testProguardFiles 'proguard.cfg', 'proguard_release.cfg'
+            signingConfig signingConfigs.release
+        }
+    }
+
+    lintOptions {
+        disable 'InvalidPackage' // because of butterknife
+
+        // if true, only report errors
+        ignoreWarnings false
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+    }
+    dexOptions {
+        // Java out of memory exceptions
+        javaMaxHeapSize "2g"
+        incremental true
+    }
+}
+
+dependencies {
+    compile project(':tokenautocomplete')
+    compile project(':ksoap2')
+    compile project(':material-dialogs')
+    compile project(':common')
+    compile project(':soap')
+    compile files('libs/commons-lang3-3.4.jar')
+    compile project(':viewbadger')
+
+    compile 'com.google.protobuf:protobuf-java:2.6.0'
+
+    compile 'com.android.support:support-v4:23.1.1'
+    compile 'com.android.support:support-v13:23.1.1'
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile 'com.android.support:design:23.1.1'
+    compile 'com.android.support:multidex:1.0.1'
+
+    compile 'com.google.android.gms:play-services-analytics:8.4.0'
+    compile 'com.google.android.gms:play-services-gcm:8.4.0'
+
+    compile 'com.github.bumptech.glide:glide:3.6.1'
+    compile 'com.android.support:recyclerview-v7:23.1.1'
+    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'it.sephiroth.android.library.imagezoom:imagezoom:2.2.2'
+
+    /*
+    Problem: library is not compatible with API 23+ and PR fixing that was not merged yet,
+    so I copied the library in the local module (viewpagerindicator) and applied PR myself
+    -- compile 'fr.avianey.com.viewpagerindicator:library:2.4.1@aar'
+
+    The same problem with glowbackport
+    widget to pick-up a call
+    --  compile 'net.frakbot.glowpadbackport:glowpadbackport:2.1.0'
+    TODO: once fixed on the GitHub, include as a dependency here
+    */
+
+    compile files('libs/scmail-jdk15on-1.47.0.3-SNAPSHOT.jar')
+    compile files('libs/scpkix-jdk15on-1.47.0.3-SNAPSHOT.jar')
+    compile files('libs/commons-codec.jar')
+    compile files('libs/sc-light-jdk15on-1.47.0.3-SNAPSHOT.jar')
+    compile files('libs/sc-bzip2-1.47.0.3-SNAPSHOT.jar')
+    compile files('libs/scprov-jdk15on-1.47.0.3-SNAPSHOT.jar')
+    compile files('libs/additionnal.jar')
+    compile files('libs/org.xbill.dns_2.1.6.jar')
+    compile files('libs/scpg-jdk15on-1.47.0.3-SNAPSHOT.jar')
+    compile files('libs/sqlcipher.jar')
+    compile files('libs/mail.jar')
+    compile files('libs/asmack-android-8-4.1.0-alpha1-SNAPSHOT-2014-06-26.jar')
+    compile files('libs/activation.jar')
+
+    /* Test dependencies */
+    // Force usage of support annotations in the test app, since it is internally used by the runner module.
+    // http://stackoverflow.com/questions/33317555/conflict-with-dependency-com-android-supportsupport-annotations-resolved-ver
+    androidTestCompile 'com.android.support:support-annotations:23.1.1'
+    androidTestCompile 'com.android.support.test:runner:0.4'
+    androidTestCompile 'com.android.support.test:rules:0.4'
+    androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.1'
+    //    androidTestCompile 'com.android.support.test.uiautomator:uiautomator-v18:2.1.2'
+    compile project(':viewpagerindicator')
+    compile project(':glowpadbackport')
+}
+
+task applyQuiltPatches(type: Exec) {
+    //on linux
+    commandLine 'quilt', 'push', '-a'
+}
+
+task execMake(type: Exec) {
+    //on linux
+    commandLine 'make'
+}
+
+// Does not work in new gradle, dont know why. For now, doing manually...
+//assembleRelease.dependsOn applyQuiltPatches, execMake

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="menu_delete_all">Apagar discussões</string>
+    <string name="menu_delete">Apagar discussão</string>
+    <string name="menu_view">Ver discussão</string>
+    <string name="undelivered_msg_dialog_title">Mensagem não entregue</string>
+    <string name="copy_message_text">Copiar texto da mensagem</string>
+    <string name="done">Concluído</string>
+    <string name="compose_title">Compor</string>
+    <string name="send">Enviar</string>
+    <string name="type_to_compose_text_enter_to_send">Escreva para compor</string>
+    <string name="yes">Aceitar</string>
+    <string name="no">Cancelar</string>
+    <string name="edit">Editar</string>
+    <string name="restore_default">Restaurar as configurações padrão</string>
+    <string name="confirm_dialog_title">Apagar</string>
+    <string name="confirm_delete_conversation">A discussão inteira será apagada.</string>
+    <string name="confirm_delete_all_conversations">Todas as discussões serão apagadas.</string>
+    <string name="delete">Apagar</string>
+    <string name="status_pending">Pendente</string>
+    <string name="status_failed">Sem êxito</string>
+    </resources>

@@ -1,0 +1,1 @@
+include ':app', ':tokenautocomplete', ':material-dialogs', ':ksoap2', ':soap', ':common', ':viewbadger', ':viewpagerindicator', ':glowpadbackport'

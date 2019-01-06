@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="prefs">Ρυθμίσεις</string>
+<string name="prefs_connectivity">Δίκτυο</string>
+<string name="prefs_media">Μέσα ενημέρωσης</string>
+<string name="prefs_ui">Διεπαφή χρήστη</string>
+<string name="prefs_security">Ασφάλεια</string>
+<string name="transport">Μεταφορές</string>
+<string name="network_watchdog">Φύλακα Δίκτυο</string>
+<string name="network_watchdog_desc">Επανεκκίνηση της υπηρεσίας σε περίπτωση μη εγγραφής. Μέσα σε λίγα δευτερόλεπτα. 0 = απενεργοποίηση</string>
+<string name="audio_quality">Η ποιότητα του ήχου</string>
+<string name="audio_volume">Όγκος</string>
+<string name="codecs">Κωδικοποιητές</string>
+<string name="echo_cancellation">Echo ακύρωσης</string>
+<string name="echo_cancellation_desc">Ενεργοποίηση ακύρωση ηχούς</string>
+<string name="disable_vad">Voice ήχου ανίχνευση</string>
+<string name="disable_vad_desc">Ενεργοποίηση φωνής ήχου ανίχνευση</string>
+<string name="enable_noise_reduction">Μείωση του θορύβου</string>
+<string name="enable_noise_reduction_desc">Έργα αν η ακύρωση ηχούς ενεργοποιείται και WebRTC ακυρώνει την ηχώ backend χρησιμοποιείται</string>
+<string name="sound_mic_volume">Micro ενίσχυση</string>
+<string name="sound_speaker_volume">Ενίσχυση ηχείων</string>
+<string name="sound_bt_mic_volume">Bluetooth ενίσχυση mic</string>
+<string name="media_quality">Media ποιότητας</string>
+<string name="media_quality_desc">Ποιότητα της ροής των μέσων ενημέρωσης (τροποποιήσει μόνο αν ξέρετε τι κάνετε)</string>
+<string name="sound_clock_rate">Ρυθμό του ρολογιού</string>
+<string name="sound_clock_rate_desc">Ήχος συχνότητα καναλιού</string>
+<string name="echo_cancellation_mode">Echo λειτουργία</string>
+<string name="echo_cancellation_mode_desc">Αλγόριθμος για echo</string>
+<string name="enable_focus_audio">Εστίαση ήχου</string>
+<string name="auto">Auto</string>
+<string name="simple">Απλός</string>
+<string name="slow">Αργά</string>
+<string name="fast">Γρήγορα</string>
+<string name="general_ui">Γενική διεπαφή χρήστη</string>
+<string name="keep_awake_incall">Κρατήσει ξύπνιο, ενώ για την πρόσκληση</string>
+<string name="keep_awake_incall_desc">Διορθώσεις αν έχετε ασταθής ήχο όταν η οθόνη σβήσει, ενώ στην κλήση WIFI</string>
+<string name="log_level">Σύνδεση επίπεδο</string>
+<string name="ringtone">Ringtone</string>
+<string name="prevent_screen_rotation">Αποτροπή περιστροφή της οθόνης</string>
+<string name="invert_proximity_sensor">Αντιστροφή αισθητήρα εγγύτητας</string>
+<string name="normal_preferences">Κανονική λειτουργία</string>
+<string name="security_messages">Μηνύματα</string>
+<string name="messages_delete_period_desc">Πόσο καιρό για να κρατήσει τα μηνύματά σας στο αρχείο</string>
+<string name="messages_delete_period">Μηνύματα archivation</string>
+<string name="just_session">Ακριβώς αυτή τη σύνοδο</string>
+<string name="one_day">1 ημέρα</string>
+<string name="three_days">3 ημέρες</string>
+<string name="week">Εβδομάδα</string>
+<string name="month">Μήνας</string>
+<string name="forever">Για πάντα</string>
+</resources>

@@ -1,0 +1,210 @@
+Index: pjsip/sources/pjsip/include/pjsua-lib/pjsua.h
+===================================================================
+--- pjsip.orig/sources/pjsip/include/pjsua-lib/pjsua.h
++++ pjsip/sources/pjsip/include/pjsua-lib/pjsua.h
+@@ -4594,6 +4594,20 @@ PJ_DECL(pj_status_t) pjsua_call_answer2(
+ 				        const pj_str_t *reason,
+ 				        const pjsua_msg_data *msg_data);
+ 
++/**
++ * Forcefuly terminates call - should be used carefully and only after calling pjsua_call_hangup.
++ * This is workaround for waiting on call hangup, waiting on BYE transaction to timeout
++ * in case the remote party is disconnected. This waiting can be long, so this could forcefully
++ * terminate call.
++ * 
++ * @param call_id   Call identification.
++ * @param code      Optional status code to be sent when we're rejecting
++ *          incoming call. If the value is zero, "603/Decline"
++ *          will be sent.
++ *  
++ * EXPERIMENTAL
++ */
++PJ_DECL(pj_status_t) pjsua_call_terminate(pjsua_call_id call_id, unsigned code);
+ 
+ /**
+  * Hangup call by using method that is appropriate according to the
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_call.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_call.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_call.c
+@@ -2259,6 +2259,92 @@ on_return:
+     return status;
+ }
+ 
++/*
++ * EXPERIMENTAL!
++ *
++ * Forcefuly terminates call - should be used carefully and only after calling pjsua_call_hangup.
++ * This is workaround for waiting on call hangup, waiting on BYE transaction to timeout
++ * in case the remote party is disconnected. This waiting can be long, so this could forcefully
++ * terminate call.
++ */
++PJ_DEF(pj_status_t) pjsua_call_terminate(pjsua_call_id call_id, unsigned code){
++	pjsua_call *call;
++	pjsip_dialog *dlg = NULL;
++	pj_status_t status;
++	pjsip_tx_data *tdata;
++
++	if (call_id<0 || call_id>=(int)pjsua_var.ua_cfg.max_calls) {
++		PJ_LOG(1,(THIS_FILE, "pjsua_call_terminate(): invalid call id %d", call_id));
++	}
++
++	PJ_ASSERT_RETURN(call_id>=0 && call_id<(int)pjsua_var.ua_cfg.max_calls, PJ_EINVAL);
++
++	PJ_LOG(4,(THIS_FILE, "Call %d TERMINATING: code=%d..", call_id, code));
++	pj_log_push_indent();
++
++	status = acquire_call("pjsua_call_hangup()", call_id, &call, &dlg);
++	if (status != PJ_SUCCESS)
++	goto on_return;
++
++	/* If media transport creation is not yet completed, we will hangup
++	 * the call in the media transport creation callback instead.
++	 * The same as in call_hangup()
++	 */
++	if (call->med_ch_cb && !call->inv) {
++		PJ_LOG(4,(THIS_FILE, "Pending call %d hangup upon completion "
++							 "of media transport", call_id));
++		call->async_call.call_var.out_call.hangup = PJ_TRUE;
++		if (code == 0)
++			call->last_code = PJSIP_SC_REQUEST_TERMINATED;
++		else
++			call->last_code = (pjsip_status_code)code;
++		goto on_return;
++	}
++
++	if (code==0) {
++	if (call->inv->state == PJSIP_INV_STATE_CONFIRMED){
++		if (call->inv->role == PJSIP_ROLE_UAC){
++			code = PJSIP_SC_CALL_TSX_DOES_NOT_EXIST;
++		} else {
++			code = PJSIP_SC_CALL_TSX_DOES_NOT_EXIST;
++	}} else if (call->inv->role == PJSIP_ROLE_UAS){
++		code = PJSIP_SC_DECLINE;
++	} else {
++		code = PJSIP_SC_REQUEST_TERMINATED;
++	}}
++
++	// In hangup we do (according to RFC):
++	// pjsip_inv_end_session()  - create INVITE session BYE request
++	// pjsip_inv_send_msg()     - sends BYE reuest by
++	//    pjsip_dlg_send_request()  - new transaction is created by dialog framework for BYE request
++	//    state change of BYE transaction is reported to UA, finally to mod_inv_on_tsx_state --> disconnected state
++	//
++	// BUT here (not acc. to RFC!) we don't wait for transaction to finish, we just forcefully terminate all transactions
++	// and pending call. Then we should get notified by terminating transaction what should lead to call termination. Right?
++	/* Stop reinvite timer, if it is active */
++	if (call->reinv_timer.id) {
++		PJ_LOG(4,(THIS_FILE, "call_terminate(); reinv_timer.id; callid=%d..", call_id));
++		pjsua_cancel_timer(&call->reinv_timer);
++		call->reinv_timer.id = PJ_FALSE;
++	}
++
++	// terminate INV
++	PJ_LOG(4,(THIS_FILE, "call_terminate(); going to call terminate; callid=%d..", call_id));
++        
++        // Call terminate with notify = true so "pjsua_call_on_state_changed"
++        // is called as a callbeck to transaction change event, so call is 
++        // properly cleaned.
++	pjsip_inv_terminate(call->inv, code, PJ_TRUE);
++
++	call->med_ch_cb = NULL;
++	pjsua_check_snd_dev_idle();
++
++on_return:
++	PJ_LOG(4,(THIS_FILE, "call_terminate() on_return; callid=%d..", call_id));
++	if (dlg) pjsip_dlg_dec_lock(dlg);
++	pj_log_pop_indent();
++	return status;
++}
+ 
+ /*
+  * Hangup call by using method that is appropriate according to the
+@@ -3626,7 +3712,7 @@ static void pjsua_call_on_state_changed(
+     /* If this is an outgoing INVITE that was created because of
+      * REFER/transfer, send NOTIFY to transferer.
+      */
+-    if (call->xfer_sub && e->type==PJSIP_EVENT_TSX_STATE)  {
++    if (call->xfer_sub && e!=NULL && e->type==PJSIP_EVENT_TSX_STATE)  {
+ 	int st_code = -1;
+ 	pjsip_evsub_state ev_state = PJSIP_EVSUB_STATE_ACTIVE;
+ 
+@@ -3690,7 +3776,7 @@ static void pjsua_call_on_state_changed(
+     }
+ 
+     /* Ticket #1627: Invoke on_call_tsx_state() when call is disconnected. */
+-    if (inv->state == PJSIP_INV_STATE_DISCONNECTED &&
++    if (inv->state == PJSIP_INV_STATE_DISCONNECTED && e!=NULL &&
+ 	e->type == PJSIP_EVENT_TSX_STATE &&
+ 	call->inv &&
+ 	pjsua_var.ua_cfg.cb.on_call_tsx_state)
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_aud.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_aud.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_aud.c
+@@ -382,13 +382,20 @@ void pjsua_check_snd_dev_idle()
+ {
+     unsigned call_cnt;
+ 
++    PJ_LOG(3,(THIS_FILE,"pjsua_check_snd_dev_idle"));
+     /* Check if the sound device auto-close feature is disabled. */
+     if (pjsua_var.media_cfg.snd_auto_close_time < 0)
++    {
++    	PJ_LOG(3,(THIS_FILE,"pjsua_check_snd_dev_idle, <0"));
+ 	return;
++    }
+ 
+     /* Check if the sound device is currently closed. */
+     if (!pjsua_var.snd_is_on)
++    {
++    	PJ_LOG(3,(THIS_FILE,"pjsua_check_snd_dev_idle, snd_is_on=false"));
+ 	return;
++    }
+ 
+     /* Get the call count, we shouldn't close the sound device when there is
+      * any calls active.
+@@ -417,18 +424,25 @@ void pjsua_check_snd_dev_idle()
+      * It is idle when there is no port connection in the bridge and
+      * there is no active call.
+      */
++    PJ_LOG(3,(THIS_FILE,"pjsua_check_snd_dev_idle, (pjsua_var.snd_idle_timer.id == PJ_FALSE)=%d; call_cnt=%d",
++    		pjsua_var.snd_idle_timer.id == PJ_FALSE,
++    		call_cnt
++    		));
+     if (pjsua_var.snd_idle_timer.id == PJ_FALSE &&
+ 	call_cnt == 0 &&
+ 	pjmedia_conf_get_connect_count(pjsua_var.mconf) == 0)
+     {
++    	 PJ_LOG(3,(THIS_FILE,"setting close timer; timerid=%d id=%d", pjsua_var.snd_idle_timer._timer_id, pjsua_var.snd_idle_timer.id));
+ 	pj_time_val delay;
+ 
+ 	delay.msec = 0;
+ 	delay.sec = pjsua_var.media_cfg.snd_auto_close_time;
+ 
+ 	pjsua_var.snd_idle_timer.id = PJ_TRUE;
+-	pjsip_endpt_schedule_timer(pjsua_var.endpt, &pjsua_var.snd_idle_timer,
++	pj_status_t timerAdd = pjsip_endpt_schedule_timer(pjsua_var.endpt, &pjsua_var.snd_idle_timer,
+ 				   &delay);
++	PJ_LOG(3,(THIS_FILE,"setting close timer; timerid=%d id=%d; status=%d", pjsua_var.snd_idle_timer._timer_id, pjsua_var.snd_idle_timer.id, timerAdd ));
++	//pjsip_endpt_dump(pjsua_var.endpt, 1);
+     }
+ }
+ 
+Index: pjsip/sources/pjsip/src/pjsip-ua/sip_inv.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip-ua/sip_inv.c
++++ pjsip/sources/pjsip/src/pjsip-ua/sip_inv.c
+@@ -1581,7 +1581,12 @@ PJ_DEF(pj_status_t) pjsip_inv_terminate(
+     if (inv->state != PJSIP_INV_STATE_DISCONNECTED) {
+ 	pjsip_event usr_event;
+ 
+-	PJSIP_EVENT_INIT_USER(usr_event, NULL, NULL, NULL, NULL);
++        if (inv->invite_tsx != NULL){
++             PJSIP_EVENT_INIT_TSX_STATE(usr_event, inv->invite_tsx, PJSIP_EVENT_TSX_STATE, NULL, inv->state);
++        } else {
++             PJSIP_EVENT_INIT_USER(usr_event, NULL, NULL, NULL, NULL);
++        }
++
+ 	inv_set_state(inv, PJSIP_INV_STATE_DISCONNECTED, &usr_event);
+     }
+ 

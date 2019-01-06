@@ -1,0 +1,79 @@
+// Key for the user encoded in the MsgkeyPart.
+message UserKey {
+  // KeySlot number, if null, there is no key slot and
+  // encryption key is directly usable.
+  optional uint32 keySlotId = 1;
+
+  // Encryption key.
+  optional bytes key = 2;
+
+  // MAC key
+  optional bytes macKey = 3;
+}
+
+// Key part of the text message.
+message MsgKeyPart {
+  // Message version
+  optional uint32 version   = 1 [default=1];
+
+  // Types of the key information.
+  enum KeyType {
+    PUBENC = 0;
+    DHKEY = 1;
+  }
+
+  // Type of the encryption message
+  optional KeyType type      = 2 [default=PUBENC];
+
+  // Destination user
+  optional string destUser  = 3;
+
+  // Simplest time of the key block - hybrid encryption.
+  //
+  required bytes aCiphertext  = 10;
+  optional bytes sIv          = 11;
+  optional bytes sCiphertext  = 12;
+
+  // MAC of the ciphertext, optional.
+  // Each user has its own ciphertext MAC.
+  optional bytes mac = 20;
+}
+
+// Key slot encrypting (usually shared) encryption key for ciphertext.
+// Standardized encryption if this: AES-256-GCM.
+message KeySlot {
+  // Types of the key information.
+  enum KeySlotEncryption {
+    AES256CBC = 0;
+    AES256CBCMAC = 1;
+    AES256GCM = 2;
+  }
+
+  // Type of the encryption.
+  optional KeySlotEncryption encType = 1 [default=AES256GCM];
+
+  // Initialization vector for encryption of the encryption key (OPTIONAL).
+  optional bytes iv=2;
+
+  // Encrypted key.
+  optional bytes encKey = 3;
+
+  // additional mac (OPTIONAL).
+  optional bytes mac = 4;
+}
+
+message EncryptedMessage {
+  // Protocol version.
+  optional uint32 version = 1 [default=1];
+
+  // Encryption keys
+  repeated MsgKeyPart keys=2;
+
+  // Key slots (optional)
+  repeated KeySlot keySlots=3;  // List of enclosed files in the archive.
+
+  required bytes aCiphertext  = 10;
+  optional bytes sIv          = 11;
+  optional bytes sCiphertext  = 12;
+}
+

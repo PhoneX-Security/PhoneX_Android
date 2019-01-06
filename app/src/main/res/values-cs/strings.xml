@@ -1,0 +1,762 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="registered">Registrován</string>
+    <string name="unregistered">Neregistrován</string>
+    <string name="connection_not_valid">Síťové připojení nelze použít.</string>
+    <string name="invalid_sip_uri">Není možné uskutečnit hovor na daný kontakt. Kontakt je neplatný.</string>
+    <string name="save">Uložit</string>
+    <string name="cancel">Zrušit</string>
+    <string name="delete_account">Odstranit účet</string>
+    <string name="add_account">Přidat kontakt</string>
+    <string name="call">Volat</string>
+    <string name="message_notification">Nová zpráva</string>
+    <string name="ongoing_call">Probíhá hovor</string>
+    <string name="missed_call">Zmeškaný hovor</string>
+    <string name="messages_tab_name_text">Zprávy</string>
+    <string name="notifications_tab_name_text">Notifikace</string>
+    <string name="menu_disconnect">Odpojit</string>
+    <string name="service_notification_registered">PhoneX registrován</string>
+    <string name="service_notification_unregistered">PhoneX neregistrován</string>
+    <string name="faq">Často kladené dotazy</string>
+    <string name="help">Nápověda</string>
+    <string name="ok">OK</string>
+    <string name="logout">Odhlásit</string>
+    <string name="quit_info">Po odhlášení nebudete moci přijímat hovory a zprávy, opravdu chcete odhlásit?</string>
+    <string name="voice_mail">Hlasová pošta</string>
+    <string name="not_configured_multiple_calls">Aplikace není nakonfigurována na povolení více hovorů</string>
+    <string name="loading">Nahrávání</string>
+    <string name="info">Info</string>
+    <!--Presence stuff-->
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="away">Pryč</string>
+    <string name="busy">Zaneprázdněný</string>
+    <string name="pinconfirm">Potvrdit</string>
+    <string name="pin_block_info">Aplikace je blokována</string>
+    <string name="pin_block_reason_retries">Příliš mnoho pokusů</string>
+    <!-- phoneX defined -->
+    <string name="clist_add_title">Přidat kontakt</string>
+    <string name="clist_add_sip">Uživatelské jméno</string>
+    <string name="clist_add_displayname">Přezdívka</string>
+    <string name="clist_add_choosealias">Zvolit přezdívku</string>
+    <string name="clist_add_inwhitelist">Umožnit Vám zavolat</string>
+    <string name="clist_add_add">Přidat</string>
+    <string name="clist_add_description">Napište uživatelské jméno kontaktu, který si chcete přidat. Zeptejte se vašeho kontaktu na jeho uživatelské jméno.</string>
+    <string name="empty_messages">Žádné zprávy</string>
+    <string name="empty_notifications">Žádné notifikace</string>
+    <string name="contact_details">Detail</string>
+    <string name="contacts_tab_name_text">Kontakty</string>
+    <string name="rename_account">Přejmenovat</string>
+    <string name="rename_account_title">Přejmenovat přezdívku</string>
+    <string name="rename_account_new">Nová přezdívka:</string>
+    <string name="presence_online">Online</string>
+    <string name="presence_away">Pryč</string>
+    <string name="presence_invisible">Neviditelný</string>
+    <string name="intro_login">Uživatelské jméno</string>
+    <string name="intro_pass">Heslo</string>
+    <string name="intro_pass_confirmation">Potvrzení hesla</string>
+    <string name="intro_pass_change">Uložit heslo</string>
+    <string name="intro_connect">Přihlásit se</string>
+    <string name="intro_set_new_password">Nastavte si prosím své nové heslo (minimálně 8 znaků dlouhé)</string>
+    <string name="intro_remember_me">Zapamatovat si jméno</string>
+    <string name="p_authentication">Autentizace</string>
+    <string name="p_authentication_failed">Neúspěšná autentizace</string>
+    <string name="p_success">Úspěch</string>
+    <string name="p_error">Chyba</string>
+    <string name="p_problem">Chyba</string>
+    <string name="p_error_empty_login">Přihlašovací jméno je prázdné</string>
+    <string name="p_error_empty_password">Přihlašovací heslo je prázdné</string>
+    <string name="p_almost_there">Téměř hotovo...</string>
+    <string name="p_not_before_certificate">Váš účet je připraven k použití!\n\nAle čas Vašeho zařízení je mírně zpožděn oproti času serveru, takže Váš certifikát není zatím není. Proto prosím počkejte, než Váš certifikát nabude platnosti. \n\nZbývá: %1$s minut, %2$s sekund</string>
+    <string name="p_problem_nonspecific">Vyskytla se chyba, pravděpodobně kvůli internetovému připojení, zkuste to za chvíli.</string>
+    <string name="p_problem_db_general">Vyskytla se chyba, není možné otevřít šifrovanou databázi. \n\nPokud se problém opakuje, zvažte prosím vymazání aplikačních dat nebo přeinstalování aplikace.</string>
+    <string name="p_problem_resolv">K přihlášení do PhoneX aplikace je třeba internetové připojení.\n\n Zkontrolujte prosím Vaše připojení a zkuste to znovu.</string>
+    <string name="p_problem_socket">Vyskytla se chyba, spojení na server selhalo. \n\nPravděpodobně nejste připojen k internetu, zkuste to za chvíli.</string>
+    <string name="p_problem_auth_bad_response">Vyskytla se chyba, server vrátil neočekávanou odpověď. \n\nMožná máte zastaralou verzi aplikace. Zkuste prosím aktualizovat.</string>
+    <string name="p_problem_bad_response">Vyskytla se chyba, server vrátil neočekávanou odpověď.</string>
+    <string name="p_problem_bad_certificate">Vyskytla se chyba, certifikát není validní.</string>
+    <string name="p_problem_badcredential">Vaše jméno nebo heslo je chybné</string>
+    <string name="p_problem_account_disabled">Váš účet je zablokován. Kontaktujte prosím support.</string>
+    <string name="p_problem_trial_expired">Platnost Vašeho zkušebního uživatelského účtu skončila.</string>
+    <string name="p_problem_trial_about_to_expire">Platnost Vašeho zkušebního uživatelského účtu brzo skončí.\n\nÚčet bude vypnut za %1$s dní, %2$s hodin</string>
+    <string name="p_problem_time_drift">Váš systémový čas není synchronizován s časem serveru. Toto může způsobovat problémy při přihlášení.\n\nČas serveru: %1$s</string>
+    <string name="p_problem_time_drift_forward">Váš čas je posunut dopředu o %1$s.</string>
+    <string name="p_problem_time_drift_backward">Váš čas je posunut dozadu o %1$s.</string>
+    <string name="p_generating_keypair">Generuji klíče</string>
+    <string name="p_getting_token">Získávám token</string>
+    <string name="p_sending_csr">Posílam certifikát na podepsání</string>
+    <string name="p_storing_csr">Ukladám certifikát</string>
+    <string name="p_generating_key">Generuji šifrovací klíče</string>
+    <string name="p_rekey_keystore">Šifrování privátního klíče novým heslem</string>
+    <string name="p_rekey_database">Šifrování databáze novým heslem</string>
+    <string name="p_testing_db">Testuji šifrovanou databázi</string>
+    <string name="p_getting_client_csr">Získávám certifikát</string>
+    <string name="p_sending_clist">Ukladám kontakty na server</string>
+    <string name="p_saving_csr">Ukladám lokálně</string>
+    <string name="p_getting_clist">Stahuji kontakty ze serveru</string>
+    <string name="p_processing_clist">Zpracování seznamu kontaktů</string>
+    <string name="p_processing_csr">Zpracování certifikátů</string>
+    <string name="p_getting_local_clist">Nahrávám kontakty</string>
+    <string name="p_getting_missing_csr">Stahuji chybějící certifikáty</string>
+    <string name="p_synchronizing_clist">Synchronizuji kontakty</string>
+    <string name="p_deleting_contact">Mažu uživatele</string>
+    <string name="p_deleting_contact_localy">Mažu lokálně</string>
+    <string name="p_deleting_contact_artifacts">Mažu po uživateli nadbytečné data!</string>
+    <string name="p_renaming_contact_localy">Ukládám lokálně</string>
+    <string name="p_sending_request">Posílám požadavek na server</string>
+    <string name="p_getting_response">Získávám odpověd</string>
+    <string name="p_rename_success">Kontakt %1$s byl přejmenován na %2$s.</string>
+    <string name="p_add_success">Kontakt %s byl přidán.</string>
+    <string name="p_delete_success">Kontakt %s byl smazán.</string>
+    <string name="p_encrypting_pass">Šifrování hesla</string>
+    <string name="p_encrypting_csr">Šifrování certifikátu</string>
+    <string name="p_renaming">Přejmenovávam kontakt</string>
+    <string name="p_deleting">Mažu uživatele</string>
+    <string name="p_rename_confirm">Opravdu chcete smazat tohoto uživatele?</string>
+    <string name="p_loading_personal_credential">Nahrávam certifikát</string>
+    <string name="p_synchronizing_csr">Synchronizace certifikátu</string>
+    <string name="p_unknown_error">Interní chyba aplikace</string>
+    <string name="p_different_passwords">Hesla nejsou stejná.</string>
+    <string name="p_short_password">Heslo je příliš krátké. Minimální délka je 8 znaků.</string>
+    <string name="p_changing_password">Změna hesla</string>
+    <string name="p_password_change_err">Operace se nezdařila</string>
+    <string name="p_password_change_ok">Heslo bylo změněno</string>
+    <!-- these 2 strings will be join -->
+    <string name="p_loading_view">Načítání, čekejte prosím ...</string>
+    <string name="p_generating_dh_keys">Generování šifrovacích klíčů</string>
+    <string name="p_wait_for_cert">Prosím čekejte až Váš certifikát nabude platnosti.\n\nZbývá sekund: %s.</string>
+    <!-- call errors -->
+    <string name="call_error_403">Nejste oprávněni volat tenhle kontakt.</string>
+    <string name="call_error_404">Kontakt je offline.</string>
+    <string name="call_error_408">Vypršel časový limit žádosti. Server nebo kontakt neodpovědel do limitu. Prosím zkuste to později.</string>
+    <string name="call_error_410">Kontakt nelze zastihnout. V současnosti už není dostupný, pravděpodobne se nedávno odpojil.</string>
+    <string name="call_error_477">Požadavek o spojení nemůže dosáhnout cíle. Prosím zkuste to později.</string>
+    <string name="call_error_480">Dočasná nedostupnost. Pravděpodobne se nepodařilo navázat přímé spojení nebo došlo k jeho rozpojení. Prosím zkuste to později.</string>
+    <string name="call_error_486">Kontakt je zaneprázdněn.</string>
+    <string name="call_error_487">Došlo ke zrušení žádosti o hovor.</string>
+    <string name="call_error_503">Služba je momentálně nedostupná, server je pravdepodobně zaneprázdněn. Prosím zkuste to později.</string>
+    <string name="call_error_603">Volané číslo odmítlo hovor.</string>
+    <string name="call_error_not_valid">PhoneX není registrován v síti, není možné uskutečnit hovor.</string>
+    <string name="call_error_generic">Neznámá chyba, není možné uskutečnit hovor. Zkuste to prosím znovu později. Pokud problém přetrvává, zkuste restartovat PhoneX.</string>
+    <string name="missed_call_title">Zmeškaný hovor</string>
+    <string name="missed_call_body">Máte zmeškaný hovor od %1$s v čase %2$s.</string>
+    <string name="intro_init_title">Inicializace...</string>
+    <string name="intro_init_msg">Spouštení aplikace, prosím čekejte</string>
+    <string name="intro_resurrect_msg">Obnovování aplikace, prosím čekejte.</string>
+    <string name="msg_offline_message_title">offline</string>
+    <string name="msg_enc_tit_signature_invalid">Varování: špatný podpis</string>
+    <string name="msg_enc_tit_encrypted">Šifrováno</string>
+    <string name="msg_enc_tit_decrypted">Dešifrováno</string>
+    <string name="msg_enc_tit_encrypted_file">Šifrovaný soubor</string>
+    <string name="msg_enc_tit_decryption_error">Chyba dešifrování</string>
+    <string name="msg_enc_tit_inv_mime">Varování: zřejmě podvrženo</string>
+    <string name="msg_resend">Přeposlat</string>
+    <string name="msg_sent_date">Odesláno</string>
+    <string name="msg_received">Přijato</string>
+    <string name="msg_sent_failed">Odeslání selhalo</string>
+    <string name="msg_sent_failed_477">Chyba šifrování</string>
+    <string name="msg_sending">Zasílání</string>
+    <string name="msg_no_cert">Certifikát nenalezen</string>
+    <string name="msg_file_rejected">Soubor odmítnut</string>
+    <string name="msg_error">Chyba</string>
+    <string name="msg_error_recv">Chyba stahování</string>
+    <!-- in call -->
+    <string name="incall_zrtphash_nomatch_error">ZRTP hash nesedí (SDP vs. ZRTP hello). V médiu může být přítomen útočník! Kód chyby: </string>
+    <string name="incall_incoming_gsm_call">Zmeškali jste hovor od čísla: </string>
+    <!-- settings -->
+    <string name="security">Zabezpečení</string>
+    <string name="change_password">Změnit heslo</string>
+    <string name="change_password_desc">Změnit přihlašovací heslo do systému PhoneX.</string>
+    <string name="my_certificate">Můj certifikát</string>
+    <string name="my_certificate_desc">Zobrazit detaily certifikátu.</string>
+    <string name="sync_certificates">Synchronizovat certifikáty</string>
+    <string name="sync_certificates_desc">Kontrola aktuálnosti certifikátů Vašich kontaktů.</string>
+    <string name="sync_certificates_toast">Synchronizace bude spuštěna na pozadí aplikace.</string>
+    <string name="sync_dhkeys">Synchronizovat klíče</string>
+    <string name="sync_dhkeys_desc">Kontrola šifrovacích klíčů pro přenos souborů.</string>
+    <string name="sync_dhkeys_toast">Synchronizace klíčů bude spuštěna na pozadí aplikace.</string>
+    <string name="warning_signature">SIP zpráva s nesprávným podpisem</string>
+    <string name="my_profile">Můj účet</string>
+    <string name="project_page">Web projektu</string>
+    <string name="obtain_trial">7-denní zkušební verze</string>
+    <string name="intro_info">Úvod</string>
+    <string name="options">Možnosti</string>
+    <string name="firstlaunch_welcome">Vítejte ve <b>PhoneX</b></string>
+    <string name="firstlaunch_text">PhoneX je mobilní aplikace pro bezpečnou komunikaci, která umožňuje šifrované volání, posílání zpráv a souborů mezi uživateli.</string>
+    <string name="firstlaunch_text2">Můžete vyzkoušet 7-denní zkušební verzi zdarma, nebo si zakoupit plnou licenci na webových stránkách www.phone-x.net.</string>
+    <string name="continue_to_app">Pokračovat k přihlášení</string>
+    <string name="conversation_call_button">Volat</string>
+    <string name="registration_warning">Registrace do sítě</string>
+    <string name="notification_keygen">PhoneX kontrola šifrovacích klíčů</string>
+    <string name="notification_certupd">PhoneX aktualizace certifikátu</string>
+    <string name="notification_appupd">PhoneX aktualizován</string>
+    <string name="notification_appupd_text">Verze %s, přihlašte se.</string>
+    <string name="notification_device_reboot_text">Zařízení bylo zapnuto, přihlaste se.</string>
+
+    <string name="certupd_done">Hotovo</string>
+    <string name="certupd_none">Chyba</string>
+    <string name="certupd_in_queue">Ve frontě</string>
+    <string name="certupd_started">Započato stahování</string>
+    <string name="certupd_local_loading">Nahrávání</string>
+    <string name="certupd_server_call">Stahování ze serveru</string>
+    <string name="certupd_post_server_call">Zpracování odpovědi</string>
+    <string name="certupd_saving">Ukládání</string>
+    <string name="certupd_header">Synchronizace certifikátů</string>
+    <string name="certupd_header_description">Synchronizuji certifikáty Vašich kontaktů.</string>
+
+    <string name="keygen_done">Hotovo</string>
+    <string name="keygen_none">Chyba</string>
+    <string name="keygen_in_queue">Ve frontě</string>
+    <string name="keygen_started">Započato zpracování</string>
+    <string name="keygen_cleaning">Čištění starých klíčů</string>
+    <string name="keygen_generating_key">Generování klíče %1$d/%2$d</string>
+    <string name="keygen_generated">Klíče vygenerovány, čekání</string>
+    <string name="keygen_server_call_save">Zasílání klíčů na server</string>
+    <string name="keygen_post_server_call_save">Zpracování odpovědi</string>
+    <string name="keygen_deleting">Odstraňování klíčů</string>
+    <string name="keygen_server_call_delete">Odstraňování klíčů ze serveru</string>
+    <string name="keygen_post_server_call_delete">Zpracování odpovědi</string>
+    <string name="keygen_header">Generování klíčů</string>
+    <string name="keygen_header_description">Generuji klíče potřebné pro přenos souborů.</string>
+
+    <!-- Help Add Account fragment -->
+    <string name="help_ac_how_to_add">Jak přidat nový kontakt?</string>
+    <string name="help_ac_add_1"><![CDATA[Tenhle postup ukazuje, jak se dva uživatelé mohou vzájemně přidat do seznamu kontaktů. Jste uživatel "ALF 1" a chcete přidat nového uživatele s názvem "Eve" do svého seznamu kontaktů. Za prvé, musíte být přihlášeni na hlavní obrazovce. Klikněte na tlačítko <b>v pravém dolním rohu </b> a potom klepněte na tlačítko <b>Přidat</b>.]]></string>
+    <string name="help_ac_add_2"><![CDATA[V dialogovém okně zadejte uživatelské jméno kontaktu - "Eve". Můžete také vyplnit pole přezdívka/alias (tj. jméno pod jakém chcete daný kontakt zobrazovat). Na závěr klikněte na tlačítko <b>Přidat</b>.]]></string>
+    <string name="help_ac_add_3"><![CDATA[Po tom jak byl uživatel pŕidán, zobrazí se jeho jméno v zoznamu kontaktú spolu s jeho statusem. Status informuje, jestli je uživatel <b>Online</b> nebo <b>Offline</b>.]]></string>
+    <string name="help_ac_add_4"><![CDATA[<b>Když chtějí dva uživatelé spolu komunikovat (volat nebo posílat zprávy), musí se vzájemně přidat do svých seznamu kontaktů. &nbsp;</b>Tohle nastavení zabraňuje nevyžádaným telefonátum od osob, které uživatelé neznají.</p>]]></string>
+
+    <!-- Send file -->
+    <string name="open_file">Otevřít</string>
+    <string name="download_file">Stáhnout</string>
+    <string name="reject_file">Odmítnout</string>
+    <string name="open_directory">Otevřít adresář</string>
+    <plurals name="delete_file">
+        <item quantity="one">Smazat soubor</item>
+        <item quantity="few">Smazat soubory</item>
+        <item quantity="other">Smazat soubory</item>
+    </plurals>
+    <string name="filepicker_title">Vyberte adresář</string>
+    <string name="filepicker_toast_sort_asc">Třídění seznamu: A..Z</string>
+    <string name="filepicker_toast_sort_desc">Třídění seznamu: Z..A</string>
+    <string name="filepicker_camera">Fotoaparát</string>
+    <string name="filepicker_camera_2">Fotoaparát SD</string>
+    <string name="filepicker_download">Stažené soubory</string>
+    <string name="filepicker_documents">Dokumenty</string>
+    <string name="filepicker_pictures">Obrázky</string>
+    <string name="filepicker_music">Hudba</string>
+    <string name="filepicker_storage">Úložiště</string>
+    <string name="filepicker_external_sd">Externí SD</string>
+
+    <string name="dwn_p_error">Chyba</string>
+    <string name="dwn_p_cancelled">Zrušeno</string>
+    <string name="dwn_p_in_queue">Ve frontě</string>
+    <string name="dwn_p_retrieving_details">Stahování</string>
+    <string name="dwn_p_deleting">Mazání ze serveru</string>
+    <string name="dwn_p_deleted">Smazáno ze serveru</string>
+    <string name="dwn_p_loading_info">Stahování meta-dat</string>
+    <string name="dwn_p_enc_keys">Derivování šifrovacích klíčů</string>
+    <string name="dwn_p_downloading">Stahování</string>
+    <string name="dwn_p_key_load">Nahrávání privátních klíčů</string>
+    <string name="dwn_p_connecting">Připojování na server</string>
+    <string name="dwn_p_extracting">Rozbalování souborů</string>
+    <string name="dwn_p_decryption">Dešifrování</string>
+    <string name="dwn_p_done">Hotovo</string>
+    <string name="dwn_failed">Stahování selhalo</string>
+    <string name="dwn_failed_download">Chyba při stahování souboru, prosím, zkuste to později.</string>
+    <string name="dwn_failed_recoverable">Nastala chyba při stahování souboru. Prosím, zkuste to později.</string>
+    <string name="dwn_failed_generic">Nastala obecná chyba při stahování souboru. Soubor je pravděpodobně poškozený.</string>
+    <string name="dwn_no_file">Nebyl nalezen žádný stažený soubor pro tuto zprávu.</string>
+    <string name="dwn_file_not_found">Soubor nebyl nalezen. Pravděpodobně byl smazán. \n\nNázev souboru:\n%s</string>
+
+    <string name="upd_p_cancelled">Zrušeno</string>
+    <string name="upd_p_in_queue">Ve frontě</string>
+    <string name="upd_p_initialization">Inicializace stahování</string>
+    <string name="upd_p_downloading_keys">Stahování klíčů ze serveru</string>
+    <string name="upd_p_key_verification">Kontrola klíčů</string>
+    <string name="upd_p_uploading">Nahrávání na server</string>
+    <string name="upd_p_gen_enc_keys">Generování šifrovacích klíčů</string>
+    <string name="upd_p_processing_input">Šifrování souborů</string>
+    <string name="upd_p_enc_notif">Šifrování notifikace</string>
+    <string name="upd_p_sending_notif">Odesílaní notifikace</string>
+    <string name="upd_p_done">Hotovo</string>
+    <string name="upd_failed">Nahrávání selhalo</string>
+    <string name="upd_failed_full_mailbox">Souborová schránka adresáta je plná.</string>
+    <string name="upd_failed_too_big">Soubor je příliž velký.</string>
+    <string name="upd_failed_no_keys">Adresát nemá k dispozici volný šifrovací klíč pro přenos souborů.</string>
+    <string name="upd_failed_generic">Nastala obecná chyba při nahrávání souboru.</string>
+    <string name="ft_err_timeout">Chyba připojení</string>
+
+    <string name="intro_phonex">PhoneX %s – Secure communication</string>
+    <string name="intro_copyright">© 2012-2015 Všechna práva vyhrazena</string>
+
+    <string name="dummy_username">uzivatel@phone-x.net</string>
+    <string name="dummy_displayname">např. Jan Novák</string>
+
+    <string name="phonex_restart_title">Restart aplikace</string>
+    <string name="phonex_restart_info">Prosím čekejte na restart PhoneX</string>
+
+    <string name="notif_delete">Smazat</string>
+    <string name="notif_delete_type">Smazat všechny</string>
+
+    <string name="filepicker_decrypt">Dešifrovat soubor</string>
+    <string name="filepicker_decrypt_open">Dešifrovat a otevřít</string>
+
+    <!-- File Manager -->
+    <string name="file_manager">Správce souborů</string>
+    <string name="filepicker_secure_storage">Bezpečné úložiště</string>
+    <string name="filepicker_secure_photo_storage">Bezpečný fotoaparát</string>
+    <string name="file_menu_decrypt">Dešifrovat soubor</string>
+    <string name="file_menu_delete">Smazat soubor</string>
+    <string name="file_menu_delete_multi">Smazat vybrané soubory</string>
+    <plurals name="file_dialog_delete_title">
+        <item quantity="one">Smazat soubor</item>
+        <item quantity="few">Smazat soubory</item>
+        <item quantity="other">Smazat soubory</item>
+    </plurals>
+    <plurals name="file_dialog_delete_confirm">
+        <item quantity="one">Tento soubor bude smazán:</item>
+        <item quantity="few">Tyto soubory budou smazány:</item>
+        <item quantity="other">Tyto soubory budou smazány:</item>
+    </plurals>
+    <plurals name="file_dialog_decrypt_title">
+        <item quantity="one">Dešifrovat soubor</item>
+        <item quantity="few">Dešifrovat soubory</item>
+        <item quantity="other">Dešifrovat soubory</item>
+    </plurals>
+    <plurals name="file_dialog_decrypt_confirm">
+        <item quantity="one">Tento soubor bude dešifrován do adresáře pro stažené soubory.\n\nVarování: po dešifrování bude soubor přístupný všem nainstalovaným aplikacím.</item>
+        <item quantity="few">Tyto soubory budou dešifrovány do adresáře pro stažené soubory.\n\nVarování: po dešifrování budou soubory přístupné všem nainstalovaným aplikacím.</item>
+        <item quantity="other">Tyto soubory budou dešifrovány do adresáře pro stažené soubory.\n\nVarování: po dešifrování budou soubory přístupné všem nainstalovaným aplikacím.</item>
+    </plurals>
+    <string name="file_dialog_open_title">Dešifrovat soubor před otevřením</string>
+    <string name="file_dialog_open_confirm">Tento soubor bude dešifrován do složky pro stažené soubory, aby ho mohla otevřít jiná aplikace.\n\nVarování: po dešifrování bude soubor přístupný všem nainstalovaným aplikacím.</string>
+
+    <string name="file_dialog_title">Dešifruje se</string>
+    <string name="file_dialog_to">do:</string>
+    <string name="file_delete_error">Chyba během mazání</string>
+    <string name="file_delete_error_message">Některé soubory nebyly smazány</string>
+    <string name="file_decrypt_error">Chyba během dešifrování</string>
+    <string name="file_decrypt_fail">Tyto soubory se nepodařilo dešifrovat:</string>
+
+    <string name="chat_delete_message_body">Opravdu chcete smazat tuto zprávu?</string>
+    <string name="chat_delete_message_delete_files_prompt">Smazat soubory z této zprávy</string>
+
+    <!-- Trial Request -->
+    <string name="trial_license">Zkušební verze</string>
+    <string name="trial_error_401">Zadali jste špatný ověřovací kód.</string>
+    <string name="trial_error_402">Již máte aktivní testovací účet, každý uživatel může vytvořit pouze 1 zkušební licenci.</string>
+    <string name="trial_error_404">Uživatelské jméno již existuje.</string>
+    <string name="trial_fragment_title">Vytváření zkušební licence</string>
+    <string name="trial_fragment_message">Ověření žádosti</string>
+    <string name="trial_created_title">Úspěch</string>
+    <string name="trial_created_message">Váš účet byl úspěšně vytvořen.</string>
+    <string name="trial_created_login">Uživatelské jméno:</string>
+    <string name="trial_created_expiration">Platnost do:</string>
+    <string name="trial_created_pass">Heslo:</string>
+    <string name="trial_button_submit">Poslat</string>
+    <string name="trial_button_reset">Jiný obrázek</string>
+    <string name="trial_captcha_loading">Generuji kód</string>
+    <string name="trial_security_check">Ověření žádosti</string>
+    <string name="trial_security_check_desc">Pro verifikaci vašeho požadavku prosím zadejte captcha kód do políčka níže.</string>
+
+    <string name="clist_add_error_nonexisting_user">Nelze přidat uživatele, uživatel neexistuje.</string>
+
+    <string name="about">O aplikaci</string>
+    <string name="msg_seen">Zobrazeno %s</string>
+    <string name="trial_continue_login">Přihlásit se</string>
+    <string name="pin_timer">Čas do uzamčení</string>
+    <string name="lock_asap">10 sekund</string>
+    <string name="lock_30s">30 sekund</string>
+    <string name="lock_1m">1 minuta</string>
+    <string name="lock_2m">2 minuty</string>
+    <string name="lock_3m">3 minuty</string>
+    <string name="lock_5m">5 minut</string>
+    <string name="lock_10m">10 minut</string>
+    <string name="lock_15m">15 minut</string>
+    <string name="lock_30m">30 minut</string>
+    <string name="lock_45m">45 minut</string>
+    <string name="lock_60m">60 minut</string>
+
+    <string name="add_contact_empty_alias">Prázdná přezdívka</string>
+    <string name="call_error_number">Chyba %d</string>
+    <string name="call_error_unspecific_msg">Interní chyba volání.</string>
+    <string name="call_error_481">Vynucené ukončení hovoru.</string>
+    <string name="call_error_501">Druhá strana nepodporuje hlasový hovor.</string>
+
+    <string name="file_picker_sorting_prompt">Seřadit dle</string>
+    <string name="file_picker_sorting_alphabet">Název</string>
+    <string name="file_picker_sorting_date">Datum</string>
+
+    <string name="file_picker_sorting_alphabet_asc">Název A..Z</string>
+    <string name="file_picker_sorting_alphabet_desc">Název Z..A</string>
+    <string name="file_picker_sorting_date_asc">Datum od nejstaršího</string>
+    <string name="file_picker_sorting_date_desc">Datum od nejnovějšího</string>
+
+    <string name="file_picker_selected_files">Vybrané soubory</string>
+
+    <string name="p_waiting_for_service">Spouštění služby</string>
+    <string name="app_update_release_notes">Novinky</string>
+    <string name="app_update_available_title">Nová verze k dispozici</string>
+    <string name="app_update_get_now">Aktualizovat</string>
+    <string name="app_update_remind_me_later">Připomenout později</string>
+    <string name="app_update_ignore_this_version_label">Ignorovat</string>
+    <string name="app_update_updated_to">PhoneX aktualizován na revizi %d</string>
+    <string name="app_update_generic_release_notes">PhoneX %1$s revize %2$d je k dispozici. Přejete si aktualizovat?</string>
+
+    <string name="clist_display_name">Přezdívka</string>
+    <string name="clist_sip">Uživatelské jméno</string>
+
+    <string name="intro_pass_title">Změna výchozího hesla</string>
+    <string name="intro_pass_description">Prosím, nastavte si nové heslo.</string>
+    <string name="password_requirements">Požadavky:\n&#8226; Minimálně 8 znaků.\n&#8226; Obsahuje písmena a čísla.</string>
+    <string name="pass_validator_short">Heslo je příliš krátké.</string>
+    <string name="pass_validator_confirmed_password_differs">Heslo a potvrzené heslo se musí shodovat.</string>
+    <string name="pass_validator_missing_number">Heslo musí obsahovat alespoň jedno číslo.</string>
+    <string name="pass_validator_missing_letter">Heslo musí obsahovat alespoň jedno písmeno.</string>
+
+    <string name="msg_sending_failed">Odesílání selhalo!</string>
+    <string name="some_files_were_deleted">Některé označené soubory se nepodařilo najít.</string>
+
+    <string name="select_file">Vybrat soubor</string>
+    <string name="send_message">Poslat zprávu</string>
+
+    <string name="broadcast_title">Rozeslat zprávu</string>
+    <string name="broadcast_recipients">Příjemci</string>
+    <string name="broadcast_message">Zpráva</string>
+    <string name="broadcast_note">Zpráva bude odeslána každému příjemci zvlášť.</string>
+    <string name="broadcast_limit_exceeded">Maximální počet uživatelů na akcii je %d.</string>
+    <string name="broadcast_empty_recipients_list">Prázdný seznam příjemců</string>
+    <string name="broadcast_message_is_being_sent">Zpráva se odesílá zadaným příjemcům.</string>
+
+    <string name="option_broadcast_message">Rozeslat zprávu</string>
+
+    <string name="msg_forward">Přeposlat zprávu</string>
+
+    <plurals name="clist_actionmode_selected">
+        <item quantity="one">Vybrán %d</item>
+        <item quantity="few">Vybrány %d</item>
+        <item quantity="other">Vybráno %d</item>
+    </plurals>
+
+    <string name="received_files">Přijaté soubory</string>
+    <string name="upd_failed_internal_error">Nahrávání souborů selhalo, interní chyba.</string>
+    <string name="upd_failed_some_files_missing_title">Chybějící soubory</string>
+    <string name="upd_failed_some_files_missing_desc">Některé soubory ze zprávy nelze nalézt na souborovém systému:\n</string>
+    <string name="upd_failed_all_files_missing">Soubory ze zprávy chybí na souborovém systému, zpráva se nedá přeposlat.</string>
+    <string name="broadcast_files">Soubory</string>
+    <string name="no_files_selected">Nejsou vybrány žádné soubory.</string>
+
+    <string name="file_deleted">Smazán.</string>
+    <string name="file_rejected">Zamítnut.</string>
+    <plurals name="files_preview">
+        <item quantity="one">Náhled souboru</item>
+        <item quantity="few">Náhled souborů</item>
+        <item quantity="other">Náhled souborů</item>
+    </plurals>
+    <plurals name="files_rejected">
+        <item quantity="one">Soubor zamítnut</item>
+        <item quantity="few">Soubory zamítnuty</item>
+        <item quantity="other">Soubory zamítnuty</item>
+    </plurals>
+    <string name="msg_delete">Smazat zprávu</string>
+
+    <string name="saved_username">Uložené uživatelské jméno</string>
+    <string name="create_trial_account">Vytvořit skušební účet</string>
+    <string name="create_account">Vytvořit účet</string>
+    <string name="sign_in">Přihlásit se</string>
+    <string name="phonex_subtitle">Šifrované hovory, zprávy \na přenos souborů.</string>
+
+    <string name="enter_captcha">Captcha kód</string>
+    <string name="account_creation">Vytvoření účtu</string>
+    <string name="second_device_detected_title">Odhlášení uživatele</string>
+    <string name="second_device_detected_desc">Byli jste odhlášeni, protože se někdo přihlásil pomocí stejných přihlašovacích údajů na jiném zařízení.</string>
+
+    <string name="enter_username_description">Vyberte si své uživatelské jméno, které bude sloužit jako váš jedinečný identifikátor v síti PhoneX.</string>
+    <string name="your_username">Uživatelské jméno</string>
+    <string name="invalid_username">Uživatelské jméno může obsahovat pouze písmena, čísla, pomlčku a podtržítko a musí být 3-18 znaků dlouhé.</string>
+
+    <string name="link_terms_of_use">Pokračováním souhlasíte s podmínkami používání.</string>
+    <string name="link_terms_of_use_highlight">podmínkami používání</string>
+    <string name="terms_of_use">Podmínky používání</string>
+
+    <string name="intro_new_account">Nový účet</string>
+    <string name="about_phonex">PhoneX</string>
+    <string name="advanced_ui">Pokročilé nastavení</string>
+    <string name="another_application_use_sip_port">Chyba: další aplikace používá SIP port.</string>
+    <string name="application_name">PhoneX</string>
+    <string name="audio_implementation">Audio knihovna</string>
+    <string name="audio_implementation_desc">Použitá audio knihovna</string>
+    <string name="audio_troubleshooting">Problémy se zvukem</string>
+    <string name="audio_troubleshooting_desc">Nastavení pro problémy se zvukem</string>
+    <string name="category_debug">Ladení</string>
+    <string name="cert_cn">CN certifikátu</string>
+    <string name="cert_date_created">Datum vytvoření</string>
+    <string name="cert_date_last_refresh">Datum posledního obnovení</string>
+    <string name="cert_hash">Hash certifikátu</string>
+    <string name="cert_issuer">Vydavatel certifikátu</string>
+    <string name="cert_no">Ne</string>
+    <string name="cert_owner">Vlastník</string>
+    <string name="cert_public_key">Veřejný klíč</string>
+    <string name="cert_public_key_alg">Algoritmus veřejného klíče</string>
+    <string name="cert_public_key_length">Délka veřejného klíče</string>
+    <string name="cert_raw">Neformátovaný certifikát</string>
+    <string name="cert_serial">Sériové číslo certifikátu</string>
+    <string name="cert_status">Status certifikátu</string>
+    <string name="cert_status_forbidden">Zakázaný</string>
+    <string name="cert_status_invalid">Neplatný</string>
+    <string name="cert_status_missing">Chybějící</string>
+    <string name="cert_status_nouser">Neexistující uživatel</string>
+    <string name="cert_status_ok">OK</string>
+    <string name="cert_status_revoked">Zrušeno</string>
+    <string name="cert_validity">Platnost certifikátu</string>
+    <string name="cert_yes">Áno</string>
+    <string name="clist_cat_user">Uživatel</string>
+    <string name="codecs_availability_text">Seznam kodeků</string>
+    <string name="codecs_band_types">Šírka pásma pro kodeky</string>
+    <string name="devel_preferences">Pokročilý mód</string>
+    <string name="downloading_text">Stahování</string>
+    <string name="drop_bad_bye">Zahoď špatný BYE</string>
+    <string name="drop_bad_bye_desc">Ignorovat BYE (ukončení hovoru) zprávu s neplatným podpisem.</string>
+    <string name="drop_bad_invite">Zahoď špatný INVITE</string>
+    <string name="drop_bad_invite_desc">Ignorovat INVITE (start volání) zprávu s neplatným podpisem.</string>
+    <string name="has_io_queue">IO fronta</string>
+    <string name="has_io_queue_desc">Samostatné fronty pro vstup / výstup</string>
+    <string name="has_certificate">Má lokální certifikát</string>
+    <string name="log_level_desc">0 žádné logy, 5 všechny logy</string>
+    <string name="log_to_file">Zkopírujte logcat do souboru</string>
+    <string name="log_to_file_desc">Všechny logy do externího souboru</string>
+    <string name="media_thread_count" translatable="false">Počet média vláken</string>
+    <string name="media_thread_count_desc">Počet média vláken</string>
+    <string name="micro_source">Zdroj mikrofonu</string>
+    <string name="micro_source_desc">Zdroj pro mikrofon</string>
+    <string name="modsign_err_generic">Nespecifikovaná chyba při ověřování podpisu pro uživatele \ "% s \"</string>
+    <string name="modsign_err_remote_user_unknown">Neznámý vzdálený uživatel \"%s\"</string>
+    <string name="modsign_err_signature_invalid">Ověření podpisu se nezdařilo pro uživatele \"%s\"</string>
+    <string name="modsign_err_success">Ověření podpisu bylo úspěšné</string>
+    <string name="modsign_err_user_cert_invalid">Certifikát pro uživatele %s je neplatný, nelze ověřit podpis</string>
+    <string name="modsign_err_user_cert_missing">Certifikát pro uživatele %s nebyla nalezena, nelze ověřit podpis</string>
+    <string name="p_refreshing_certificate">Obnovení certifikátu</string>
+    <string name="permission_phonex_desc">Obecné PhoneX povolení, používané pro pluginy a rozšíření.</string>
+    <string name="progress_loading_msg">Prosím čekejte...</string>
+    <string name="progress_loading_title">Načítání dat</string>
+    <string name="recheck_certificate">Obnovit certifikát</string>
+    <string name="warn_sig_detail_cat_action">Akce</string>
+    <string name="warn_sig_detail_cat_cert">Detail</string>
+    <string name="intro_bcode_non_valid">Zadaný kód je neplatný.</string>
+    <string name="intro_bcode_already_used">Zadaný kód již byl použit.</string>
+    <string name="intro_bcode_error_409_expired">Zadaný kód již není platný, jeho platnost vypršela.</string>
+
+    <string name="intro_enter_code">Zadejte kód</string>
+    <string name="intro_apply_code">Použít kód</string>
+    <string name="intro_credentials">Přihlašovací údaje</string>
+    <string name="intro_code">Kód</string>
+    <string name="intro_back">Zpět</string>
+    <string name="reject_confirm">Opravdu chcete zamítnout tento soubor? Po zamítnutí bude trvale smazán.</string>
+    <string name="license_type_trial">Zkušební licence</string>
+    <string name="license_type_full">Plná licence</string>
+    <string name="expires_at">Platnost do %s</string>
+    <string name="settings">Nastavení</string>
+    <string name="my_account">Můj účet</string>
+
+    <string name="notification_license_updated">PhoneX licence aktualizovaná</string>
+    <string name="notification_license_updated_text">%1$s, platnost do %2$s</string>
+
+    <string name="old_password">Staré heslo</string>
+    <string name="new_password">Nové heslo</string>
+    <string name="new_password_confirmation">Potvrzení hesla</string>
+    <string name="old_password_incorrect">Staré heslo není správné.</string>
+    <string name="trial_message_limit_explanation">Váš limit je% d zpráv denně.</string>
+    <string name="license_expired">Expirovaná licence</string>
+
+    <string name="get_premium_explanation"><![CDATA[Vaše licence vypršela. Kupte si novou licenci a získajte přístup k <b>prémiovým funkcem</b> jako jsou <b>bezpečné hlasové hovory</b>, <b>posílání souborů</b> a <b>neomezené posílání zpráv</b>.]]></string>
+    <string name="purchase_license">Prodloužit licenci</string>
+    <string name="licenses_types">Typy licencí:</string>
+    <string name="business_license">Byznys licence</string>
+    <string name="business_license_desc">Pro bezpečnou komunikaci se svými kolegy, obchodními partnery a klienty. Ceník na míru.</string>
+    <string name="see_the_examples">Příklady</string>
+    <string name="personal_license">Osobní licence</string>
+    <string name="get_premium_interested">Máte zájem? Potřebujete více informací?</string>
+    <string name="get_premium_contact_support">Kontaktujte support účet.</string>
+    <string name="get_premium_contact_support_highlight">support účet</string>
+    <string name="get_premium_visit_web">Objednejte si licenci na našich webových stránkách.</string>
+    <string name="get_premium_visit_web_highlight">webových stránkách</string>
+    <string name="price_individual_month">%s/měsíc</string>
+    <string name="price_individual_year">or %s/rok</string>
+
+    <string name="notification_license_expired">PhoneX licence vypršela</string>
+    <string name="notification_license_expired_text">Kupte si novou licenci nebo pokračujte v omezeném režimu.</string>
+
+    <string name="notification_license_expires_title">Vypršení licence PhoneX</string>
+    <string name="notification_license_expires_week_text">Vaše licence vyprší za méně než týden.</string>
+    <string name="notification_license_expires_week_text_full"><![CDATA[Vaše licence vyprší <b>%s</b>. Pokud chcete i nadále používat <b>prémiové funkce</b> (hlasové hovory, posílání souborů, neomezené posílání zpráv) po vypršení doby platnosti, zakupte si novou licenci.]]></string>
+    <string name="notification_license_expires_day_text">Vaše licence vyprší za den</string>
+    <string name="notification_license_expires_day_text_full"><![CDATA[Vaše licence vyprší za <b>den</b>. Pokud chcete i nadále používat <b> prémiové funkce </b> (hlasové hovory, posílání souborů, neomezené posílání zpráv) po vypršení doby platnosti, zakupte si novou licenci.]]></string>
+
+    <string name="dialog_license_expired_title">Licence vypršela</string>
+    <string name="dialog_license_expired_msg">Vaše licence vypršela. PhoneX je nyní v omezeném režimu (%d odchozích zpráv za den). Přijímání hovorů nebo zpráv/souborů není limitováno. Chcete-li pokračovat v používání aplikace bez omezení, zakoupte si novou licenci.</string>
+    <string name="dialog_license_expired_negative">Pokračovat v omezeném režimu</string>
+
+    <plurals name="day">
+        <item quantity="one">den</item>
+        <item quantity="few">dny</item>
+        <item quantity="other">dní</item>
+    </plurals>
+    <plurals name="hour">
+        <item quantity="one">hodina</item>
+        <item quantity="few">hodiny</item>
+        <item quantity="other">hodin</item>
+    </plurals>
+    <plurals name="minute">
+        <item quantity="one">minuta</item>
+        <item quantity="few">minuty</item>
+        <item quantity="other">minut</item>
+    </plurals>
+    <string name="attach_file">Odeslat soubory</string>
+    <string name="attach_picture">Odeslat obrázky</string>
+
+    <!--Camera-->
+    <string name="camera_take_picture">Vyfotit obrázek</string>
+    <string name="camera_secure">Bezpečný fotoaparát</string>
+    <string name="camera_photo_saved">Fotografie byla uložena do bezpečného úložiště pod názvem %s</string>
+    <string name="lbl_camera_unavailable">Kamera není k dispozici.\nUkončete aplikace, které mohou používat fotoaparát.</string>
+    <string name="lbl_camera_instance">Přední fotoaparát</string>
+    <string name="lbl_close">Zavřít</string>
+    <string name="lbl_focus_mode">Režim ostření</string>
+    <string name="lbl_resolution">Rozlišení</string>
+    <string name="lbl_saving">Ukládá se</string>
+
+    <string name="filepicker_display_mode">Změnit režim zobrazení</string>
+
+    <string name="processing">Zpracování požadavku</string>
+
+    <!-- pairing request -->
+    <string name="pairing_requests">Žádosti o spojení</string>
+    <string name="pairing_request_accept">Přidat kontakt</string>
+    <string name="pairing_request_reject">Odmítnout žádost</string>
+    <string name="pairing_request_block">Zablokovat kontakt</string>
+    <string name="pairing_request_count">Žádost o spojení: %d</string>
+    <string name="pairing_request_notif_title">Žádost o spojení</string>
+    <string name="pairing_request_notif_text">%s vám poslal žádost o spojení.</string>
+    <string name="pairing_request_prompt">Žádost o spojení od %s</string>
+    <string name="no_contact_requests">Žádná žádost o spojení</string>
+    <string name="no_contacts">Žádné kontakty</string>
+
+    <string name="add_license_code">Mám licenční kód</string>
+    <string name="license_code">Licenční kód</string>
+    <string name="phonex_revision">Revize %s</string>
+
+    <string name="remaining_time">Zbývající čas: %s</string>
+    <string name="call_out_of_minutes">Limit minut byl vyčerpán.</string>
+    <string name="manage_license">Správa licence</string>
+    <string name="unlimited">neomezený</string>
+    <string name="day_limit">%d za den</string>
+    <string name="no_packages">Žádné balíky</string>
+    <string name="limit_reached_outgoing_msgs">Dosáhli jste limit odchozích zpráv. Pro zvýšení limitu je nutno si zakoupit některý z balíčků které jsou k dispozici v naší nabídce.</string>
+    <string name="limit_reached_outgoing_calls">Dosáhli jste limit odchozích minut. Pro zvýšení limitu je nutno si zakoupit některý z balíčků které jsou k dispozici v naší nabídce.</string>
+    <string name="limit_reached_outgoing_files">Dosáhli jste limit odchozích souborů. Pro zvýšení limitu je nutno si zakoupit některý z balíčků které jsou k dispozici v naší nabídce.</string>
+    <string name="see_offer">Podívejte se na nabídku</string>
+
+    <string name="files_limit_explanation">Váš limit je %d odchozích souborů.</string>
+    <string name="current_state">Aktuální stav</string>
+    <string name="current_state_desc">Přehled jednotek které máte k dispozici.</string>
+    <string name="available_products">Dostupné produkty</string>
+    <string name="product_detail">Detail výrobku</string>
+    <string name="calls_limit">Volání:</string>
+    <string name="messages_limit">Zprávy:</string>
+    <string name="files_limit">Soubory:</string>
+    <string name="details">Detaily</string>
+    <string name="price">Cena</string>
+    <string name="description">Popis</string>
+    <string name="messages_daily_limit">Zprávy (denní limit):</string>
+    <string name="valid_until">Platnost do: %s</string>
+    <string name="error_loading_purchased_products">Chyba při načítání zakoupených produktů. Zkontrolujte prosím své připojení k internetu nebo to zkuste později.</string>
+    <string name="no_purchased_packages">Žádné zakoupené balíčky.</string>
+    <string name="subscriptions">Předplatné</string>
+    <string name="subscriptions_desc">Aktivované předplatné balíčky.</string>
+    <string name="packages">Balíčky</string>
+    <string name="packages_desc">Balíčky které jste si zakoupili.</string>
+    <string name="error_loading_available_products">Chyba při načítání dostupných produktů. Zkontrolujte prosím své připojení k internetu nebo to zkuste později.</string>
+
+    <string name="single_package">Jednorázový balíček</string>
+    <string name="month_subscription">Měsíční předplatné</string>
+    <string name="no_purchased_license">Bez zakoupené licence</string>
+    <plurals name="subscription_count_plural">
+        <item quantity="one">%d předplatné</item>
+        <item quantity="few">%d předplatné</item>
+        <item quantity="other">%d předplatných</item>
+    </plurals>
+    <plurals name="packages_count_plural">
+        <item quantity="one">%d balík</item>
+        <item quantity="few">%d balíky</item>
+        <item quantity="other">%d balíků</item>
+    </plurals>
+    <string name="default_permission">Výchozí</string>
+    <string name="product_full_license_name">PhoneX Premium</string>
+    <string name="call_error_gsm_remote">Hovor byl ukončen, druhá strana má přicházející GSM hovor.\n\nPhoneX nemůže reagovať na GSM hovor, mají prioritu před PhoneX. Při GSM aktivite je mikrofon pro PhoneX nedostupný a v některých připadech nemusí fungovať internetové připojení (napr. 3G).\n\nPhoneX hovor můžete opakovat jakmile bude druhá strana opět dostupná.</string>
+    <string name="call_error_gsm_local">Hovor byl ukončen z důvodu přicházejícího GSM hovoru.\n\nPhoneX nemůže reagovať na GSM hovor, mají prioritu před PhoneX. Při GSM aktivite je mikrofon pro PhoneX nedostupný a v některých připadech nemusí fungovať internetové připojení (napr. 3G).\n\nPo skončení GSM hovoru můžete PhoneX hovor opakovat.</string>
+    <string name="error_purchase_generic">Nelze dokončit nákup, prosím zkuste to později.</string>
+    <string name="product_purchase_success">Váš nákup produktu "%s" byl úspěšně dokončen.</string>
+    <string name="files_were_deleted">Soubory byly odstraněny.</string>
+    <string name="files_were_not_sent">Soubory nebylo možné odeslat.</string>
+
+    <string name="restore_error_nothing_to_restore">Všechny licencie jsou již načteny.</string>
+    <string name="restore_success_with_no_change">Licence byly úspěšně načteny.</string>
+    <string name="restore_new_licenses_loaded">Licence byly úspěšně načteny. Počet nových licencí je %d.</string>
+    <string name="restore_error_generic">Neznámá chyba při načítání aktuálního stavu licencí. Zkuste to prosím později.</string>
+    <string name="restore_purchases">Obnovit nákupy</string>
+
+    <string name="invite_friend">Pozvat přátele</string>
+    <string name="invite_friend_header">Chraňte komunikaci se svými kontakty a pozvěte je do aplikace PhoneX:</string>
+    <string name="invite_friend_text">Přepnime na šifrovanou komunikaci pomocí PhoneX: %s</string>
+    <string name="share">Sdílet</string>
+    <string name="invite_to_phonex">Pozvat do PhoneX</string>
+    <string name="phonex_invitation">PhoneX pozvánka</string>
+
+    <string name="or_text">nebo</string>
+    <string name="get_started">Začínáme</string>
+    <string name="create_new_account">Vytvořit nový účet</string>
+    <string name="slide_calls_title">Šifrované hlasové hovory</string>
+    <string name="slide_cl_title">Privátní seznam kontaktů</string>
+    <string name="slide_msg_desc">Vše v jedné aplikaci.</string>
+    <string name="slide_pin_title">Ochrana pomocí PINu</string>
+    <string name="slide_pin_desc">Zamkněte aplikaci pomocí PINu a zabraňte úniku dat v případe ztráty nebo kráděže telefonu.</string>
+    <string name="slide_msg_title">Šifrované zprávy a přenos souborů</string>
+    <string name="slide_secstorage_title">Šifrované úložiště</string>
+    <string name="slide_start_title">Začněte hned</string>
+    <string name="slide_start_desc">Vyberte si uživatelské jméno a heslo a vytvořte si účet PhoneX. Telefonní číslo není potřebné.</string>
+    <string name="slide_calls_desc">Skutečně soukromé hovory s ostatními uživateli PhoneX aplikace. PhoneX pracuje přes internetové připojení.</string>
+    <string name="slide_secstorage_desc">Soubory které posíláte nebo přijímáte jsou automaticky ukládány v šifrovaném úložišti a jsou přístupné pouze z PhoneX.</string>
+    <string name="slide_cl_desc">Seznam kontaktů PhoneX je oddělen od systémového seznamu kontaktů. Přidejte nový kontakt jednoduše kliknutím na tlačítko přidat a zadáním uživatelského jména.</string>
+    <string name="skip_question">Chcete přeskočit úvodní představení PhoenX?</string>
+    <string name="skip">Přeskočit</string>
+    <string name="continue_button">Pokračovat</string>
+
+    <string name="link_password_reset">Zapomněli jste heslo?</string>
+    <string name="password_reset">Obnovení hesla</string>
+
+    <string name="pass_reset_err_general">Při operaci došlo k interní chybě. Pro další pomoc se prosím obraťte na podporu PhoneX.</string>
+    <string name="pass_reset_err_no_email_or_user">S daným uživatelským jménem není spojen žádný e-mail pro obnovu hesla. Pro další pomoc se prosím obraťte na podporu PhoneX.</string>
+    <string name="pass_reset_err_verification_too_often">Před dalším pokusem musíte počkat 5 sekund.</string>
+    <string name="pass_reset_err_too_often">Kód už byl odeslán. Minimální časový rozestup mezi pokusy je 1 minuta.</string>
+    <string name="pass_reset_err_invalid_code">Kód který jste zadali není platný. Zkuste to znovu nebo si vygenerujte nový kód.</string>
+    <string name="pass_reset_success">Obnovovací kód byl odeslán na váš e-mail. Platnost kódu je %s.</string>
+    <string name="pass_reset_desc">Chcete-li obnovit své heslo, zadejte prosím své uživatelské jméno. Obdržíte e-mail s kódem pro jednorázové přihlášení a změnu hesla.</string>
+    <string name="send_recovery_code">Poslat obnovovací kód</string>
+    <string name="enter_recovery_code">Zadejte obnovovací kód</string>
+    <string name="apply_recovery_code">Použít kód</string>
+
+    <string name="recovery_email">E-mail pro obnovu hesla</string>
+    <string name="recovery_email_desc">E-mail na zaslání obnovovacího kódu v případě zapomenutého hesla.</string>
+    <string name="enter_recovery_email">Zadejte e-mail</string>
+    <string name="recovery_email_missing_warning">Žádný e-mail není nastaven! V případě zapomenutého hesla můžete ztratit přístup ke svému účtu.</string>
+    <string name="recover_email_explanation">E-mail bude použit pouze na zaslání kódu pro obnovu hesla a nebude sdílený s jinými třetími stranami.</string>
+    <string name="recovery_email_has_not_changed">E-mail je shodný s předchozím.</string>
+    <string name="incorrect_password">Zadané nesprávné heslo.</string>
+    <string name="invalid_email">Zadaný e-mail není platný.</string>
+    <string name="recovery_email_saved">E-mail pro obnovu hesla byl úspěšně uložen.</string>
+    <string name="missing_recovery_email">Chybějící e-mail pro obnovu hesla</string>
+    <string name="missing_recovery_email_desc">Prosím zadajte váš e-mail pre obnovu hesla</string>
+    <string name="bluetooth_connect_failed">Systém se nebyl schopen připojit na žádný bluetooth headset.</string>
+    <string name="application_is_being_closed">Aplikace se zavírá ...</string>
+</resources>

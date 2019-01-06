@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">설정</string>
+  <string name="prefs_connectivity">네트워크</string>
+  <string name="prefs_media">미디어</string>
+  <string name="prefs_ui">사용자 인터페이스</string>
+  <!--Network-->
+  <string name="transport">전송</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">오디오 품질</string>
+  <string name="audio_volume">볼륨</string>
+  <string name="codecs">코덱</string>
+  <string name="echo_cancellation">에코 취소</string>
+  <string name="echo_cancellation_desc">에코 취소 기능 활성</string>
+  <string name="disable_vad">음성 오디오 탐색</string>
+  <string name="disable_vad_desc">음성 오디오 탐색 기능 활성</string>
+  <string name="sound_mic_volume">미세 증폭</string>
+  <string name="sound_speaker_volume">스피커 증폭</string>
+  <string name="media_quality">매체 품질</string>
+  <string name="media_quality_desc">미디어 스트림 품질(필요 시에만 조정)</string>
+  <string name="sound_clock_rate">클록 속도</string>
+  <string name="sound_clock_rate_desc">오디오 채널 주파수</string>
+  <string name="echo_cancellation_mode">에코 모드</string>
+  <string name="echo_cancellation_mode_desc">에코 알고리즘</string>
+  <string name="auto">자동</string>
+  <string name="simple">단순한</string>
+  <!--UI-->
+  <string name="general_ui">사용자 인터페이스</string>
+  <string name="keep_awake_incall">전화에 깨어있는 동안 계속</string>
+  <string name="keep_awake_incall_desc">와이파이 통화 시 스크린이 꺼질 때 음성 끊김 교정</string>
+  <string name="log_level">기록 수준</string>
+  <string name="ringtone">벨소리</string>
+  <string name="prevent_screen_rotation">화면 회전 차단</string>
+  <string name="invert_proximity_sensor">전환 근접 센서</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <!--Generic-->
+
+
+
+<!-- ##automatically translated below -->
+
+<string name="prefs_security">보안</string>
+<string name="network_watchdog">네트워크 감시</string>
+<string name="network_watchdog_desc">등록증의 경우 다시 시작 서비스를 제공합니다. 초. 0 = 해제</string>
+<string name="enable_noise_reduction">노이즈 감소</string>
+<string name="enable_noise_reduction_desc">에코 제거하면 작동이 활성화 WebRTC 에코 제거기가 사용하는 백엔드됩니다</string>
+<string name="sound_bt_mic_volume">블루투스 마이크 증폭</string>
+<string name="enable_focus_audio">오디오 포커스</string>
+<string name="slow">천천히</string>
+<string name="fast">빠른</string>
+<string name="normal_preferences">일반 모드</string>
+<string name="security_messages">메시지</string>
+<string name="messages_delete_period_desc">아카이브에 메시지를 유지하는 시간</string>
+<string name="messages_delete_period">메시지 archivati​​on</string>
+<string name="just_session">그냥이 세션</string>
+<string name="one_day">일일</string>
+<string name="three_days">삼일</string>
+<string name="week">주</string>
+<string name="month">달</string>
+<string name="forever">영원히</string>
+</resources>

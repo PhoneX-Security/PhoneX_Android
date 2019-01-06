@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/phonex_color_primary"
+    android:layout_height="@dimen/list_detail_image_size"
+    >
+
+    <RelativeLayout
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+
+    android:layout_height="@dimen/list_detail_image_size">
+
+        <ImageButton
+        android:id="@+id/clear"
+        android:src="@drawable/ic_clear_black_24px"
+        android:layout_width="@dimen/list_detail_image_size"
+        android:layout_height="match_parent"
+        android:padding="@dimen/file_picker_button_padding"
+        android:background="?attr/selectableItemBackground"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/selected_size_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:singleLine="true"
+                android:textSize="14sp"
+                android:textColor="?android:attr/textColorSecondary"
+                />
+
+            <TextView
+                android:id="@+id/limit_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:layout_centerHorizontal="true"
+                android:textColor="?android:attr/textColorSecondary"
+                android:layout_below="@+id/selected_size_text"
+
+                android:clickable="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:textSize="14sp"
+                />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/manager_menu"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/filepicker_open"
+                android:layout_width="@dimen/file_picker_button_size"
+                android:layout_height="@dimen/file_picker_button_size"
+                android:padding="@dimen/file_picker_button_padding"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/transparent_color"
+                android:src="@drawable/svg_open"
+                android:contentDescription="@string/open_file"/>
+
+            <ImageButton
+                android:id="@+id/filepicker_delete"
+                android:layout_width="@dimen/file_picker_button_size"
+                android:layout_height="@dimen/file_picker_button_size"
+                android:padding="@dimen/file_picker_button_padding"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/transparent_color"
+                android:src="@drawable/svg_trash"
+                android:contentDescription="@string/delete"/>
+
+            <ImageButton
+                android:id="@+id/filepicker_decrypt"
+                android:layout_width="@dimen/file_picker_button_size"
+                android:layout_height="@dimen/file_picker_button_size"
+                android:padding="@dimen/file_picker_button_padding"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/transparent_color"
+                android:src="@drawable/svg_decrypt"
+                android:contentDescription="@string/filepicker_decrypt"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/send_menu"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/send"
+                android:layout_width="@dimen/list_detail_image_size"
+                android:layout_height="match_parent"
+                android:padding="@dimen/file_picker_button_padding"
+                android:layout_gravity="center_vertical"
+                android:background="?attr/selectableItemBackground"
+                android:src="@drawable/ic_send_black_24px" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+    <View
+        android:id="@+id/disabler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DD000000"/>
+
+</FrameLayout>

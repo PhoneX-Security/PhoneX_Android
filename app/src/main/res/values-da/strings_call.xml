@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="answer_call">Svar</string>
+<string name="end_call">End</string>
+<string name="speaker">Højttaler</string>
+<string name="mute">Mute</string>
+<string name="call_state_calling">Opkald ...</string>
+<string name="call_state_disconnected">Hængt op</string>
+<string name="call_state_incoming">Indgående opkald ...</string>
+<string name="hold_call">Hold</string>
+<string name="on_hold">On Hold</string>
+<string name="transport_secure_to_server">TLS transport anvendes til øjeblikkelig hop</string>
+<string name="transport_secure_full">End-to-end-signalering er meningen sikker</string>
+</resources>

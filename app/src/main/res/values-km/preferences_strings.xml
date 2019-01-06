@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">ការ​កំណត់</string>
+  <string name="prefs_connectivity">បណ្ដាញ</string>
+  <string name="prefs_media">មេឌៀ</string>
+  <string name="prefs_ui">ចំណុច​ប្រទាក់​អ្នក​ប្រើ</string>
+  <!--Network-->
+  <string name="transport">បញ្ជូន</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">គុណភាព​​​អូឌីយ៉ូ</string>
+  <string name="audio_volume">កម្រិត​សំឡេង</string>
+  <string name="codecs">កូឌិដ</string>
+  <string name="echo_cancellation">ការ​បំបាត់​អេកូ</string>
+  <string name="echo_cancellation_desc">ធ្វើ​ឲ្យ​ការ​​​បំបាត់​​អេកូ​សកម្ម</string>
+  <string name="disable_vad">ការ​រក​ឃើញ​អូឌីយ៉ូ​សំឡេង</string>
+  <string name="disable_vad_desc">ធ្វើ​ឲ្យ​ការ​រក​ឃើញ​អូឌីយ៉ូ​សំឡេង​សកម្ម</string>
+  <string name="enable_noise_reduction">​កាត់បន្ថយ​សំឡេង​រំខាន​​</string>
+  <string name="enable_noise_reduction_desc">បើ​បំបាត់​អេកូ​ត្រូវ​បាន​ធ្វើ​ឲ្យ​សកម្ម ​កម្មវិធី​បំបាត់​អេកូ WebRTC ប្រើ​កម្មវិធី​ខាងក្រោយ</string>
+  <string name="sound_mic_volume">ឧបករណ៍​បំពង​សំឡេង​មីក្រូហ្វូន</string>
+  <string name="sound_speaker_volume">ឧបករណ៍​បំពង​សំឡេង​អូប៉ាល័រ</string>
+  <string name="sound_bt_mic_volume">ឧបករណ៍​បំពង​សំឡេង​មីក្រូហ្វូន​ប៊្លូធូស</string>
+  <string name="media_quality">គុណភាព​មេឌៀ</string>
+  <string name="media_quality_desc">គុណភាព​ចរន្ត​មេឌៀ (កែប្រែ បើ​អ្នក​មិន​ដឹង​អ្វី​​ដែល​អ្នក​កំពុង​ធ្វើ)</string>
+  <string name="sound_clock_rate">Clock rate</string>
+  <string name="sound_clock_rate_desc">រលក​អាកាស​វិទ្យុ​ឆានែល​អូឌីយ៉ូ</string>
+  <string name="echo_cancellation_mode">របៀប​អេកូ</string>
+  <string name="echo_cancellation_mode_desc">ក្បួន​ដោះស្រាយ​អេកូ</string>
+  <string name="enable_focus_audio">ផ្ដោត​អូឌីយ៉ូ</string>
+  <string name="auto">អូឌីយ៉ូ</string>
+  <string name="simple">សាមញ្ញ</string>
+  <string name="slow">យឺត</string>
+  <string name="fast">លឿន</string>
+  <!--UI-->
+  <string name="general_ui">ចំណុច​ប្រទាក់​អ្នក​ប្រើ​ទូទៅ</string>
+  <string name="keep_awake_incall">នៅ​តែ​ដំណើរការ​នៅ​ពេល​ហៅ</string>
+  <string name="keep_awake_incall_desc">កំណត់ បើ​​មាន​សំឡេង នៅ​ពេល​​អេក្រង់​បិទ​ខណៈ​ពេល​ហៅ​តាម​ WIFI</string>
+  <string name="log_level">កម្រិត​កំណត់ហេតុ</string>
+  <string name="ringtone">សំឡេង​រោទ៍</string>
+  <string name="prevent_screen_rotation">​កុំ​​បង្វិល​អេក្រង់</string>
+  <string name="invert_proximity_sensor">​បម្លែង​​​ឧបករណ៍​ចាប់​សញ្ញា​នៅ​ជិតៗ</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <string name="normal_preferences">របៀប​ធម្មតា</string>
+  <!--Generic-->
+  <!-- ##automatically translated below -->
+
+<string name="prefs_security">ស​ន្ដិ​សុខ</string>
+<string name="network_watchdog">ឃ្លាំ​មើល​ប​ណ្តា​ញ</string>
+<string name="network_watchdog_desc">ចាប់ផ្ដើម​ឡើង​វិញ​សេវា​ក្នុង​ករណី​នៃ​ការ​ចុះ​ឈ្មោះ​នោះ​ទេ​។ នៅ​ក្នុង​វិនាទី​។ 0 = បិទ</string>
+<string name="security_messages">សារ</string>
+<string name="messages_delete_period_desc">រយៈ​ពេល​យូរ​តើ​ធ្វើ​ដូចម្តេច​ដើម្បី​រក្សា​សារ​របស់​អ្នក​នៅ​ក្នុង​ប័ណ្ណសារ</string>
+<string name="messages_delete_period">ប​ណ្ណ​សារ​សារ</string>
+<string name="just_session">គ្រាន់​តែ​សម័យ​នេះ</string>
+<string name="one_day">1 ថ្ងៃ</string>
+<string name="three_days">3 ថ្ងៃ</string>
+<string name="week">ស​ប្តា​ហ៍</string>
+<string name="month">ខែ</string>
+<string name="forever">ជា​រៀង​រហូត</string>
+</resources>

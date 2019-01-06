@@ -1,0 +1,13 @@
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_core.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_core.c	2014-11-12 18:14:35.523068094 +0100
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_core.c	2014-11-12 19:38:30.695838109 +0100
+@@ -290,7 +290,7 @@
+     cfg->reg_retry_interval = PJSUA_REG_RETRY_INTERVAL;
+     cfg->reg_retry_random_interval = 10;
+     cfg->contact_rewrite_method = PJSUA_CONTACT_REWRITE_METHOD;
+-    cfg->contact_use_src_port = PJ_TRUE;
++    cfg->contact_use_src_port = PJ_FALSE;
+     cfg->use_rfc5626 = PJ_TRUE;
+     cfg->reg_use_proxy = PJSUA_REG_USE_OUTBOUND_PROXY |
+ 			 PJSUA_REG_USE_ACC_PROXY;

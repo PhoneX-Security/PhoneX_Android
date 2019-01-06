@@ -1,0 +1,14 @@
+Index: pjsip/sources/pjlib/include/pj/config_site.h
+===================================================================
+--- pjsip.orig/sources/pjlib/include/pj/config_site.h	2014-11-10 23:23:58.917933095 +0100
++++ pjsip/sources/pjlib/include/pj/config_site.h	2014-11-10 23:23:58.917933095 +0100
+@@ -6,6 +6,9 @@
+ #define PJMEDIA_SDP_NEG_PREFER_REMOTE_CODEC_ORDER 0
+ #define PJ_HAS_IPV6 1
+ 
++// Redefine software name
++#define PJNATH_STUN_SOFTWARE_NAME "phonex"
++
+ #define PJ_STUN_KEEP_ALIVE_SEC 90
+ #define PJ_ICE_SESS_KEEP_ALIVE_MIN 90
+ 

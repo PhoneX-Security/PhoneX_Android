@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <dimen name="right_panel_margin_left">0dip</dimen>
+    <dimen name="right_panel_margin_vertical">0dip</dimen>
+    <dimen name="right_panel_fading_edge">50px</dimen>
+
+    <!-- Contact List -->
+    <dimen name="clist_divider_margin">5dip</dimen>
+
+    <dimen name="pairing_request_action_button_width">42dip</dimen>
+
+    <!-- Call Log -->
+    <dimen name="call_log_call_action_width">56dip</dimen>
+    <dimen name="call_log_inner_margin">8dip</dimen>
+    <dimen name="call_log_outer_margin">0dip</dimen>
+    <!-- Messages -->
+    <dimen name="message_item_text_padding_left_right">8dip</dimen>
+    <dimen name="message_item_text_padding_top">5dip</dimen>
+    <dimen name="pin_header">25dip</dimen>
+    <!-- Contact list -->
+    <dimen name="contact_list_inner_margin">2dip</dimen>
+    <dimen name="contact_list_inner_margin_top">0dip</dimen>
+
+    <!-- Dialogs -->
+    <dimen name="dialog_button_text_size">16sp</dimen>
+
+    <!-- Notifications -->
+    <dimen name="notifications_outer_margin">16dip</dimen>
+    <dimen name="notifications_inner_margin">8dip</dimen>
+
+    <dimen name="decent_padding">10dp</dimen>
+
+
+    <!-- PinLock view  -->
+    <dimen name="fragment_padding">10dp</dimen>
+    <dimen name="keyboard_underline_padding">20dp</dimen>
+    <dimen name="pin_keyboard_default_text_size">24sp</dimen>
+    <dimen name="pin_header_label_size">24sp</dimen>
+    <dimen name="pinputview_default_text_size">22sp</dimen>
+    <dimen name="pinputview_default_char_padding">6dp</dimen>
+    <dimen name="pin_view_progressbar_size">32dp</dimen>
+    <dimen name="pin_logo_top_margin">52dp</dimen>
+    <dimen name="pin_logo_margin">32dp</dimen>
+
+    <!-- FilePicker -->
+    <dimen name="list_detail_item_padding">5dp</dimen>
+    <dimen name="list_detail_image_size">56dp</dimen>
+    <dimen name="list_font">16sp</dimen>
+
+    <dimen name="file_picker_button_size">46dp</dimen>
+    <dimen name="file_picker_button_padding">10dp</dimen>
+
+    <dimen name="list_grid_item_padding">2dp</dimen>
+    <dimen name="list_grid_item_margin">1dp</dimen>
+    <dimen name="list_grid_pick_size">40dp</dimen>
+    <dimen name="list_grid_font">10sp</dimen>
+
+    <!--Material redesign-->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="nav_drawer_width">300dp</dimen>
+
+    <dimen name="dialog_side_padding">24dp</dimen>
+
+    <!--Camera-->
+    <dimen name="base_padding">15dp</dimen>
+    <dimen name="small_margin">10dp</dimen>
+    <dimen name="medium_margin">20dp</dimen>
+    <dimen name="large_margin">40dp</dimen>
+    <dimen name="camera_screen_dialog_spinner_width">200dp</dimen>
+    <dimen name="settings_item_padding">5dp</dimen>
+    <dimen name="image_button_size">50dp</dimen>
+    <dimen name="image_small_button_size">26dp</dimen>
+    <dimen name="zoom_size">100dp</dimen>
+    <dimen name="splash_size">100dp</dimen>
+    <dimen name="license_current_state_margin">6dp</dimen>
+
+</resources>

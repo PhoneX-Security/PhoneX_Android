@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/list_text"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:gravity="center_vertical"    
+    android:paddingLeft="13dip"
+    android:paddingRight="13dip"
+    android:paddingTop="13dip"
+    
+    android:textColor="#ffffff"
+    android:background="@drawable/actionbar_status_dropdown_selector"
+    android:drawablePadding="7dip"
+    android:paddingBottom="13dip"
+
+    />
+    <!--android:drawableLeft="@drawable/svg_logo_square_small"-->
+    <!--android:drawablePadding="7dip"-->

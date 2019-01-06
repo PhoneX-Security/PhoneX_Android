@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="menu_delete_all">删除线程</string>
+    <string name="menu_delete">删除线程</string>
+    <string name="menu_view">查看线程</string>
+
+    <string name="undelivered_msg_dialog_title">未发出信息</string>
+    <string name="msg_backoff_resend">重新发送%s s</string>
+
+    <string name="copy_message_text">复制文本信息</string>
+    <string name="done">完成</string>
+
+    <string name="compose_title">聊天</string>
+    <string name="send">发送</string>
+    <string name="type_to_compose_text_enter_to_send">打字生成</string>
+    <string name="yes">OK</string>
+    <string name="no">取消</string>
+    <string name="edit">编辑</string>
+    <string name="restore_default">恢复默认设置</string>
+    <string name="confirm_dialog_title">删除</string>
+    <string name="confirm_delete_conversation">整个线程将被删除</string>
+    <string name="confirm_delete_all_conversations">所有线程将被删除</string>
+    <string name="delete">删除</string>
+
+    <string name="status_pending">暂停</string>
+    <string name="status_failed">未成功</string>
+</resources>

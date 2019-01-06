@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="net.phonex"
+    android:installLocation="internalOnly"
+    android:versionCode="2334"
+    android:versionName="1.9.3">
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true"
+        android:xlargeScreens="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Call may crash on some phones when this permission is missing -->
+    <uses-permission android:name="android.permission.USE_SIP" />
+    <!-- For intercepting GSM calls while SIP call is in progress. -->
+    <uses-permission android:name="android.permission.MODIFY_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.PHONEX" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Camera is needed for photos from file picker -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+
+
+    <!-- [START gcm_permission] -->
+    <permission android:name="net.phonex.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="net.phonex.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <!-- + WAKE_LOCK -->
+    <!-- [END gcm_permission] -->
+
+    <permission
+        android:name="android.permission.PHONEX"
+        android:description="@string/permission_phonex_desc"
+        android:label="@string/permission_phonex"
+        android:permissionGroup="android.permission-group.COST_MONEY"
+        android:protectionLevel="signature" />
+
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.screen.portrait"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+
+    <application
+        android:name=".PhoneX"
+        android:allowBackup="false"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/icon_flat7"
+        android:label="@string/application_name"
+        android:logo="@drawable/icon_flat7" >
+
+        <activity
+            android:name=".testing.TestActivity"
+            android:label="PhoneX"
+            android:theme="@style/MaterialTheme" >
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+
+        </activity>
+        <activity
+            android:name=".ui.intro.IntroActivity"
+            android:configChanges="orientation|locale"
+            android:label="@string/application_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/IntroActivityTheme"
+            android:windowSoftInputMode="adjustNothing" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.phone-x.net"
+                    android:pathPrefix="/trial/credentials"
+                    android:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.phone-x.net"
+                    android:pathPrefix="/recoverycode"
+                    android:scheme="https" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="www.phone-x.net"
+                    android:scheme="phonex" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.PhonexActivity"
+            android:label="PhoneX"
+            android:launchMode="singleTask"
+            android:logo="@drawable/svg_logo_small"
+            android:theme="@style/MaterialTheme" >
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+
+            <intent-filter android:priority="10" >
+                <action android:name="net.phonex.phone.action.CONTACT_LIST" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="10" >
+                <action android:name="net.phonex.phone.action.MESSAGES" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="10" >
+                <action android:name="net.phonex.ui.action.SIPWARNING" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:priority="10" >
+                <action android:name="net.phonex.phone.action.NOTIFICATIONS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.help.HelpListActivity"
+            android:exported="false"
+            android:label="@string/application_name"
+            android:theme="@style/MaterialTheme" >
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <!-- Main service -->
+        <!-- Require at least the configure permission to use -->
+        <service
+            android:name=".service.XService"
+            android:exported="false"
+            android:permission="android.permission.PHONEX"
+            android:process=":service" >
+            <intent-filter>
+                <action android:name="net.phonex.service.XService" />
+            </intent-filter>
+        </service>
+
+        <!-- SafeNet Service - running in background, lightweight, separate process -->
+        <service
+            android:name=".service.SafeNetService"
+            android:exported="false"
+            android:permission="android.permission.PHONEX"
+            android:process=":safeNet" >
+            <intent-filter>
+                <action android:name="net.phonex.service.SafeNetService" />
+            </intent-filter>
+        </service>
+
+        <!-- GCM related services -->
+        <receiver
+            android:name="com.google.android.gms.gcm.GcmReceiver"
+            android:exported="true"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <!--<action android:name="com.google.android.c2dm.intent.REGISTRATION" />-->
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="net.phonex" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="net.phonex" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name=".gcm.MyGcmListenerService"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".gcm.MyInstanceIDListenerService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.android.gms.iid.InstanceID" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".gcm.RegistrationIntentService"
+            android:exported="false">
+        </service>
+
+        <service
+            android:name=".login.LogoutIntentService"
+            android:exported="false">
+        </service>
+
+        <!-- Short lived services -->
+        <service
+            android:name=".inapp.ReloadPurchasesService"
+            android:exported="false"/>
+
+        <receiver
+            android:name=".pub.BaseSystemReceiver"
+            android:permission="android.permission.PHONEX"
+            android:process=":service" >
+
+            <!-- Here filter for protected-broadcasts -->
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="net.phonex.accounts.activate" />
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".pub.QuickLoginReceiver"
+            android:permission="android.permission.PHONEX"
+            android:process=":service">
+            <intent-filter>
+                <action android:name="net.phonex.service.ACTION_TRIGGER_QUICK_LOGIN" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Preferences -->
+        <activity
+            android:name=".ui.preferences.PhonexPreferences"
+            android:configChanges="orientation|locale"
+            android:enabled="@bool/prefs_v8_enabled"
+            android:exported="false"
+            android:label="@string/prefs"
+            android:permission="android.permission.PHONEX"
+            android:theme="@style/MaterialTheme.Preference" >
+            <intent-filter>
+                <action android:name="net.phonex.ui.action.PREFS_GLOBAL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.preferences.PreferencesContainer"
+            android:exported="false"
+            android:label=""
+            android:theme="@style/MaterialTheme.Preference" />
+
+        <!-- Account manager -->
+        <activity
+            android:name=".ui.account.AccountPreferences"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:label="@string/edit"
+            android:theme="@style/MaterialTheme.Preference" />
+
+        <!-- android:process=":service" -->
+        <activity
+            android:name=".ui.call.CallActivity"
+            android:allowTaskReparenting="true"
+            android:configChanges="orientation"
+            android:excludeFromRecents="true"
+            android:exported="false"
+            android:launchMode="singleTask"
+            android:permission="android.permission.PHONEX"
+            android:taskAffinity=""
+            android:theme="@style/MaterialTheme" >
+            <intent-filter android:priority="100" >
+
+                <!--
+                To intercept gsm calls
+                <action android:name="android.intent.action.PHONE_STATE" />
+                -->
+                <action android:name="net.phonex.phone.action.INCALL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".pub.a.AudioSettingsActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:label="@string/prefs_media"
+            android:taskAffinity="net.phonex.legacy.ui.incall.InCallActivity"
+            android:theme="@style/MaterialTheme"
+             />
+
+        <receiver android:name=".pub.HeadsetButtonBroadcastReceiver" />
+
+        <!-- Messages -->
+        <activity
+            android:name=".ui.chat.MessageActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/MaterialTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <!-- android:theme="@style/PhoneXTheme" -->
+
+        <activity
+            android:name=".ui.fileManager.FileManagerActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/MaterialTheme" />
+        <activity
+            android:name=".camera.CameraActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialTheme" />
+        <activity
+            android:name=".ui.gallery.GalleryActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:launchMode="singleTop"
+            android:theme="@style/MaterialTheme" />
+
+        <!-- Databases providers -->
+        <provider
+            android:name=".pref.PreferenceProvider"
+            android:authorities="net.phonex.prefs"
+            android:exported="false"
+            android:permission="android.permission.PHONEX" />
+        <provider
+            android:name=".db.DBMemoryPrefsProvider"
+            android:authorities="net.phonex.memory.prefs"
+            android:exported="false"
+            android:permission="android.permission.PHONEX"
+            android:process=":safeNet" />
+        <provider
+            android:name=".db.DBProvider"
+            android:authorities="net.phonex.db"
+            android:exported="false"
+            android:permission="android.permission.PHONEX"
+            android:process=":service" />
+
+        <activity
+            android:name=".ui.lock.PinActivity"
+            android:exported="false"
+            android:label="@string/application_name"
+            android:theme="@style/MaterialTheme" >
+        </activity>
+        <activity
+            android:name=".ui.CallErrorActivity"
+            android:configChanges="orientation"
+            android:exported="false"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialTheme.NoTitleAndTransparent" >
+        </activity>
+        <activity
+            android:name=".ui.preferences.ChangePasswordActivity"
+            android:exported="false"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialTheme" >
+        </activity>
+        <activity
+            android:name=".ui.keyGen.NotificationActivity"
+            android:exported="false"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialTheme" >
+            <intent-filter>
+                <action android:name="net.phonex.ui.action.CERTUPD" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="net.phonex.ui.action.KEYGEN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.preferences.MyCertificateActivity"
+            android:exported="false"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialTheme" >
+        </activity>
+        <activity
+            android:name=".KillerActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:exported="false"
+            android:noHistory="true"
+            android:process=":killer"
+            android:stateNotNeeded="true"
+            android:theme="@style/DarkTheme.NoTitle" >
+            <intent-filter>
+                <action android:name="net.phonex.KILL" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.github.nativehandler.NativeCrashActivity"
+            android:configChanges="keyboard|keyboardHidden|orientation"
+            android:exported="false"
+            android:process=":CrashHandler"
+            android:stateNotNeeded="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".ui.broadcast.BroadcastMessageActivity"
+            android:label="@string/application_name"
+            android:theme="@style/MaterialTheme"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name=".ui.inapp.ManageLicenseActivity"
+            android:theme="@style/MaterialTheme" >
+        </activity>
+
+        <meta-data
+            android:name="net.phonex.util.glide.PassingGlideModule"
+            android:value="GlideModule" />
+        <meta-data
+            android:name="net.phonex.util.glide.FileStorageUriStreamGlideModule"
+            android:value="GlideModule" />
+
+        <activity
+            android:name=".ui.pairingRequest.PairingRequestsActivity"
+            android:theme="@style/MaterialTheme">
+        </activity>
+        <activity
+            android:name=".ui.addContact.AddContactActivity"
+            android:theme="@style/MaterialTheme">
+        </activity>
+        <activity
+            android:name=".ui.logUpload.LogUploadActivity"
+            android:theme="@style/MaterialTheme">
+        </activity>
+        <activity
+            android:name=".ui.invite.InviteActivity"
+            android:theme="@style/MaterialTheme">
+        </activity>
+        <activity
+            android:name=".introslider.SliderActivity"
+            android:noHistory="true"
+            android:theme="@style/FullscreenTheme">
+        </activity>
+        <activity
+            android:name=".ui.preferences.ChangeRecoveryEmailActivity"
+            android:exported="false"
+            android:noHistory="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/MaterialTheme" >
+        </activity>
+
+    </application>
+
+</manifest>

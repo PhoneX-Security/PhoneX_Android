@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="verify_n_digit_pin">请输入您的PIN[Sim卡的个人识别密码]</string>
+    <string name="create_n_digit_pin">请创造新的PIN[Sim卡的个人识别密码]</string>
+    <string name="confirm_n_digit_pin">请确认您的PIN[Sim卡的个人识别密码]</string>
+    <string name="pin_mismatch">您所收入的PIN[Sim卡的个人识别密码]不符。</string>
+    <string name="pin_created">PIN[Sim卡的个人识别密码]被创建</string>
+    <string name="saving_pin">存储PIN[Sim卡的个人识别密码]</string>
+    <string name="pin_tries_depleted">您的PIN[Sim卡的个人识别密码]输入错误次数已达：%d 。注销。</string>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="crash_dialog_title">PhoneX已崩溃</string>
+    <string name="crash_dialog_text">一个意外错误导致应用程序停止。请向我们发送错误数据以帮助我们尽快解决这个问题。</string>
+    <string name="crash_dialog_comment_prompt">请填写您对这一问题的评论以帮助我们减少该问题的出现。</string>
+    <string name="crash_dialog_ok_toast">谢谢！</string>
+    <string name="crash_dialog_positive_button">发送报告</string>
+</resources>

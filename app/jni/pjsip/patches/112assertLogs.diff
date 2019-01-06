@@ -1,0 +1,17 @@
+Index: pjsip/sources/pjsip/src/pjsip/sip_dialog.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip/sip_dialog.c
++++ pjsip/sources/pjsip/src/pjsip/sip_dialog.c
+@@ -1389,6 +1389,12 @@ PJ_DEF(pj_status_t) pjsip_dlg_modify_res
+ 						int st_code,
+ 						const pj_str_t *st_text)
+ {
++    if (st_code == 0){
++        // this is clearly an error - we need to investigate more, so raise an assert log and change to valid
++        PJ_LOG(0, (THIS_FILE, "pjsip_dlg_modify_response(), invalid SIP status code [st_code=%d], changing to 699", st_code));
++        st_code = 699;
++    }
++    
+     pjsip_hdr *hdr;
+ 
+     PJ_ASSERT_RETURN(dlg && tdata && tdata->msg, PJ_EINVAL);

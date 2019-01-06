@@ -1,0 +1,11 @@
+Crypto-wrapper
+--------------
+
+* wraps useful OpenSSL functions for faster crypto in Java
+* provides implementation of Scrypt
+
+When adding new method:
+1. Add native method header to NativeCryptoHelper.java
+2. Run phonexAnd/sh/regenerateCryptoWrapper.sh to refresh nativeCryptoHelper.h header file
+3. Implement new method in nativeCryptoHelper.cpp
+

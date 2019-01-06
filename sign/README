@@ -1,0 +1,6 @@
+This directory contains files needed for producing a digital signature for APK files for Google Play.
+Do not add truststore (android.jks) and properties file (sign.properties) to a version control!
+For security reasons these files must not be commited!
+
+You should be able to obtain JKS file from developers by a secure channel. 
+

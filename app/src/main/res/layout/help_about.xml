@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/phonex_background"
+    >
+
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="20dip"
+    android:paddingRight="20dip"
+    android:paddingTop="10dip"
+    android:paddingBottom="10dip"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/linearlayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="horizontal"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:id="@+id/logophonex"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:src="@drawable/svg_logo_square_small"
+            android:gravity="center"
+            />
+
+        <TextView
+            android:id="@+id/editText1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:text="@string/about_phonex"
+            android:gravity="center"/>
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/text1"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="@string/firstlaunch_text"
+        android:layout_below="@+id/linearlayout"
+        />
+
+    <TextView
+        android:id="@+id/text2"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:autoLink="email|web"
+        android:linksClickable="true"
+        android:text="@string/firstlaunch_text2"
+        android:layout_below="@id/text1"
+        android:ellipsize="none" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text2"
+        android:gravity="bottom">
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/phonex_text"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="logo"
+            android:paddingBottom="15dp"
+            android:paddingLeft="35dp"
+            android:scaleType="center"
+            android:src="@drawable/svg_logo_large" />
+
+        <TextView
+            android:id="@+id/phonex_text"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/phonex_rev"
+            android:layout_centerHorizontal="true"
+            android:text="@string/intro_phonex"
+            android:gravity="center"
+            android:textColor="@color/text_whitesmoke"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/phonex_rev"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/phonex_copyright"
+            android:layout_centerHorizontal="true"
+            android:text="@string/intro_phonex"
+            android:gravity="center"
+            android:textColor="@color/text_whitesmoke"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/phonex_copyright"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="15dp"
+            android:text="@string/intro_copyright"
+            android:gravity="center"
+            android:textColor="@color/text_gray2"
+            android:textSize="12sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
+</ScrollView>

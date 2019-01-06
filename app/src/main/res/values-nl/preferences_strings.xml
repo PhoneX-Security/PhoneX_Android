@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">Instellingen</string>
+  <string name="prefs_connectivity">Netwerk</string>
+  <string name="prefs_media">Media</string>
+  <string name="prefs_ui">Gebruikersinterface</string>
+  <!--Network-->
+  <string name="transport">Transport</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">Geluidskwaliteit</string>
+  <string name="audio_volume">Geluidsniveau</string>
+  <string name="codecs">Coderingen</string>
+  <string name="echo_cancellation">Echo-onderdrukking</string>
+  <string name="echo_cancellation_desc">Activeer echo-onderdrukking</string>
+  <string name="disable_vad">Voice audio detection</string>
+  <string name="disable_vad_desc">Activeer voice audio detection</string>
+  <string name="enable_noise_reduction">Ruisonderdrukking</string>
+  <string name="enable_noise_reduction_desc">Werkt wanneer echoannulering is geactiveerd en de WebRTC echoannuleringsfunctie gebruikt wordt.</string>
+  <string name="sound_mic_volume">Microfoonversterking</string>
+  <string name="sound_speaker_volume">Luidsprekerversterking</string>
+  <string name="sound_bt_mic_volume">Bluetooth microfoonversterking</string>
+  <string name="media_quality">Media-kwaliteit</string>
+  <string name="media_quality_desc">Kwaliteit van de media-stroom (alleen aanpassen als u weet wat u doet)</string>
+  <string name="sound_clock_rate">Kloksnelheid</string>
+  <string name="sound_clock_rate_desc">Frequentie van het geluidskanaal</string>
+  <string name="echo_cancellation_mode">Echo modus</string>
+  <string name="echo_cancellation_mode_desc">Algoritme voor echo</string>
+  <string name="enable_focus_audio">Focus audio</string>
+  <string name="auto">Automatisch</string>
+  <string name="simple">Eenvoudig</string>
+  <string name="slow">Langzaam</string>
+  <string name="fast">Snel</string>
+  <!--UI-->
+  <string name="general_ui">Algemene gebruikersinterface</string>
+  <string name="keep_awake_incall">Blijf wakker tijdens een oproep</string>
+  <string name="keep_awake_incall_desc">Oplossing voor slecht geluid wanneer het scherm uitschakelt tijdens een Wi-Fi oproep</string>
+  <string name="log_level">Log-niveau</string>
+  <string name="ringtone">Beltoon</string>
+  <string name="prevent_screen_rotation">Voorkom schermrotatie</string>
+  <string name="invert_proximity_sensor">Inverteer nabijheidssensor</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <string name="normal_preferences">Normale modus</string>
+  <!--Generic-->
+  <!-- ##automatically translated below -->
+
+<string name="prefs_security">Veiligheid</string>
+<string name="network_watchdog">Netwerk waakhond</string>
+<string name="network_watchdog_desc">Herstart dienst in geval van geen registratie. In seconden. 0 = uitschakelen</string>
+<string name="security_messages">Berichten</string>
+<string name="messages_delete_period_desc">Hoe lang uw berichten te houden in het archief</string>
+<string name="messages_delete_period">Berichten archivation</string>
+<string name="just_session">Alleen deze sessie</string>
+<string name="one_day">1 dag</string>
+<string name="three_days">3 dagen</string>
+<string name="week">Week</string>
+<string name="month">Maand</string>
+<string name="forever">Voor altijd</string>
+</resources>

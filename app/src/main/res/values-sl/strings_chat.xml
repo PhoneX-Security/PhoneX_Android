@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="menu_delete_all">Izbriši nit</string>
+    <string name="menu_delete">Izbriši sporočilo</string>
+    <string name="menu_view">Poglej nit</string>
+    <string name="undelivered_msg_dialog_title">Nedostavljno sporočilo</string>
+    <string name="copy_message_text">Kopiraj besedilo</string>
+    <string name="done">Končano</string>
+    <string name="compose_title">Ustvari</string>
+    <string name="send">Pošlji</string>
+    <string name="type_to_compose_text_enter_to_send">Piši</string>
+    <string name="yes">V redu</string>
+    <string name="no">Prekliči</string>
+    <string name="edit">Uredi</string>
+    <string name="restore_default">Ponastavi nastavitve</string>
+    <string name="confirm_dialog_title">Izbriši</string>
+    <string name="confirm_delete_conversation">Celotna nit bo izbrisana</string>
+    <string name="confirm_delete_all_conversations">Vse niti bodo izbrisane</string>
+    <string name="delete">Izbriši</string>
+    <string name="status_pending">V čakanju</string>
+    <string name="status_failed">Ni poslano</string>
+    </resources>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="general"
+        android:title="@string/general_media">
+    <CheckBoxPreference
+        android:defaultValue="false"
+        android:key="bluetooth_default_on"
+        android:summary="@string/bluetooth_on_desc"
+        android:title="@string/bluetooth_on" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="audio_quality"
+        android:title="@string/audio_quality">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="echo_cancellation"
+            android:summary="@string/echo_cancellation_desc"
+            android:title="@string/echo_cancellation" />
+
+        <ListPreference
+            android:defaultValue="2"
+            android:entries="@array/echo_mode_choices"
+            android:entryValues="@array/echo_mode_values"
+            android:key="echo_cancellation_mode"
+            android:summary="@string/echo_cancellation_mode_desc"
+            android:title="@string/echo_cancellation_mode" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="disable_vad"
+            android:summary="@string/disable_vad_desc"
+            android:title="@string/disable_vad" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:dependency="echo_cancellation"
+            android:key="enable_noise_suppression"
+            android:summary="@string/enable_noise_reduction_desc"
+            android:title="@string/enable_noise_reduction" />
+
+        <EditTextPreference
+            android:defaultValue="4"
+            android:key="media_quality"
+            android:numeric="signed"
+            android:summary="@string/media_quality_desc"
+            android:title="@string/media_quality" />
+
+        <ListPreference
+            android:defaultValue="8000"
+            android:entries="@array/clock_rate_choices"
+            android:entryValues="@array/clock_rate_values"
+            android:key="snd_clock_rate"
+            android:summary="@string/sound_clock_rate_desc"
+            android:title="@string/sound_clock_rate" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="has_io_queue"
+            android:summary="@string/has_io_queue_desc"
+            android:title="@string/has_io_queue" />
+    </PreferenceCategory>
+
+    <EditTextPreference
+        android:defaultValue="2"
+        android:key="media_thread_count"
+        android:numeric="signed"
+        android:summary="@string/media_thread_count_desc"
+        android:title="@string/media_thread_count" />
+
+    <PreferenceScreen
+        android:key="codecs_list"
+        android:summary="@string/codecs_availability_text"
+        android:title="@string/codecs"></PreferenceScreen>
+    <PreferenceScreen
+        android:key="band_types"
+        android:title="@string/codecs_band_types"></PreferenceScreen>
+
+    <PreferenceCategory
+        android:key="audio_volume"
+        android:title="@string/audio_volume">
+        <net.phonex.pub.a.SeekBarPreference
+            android:defaultValue="1.0"
+            android:key="sound_mic_volume"
+            android:max="15"
+            android:summary="@string/sound_mic_volume_desc"
+            android:text="dB"
+            android:title="@string/sound_mic_volume" />
+        <net.phonex.pub.a.SeekBarPreference
+            android:defaultValue="1.0"
+            android:key="sound_speaker_volume"
+            android:max="15"
+            android:summary="@string/sound_speaker_volume_desc"
+            android:text="dB"
+            android:title="@string/sound_speaker_volume" />
+        <net.phonex.pub.a.SeekBarPreference
+            android:defaultValue="1.0"
+            android:key="sound_bt_mic_volume"
+            android:max="15"
+            android:summary="@string/sound_mic_volume_desc"
+            android:text="dB"
+            android:title="@string/sound_bt_mic_volume" />
+        <net.phonex.pub.a.SeekBarPreference
+            android:defaultValue="1.0"
+            android:key="sound_bt_speaker_volume"
+            android:max="15"
+            android:summary="@string/sound_speaker_volume_desc"
+            android:text="dB"
+            android:title="@string/sound_bt_speaker_volume" />
+        <net.phonex.pub.a.SeekBarPreference
+            android:defaultValue="8.0"
+            android:key="snd_stream_level"
+            android:max="10"
+            android:summary="@string/sound_init_volume_desc"
+            android:title="@string/sound_init_volume" />
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="use_soft_volume"
+            android:summary="@string/use_sw_volume_desc"
+            android:title="@string/use_sw_volume" />
+    </PreferenceCategory>
+
+    <PreferenceScreen
+        android:key="audio_troubleshooting"
+        android:summary="@string/audio_troubleshooting_desc"
+        android:title="@string/audio_troubleshooting"></PreferenceScreen>
+
+
+    <PreferenceCategory
+        android:key="category_file_transfer"
+        android:title="@string/category_file_transfer">
+        <ListPreference
+            android:defaultValue="1024"
+            android:entries="@array/ft_resize_choices"
+            android:entryValues="@array/ft_resize_values"
+            android:key="photo_resize_resolution"
+            android:summary="%s"
+            android:title="@string/ft_resize" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

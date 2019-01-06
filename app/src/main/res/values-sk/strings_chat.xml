@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="menu_delete_all">Zmazať konverzácie</string>
+    <string name="menu_delete">Zmazať konverzáciu</string>
+    <string name="menu_view">Zobraziť vlákno</string>
+    <string name="undelivered_msg_dialog_title">Nedoručená správa</string>
+    <string name="copy_message_text">Skopírujte text správy</string>
+    <string name="done">Dokončené</string>
+    <string name="compose_title">Napísať</string>
+    <string name="send">Odoslať</string>
+    <string name="type_to_compose_text_enter_to_send">Napísať správu</string>
+    <string name="yes">OK</string>
+    <string name="no">Zrušiť</string>
+    <string name="edit">Upraviť</string>
+    <string name="restore_default">"Obnoviť predvolené nastavenia"</string>
+    <string name="confirm_dialog_title">Vymazať</string>
+    <string name="confirm_delete_conversation">Celé vlákno bude zmazané.</string>
+    <string name="confirm_delete_all_conversations">Všetky príspevky budú vymazané.</string>
+    <string name="delete">Vymazať</string>
+    <string name="status_pending">Čaká sa</string>
+    <string name="status_failed">Nedokončené</string>
+
+    <string name="msg_backoff_resend">Ďaľší pokus za %s s</string>
+</resources>

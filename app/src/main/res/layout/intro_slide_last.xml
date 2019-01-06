@@ -1,0 +1,79 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="0dp"
+    android:background="#333333"
+    android:orientation="vertical"
+    tools:context=".SliderActivity$PlaceholderFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="32sp"
+            android:layout_above="@+id/description"
+            android:gravity="center_horizontal"
+            android:text="@string/slide_start_title"  />
+
+        <TextView android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/secondary_text"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="2dp"
+            android:textSize="16sp"
+            android:gravity="center_horizontal"
+            android:text="@string/slide_start_desc"  />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/new_account_redirect_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="20dp"
+            android:text="@string/create_new_account"
+            style="@style/SlideButtonFlatOrange"
+            />
+
+        <TextView
+            android:id="@+id/or_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:gravity="center_horizontal"
+            android:textSize="18dp"
+            android:layout_below="@+id/new_account_redirect_button"
+            android:textStyle="italic"
+            android:text="@string/or_text"
+            />
+
+        <Button
+            android:id="@+id/login_redirect_button"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/or_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/sign_in"
+            style="@style/SlideButtonFlatOrange"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

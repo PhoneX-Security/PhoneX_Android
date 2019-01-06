@@ -1,0 +1,175 @@
+package net.phonex.pub.proto;
+option java_outer_classname = "FileTransfer";
+option optimize_for = SPEED;
+
+// Hybrid encryption structure. Asymmetrically encrypted symmetric
+// encryption key, symmetric ciphertext, initialization vector.
+message HybridEncryption {
+  optional int32 version = 1 [default=1];
+  required bytes aCiphertext = 2;
+  optional bytes iv = 3;
+  optional bytes sCiphertext = 4;
+  extensions 100 to 199;
+}
+
+// Structure that will be encrypted with symmetric
+// cipher in the GetDHKey protocol, message #2.
+message GetDHKeyResponseBodySCip {
+  required uint32 dhGroupId = 1;
+  required bytes gx = 2;
+  optional string nonce1 = 3;
+  optional bytes sig1 = 4; 
+}
+
+// Structure the signature value will be computed on 
+// in GetDHKey protocol.
+// Can have 2 variants, with/without nonce2.
+message DhkeySig {
+  required uint32 version = 1 [default=1];
+  required string b = 2;
+  required string bCertHash = 3;
+  required string a = 4;
+  required string aCertHash = 5;
+  required uint32 dhGroupId = 6;
+  required bytes gx = 7;
+  required string nonce1 = 8;
+  optional string nonce2 = 9;
+}
+  
+// Authenticated encryption (IV, ciphertext, MAC).
+// For file transfer, individual file is transfered in 
+// this way.
+message AuthEnc {
+  optional bytes iv = 1;
+  optional bytes sCiphertext=2;
+  optional bytes mac=3;
+}
+
+// "Key" field of the upload file request.
+// Contains DH public key for derivation of the shared symmetric key
+// and encrypted & MACed signature.
+message UploadFileKey {
+  optional bytes saltb = 1;
+  optional bytes gy = 2;
+  optional bytes sCiphertext = 3;
+  optional bytes mac = 4;
+}
+
+// Structure the MAC will be computed on in FileTransfer.
+message UploadFileToMac {
+  required uint32 version = 1 [default=1];
+  required string b = 2;
+  required string bCertHash = 3;
+  required string a = 4;
+  required string aCertHash = 5;
+  required uint32 dhGroupId = 6;
+  required bytes gx = 7;
+  required bytes gy = 8;
+  required bytes gxy = 9;
+  required string nonce1 = 10;
+  required string nonce2 = 11;
+  required bytes nonceb = 12;
+}
+
+// Xb from the FileTransfer protocol description.
+message UploadFileXb {
+  required string b=1;
+  required bytes nonceb=2;
+  required bytes sig=3;
+}
+
+// Message containing information about symmetric
+// encryption of an individual file (meta or archive).
+message UploadFileEncryptionInfo {
+  required bytes iv=1;
+  required bytes mac=2;
+}
+
+// Detailed info about some file from the archive.
+message MetaFileDetail {
+  optional string fileName=1;
+  optional string extension=2;
+  optional string mimeType=3;
+  optional uint64 fileSize=4;
+  optional bytes hash=5;
+  optional bytes thumb=6; // JPEG image, thumb representation of the file.
+  
+  optional int32  prefOrder=7;
+  optional string thumbNameInZip=8;
+  optional string title=9;
+  optional string desc=10;
+  optional uint64 fileTimeMilli=11;
+}
+
+message MetaFile {
+  optional uint64 timestamp=1;
+  optional bytes archiveHash=2; // Hash of the archive counterpart (ties archive to meta file).
+  optional bytes archiveSig=3;
+  optional uint32 numberOfFiles=4;
+  optional string title=5;
+  optional string description=6;
+  
+  repeated MetaFileDetail files=7;  // List of enclosed files in the archive.
+}
+
+// Included in SIP messages, for general notifications
+// for example when sending files, this message is sent to notify user that file is uploaded 
+// and waiting to be downloaded  
+message GeneralMsgNotification {
+  // Types of the key information.
+  enum NotificationType {
+    NewFile = 0;
+    MissedCall = 1;
+    DhKeySyncRequest = 2;
+    FullMailbox = 3;
+    MessageReadAck = 4;
+    CallMeRequest = 5;
+    BurnMessage = 6;
+    ConversationPolicy = 7;
+    CertRequest = 8;
+    ISeeYorCertificate = 9;
+    PairingRequest = 10;
+    ContactList = 11;
+    GroupChat = 12;
+    GroupCall = 13;
+    GroupKey = 14;
+    ServerRequest = 15;
+    GeneralRequest = 16;
+    Other=63;
+  }
+  
+  optional string title=1;
+  optional string subtitle=2;
+  
+  // Timestamp of the event user is being notified.
+  optional uint64 timestamp=4;
+
+  // Nonce-id of this message
+  optional uint32 nonce=6;
+  
+  // Type of the notification
+  optional NotificationType notifType=5 [default=NewFile]; 
+   
+  // Optional notification auxiliary information.
+  optional uint32 notifAux=8;
+  
+  // Nonce2 of the file (relevant for NewFile type)
+  optional string fileTransferNonce=3;
+
+  // Acknowledged nonces (relevant for MessageReadAck type)
+  repeated uint32 ackNonces=7 [packed=true];
+
+  // CallID for missed call notification
+  optional string sipCallId=9;
+
+  // Message IDs for burn request
+  repeated uint32 msgNonces = 11;
+
+  // For more general requests - notification code.
+  optional uint32 notifCode = 15;
+  optional uint32 notifSubCode = 16;
+
+  // Optional string for request body.
+  optional string requestBodyAux = 20;
+}
+

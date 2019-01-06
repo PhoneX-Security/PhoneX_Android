@@ -1,0 +1,159 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="prefs">Настройки</string>
+    <string name="prefs_connectivity">Сеть</string>
+    <string name="prefs_media">Медиа</string>
+    <string name="prefs_ui">Интерфейс пользователя</string>
+    <string name="prefs_security">Безопасность</string>
+
+    <string name="transport">Передача</string>
+    <string name="network_watchdog">Сторож регистрации</string>
+    <string name="network_watchdog_desc">В случае сбоя регистрации перезагрузит службу после выбранного количества секунд. 0 означает отключено.</string>
+
+    <!-- Media -->
+    <string name="audio_quality">Качество звука</string>
+    <string name="audio_volume">Громкость</string>
+    <string name="codecs">Кодеки</string>
+    <string name="echo_cancellation">Исключение эха</string>
+    <string name="echo_cancellation_desc">Активирует функции для эхоподавления</string>
+    <string name="disable_vad">Выключить определение голоса</string>
+    <string name="disable_vad_desc">Деактивация голосового определения</string>
+    <string name="enable_noise_reduction">Шумоподавление</string>
+    <string name="enable_noise_reduction_desc">Работает, когда эхоподавление активированo, и когда при нем использован WebRTC в качестве бэкэнда.</string>
+    <string name="sound_mic_volume">Усиление микрофона</string>
+    <string name="sound_mic_volume_desc">Усиление уровня микрофона</string>
+    <string name="sound_speaker_volume">Усиление громкости динамиков</string>
+    <string name="sound_speaker_volume_desc">Настройки громкости динамиков</string>
+    <string name="sound_bt_mic_volume">Усиление Bluetooth микрофона</string>
+    <string name="sound_bt_speaker_volume">Усиление Bluetooth гарнитуры</string>
+    <string name="sound_init_volume">Громкость динамиков по умолчанию</string>
+    <string name="sound_init_volume_desc">Установка громкости динамиков по умолчанию</string>
+    <string name="sound_clock_rate">Тактовая частота</string>
+    <string name="sound_clock_rate_desc">Аудио частота канала</string>
+    <string name="media_quality">Качество медиа</string>
+    <string name="media_quality_desc">Качество потока аудиовизуальной информации</string>
+    <string name="echo_cancellation_mode">Эхоподавление</string>
+    <string name="echo_cancellation_mode_desc">Алгоритм эхоподавления</string>
+    <string name="enable_focus_audio">Аудио фокус</string>
+    <string name="enable_focus_audio_desc">Фокус отключает звук музыкальный плеер во время звонка</string>
+    <string name="micro_source">Источник микрофона</string>
+    <string name="micro_source_desc">Источник для микрофона</string>
+    <string name="has_io_queue">IO очередь</string>
+    <string name="has_io_queue_desc">Отдельные очереди для ввода / вывода</string>
+    <string name="codecs_band_types">Ширина полосы для кодеков</string>
+    <string name="audio_implementation">Аудио библиотека</string>
+    <string name="audio_implementation_desc">Аудио система</string>
+    <string name="auto">Автоматически</string>
+    <string name="speex">speex</string>
+    <string name="simple">Просто</string>
+    <string name="slow">Медленно</string>
+    <string name="fast">Быстро</string>
+    <string name="audio_troubleshooting">Проблемы со звуком</string>
+    <string name="audio_troubleshooting_desc">Настройки при проблемах со звуком </string>
+    <!--TODO: <string name="media_thread_count"></string>-->
+    <string name="media_thread_count_desc">Количесвто медиа потоков</string>
+    <!-- UI -->
+    <string name="general_ui">Общий интерфейс пользователя</string>
+    <string name="advanced_ui">Дополнительные настройки</string>
+    <string name="keep_awake_incall">Не выключать экран при вызове</string>
+    <string name="keep_awake_incall_desc">Предотвращает переход процессора в неактивное состояние и этим предотвращает разрывы вызова.</string>
+    <string name="log_level">Уровень логирования</string>
+    <string name="log_level_desc">0 нет логов, 5 логи все</string>
+    <string name="ringtone">Мелодия звонка </string>
+    <string name="ringtone_desc">Мелодия для входящих зваонков по умолчанию</string>
+    <string name="prevent_screen_rotation">Предотвращение поворота экрана</string>
+    <string name="prevent_screen_rotation_desc">Блокировка поворота экрана. Портретная ориентация экрана.</string>
+    <string name="invert_proximity_sensor">Обратить датчик приближения</string>
+    <string name="invert_proximity_sensor_desc">Попробуйте, при наличии проблемы с яркостью экрана в момент звонка.</string>
+    <string name="log_to_file">Копировать LogCat в файл</string>
+    <string name="log_to_file_desc">Все логи во внешний файл</string>
+
+
+    <!-- Fast settings -->
+    <string name="codecs_availability_text">Список кодеков</string>
+
+    <!-- Calls settings -->
+    <!-- Settings modes -->
+    <string name="devel_preferences">Расширенный режим</string>
+    <string name="normal_preferences">Нормальный режим</string>
+
+    <!-- Generic -->
+    <!-- Contact list settings -->
+    <!-- Security -->
+    <string name="security_messages">Сообщения</string>
+    <string name="security_calls">Вызовы</string>
+
+    <string name="messages_delete_period_desc">Как долго хранить сообщения в архиве</string>
+    <string name="messages_delete_period">Архивация сообщений</string>
+
+
+    <string name="just_session">Только данную сессию</string><!--Unused-->
+    <string name="one_hour">1 час</string>
+    <string name="six_hours">6 часов</string>
+    <string name="twelve_hours">12 часов</string>
+    <string name="one_day">1 день</string>
+    <string name="three_days">3 дня</string>
+    <string name="week">Неделю</string>
+    <string name="month">Месяц</string>
+    <string name="forever">Всегда</string>
+
+    <string name="sip_signature">SIP-электронная подпись</string>
+    <string name="sip_signature_desc">Настройка проверки электронной подписи</string>
+    <string name="drop_bad_invite">Отменить плохой INVITE</string>
+    <string name="drop_bad_invite_desc">Игнорировать INVITE (начало вызова) сообщение с недействительной подписью</string>
+    <string name="drop_bad_bye">Отменить плохой BYE</string>
+    <string name="drop_bad_bye_desc">Игнорировать BYE (конец вызова) сообщение с недействительной подписью</string>
+    <string name="security_reports">Отчет об ошибках</string>
+    <string name="pref_disable_acra">Отключить отчет об ошибках</string>
+    <string name="pref_acra_disabled">Автоматический отчет об ошибках отключен</string>
+    <string name="pref_acra_enabled">Автоматический отчет об ошибках включен</string>
+    <string name="pref_acra_syslog">Разрешить системные логи</string>
+    <string name="pref_acra_syslog_enabled">Системные логи будут приложены к отчету об ошибках</string>
+    <string name="pref_acra_syslog_disabled">Системные логи не разрешаеюся для использования в отчете об ошибках. Пожалуйста, подумайте над этим вариантом, это может значительно помочь разработчикам приложений решать ваши проблемы.</string>
+    <string name="pref_acra_deviceid">Разрешить идентификатор устройства</string>
+    <string name="pref_acra_deviceid_enabled">Идентификация устройства будет приложена к отчету об ошибках</string>
+    <string name="pref_acra_deviceid_disabled">Идентификация устройства не разрешена для использования в отчете об ошибках. Пожалуйста, подумайте над этим вариантом, это может значительно помочь разработчикам приложений решать ваши проблемы.</string>
+
+    <string name="category_debug">Отладка</string>
+    <string name="pref_updates_section">Обновление</string>
+    <string name="pref_updates">Разрешить обновление PhoneХ</string>
+    <string name="pref_updates_enabled">Обновление программы Phonex от серверов приложений разрешается. Требуется разрешение установки приложений вне Google Play.</string>
+    <string name="pref_updates_disabled">Обновление приложения отключено</string>
+
+    <string name="pref_misc_section">Другие</string>
+    <string name="pref_misc_screenshot">Блокировать скриншоты</string>
+    <string name="pref_misc_screenshot_enabled">Скриншоты блокированы</string>
+    <string name="pref_misc_screenshot_disabled">Скриншоты приложения PhoneХ разрешены</string>
+
+    <string name="pref_incall">"Разрешить статус ""на вызове"""</string>
+    <string name="pref_incall_enabled">"Проверка подписи не прошла для пользователя \""%s\"""</string>
+    <string name="pref_incall_disabled">Статус выключен.</string>
+
+    <string name="restart_stack">Приложение перезапускается</string>
+    <string name="restart_stack_desc">Перезапустит приложение. Примените, если Вам кажется, что у приложения имеются проблемы, например, при входе. </string>
+    <string name="restart_stack_toast">Приложение будет перезапущено.</string>
+
+    <string name="contactlist_sort_online">Онлайн контакты в начале</string>
+    <string name="contactlist_sort_online_desc">Контакты в режиме «онлайн» будут показываться в начале списка контактов.</string>
+
+    <string name="alert_new_message_during_chat">Предупредить о новом сообщении</string>
+    <string name="alert_new_message_during_chat_desc">Предупредит о новом сообщении от пользователя, с которым Вы сейчас общаетесь в чате, т.е., с которым у Вас открыто окно общения</string>
+
+    <string name="pin_lock">Блокировка PIN-кода </string>
+    <string name="pin_lock_desc">Блокировка экрана с помощью PIN-кода</string>
+    <string name="pin_enable">Включить блокировку экрана</string>
+    <string name="pin_change">Изменение PIN-кода</string>
+    <string name="pin_reset">Сброс PIN-кода</string>
+    <string name="pin_reset_desc">В случае забытого PIN-кода создайте новый.</string>
+    <string name="pin_reset_enter_pass">Введите Ваш пароль</string>
+    <string name="pin_reset_wrong_pass">Неверный пароль</string>
+
+    <string name="contactlist_show_username_desc">Показать имена пользователей с никами в списке контактов.</string>
+    <string name="contactlist_show_username">Показать имена пользователей</string>
+
+    <!--TODO:translate
+    <string name="___TO_TRANSLATE___;pref_google_analytics">Enable Google Analytics</string>
+    <string name="___TO_TRANSLATE___;pref_google_analytics_enabled">Google Analytics anonymous logging is enabled. Only full license can disable this option.</string>
+    <string name="___TO_TRANSLATE___;pref_google_analytics_disabled">Google Analytics anonymous logging is disabled.</string>
+    -->
+</resources>

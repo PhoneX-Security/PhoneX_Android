@@ -1,0 +1,6 @@
+{
+    "server":"127.0.0.1",
+    "db":"phonex_translate",
+    "user":"phonex_translate",
+    "passwd":"passwd"
+}

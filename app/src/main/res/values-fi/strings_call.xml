@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="answer_call">Vastata</string>
+<string name="end_call">Pää</string>
+<string name="speaker">Puhuja</string>
+<string name="mute">Mykistää</string>
+<string name="call_state_calling">Calling ...</string>
+<string name="call_state_disconnected">Hermostunut</string>
+<string name="call_state_incoming">Tuleva puhelu ...</string>
+<string name="hold_call">Pitää</string>
+<string name="on_hold">On Hold</string>
+<string name="transport_secure_to_server">TLS liikenteen käytetään välittömästi hop</string>
+<string name="transport_secure_full">End-to-end signalointi on tarkoitus turvallista</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="sas_confirm">确认</string>
+    <string name="sas_reject">拒绝</string>
+    <string name="sas_title">安全代码</string>
+    <string name="sas_say">告知联系人:</string>
+    <string name="sas_verify">联系人应该说:</string>
+    <string name="sas_more_info">更多的信息</string>
+    <string name="sas_more_desc">验证安全码是防止被窃听的另一个层面。<br/><br/>\n\n通过您和您通话的联系人对安全代码进行互相验证以确保通话不会被窃听，从而使你们的通话可以安全进行。<br/><br/>\n\n这种验证会在您第一次同指定的联系人通话时运行。<br/><br/>\n\n<b>推荐的验证方式：</b><br/>\n请按照屏幕上所给指令进行操作。如果指令为<b>告知联系人</b>，请将橙色框内显示的代码告知另一端的指定联系人以便于该联系人可以用此代码进行验证。然后请联系人说出他的代码并验证其是否和灰色框中所显示的代码一致。<br/><br/>\n\n如果第一个显示的指令是<b>联系人应该告知</b> 那么请等待联系人告知您他的代码并验证此其是否不同于您的代码。接下来进行到下一步，将您的代码告知联系人以便其可以验证该代码。<br/><br/>\n\n当该步骤完成后，两端的代码应该一致。如果一致的话，请点击<b>确认</b></string>
+
+</resources>

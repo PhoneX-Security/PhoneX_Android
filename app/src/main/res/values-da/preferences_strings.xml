@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="prefs">Indstillinger</string>
+<string name="prefs_connectivity">Netværk</string>
+<string name="prefs_media">Medier</string>
+<string name="prefs_ui">Brugergrænseflade</string>
+<string name="prefs_security">Sikkerhed</string>
+<string name="transport">Transport</string>
+<string name="network_watchdog">Netværk vagthund</string>
+<string name="network_watchdog_desc">Genstarter tjeneste i tilfælde af ingen registrering. På få sekunder. 0 = deaktiver</string>
+<string name="audio_quality">Lydkvaliteten</string>
+<string name="audio_volume">Volumen</string>
+<string name="codecs">Codecs</string>
+<string name="echo_cancellation">Echo aflysning</string>
+<string name="echo_cancellation_desc">Aktiver ekko</string>
+<string name="disable_vad">Stemme lyd afsløring</string>
+<string name="disable_vad_desc">Aktiver stemme lyd afsløring</string>
+<string name="enable_noise_reduction">Støjreduktion</string>
+<string name="enable_noise_reduction_desc">Fungerer, hvis ekko er aktiveret, og WebRTC ekkoundertrykker backend brugt</string>
+<string name="sound_mic_volume">Micro forstærkning</string>
+<string name="sound_speaker_volume">Speaker forstærkning</string>
+<string name="sound_bt_mic_volume">Bluetooth mic forstærkning</string>
+<string name="media_quality">Medier kvalitet</string>
+<string name="media_quality_desc">Kvaliteten af ​​mediestrømmen (ændre kun, hvis du ved hvad du laver)</string>
+<string name="sound_clock_rate">Klokfrekvensen</string>
+<string name="sound_clock_rate_desc">Lydkanal frekvens</string>
+<string name="echo_cancellation_mode">Ekko-funktionen</string>
+<string name="echo_cancellation_mode_desc">Algoritme for ekko</string>
+<string name="enable_focus_audio">Fokus lyd</string>
+<string name="auto">Auto</string>
+<string name="simple">Simple</string>
+<string name="slow">Langsom</string>
+<string name="fast">Fast</string>
+<string name="general_ui">General brugergrænseflade</string>
+<string name="keep_awake_incall">Holde sig vågen under et opkald</string>
+<string name="keep_awake_incall_desc">Rettelser, hvis du får knasende lyd, når skærmen slukker, mens i WIFI opkald</string>
+<string name="log_level">Log niveau</string>
+<string name="ringtone">Ringetone</string>
+<string name="prevent_screen_rotation">Undgå screen rotation</string>
+<string name="invert_proximity_sensor">Invert sensor</string>
+<string name="normal_preferences">Normal tilstand</string>
+<string name="security_messages">Meddelelser</string>
+<string name="messages_delete_period_desc">Hvor længe for at holde dine beskeder i arkivet</string>
+<string name="messages_delete_period">Beskeder arkivering</string>
+<string name="just_session">Bare denne session</string>
+<string name="one_day">En dag</string>
+<string name="three_days">Tre dage</string>
+<string name="week">Uge</string>
+<string name="month">Måned</string>
+<string name="forever">Forever</string>
+</resources>

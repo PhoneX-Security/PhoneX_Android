@@ -1,0 +1,78 @@
+package net.phonex.pub.proto;
+option java_outer_classname = "PushNotifications";
+option optimize_for = SPEED;
+
+// Message conveyed in the presence notifications for one particular user.
+// Serves as a simple push notification from the user. Main reason:
+// certificate update.
+message PresencePush {
+  required uint32 version = 1 [default=1];
+  
+  // Certificate freshness
+  optional string certHashShort = 2;
+  optional string certHashFull = 3;
+  optional uint64 certNotBefore = 4;
+  
+  // Status & busy indicators
+  enum Status {
+    ONLINE = 0;
+    OFFLINE = 1; // This represents invisible status
+    BUSY = 2;
+    AWAY = 3;
+    DND = 4;    // Do Not Disturb
+    CUSTOM = 5;
+    ONCALL = 6;
+    DEVSLEEP = 7;
+  }
+  
+  optional Status status = 5 [default = ONLINE];
+  optional string statusText = 6;
+  
+  // Capabilities, array of strings.
+  // Should be encoded in hierarchical manner like in X509: "1.2.0.1,1.2.0.2, ..."
+  repeated string capabilities = 7;
+  // If true this value says that capabilities were not set.
+  optional bool capabilitiesSkip = 8; 
+  // Hash of capabilities for versioning.
+  optional string capabilitiesHash = 9;
+  // If user is available via SIP protocol.
+  optional bool sipRegistered = 10;
+
+  // Resource ID of the user device.
+  optional string resourceId = 11;
+  // SIP identifier, for direct identification.
+  optional string sipId = 12;
+
+  // Optional json.
+  optional string auxJson = 13;
+
+  // Server pushed this on behalf sleeping user.
+  optional bool serverGenerated = 14 [default = false];
+  // Server generated field - last activity time
+  optional uint64 serverLastActivity = 15;
+  // Server generated aux json data.
+  optional string serverJsonAux = 16;
+
+  // Possible extension numbers.  
+  extensions 500 to 999;
+}
+
+//
+// Detailed info about some file from the archive.
+message FileDetail {
+  optional uint32 version=1;
+  optional string nonce2=2;
+  optional string fromUser=3;
+  optional uint64 uploadedTime=4;
+}
+
+//
+// Message sent in presence status by server to the particular user.
+message ServerNotificationPush {
+  required uint32 version = 1 [default=1];
+  repeated FileDetail files=2;  // List of enclosed files in the archive.
+  
+  // Possible extension numbers.  
+  extensions 500 to 999;
+}
+

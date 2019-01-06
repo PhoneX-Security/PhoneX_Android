@@ -1,0 +1,13 @@
+Index: pjsip/sources/pjsip/src/pjsua-lib/pjsua_acc.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsua-lib/pjsua_acc.c
++++ pjsip/sources/pjsip/src/pjsua-lib/pjsua_acc.c
+@@ -3519,7 +3519,7 @@ static void auto_rereg_timer_cb(pj_timer
+      * the auto-reregistration.
+      */
+     if (!acc->valid || !acc->auto_rereg.active || 
+-	acc->cfg.reg_retry_interval == 0)
++	acc->cfg.reg_retry_interval == 0 || pjsua_var.state == PJSUA_STATE_CLOSING)
+     {
+ 	goto on_return;
+     }

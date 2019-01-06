@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="connection_not_valid">Rota de rede selecionada não permitida com as configurações atuais que você definiu</string>
+  <string name="save">Salvar</string>
+  <string name="cancel">Cancelar</string>
+  <string name="delete_account">Excluir conta</string>
+  <string name="add_account">Adicionar conta</string>
+  <string name="ongoing_call">Chamada em andamento</string>
+  <string name="missed_call">Chamada perdida</string>
+  <string name="messages_tab_name_text">Mensagens</string>
+  <string name="menu_disconnect">Desconectar</string>
+  <string name="service_notification_registered">PhoneX Registrado</string>
+  <string name="faq">Perguntas Frequentes</string>
+  <string name="help">Ajuda</string>
+  <string name="ok">OK</string>
+  <string name="quit_info">Você configurou para estar disponível nesta rede !!! Ao clicar OK você estará confirmando que não deseja estar disponível até a próxima inicialização da aplicação</string>
+  <string name="voice_mail">Correio de Voz</string>
+  <string name="not_configured_multiple_calls">A aplicação não esta configurada para permitir múltiplas chamadas</string>
+  <string name="loading">Carregando</string>
+  <string name="info">Informação</string>
+  <!--Presence stuff-->
+  <string name="online">Online</string>
+  <string name="offline">Offline</string>
+  <string name="away">Ausente</string>
+  <string name="busy">Ocupado</string>
+  </resources>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recover_email_explanation"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <EditText
+        android:id="@+id/recovery_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/edit_text_flat"
+        android:hint="@string/enter_recovery_email"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:inputType="textEmailAddress">
+    </EditText>
+
+    <TextView
+        android:id="@+id/missing_warning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recovery_email_missing_warning"
+        android:textSize="16sp"
+        android:layout_marginBottom="4dp"
+        android:textColor="@color/material_red_500"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:textAllCaps="false"
+        android:text="@string/save"
+        android:layout_height="40dp"
+        style="@style/button_flat_orange"
+        />
+</LinearLayout>

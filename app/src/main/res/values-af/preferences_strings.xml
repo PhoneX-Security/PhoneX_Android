@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="prefs_connectivity">Netwerk</string>
+    <string name="prefs_media">Media</string>
+    <!--Network-->
+    <string name="transport">Transport</string>
+    <!--<string name="ka_use_wake">Keep alive awake</string>
+      <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+    <!--Security-->
+    <!--Media-->
+    <string name="audio_quality">Klank kwaliteit</string>
+    <string name="audio_volume">Volume</string>
+    <string name="media_quality">Media kwaliteit</string>
+    <!--UI-->
+    <string name="log_level">Register vlak</string>
+    <string name="prevent_screen_rotation">Verhoed skerm rotasie</string>
+    <!--Fast settings-->
+    <!--Calls settings-->
+    <!--Settings modes-->
+    <!--Generic-->
+
+
+    <!-- ##automatically translated below -->
+
+    <string name="prefs">Instellings</string>
+    <string name="prefs_ui">Gebruikerskoppelvlak</string>
+    <string name="prefs_security">Sekuriteit</string>
+    <string name="network_watchdog">Netwerk waghond</string>
+    <string name="network_watchdog_desc">Weer begin diens in die geval van geen registrasie. In sekondes. 0 = skakel</string>
+    <string name="codecs">Codecs</string>
+    <string name="echo_cancellation">Echo kansellasie</string>
+    <string name="echo_cancellation_desc">Aktiveer eggo kansellasie</string>
+    <string name="disable_vad">Stem klank opsporing</string>
+    <string name="disable_vad_desc">Aktiveer stem klank opsporing</string>
+    <string name="enable_noise_reduction">Geluidsreductie</string>
+    <string name="enable_noise_reduction_desc">Werke as eggo kansellasie is geaktiveer en WebRTC eggo kanselleerder stelsel is gebruik</string>
+    <string name="sound_mic_volume">Mikro versterking</string>
+    <string name="sound_speaker_volume">Speaker versterking</string>
+    <string name="sound_bt_mic_volume">Bluetooth mic versterking</string>
+    <string name="media_quality_desc">Kwaliteit van die media stroom (verander net as jy weet wat jy doen)</string>
+    <string name="sound_clock_rate">Klok koers</string>
+    <string name="sound_clock_rate_desc">Audio kanaal frekwensie</string>
+    <string name="echo_cancellation_mode">Echo af</string>
+    <string name="echo_cancellation_mode_desc">Algoritme vir die eggo</string>
+    <string name="enable_focus_audio">Fokus klank</string>
+    <string name="auto">Auto</string>
+    <string name="simple">Eenvoudige</string>
+    <string name="slow">Stadig</string>
+    <string name="fast">Fast</string>
+    <string name="general_ui">Algemene gebruikerskoppelvlak</string>
+    <string name="keep_awake_incall">Wakker hou terwyl op die oproep</string>
+    <string name="keep_awake_incall_desc">Opgelos as jy woelig klank wanneer die skerm draai af, terwyl in WIFI oproep</string>
+    <string name="ringtone">Ringtone</string>
+    <string name="invert_proximity_sensor">Keer nabyheid sensor</string>
+    <string name="normal_preferences">Normale modus</string>
+    <string name="security_messages">Boodskappe</string>
+    <string name="messages_delete_period_desc">Hoe lank om jou boodskappe te hou in die argief</string>
+    <string name="messages_delete_period">Boodskappe archivation</string>
+    <string name="just_session">Net hierdie sessie</string>
+    <string name="one_day">1 dag</string>
+    <string name="three_days">3 dae</string>
+    <string name="week">Week</string>
+    <string name="month">Maand</string>
+    <string name="forever">Forever</string>
+    <!-- ##automatically translated below -->
+</resources>

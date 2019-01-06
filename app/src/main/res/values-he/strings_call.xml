@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">מענה</string>
+  <string name="end_call">סיום</string>
+  <string name="speaker">רמקול</string>
+  <string name="mute">השתקה</string>
+  <string name="call_state_calling">מתקשר…</string>
+  <string name="call_state_disconnected">ניתוק</string>
+  <string name="call_state_incoming">שיחה נכנסת…</string>
+  <string name="hold_call">החזקה</string>
+
+
+
+<!-- ##automatically translated below -->
+
+<string name="on_hold">בהמתנה</string>
+<string name="transport_secure_to_server">TLS משמשת לתחבורת הופ המיידית</string>
+<string name="transport_secure_full">איתות מקצה לקצה אמורה מאובטחת</string>
+</resources>

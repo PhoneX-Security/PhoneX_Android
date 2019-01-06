@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">Nastavitve</string>
+  <string name="prefs_connectivity">Omrežje</string>
+  <string name="prefs_media">Mediji</string>
+  <string name="prefs_ui">Uporabniški vmesnik</string>
+  <!--Network-->
+  <string name="transport">Prenos</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">Kvaliteta zvoka</string>
+  <string name="audio_volume">Glasnost</string>
+  <string name="codecs">Kodeki</string>
+  <string name="echo_cancellation">Dušilec odmeva</string>
+  <string name="echo_cancellation_desc">Vklopi dušenje odmeva</string>
+  <string name="disable_vad">Odkrivanje glasu</string>
+  <string name="disable_vad_desc">Omogoči odkrivanje glasu</string>
+  <string name="sound_mic_volume">Ojačanje mikrofona</string>
+  <string name="sound_speaker_volume">Ojačanje zvočnika</string>
+  <string name="media_quality">Kvaliteta medija</string>
+  <string name="media_quality_desc">Kvaliteta toka medija (samo, če ste prepričani)</string>
+  <string name="sound_clock_rate">Takt</string>
+  <string name="sound_clock_rate_desc">Frekvenca zvokovnega kanala</string>
+  <string name="auto">Samodejno</string>
+  <string name="simple">Enostavno</string>
+  <!--UI-->
+  <string name="general_ui">Splošne prilagoditve</string>
+  <string name="keep_awake_incall">Ostani buden med klicem</string>
+  <string name="keep_awake_incall_desc">Omogočite v primeru slabega zvoka med klicem na WiFi, ko zaslon zaspi</string>
+  <string name="log_level">Stopnja zapisov</string>
+  <string name="ringtone">Ton zvonjenja</string>
+  <string name="prevent_screen_rotation">Prepreči vrtenje zaslona</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <!--Generic-->
+
+
+
+<!-- ##automatically translated below -->
+
+<string name="prefs_security">Varnost</string>
+<string name="network_watchdog">Mreža watchdog</string>
+<string name="network_watchdog_desc">Znova zagnal storitev v primerih brez registracije. V nekaj sekundah. 0 = onemogoči</string>
+<string name="enable_noise_reduction">Zmanjšanje hrupa</string>
+<string name="enable_noise_reduction_desc">Deluje, če odmeva se aktivira in WebRTC echo Izniči hrbtenica uporablja</string>
+<string name="sound_bt_mic_volume">Bluetooth mic ojačanje</string>
+<string name="echo_cancellation_mode">Način echo</string>
+<string name="echo_cancellation_mode_desc">Algoritem za echo</string>
+<string name="enable_focus_audio">Osredotočiti audio</string>
+<string name="slow">Počasi</string>
+<string name="fast">Hitro</string>
+<string name="invert_proximity_sensor">Invertnega tipala</string>
+<string name="normal_preferences">Običajni način</string>
+<string name="security_messages">Sporočila</string>
+<string name="messages_delete_period_desc">Kako dolgo je treba ohraniti svoja sporočila v arhivu</string>
+<string name="messages_delete_period">Sporočila archivation</string>
+<string name="just_session">Samo ta seja</string>
+<string name="one_day">1 dan</string>
+<string name="three_days">3 dni</string>
+<string name="week">Teden</string>
+<string name="month">Mesec</string>
+<string name="forever">Forever</string>
+</resources>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="menu_delete_all">Cancella discussioni</string>
+    <string name="menu_delete">Cancella discussione</string>
+    <string name="menu_view">Visualizza discussione</string>
+    <string name="undelivered_msg_dialog_title">Messaggio non inviato</string>
+    <string name="copy_message_text">Copia il testo del messaggio</string>
+    <string name="done">Completato</string>
+    <string name="compose_title">Componi</string>
+    <string name="send">Invia</string>
+    <string name="type_to_compose_text_enter_to_send">Digita per comporre</string>
+    <string name="yes">OK</string>
+    <string name="no">Annulla</string>
+    <string name="edit">Edita</string>
+    <string name="restore_default">Ripristina impostazioni di default</string>
+    <string name="confirm_dialog_title">Elimina</string>
+    <string name="confirm_delete_conversation">L\'intera conversazione sarà cancellata</string>
+    <string name="confirm_delete_all_conversations">Tutte le conversazioni saranno eleiminate</string>
+    <string name="delete">Elimina</string>
+    <string name="status_pending">In attesa</string>
+    <string name="status_failed">Fallito</string>
+    </resources>

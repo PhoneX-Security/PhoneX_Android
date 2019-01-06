@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content" android:layout_height="match_parent"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    >
+    	<TextView android:id="@+id/message"
+                style="?android:attr/textAppearanceMedium"
+                android:textSize="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dip"
+            	android:layout_marginBottom="4dip"    
+                android:padding="5dip" />
+    
+        <ProgressBar android:id="@+id/progress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+             android:layout_below="@id/message"  
+            android:layout_marginTop="7dip"
+            android:layout_marginBottom="1dip"      
+            android:layout_centerHorizontal="true"
+            android:progressDrawable="@drawable/phonex_progress_o"
+            android:indeterminateDrawable="@drawable/phonex_progress_o_indeterminate_holo"
+            />
+        
+        <!-- android:layout_marginStart="10dip"
+            android:layout_marginEnd="10dip" -->
+        
+        <TextView
+            android:id="@+id/progress_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dip"
+            android:layout_below="@id/progress"       
+            android:layout_alignLeft="@id/progress"    
+            
+        />
+        <!--android:layout_alignParentStart="true"  -->
+        
+        <TextView
+            android:id="@+id/progress_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="12dip"
+            android:layout_below="@id/progress"            
+            android:layout_alignRight="@id/progress"
+            
+        />
+        <!-- android:layout_alignParentEnd="true"  -->
+</RelativeLayout>

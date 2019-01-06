@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/audio_test_text"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dip"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageView
+        android:id="@+id/tx_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/audio_test_text"
+        android:contentDescription="@string/empty_description"
+        android:padding="5dip"
+        android:src="@drawable/ic_speaker_dark" />
+
+    <ProgressBar
+        android:id="@+id/tx_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tx_icon"
+        android:layout_alignTop="@id/tx_icon"
+        android:layout_toRightOf="@id/tx_icon"
+        android:max="255"
+        android:padding="5dip" />
+
+    <ImageView
+        android:id="@+id/rx_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tx_icon"
+        android:contentDescription="@string/empty_description"
+        android:padding="5dip"
+        android:src="@drawable/ic_micro_dark" />
+
+    <ProgressBar
+        android:id="@+id/rx_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/rx_icon"
+        android:layout_alignTop="@id/rx_icon"
+        android:layout_toRightOf="@id/rx_icon"
+        android:max="255"
+        android:padding="5dip" />
+
+    <Button
+        android:id="@+id/cancel_bt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rx_icon"
+        android:text="@string/cancel" />
+    <!--style="@style/ButtonBarButton"-->
+
+</RelativeLayout>

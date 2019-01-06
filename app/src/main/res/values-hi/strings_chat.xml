@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="menu_delete_all">धागे हटाएँ</string>
+<string name="menu_delete">धागा हटाएँ</string>
+<string name="menu_view">धागा</string>
+<string name="undelivered_msg_dialog_title">बिना डिलीवरी संदेश</string>
+<string name="copy_message_text">संदेश पाठ को कॉपी</string>
+<string name="done">डन</string>
+<string name="compose_title">लिखें</string>
+<string name="send">भेजें</string>
+<string name="type_to_compose_text_enter_to_send">रचना के लिए टाइप करें</string>
+<string name="yes">अच्छा</string>
+<string name="no">रद्द करें</string>
+<string name="edit">संपादित करें</string>
+<string name="restore_default">"डिफ़ॉल्ट सेटिंग्स पुनर्स्थापित"</string>
+<string name="confirm_dialog_title">हटाना</string>
+<string name="confirm_delete_conversation">पूरे धागा हटा दिया जाएगा.</string>
+<string name="confirm_delete_all_conversations">सभी धागे हटा दिया जाएगा.</string>
+<string name="delete">हटाना</string>
+<string name="status_pending">अपूर्ण</string>
+<string name="status_failed">असफल</string>
+</resources>

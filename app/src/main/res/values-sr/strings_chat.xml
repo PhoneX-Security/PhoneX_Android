@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="menu_delete_all">Брисање тема</string>
+<string name="menu_delete">Обриши тему</string>
+<string name="menu_view">Погледај тхреад</string>
+<string name="undelivered_msg_dialog_title">Недостављену поруку</string>
+<string name="copy_message_text">Ископирајте текст поруке</string>
+<string name="done">Урађено</string>
+<string name="compose_title">Саставити</string>
+<string name="send">Послати</string>
+<string name="type_to_compose_text_enter_to_send">Унесите саставити</string>
+<string name="yes">У реду</string>
+<string name="no">Отказати</string>
+<string name="edit">Измени</string>
+<string name="restore_default">"Враћање подразумеваних подешавања"</string>
+<string name="confirm_dialog_title">Избрисати</string>
+<string name="confirm_delete_conversation">Цео нит ће бити избрисана.</string>
+<string name="confirm_delete_all_conversations">Све теме ће бити избрисана.</string>
+<string name="delete">Избрисати</string>
+<string name="status_pending">Нерешен</string>
+<string name="status_failed">Неуспешан</string>
+</resources>

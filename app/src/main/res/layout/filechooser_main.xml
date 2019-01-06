@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+
+    android:background="@color/phonex_background"
+    android:layout_height="match_parent"
+    android:clickable="true">
+    <!--android:background="@drawable/app_layered_background"-->
+
+    <include layout="@layout/toolbar"
+        android:id="@+id/my_toolbar"/>
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/header"
+        android:layout_below="@id/my_toolbar"
+        />
+
+    <include layout="@layout/filechooser_bar"
+        android:id="@+id/selection_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_detail_image_size"
+        android:layout_alignParentBottom="true"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:layout_below="@id/header"
+        android:layout_above="@id/selection_bar"
+        android:id="@+id/body">
+
+        <LinearLayout
+            android:id="@+id/progressContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <ProgressBar
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dip"
+                android:singleLine="true"
+                android:text="@string/loading"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

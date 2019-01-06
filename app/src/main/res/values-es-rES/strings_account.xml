@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="account_name">Nombre de la cuenta</string>
+  <string name="account_name_desc">Nombre para mostrar de esta cuenta</string>
+  </resources>

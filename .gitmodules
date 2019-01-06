@@ -1,0 +1,22 @@
+[submodule "app/jni/pjsip/sources"]
+	path = app/jni/pjsip/sources
+url=git@bitbucket.org:phonex-devs/phonexand-pjsip.git
+[submodule "app/jni/webrtc/webrtc"]
+	path = app/jni/webrtc/webrtc
+url=git@bitbucket.org:phonex-devs/phonexand-webrtc.git
+[submodule "app/jni/codec2/sources"]
+	path = app/jni/codec2/sources
+url=git@bitbucket.org:phonex-devs/phonexand-codec2.git
+[submodule "app/jni/third_party/libyuv"]
+	path = app/jni/third_party/libyuv
+url=git@bitbucket.org:phonex-devs/phonexand-libyuv.git
+[submodule "app/jni/zrtpcpp/sources/zrtp"]
+	path = app/jni/zrtpcpp/sources/zrtp
+url=git@bitbucket.org:phonex-devs/phonexzrtp.git
+	branch = phonexPatched
+[submodule "docs"]
+	path = docs
+url=git@bitbucket.org:phonex-devs/phonexdocs.git
+[submodule "material-dialogs"]
+	path = material-dialogs
+	url = https://github.com/msvitok/material-dialogs.git

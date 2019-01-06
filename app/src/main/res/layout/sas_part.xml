@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    >
+
+    <LinearLayout
+        android:id="@+id/sas_one"
+        style="@style/sas_word"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/one_head"
+            style="@style/sas_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="T" />
+
+        <TextView
+            android:id="@+id/one_tail"
+            style="@style/sas_tail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ango" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="1dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#55ffffff" />
+
+    <LinearLayout
+        android:id="@+id/sas_two"
+        style="@style/sas_word"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/two_head"
+            style="@style/sas_head"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="V" />
+
+        <TextView
+            android:id="@+id/two_tail"
+            style="@style/sas_tail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ictor" />
+    </LinearLayout>
+</LinearLayout>

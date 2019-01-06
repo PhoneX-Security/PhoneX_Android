@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="prefs">सेटिंग्स</string>
+<string name="prefs_connectivity">संजाल</string>
+<string name="prefs_media">मीडिया</string>
+<string name="prefs_ui">उपयोगकर्ता इंटरफ़ेस</string>
+<string name="prefs_security">सुरक्षा</string>
+<string name="transport">परिवहन</string>
+<string name="network_watchdog">नेटवर्क प्रहरी</string>
+<string name="network_watchdog_desc">कोई पंजीकरण के मामले में restarts सेवा. सेकंड में. 0 = अक्षम करें</string>
+<string name="audio_quality">ऑडियो गुणवत्ता</string>
+<string name="audio_volume">खंड</string>
+<string name="codecs">कोडेक्स</string>
+<string name="echo_cancellation">गूंज रद्द</string>
+<string name="echo_cancellation_desc">गूंज रद्द सक्रिय</string>
+<string name="disable_vad">वॉयस ऑडियो पता लगाने</string>
+<string name="disable_vad_desc">आवाज ऑडियो पता लगाने को सक्रिय करें</string>
+<string name="enable_noise_reduction">शोर में कमी</string>
+<string name="enable_noise_reduction_desc">गूंज रद्द अगर निर्माण सक्रिय और WebRTC गूंज रद्द इस्तेमाल किया बैकेंड है</string>
+<string name="sound_mic_volume">माइक्रो प्रवर्धन</string>
+<string name="sound_speaker_volume">अध्यक्ष प्रवर्धन</string>
+<string name="sound_bt_mic_volume">ब्लूटूथ mic के प्रवर्धन</string>
+<string name="media_quality">मीडिया की गुणवत्ता</string>
+<string name="media_quality_desc">मीडिया धारा की गुणवत्ता (आप क्या कर रहे हैं पता ही अगर संशोधित)</string>
+<string name="sound_clock_rate">कालद दर</string>
+<string name="sound_clock_rate_desc">ऑडियो चैनल आवृत्ति</string>
+<string name="echo_cancellation_mode">इको मोड</string>
+<string name="echo_cancellation_mode_desc">गूंज के लिए एलगोरिदम</string>
+<string name="enable_focus_audio">ऑडियो फोकस</string>
+<string name="auto">स्वत:</string>
+<string name="simple">सरल</string>
+<string name="slow">धीरे</string>
+<string name="fast">तेज</string>
+<string name="general_ui">जनरल यूजर इंटरफेस</string>
+<string name="keep_awake_incall">कॉल करते समय पर जाग रखें</string>
+<string name="keep_awake_incall_desc">फिक्स स्क्रीन बंद जब आप तड़का हुआ ध्वनि प्राप्त अगर वाईफ़ाई फोन देर में</string>
+<string name="log_level">स्तर प्रवेश</string>
+<string name="ringtone">रिंगटोन</string>
+<string name="prevent_screen_rotation">स्क्रीन रोटेशन रोकें</string>
+<string name="invert_proximity_sensor">निकटता सेंसर उलटें</string>
+<string name="normal_preferences">सामान्य मोड</string>
+<string name="security_messages">संदेश</string>
+<string name="messages_delete_period_desc">संग्रह में अपने संदेशों को रखने के लिए कब तक</string>
+<string name="messages_delete_period">संदेश archivation</string>
+<string name="just_session">बस इस सत्र</string>
+<string name="one_day">1 दिन</string>
+<string name="three_days">3 दिन</string>
+<string name="week">सप्ताह</string>
+<string name="month">माह</string>
+<string name="forever">हमेशा के लिये</string>
+</resources>

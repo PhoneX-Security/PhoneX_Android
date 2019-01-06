@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/camera_preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+    <ImageButton
+        android:id="@+id/flash_mode"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="@dimen/large_margin"
+        android:background="@null"
+        android:src="@drawable/cam_flash_auto_icn"
+        android:scaleType="fitCenter" />
+
+    <ImageButton
+        android:id="@+id/capture"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="@dimen/large_margin"
+        android:background="@null"
+        android:src="@drawable/camera_capture"
+        android:scaleType="fitCenter" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_alignBottom="@id/capture"
+        android:layout_alignEnd="@id/capture"
+        android:layout_alignLeft="@id/capture"
+        android:layout_alignRight="@id/capture"
+        android:layout_alignStart="@id/capture"
+        android:layout_alignTop="@id/capture"
+        android:visibility="gone"
+        android:scaleType="fitCenter" />
+
+    <ImageButton
+        android:id="@+id/camera_settings"
+        android:layout_width="@dimen/image_button_size"
+        android:layout_height="@dimen/image_button_size"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="@dimen/large_margin"
+        android:padding="5dp"
+        android:background="@null"
+        android:src="@drawable/svg_settings"
+        android:scaleType="fitCenter"/>
+
+</RelativeLayout>

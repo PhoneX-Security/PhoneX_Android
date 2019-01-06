@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <!-- ##automatically translated below -->
+    <string name="prefs">إعدادات</string>
+    <string name="prefs_connectivity">شبكة</string>
+    <string name="prefs_media">وسائل الإعلام</string>
+    <string name="prefs_ui">واجهة المستخدم</string>
+    <string name="prefs_security">أمن</string>
+    <string name="transport">نقل</string>
+    <string name="network_watchdog">الوكالة الدولية للطاقة الشبكة</string>
+    <string name="network_watchdog_desc">خدمة إعادة تشغيل في حالة عدم التسجيل. في ثوان. 0 = تعطيل</string>
+    <string name="audio_quality">جودة الصوت</string>
+    <string name="audio_volume">حجم</string>
+    <string name="codecs">الترميز</string>
+    <string name="echo_cancellation">إلغاء الصدى</string>
+    <string name="echo_cancellation_desc">تفعيل إلغاء الصدى</string>
+    <string name="disable_vad">كشف الصوت صوت</string>
+    <string name="disable_vad_desc">تفعيل الكشف صوت الصوت</string>
+    <string name="enable_noise_reduction">الحد من الضوضاء</string>
+    <string name="enable_noise_reduction_desc">يعمل إذا إلغاء الصدى يتم تنشيط وWebRTC صدى Canceller الخلفية المستخدمة</string>
+    <string name="sound_mic_volume">التضخيم الصغيرة</string>
+    <string name="sound_speaker_volume">المتحدث التضخيم</string>
+    <string name="sound_bt_mic_volume">بلوتوث التضخيم هيئة التصنيع العسكري</string>
+    <string name="media_quality">جودة وسائل الإعلام</string>
+    <string name="media_quality_desc">جودة تيار وسائل الاعلام (تعديل فقط إذا كنت تعرف ما تقومون به)</string>
+    <string name="sound_clock_rate">معدل ساعة</string>
+    <string name="sound_clock_rate_desc">تردد القناة السمعية</string>
+    <string name="echo_cancellation_mode">وضع الصدى</string>
+    <string name="echo_cancellation_mode_desc">الخوارزمية لصدى</string>
+    <string name="enable_focus_audio">التركيز في الصوت</string>
+    <string name="auto">السيارات</string>
+    <string name="simple">بسيط</string>
+    <string name="slow">بطيء</string>
+    <string name="fast">سريع</string>
+    <string name="general_ui">واجهة عامة للمستخدم</string>
+    <string name="keep_awake_incall">تبقي مستيقظا أثناء المكالمة</string>
+    <string name="keep_awake_incall_desc">إصلاحات إذا كنت تحصل على الصوت متقطع عند شاشة إيقاف في حين في الدعوة WIFI</string>
+    <string name="log_level">تسجيل مستوى</string>
+    <string name="ringtone">نغمة</string>
+    <string name="prevent_screen_rotation">منع دوران الشاشة</string>
+    <string name="invert_proximity_sensor">عكس مستشعر القرب</string>
+    <string name="normal_preferences">الوضع العادي</string>
+    <string name="security_messages">رسائل</string>
+    <string name="messages_delete_period_desc">كم من الوقت للحفاظ على رسائلك في الأرشيف</string>
+    <string name="messages_delete_period">رسائل الارشفة</string>
+    <string name="just_session">فقط هذه الدورة</string>
+    <string name="one_day">1 يوم</string>
+    <string name="three_days">3 أيام</string>
+    <string name="week">أسبوع</string>
+    <string name="month">شهر</string>
+    <string name="forever">إلى الأبد</string>
+</resources>

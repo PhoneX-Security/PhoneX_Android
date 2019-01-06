@@ -1,0 +1,16 @@
+package net.phonex.pub.proto;
+option java_outer_classname = "AutoLogin";
+option optimize_for = SPEED;
+
+message AutoLoginData {
+    required bytes passwordEncrypted=1;
+    required bytes iv=2;
+    required bytes nonce=3;
+    required bytes userName=4;
+    optional bytes credsEncrypted=5;
+}
+
+message AutoLoginCreds {
+    required bytes password=1;
+    required bytes sip=2;
+}

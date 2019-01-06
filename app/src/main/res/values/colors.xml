@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <drawable name="transparent_color">#00000000</drawable>
+    <color name="text_gray">#FFCECECE</color>
+    <color name="text_gray2">#FFBDBDBD</color>
+
+    <color name="text_gray_chat">#FF6b6b6b</color>
+
+    <color name="orange">#ee7600</color>
+
+
+
+    <color name="text_whitesmoke">#FFEEEEEE</color>
+    <color name="text_black">#FF000000</color>
+
+    <color name="text_orange">#FF620F</color>
+
+    <!-- divider in contact/message/notification list -->
+    <color name="divider_color">#44aaaaaa</color>
+    <color name="half_transparent">#40FFFFFF</color>
+
+    <!-- PinLock view -->
+    <color name="pin_gray">#CCCCCC</color>
+    <color name="pin_blue">#3D95CE</color>
+    <color name="pin_light_gray_50">#55CCCCCC</color>
+
+    <!-- colors from iOS for dark Theme -->
+    <!-- their names are inverted, because on iOS the mnain theme is LIGHT -->
+    <!-- i.e white==black; high==low, etc -->
+    <color name="light_gray_high">#333</color>
+    <color name="light_gray_high_transparent">#9333</color>
+    <color name="light_gray_normal">#585858</color>
+    <color name="light_gray_low">#777</color>
+    <color name="dim">#DD151515</color>
+    <color name="white_normal">#151515</color>
+    <color name="black_normal">#F8F8F8</color>
+    <color name="orange_normal">#FF9000</color>
+    <color name="orange_low">#E87800</color>
+    <color name="light_orange_normal">#B35900</color>
+    <color name="red_normal">#8F0000</color>
+    <color name="red_low">#CC0000</color>
+    <color name="green_normal">#008F00</color>
+    <color name="green_low">#00CC00</color>
+
+
+
+    <!-- Material -->
+    <color name="phonex_color_primary">#333333</color>
+    <!--<color name="phonex_color_primary_dark">#585858</color>-->
+    <color name="phonex_color_accent">#ff9000</color>
+    <color name="phonex_background">#ff212121</color>
+
+    <color name="splash_screen_background">#ffa918</color>
+
+    <color name="phonex_button_orange_pressed">#E87800</color>
+    <color name="phonex_white">#F8F8F8</color>
+
+    <color name="phonex_dialog_background">#262626</color>
+    <!--from material design palette-->
+    <color name="material_green_500">#4CAF50</color>
+    <color name="material_red_500">#F44336</color>
+
+    <color name="sas_color_verify_background">#717171</color>
+
+    <color name="material_dark_background">#303030</color>
+    <color name="material_lighter_background">#505050</color>
+
+
+    <color name="camera_background">#000000</color>
+    <color name="camera_params_background">#99000000</color>
+    <color name="camera_toolbar_transparent">#55000000</color>
+
+    <color name="filename_background_transparent">#99000000</color>
+
+    <color name="file_selected">#008F00</color>
+    <color name="file_unselected">#0000</color>
+
+    <color name="secondary_text">#d2d2d2</color>
+
+</resources>

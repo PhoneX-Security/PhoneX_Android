@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="prefs">设置</string>
+    <string name="prefs_connectivity">连接</string>
+    <string name="prefs_media">媒体</string>
+    <string name="prefs_ui">用户界面</string>
+    <string name="prefs_security">安全</string>
+
+    <string name="transport">运输</string>
+    <string name="network_watchdog">网络监督</string>
+    <string name="network_watchdog_desc">在没有注册的情况下将重启服务。几秒钟后即可完成。0=禁用。</string>
+
+    <!-- Media -->
+    <string name="audio_quality">音频质量</string>
+    <string name="audio_volume">音量</string>
+    <string name="codecs">编解码器</string>
+    <string name="echo_cancellation">消除回声</string>
+    <string name="echo_cancellation_desc">允许使用消除回声的功能</string>
+    <string name="disable_vad">禁用语音检测</string>
+    <string name="disable_vad_desc">禁用语音音频检测</string>
+    <string name="enable_noise_reduction">降噪</string>
+    <string name="enable_noise_reduction_desc">只有在允许使用消除回声的功能并且在WebRTC模式下可使用此服务</string>
+    <string name="sound_mic_volume">麦克音量</string>
+    <string name="sound_mic_volume_desc">设定麦克的音量</string>
+    <string name="sound_speaker_volume">扬声器的音量</string>
+    <string name="sound_speaker_volume_desc">设定扬声器的音量</string>
+    <string name="sound_bt_mic_volume">蓝牙麦克的音量</string>
+    <string name="sound_bt_speaker_volume">蓝牙扬声器的音量</string>
+    <string name="sound_init_volume">初始音量</string>
+    <string name="sound_init_volume_desc">设定初始音量</string>
+    <string name="sound_clock_rate">音频采样</string>
+    <string name="sound_clock_rate_desc">音轨频率</string>
+    <string name="media_quality">媒体质量</string>
+    <string name="media_quality_desc">媒体流的质量（请只有在熟悉此功能的情况下而变更）</string>
+    <string name="echo_cancellation_mode">消除回声</string>
+    <string name="echo_cancellation_mode_desc">用于消除回声的算法</string>
+    <string name="enable_focus_audio">音频焦点</string>
+    <string name="enable_focus_audio_desc">在通话时将音乐播放器调至静音</string>
+    <string name="micro_source">麦克源</string>
+    <string name="micro_source_desc">麦克风源</string>
+    <string name="has_io_queue">IO队列</string>
+    <string name="has_io_queue_desc">输入/输出的分开队列</string>
+    <string name="codecs_band_types">编解码器的带宽 </string>
+    <string name="audio_implementation">音频工具</string>
+    <string name="audio_implementation_desc">音频引擎</string>
+    <string name="auto">自动</string>
+    <string name="speex">Speex</string>
+    <string name="simple">简单</string>
+    <string name="slow">慢</string>
+    <string name="fast">快</string>
+    <string name="audio_troubleshooting">音频出问题</string>
+    <string name="audio_troubleshooting_desc">音频出问题的设置</string>
+    <string name="media_thread_count">媒体的线程数</string>
+    <string name="media_thread_count_desc">媒体的线程数</string>
+    <!-- UI -->
+    <string name="general_ui">常规用户界面</string>
+    <string name="advanced_ui">高级设置</string>
+    <string name="keep_awake_incall">在呼叫中保持提醒的状态</string>
+    <string name="keep_awake_incall_desc">在呼叫中可解决处理器的静止状态</string>
+    <string name="log_level">登录水平</string>
+    <string name="log_level_desc">0 无  5 繁琐</string>
+    <string name="ringtone">铃声</string>
+    <string name="ringtone_desc">预定的铃声</string>
+    <string name="prevent_screen_rotation">防止屏幕旋转</string>
+    <string name="prevent_screen_rotation_desc">防止屏幕旋转。保持肖像旋转。</string>
+    <string name="invert_proximity_sensor">倒转接近传感器</string>
+    <string name="invert_proximity_sensor_desc">在电话中出屏幕上的亮度问题时，请试试此功能来调整。</string>
+    <string name="log_to_file">请将logcat复制到文件里边</string>
+    <string name="log_to_file_desc">将所有的登录传到外部文件里</string>
+
+
+    <!-- Fast settings -->
+    <string name="codecs_availability_text">编解码器表</string>
+
+    <!-- Calls settings -->
+    <!-- Settings modes -->
+    <string name="devel_preferences">开发模式</string>
+    <string name="normal_preferences">正常模式</string>
+
+    <!-- Generic -->
+    <!-- Contact list settings -->
+    <!-- Security -->
+    <string name="security_messages">短信</string>
+    <string name="security_calls">电话</string>
+
+    <string name="messages_delete_period_desc">将短信要在档案里保存多久？</string>
+    <string name="messages_delete_period">短信仓库区</string>
+
+
+    <string name="just_session">只有这次会议</string><!--Unused-->
+    <string name="one_hour">1个小时</string>
+    <string name="six_hours">6个小时</string>
+    <string name="twelve_hours">12个小时</string>
+    <string name="one_day">1天</string>
+    <string name="three_days">3天</string>
+    <string name="week">1个星期</string>
+    <string name="month">1个月</string>
+    <string name="forever">一直</string>
+
+    <string name="sip_signature">SIP 数字签名</string>
+    <string name="sip_signature_desc">数字签名的验证设置</string>
+    <string name="drop_bad_invite">放弃有害的INVITE</string>
+    <string name="drop_bad_invite_desc">忽视缺乏有效签名的INVITE（初电话）短信。</string>
+    <string name="drop_bad_bye">放弃有害的BYE</string>
+    <string name="drop_bad_bye_desc">忽视缺乏有效签名的BYE（末电话）短信。</string>
+    <string name="security_reports">错误报告</string>
+    <string name="pref_disable_acra">禁用错误报告</string>
+    <string name="pref_acra_disabled">错误报告被关掉</string>
+    <string name="pref_acra_enabled">错误报告被开启</string>
+    <string name="pref_acra_syslog">允许系统日志</string>
+    <string name="pref_acra_syslog_enabled">系统日志将被连接到一个错误报告</string>
+    <string name="pref_acra_syslog_disabled">系统日志不允许被连接到一个错误报告。请您重新考虑此选项，这样做可能会帮助开发者解决您遇到的问题。</string>
+    <string name="pref_acra_deviceid">允许ID设备</string>
+    <string name="pref_acra_deviceid_enabled">设备认证将会连接到一个错误报告</string>
+    <string name="pref_acra_deviceid_disabled">设备认证不允许连接到一个错误报告。请您重新考虑此选项，这样做可能会帮助开发者解决您遇到的问题。</string>
+
+    <string name="category_debug">调试</string>
+    <string name="pref_updates_section">软件更新</string>
+    <string name="pref_updates">允许下载PhoneX更新</string>
+    <string name="pref_updates_enabled">允许PhoneX使用PhoneX服务器进行更新。该选项要求您安装您的安卓系统许可的一些未知源文件。</string>
+    <string name="pref_updates_disabled">PhoneX更新被关闭</string>
+
+    <string name="pref_misc_section">杂项</string>
+    <string name="pref_misc_screenshot">禁用截图</string>
+    <string name="pref_misc_screenshot_enabled">截图被阻止使用</string>
+    <string name="pref_misc_screenshot_disabled">允许使用PhoneX的截图</string>
+
+    <string name="pref_incall">启用“通话中”状态</string>
+    <string name="pref_incall_enabled">通话时显示“通话中”状态。隐私警告：通话时可能会被其他用户发现。</string>
+    <string name="pref_incall_disabled">“通话中”状态被禁用</string>
+
+    <string name="restart_stack">重启应用程序</string>
+    <string name="restart_stack_desc">重启应用工具。用于应用程序出现问题时，如注册时。</string>
+    <string name="restart_stack_toast">应用程序重启中</string>
+
+    <string name="contactlist_sort_online">在线联络人优先</string>
+    <string name="contactlist_sort_online_desc">在线联络人将位于联系名单顶部</string>
+
+    <string name="alert_new_message_during_chat">来信提醒</string>
+    <string name="alert_new_message_during_chat_desc">提醒接收来自于通话人的新信息（与通话人的对话框开启中）</string>
+
+    <string name="pin_lock">PIN码[Sim卡的个人识别密码]锁定</string>
+    <string name="pin_lock_desc">PIN码[Sim卡的个人识别密码]锁屏</string>
+    <string name="pin_enable">开启屏幕锁定</string>
+    <string name="pin_change">更换PIN码[Sim卡的个人识别密码]</string>
+    <string name="pin_reset">PIN码[Sim卡的个人识别密码]重置</string>
+    <string name="pin_reset_desc">如果忘记了PIN码[Sim卡的个人识别密码]，请重置新的PIN码。</string>
+    <string name="pin_reset_enter_pass">输入密码</string>
+    <string name="pin_reset_wrong_pass">密码输入有误</string>
+
+    <string name="contactlist_show_username_desc">在联系人名单里显示用户名及昵称</string>
+    <string name="contactlist_show_username">显示用户名</string>
+</resources>

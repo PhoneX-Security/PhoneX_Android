@@ -1,0 +1,149 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="prefs">Nastavení</string>
+    <string name="prefs_connectivity">Síť</string>
+    <string name="prefs_media">Média</string>
+    <string name="prefs_ui">Uživatelské rozhraní</string>
+    <string name="prefs_security">Bezpečnost</string>
+    <!--Network-->
+    <string name="transport">Přenos</string>
+    <string name="network_watchdog">Hlídač registrace</string>
+    <string name="network_watchdog_desc">Při výpadku registrace restartuje službu po zvoleném počtu sekund. 0 znamená nepoužívat.</string>
+    <!--<string name="ka_use_wake">Keep alive awake</string>
+      <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+    <!--Security-->
+    <!--Media-->
+    <string name="audio_quality">Kvalita zvuku</string>
+    <string name="audio_volume">Hlasitost</string>
+    <string name="codecs">Kodeky</string>
+    <string name="echo_cancellation">Potlačení echa</string>
+    <string name="echo_cancellation_desc">Aktivuje funkce pro potlačení echa</string>
+    <string name="disable_vad">Vypnout detekci hlasu</string>
+    <string name="disable_vad_desc">Deaktivace hlasové detekce</string>
+    <string name="enable_noise_reduction">Redukce šumu</string>
+    <string name="enable_noise_reduction_desc">Funguje, pokud je potlačení ozvěn aktivováno, a je při něm použit ako backend WebRTC.</string>
+    <string name="sound_mic_volume">Zesílení mikrofonu</string>
+    <string name="sound_mic_volume_desc">Zesílení úrovně mikrofonu</string>
+    <string name="sound_speaker_volume">Zesílení reproduktoru</string>
+    <string name="sound_speaker_volume_desc">Nastavení hlasitosti reproduktoru</string>
+    <string name="sound_bt_mic_volume">Zesílení Bluetooth mikrofonu</string>
+    <string name="sound_bt_speaker_volume">Zesílení Bluetooth sluchátka</string>
+    <string name="media_quality">Kvalita média</string>
+    <string name="media_quality_desc">Kvalita proudu média</string>
+    <string name="sound_clock_rate">Vzorkovací frekvence</string>
+    <string name="sound_clock_rate_desc">Audio frekvence kanálu</string>
+    <string name="echo_cancellation_mode">Potlačení ozvěny</string>
+    <string name="echo_cancellation_mode_desc">Algoritmus pro potlačování ozvěny</string>
+    <string name="enable_focus_audio">Audio focus</string>
+    <string name="enable_focus_audio_desc">Focus ztlumí přehrávač hudby během hovoru</string>
+    <string name="auto">Automaticky</string>
+    <string name="simple">Jednoduché</string>
+    <string name="slow">Pomalu</string>
+    <string name="fast">Rychle</string>
+    <string name="general_media">Obecné</string>
+    <string name="bluetooth_on">Bluetooth zapnut</string>
+    <string name="bluetooth_on_desc">Výchozí nastavení připojení bluetooth</string>
+    <!--UI-->
+    <string name="general_ui">Obecné uživatelské rozhraní</string>
+    <string name="keep_awake_incall">Při hovoru je telefon připraven</string>
+    <string name="keep_awake_incall_desc">Zabrání přechodu procesoru do nečinný stavu a zabrání tak trhání hovoru.</string>
+    <string name="log_level">Úroveň přihlášení</string>
+    <string name="ringtone">Vyzváněcí tón</string>
+    <string name="ringtone_desc">Vyzvánění pro příchozí hovory</string>
+    <string name="prevent_screen_rotation">Zabránit otočení obrazovky</string>
+    <string name="prevent_screen_rotation_desc">Zablokuje otočení obrazovky na šířku.</string>
+    <string name="invert_proximity_sensor">Invertovat senzor přiblížení</string>
+    <string name="invert_proximity_sensor_desc">Zkuste, pokud máte problém s jasem obrazovky když voláte.</string>
+    <string name="normal_preferences">Normální režim</string>
+    <string name="security_messages">Zprávy</string>
+    <string name="security_calls">Volání</string>
+
+    <string name="messages_delete_period_desc">Jak dlouho ukládat zprávy v archivu.</string>
+    <string name="messages_delete_period">Archivace zpráv</string>
+
+    <string name="just_session">Pouze toto sezení</string>
+
+    <string name="one_hour">1 hodina</string>
+    <string name="six_hours">6 hodin</string>
+    <string name="twelve_hours">12 hodin</string>
+
+    <string name="one_day">1 den</string>
+    <string name="three_days">3 dny</string>
+    <string name="week">Týden</string>
+    <string name="month">Měsíc</string>
+    <string name="forever">Navždy</string>
+
+    <string name="security_reports">Hlášení chyb</string>
+    <string name="pref_disable_acra">Vypnout hlášení chyb</string>
+    <string name="pref_acra_disabled">Automatické hlášení chyb je vypnuto</string>
+    <string name="pref_acra_enabled">Automatické hlášení chyb je zapnuto</string>
+    <string name="pref_acra_syslog">Povolit logy</string>
+    <string name="pref_acra_syslog_enabled">Systémové logy budou přiloženy k hlášení chyby</string>
+    <string name="pref_acra_syslog_disabled">Systémové logy nejsou povoleny pro použití při hlášení chyb. Prosím, zvažte tuto možnost, může to výrazně pomoci vývojářům aplikace při řešení Vašich problémů.</string>
+    <string name="pref_acra_deviceid">Povolit ID zařízení</string>
+    <string name="pref_acra_deviceid_enabled">Identifikace zařízení bude přiložena k hlášení chyby</string>
+    <string name="pref_acra_deviceid_disabled">Identifikace zařízení není povolena při hlášení chyby. Prosím, zvažte tuto možnost, může to výrazně pomoci vývojářům aplikace při řešení Vašich problémů.</string>
+
+    <string name="pref_updates_section">Aktualizace</string>
+    <string name="pref_updates">Povolit aktualizace PhoneX</string>
+    <string name="pref_updates_enabled">Aktualizace aplikace PhoneX ze serverů aplikace je povolena. Vyžaduje povolení instalování aplikací mimo Google Play.</string>
+    <string name="pref_updates_disabled">Aktualizace aplikace je vypnuta.</string>
+
+    <string name="pref_misc_section">Ostatní</string>
+    <string name="pref_misc_screenshot">Blokovat snímky obrazovky</string>
+    <string name="pref_misc_screenshot_enabled">Snímky obrazovky jsou blokovány.</string>
+    <string name="pref_misc_screenshot_disabled">Snímky obrazovky aplikace PhoneX jsou povoleny.</string>
+
+    <string name="pref_incall">Povolit status "telefonuje"</string>
+    <string name="pref_incall_enabled">Přepne status na "telefonuje" po dobu aktivního hovoru. Varování: Ostatní uživatelé mohou sledovat kdy telefonujete.</string>
+    <string name="pref_incall_disabled">Status je vypnut.</string>
+
+    <string name="restart_stack">Restartovat aplikaci</string>
+    <string name="restart_stack_desc">Restartuje aplikaci. Použijte pokud máte pocit, že aplikace má potíže, například s přihlášením.</string>
+    <string name="restart_stack_toast">Aplikace bude restartována.</string>
+
+    <string name="contactlist_sort_online">Online kontakty první</string>
+    <string name="contactlist_sort_online_desc">Zobrazí kontakty ve statusu "online" jako první v seznamu.</string>
+
+    <string name="alert_new_message_during_chat">Upozornit na novou zprávu</string>
+    <string name="alert_new_message_during_chat_desc">Upozorní na novou zprávu od kontaktu se kterým právě chatujete, tzn. máte s ním otevřeno okno s komunikací.</string>
+
+    <string name="sound_init_volume">Výchozí hlasitost reproduktoru.</string>
+    <string name="sound_init_volume_desc">Nastaví výchozí hlasitost reproduktoru.</string>
+    <string name="language">Jazyk</string>
+    <string name="language_desc">Nastaví jazyk aplikace.</string>
+
+    <string name="sip_signature">SIP digitalní podpis</string>
+    <string name="sip_signature_desc">Nastavení ověřování digitálního podpisu.</string>
+
+    <string name="pin_lock">PIN zámek</string>
+    <string name="pin_lock_desc">Uzamknutí obrazovky PIN kódem</string>
+    <string name="pin_enable">Povolit zamykání obrazovky</string>
+    <string name="pin_change">Změna PINu</string>
+    <string name="pin_reset">Resetování PINu</string>
+    <string name="pin_reset_desc">V případě zapomenutého PINu si zvolte nový.</string>
+    <string name="pin_reset_enter_pass">Zadejte vaše heslo</string>
+    <string name="pin_reset_wrong_pass">Nesprávné heslo</string>
+
+    <string name="contactlist_show_username_desc">Zobrazit uživatelská jména spolu s přezdívkami v seznamu kontaktů.</string>
+    <string name="contactlist_show_username">Zobrazit uživatelská jména</string>
+
+    <string name="pref_p2p_disable">Zakázat P2P</string>
+    <string name="pref_p2p_enabled">P2P spojení je zakázáno pro hovor. Data tečou přes náš server, kvalita hovoru se může snížit, druhá strana nevidí Vaši IP adresu.</string>
+    <string name="pref_p2p_disabled">P2P spojení je povoleno pro hovor. Pokud je to možné, data tečou přímo volanému. Zvyšuje kvalitu hovoru, druhá strana vidí Vaši IP adresu.</string>
+
+    <string name="pref_google_analytics">Povolit Google Analytics</string>
+    <string name="pref_google_analytics_enabled">Google Analytics anonymní logování je zapnuto.</string>
+    <string name="pref_google_analytics_disabled">Google Analytics anonymní logování je vypnuto.</string>
+
+    <!-- File transfer and photo resizing options-->
+    <string name="category_file_transfer">Přenos souborů</string>
+
+    <string name="ft_resize">Zmenšit obrázky před odesláním</string>
+    <string name="ft_resize_disable">Odesílat obrázky v původní velikosti</string>
+    <string name="ft_resize_pixels_640">Zmenšit obrázky na rozměr 640 pixelů</string>
+    <string name="ft_resize_pixels_800">Zmenšit obrázky na rozměr 800 pixelů</string>
+    <string name="ft_resize_pixels_1024">Zmenšit obrázky na rozměr 1024 pixelů</string>
+    <string name="ft_resize_pixels_1280">Zmenšit obrázky na rozměr 1280 pixelů</string>
+
+</resources>

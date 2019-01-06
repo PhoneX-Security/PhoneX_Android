@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="prefs">Настройки</string>
+    <string name="prefs_connectivity">Мрежа</string>
+    <string name="prefs_media">Медиа</string>
+    <string name="prefs_ui">Потребителски интерфейс</string>
+    <!--Network-->
+    <string name="transport">Транспорт</string>
+    <!--<string name="ka_use_wake">Keep alive awake</string>
+      <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+    <!--Security-->
+    <!--Media-->
+    <string name="audio_quality">Качество на звука</string>
+    <string name="audio_volume">Сила на звука</string>
+    <string name="codecs">Кодеци</string>
+    <string name="echo_cancellation">Премахване на ехото</string>
+    <string name="echo_cancellation_desc">Активиране намаляването на ехото</string>
+    <string name="disable_vad">VAD</string>
+    <string name="disable_vad_desc">Активиране на VAD (автоматично откриване на глас)</string>
+    <string name="enable_noise_reduction">Намаляване на шумът</string>
+    <string name="enable_noise_reduction_desc">Работи ако сте активирали \"Премахване на ехото\" и е наличенa WebRTC поддръжка</string>
+    <string name="sound_mic_volume">Усилване на микрофона</string>
+    <string name="sound_speaker_volume">Усилване на говорителя</string>
+    <string name="sound_bt_mic_volume">Усилване на Bluetooth микрофона</string>
+    <string name="media_quality">Качество на мултимедиата</string>
+    <string name="media_quality_desc">Качество на потока от информация (променяйте само ако знаете какво правите)</string>
+    <string name="sound_clock_rate">Тактова честота</string>
+    <string name="sound_clock_rate_desc">Честота на аудио канала</string>
+    <string name="echo_cancellation_mode">Ехо режим</string>
+    <string name="echo_cancellation_mode_desc">Алгоритъм за ехо</string>
+    <string name="enable_focus_audio">Фокусирай звука</string>
+    <string name="auto">Автоматично</string>
+    <string name="simple">опростен</string>
+    <string name="slow">Бавно</string>
+    <string name="fast">Бързо</string>
+    <!--UI-->
+    <string name="general_ui">Основен потребителски интерфейс</string>
+    <string name="keep_awake_incall">Без изключване на дисплея по време на разговор</string>
+    <string name="keep_awake_incall_desc">Премахва влошаването на звука при изключване на екрана по време на разговор през WiFi</string>
+    <string name="log_level">Log level</string>
+    <string name="ringtone">Мелодия</string>
+    <string name="prevent_screen_rotation">Без завъртане на екрана</string>
+    <string name="invert_proximity_sensor">\"Обърни\" сензора за близост</string>
+    <!--Fast settings-->
+    <!--Calls settings-->
+    <!--Settings modes-->
+    <string name="normal_preferences">Нормален режим</string>
+    <!--Generic-->
+
+
+    <!-- ##automatically translated below -->
+
+    <string name="prefs_security">Сигурност</string>
+    <string name="network_watchdog">Network пазител</string>
+    <string name="network_watchdog_desc">Рестартира услугата в случай на регистрация. За секунди. 0 = забраните</string>
+    <string name="security_messages">Съобщения</string>
+    <string name="messages_delete_period_desc">Колко дълго да запази вашите съобщения в архива</string>
+    <string name="messages_delete_period">Съобщения архивиране</string>
+    <string name="just_session">Просто тази сесия</string>
+    <string name="one_day">1ден</string>
+    <string name="three_days">3 дни</string>
+    <string name="week">Седмица</string>
+    <string name="month">Месец</string>
+    <string name="forever">Завинаги</string>
+</resources>

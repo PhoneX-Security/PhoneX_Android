@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--<item android:state_pressed="true" >-->
+        <!--<shape>-->
+            <!--<solid android:color="@color/phonex_button_orange_pressed"/>-->
+            <!--<corners android:radius="5dp"/>-->
+        <!--</shape>-->
+    <!--</item>-->
+
+    <item android:state_pressed="true">
+        <shape>
+            <!--<solid android:color="@color/phonex_color_accent"/>-->
+            <corners android:radius="5dp"/>
+            <stroke android:color="@color/phonex_button_orange_pressed" android:width="2dp" />
+        </shape>
+    </item>
+
+    <item >
+        <shape>
+            <!--<solid android:color="@color/phonex_color_accent"/>-->
+            <corners android:radius="5dp"/>
+            <stroke android:color="@color/phonex_color_accent" android:width="2dp" />
+        </shape>
+    </item>
+
+
+
+</selector>

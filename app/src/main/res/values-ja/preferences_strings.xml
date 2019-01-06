@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">設定</string>
+  <string name="prefs_connectivity">ネットワーク</string>
+  <string name="prefs_media">メディア</string>
+  <string name="prefs_ui">ユーザインターフェース</string>
+  <!--Network-->
+  <string name="transport">トランスポート</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">オーディオ品質</string>
+  <string name="audio_volume">ボリューム</string>
+  <string name="codecs">コーデック</string>
+  <string name="echo_cancellation">エコーキャンセル</string>
+  <string name="echo_cancellation_desc">エコーキャンセルを有効</string>
+  <string name="disable_vad">音声検出</string>
+  <string name="disable_vad_desc">音声検出を有効</string>
+  <string name="enable_noise_reduction">ノイズ削減</string>
+  <string name="enable_noise_reduction_desc">エコーキャンセルが動作していて、WebRTCエコーキャンセラーが裏で使われてるときに稼働します。</string>
+  <string name="sound_mic_volume">マイク音量</string>
+  <string name="sound_speaker_volume">スピーカー音量</string>
+  <string name="sound_bt_mic_volume">Bluetoothマイク音量</string>
+  <string name="media_quality">メディア品質</string>
+  <string name="media_quality_desc">メディアストリームの品質(何をしているか理解している場合のみ変更してください)</string>
+  <string name="sound_clock_rate">クロックレート</string>
+  <string name="sound_clock_rate_desc">オーディオチャンネル周波数</string>
+  <string name="echo_cancellation_mode">エコーモード</string>
+  <string name="echo_cancellation_mode_desc">エコーのアルゴリズム</string>
+  <string name="enable_focus_audio">音声出力抽出</string>
+  <string name="auto">自動</string>
+  <string name="simple">シンプル</string>
+  <string name="slow">遅い</string>
+  <string name="fast">早い</string>
+  <!--UI-->
+  <string name="general_ui">一般ユーザインターフェース</string>
+  <string name="keep_awake_incall">通話中のスリープ抑制</string>
+  <string name="keep_awake_incall_desc">WiFi使用時に画面オフになった場合、音声の途切れを修正</string>
+  <string name="log_level">ログレベル</string>
+  <string name="ringtone">着信音</string>
+  <string name="prevent_screen_rotation">スクリーン回転を抑制</string>
+  <string name="invert_proximity_sensor">近接センサーを反転</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <string name="normal_preferences">ノーマルモード</string>
+  <!--Generic-->
+  <!-- ##automatically translated below -->
+
+<string name="prefs_security">セキュリティー</string>
+<string name="network_watchdog">ネットワーク監視</string>
+<string name="network_watchdog_desc">無登録の場合に再起動サービス。秒単位で指定します。 0 =無効にする</string>
+<string name="security_messages">メッセージ</string>
+<string name="messages_delete_period_desc">アーカイブにあなたのメッセージを保持するためにどのくらい</string>
+<string name="messages_delete_period">メッセージarchivati​​on</string>
+<string name="just_session">ただ、このセッション</string>
+<string name="one_day">1日</string>
+<string name="three_days">3日間</string>
+<string name="week">週</string>
+<string name="month">月</string>
+<string name="forever">フォーエバー</string>
+</resources>

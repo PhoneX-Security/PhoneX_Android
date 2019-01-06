@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">Atender</string>
+  <string name="end_call">Terminar</string>
+  <string name="speaker">Viva-Voz</string>
+  <string name="mute">Mudo</string>
+  <string name="call_state_calling">Chamando…</string>
+  <string name="call_state_disconnected">Desconectado</string>
+  <string name="call_state_incoming">Recebendo chamada...</string>
+  <string name="hold_call">Espera</string>
+  <string name="on_hold">Em Espera</string>
+  </resources>

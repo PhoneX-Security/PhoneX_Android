@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">Antwoorden</string>
+  <string name="end_call">Beëindigen</string>
+  <string name="speaker">Luidspreker</string>
+  <string name="mute">Gedempt</string>
+  <string name="call_state_calling">Bellen …</string>
+  <string name="call_state_disconnected">Opgehangen</string>
+  <string name="call_state_incoming">Inkomende oproep</string>
+  <string name="hold_call">In wacht zetten</string>
+  <string name="on_hold">In Wacht</string>
+  <!-- ##automatically translated below -->
+
+<string name="transport_secure_to_server">TLS transport wordt gebruikt voor onmiddellijke hop</string>
+<string name="transport_secure_full">End-to-end signalering wordt veilig geacht</string>
+</resources>

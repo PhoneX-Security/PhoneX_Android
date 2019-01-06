@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">Yanıtla</string>
+  <string name="end_call">Bitir</string>
+  <string name="speaker">hopârlör</string>
+  <string name="mute">Sessiz</string>
+  <string name="call_state_calling">Aranıyor…</string>
+  <string name="call_state_incoming">Gelen çağrı…</string>
+  <!-- ##automatically translated below -->
+
+<string name="call_state_disconnected">Kapattı</string>
+<string name="hold_call">Tutmak</string>
+<string name="on_hold">Beklemede</string>
+<string name="transport_secure_to_server">TLS taşıma hemen atlama için kullanılır</string>
+<string name="transport_secure_full">Uçtan uca sinyal güvenli gerekiyordu</string>
+</resources>

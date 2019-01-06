@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">Válasz</string>
+  <string name="end_call">Vége</string>
+  <string name="speaker">Hangszóró</string>
+  <string name="mute">Némít</string>
+  <string name="call_state_calling">Hívás..</string>
+  <string name="call_state_disconnected">Megszakít</string>
+  <string name="call_state_incoming">Bejövő hívás..</string>
+  <string name="hold_call">Tartás</string>
+  <string name="on_hold">Tartásban</string>
+  <!-- ##automatically translated below -->
+
+<string name="transport_secure_to_server">TLS szállítására használják azonnali hop</string>
+<string name="transport_secure_full">End-to-end jelzés állítólag biztonságos</string>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="connection_not_valid">Vald nätverksrutt är inte tillåten med nuvarande inställningar som du har ställt in</string>
+  <string name="save">Spara</string>
+  <string name="cancel">Avbryt</string>
+  <string name="delete_account">Radera konto</string>
+  <string name="add_account">Lägg till konto</string>
+  <string name="ongoing_call">Samtal pågår</string>
+  <string name="missed_call">Missat samtal</string>
+  <string name="messages_tab_name_text">Meddelanden</string>
+  <string name="menu_disconnect">Stäng av</string>
+  <string name="service_notification_registered">PhoneX registrerad</string>
+  <string name="faq">Vanliga frågor</string>
+  <string name="help">Hjälp</string>
+  <string name="ok">OK</string>
+  <string name="quit_info">Du är konfigurerad till att vara tillgängliga för det här nätverket! Genom att klicka på OK bekräftar du att du inte vill vara tillgängliga förrän nästa start av applikationen</string>
+  <string name="voice_mail">Röstbrevlåda</string>
+  <string name="not_configured_multiple_calls">Applikationen är inte konfigurerad för att tillåta flera samtal</string>
+  <string name="loading">Laddar</string>
+  <string name="info">Information</string>
+  <!--Presence stuff-->
+  <string name="online">Uppkopplad</string>
+  <string name="offline">Nedkopplad</string>
+  <string name="away">Borta</string>
+  <string name="busy">Upptagen</string>
+  </resources>

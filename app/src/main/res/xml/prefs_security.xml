@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/security_messages">
+        <ListPreference
+            android:defaultValue="-1"
+            android:entries="@array/messages_delete_period_choices"
+            android:entryValues="@array/messages_delete_period_values"
+            android:key="messages_delete_period"
+            android:summary="@string/messages_delete_period_desc"
+            android:title="@string/messages_delete_period" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/security_calls">
+        <PreferenceScreen
+            android:key="sip_signature"
+            android:summary="@string/sip_signature_desc"
+            android:title="@string/sip_signature">
+        </PreferenceScreen>
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="publish_incall_state"
+            android:summaryOff="@string/pref_incall_disabled"
+            android:summaryOn="@string/pref_incall_enabled"
+            android:title="@string/pref_incall" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="p2p.disable"
+            android:summaryOff="@string/pref_p2p_disabled"
+            android:summaryOn="@string/pref_p2p_enabled"
+            android:title="@string/pref_p2p_disable" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="pref_misc_section"
+        android:title="@string/pref_misc_section">
+
+        <PreferenceScreen
+            android:key="pin_lock"
+            android:title="@string/pin_lock" >
+            </PreferenceScreen>
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="phonex_block_screenshots"
+            android:summaryOff="@string/pref_misc_screenshot_disabled"
+            android:summaryOn="@string/pref_misc_screenshot_enabled"
+            android:title="@string/pref_misc_screenshot" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/security_reports">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="google_analytics.enable"
+            android:summaryOff="@string/pref_google_analytics_disabled"
+            android:summaryOn="@string/pref_google_analytics_enabled"
+            android:title="@string/pref_google_analytics" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

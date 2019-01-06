@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <!-- The name of the SMS/MMS app as it appears to the user in the Home screen, task switcher, etc. -->
+    <!-- Command name to open a Compose screen; displays in conversation list -->
+    <!-- Summary text under "New Message" command; displays in conversation list -->
+    <!-- Menu item for starting a new conversation -->
+    <!-- Menu item to call the recipient of the conversation on the phone (imperative verb) -->
+    <!-- Menu item for deleting all conversations -->
+    <string name="menu_delete_all">Supprimer les sujets</string>
+    <!-- Context menu item on an individual conversation for deleting that conversation -->
+    <string name="menu_delete">Supprimer un fil de discussion</string>
+    <!-- Context menu item on an individual conversation for viewing that conversation -->
+    <string name="menu_view">Voir le sujet</string>
+    <!-- Name to use when we have an unspecified sender -->
+    <!-- Name of the local user when displaying sender of an outgoing message (personal pronoun) -->
+    <!-- Abbreviation for "kilobyte" -->
+    <!-- Dialog box title brought up when warning the user that a message could not be delivered -->
+    <string name="undelivered_msg_dialog_title">Messages non délivré</string>
+    <!-- Dialog box message indicating that a message could not be delivered -->
+    <!-- Menu item for deleting the entire conversation currently being viewed -->
+    <!--
+      Text of a button appearing for MMS messages that have not yet been downloaded, causing the message
+         to be downloaded (imperative verb)
+    -->
+    <!--
+      Message displayed in place of the "download message" button once it has been pressed,
+         indicating that the download is in progress
+    -->
+    <!-- Individual message context menu item -->
+    <string name="copy_message_text">Copier le message</string>
+    <!-- Header for context menu on an individual message -->
+    <!-- Button text on edit slide screen indicating the user wants to finish editing that slide -->
+    <string name="done">Terminé</string>
+    <!-- Title bar displayed in compose message activity before a recipient has been selected -->
+    <string name="compose_title">Ecrire</string>
+    <!-- Menu item in conversation screen for attaching something to the message being composed -->
+    <!-- Button next to an attachment during message composition to view the attachment (imperative verb) -->
+    <!-- Button in conversation screen for sending the SMS message currently being composed (imperative verb) -->
+    <string name="send">Envoyer</string>
+    <!-- Menu item in conversation screen for returning to the conversation list -->
+    <!-- Hint text in message body field when keyboard is exposed -->
+    <string name="type_to_compose_text_enter_to_send">Ecrire</string>
+    <!-- Hint text in message body field when keyboard is hidden -->
+    <!-- Dialog title for warning the user that the picture they are trying to attach is too large -->
+    <!-- Dialog message text asking the user if he wants to resize the picture being attached -->
+    <!-- Toast message while an image is being resized -->
+    <!-- Context menu item on a message recipient for viewing their contact info -->
+    <!--
+      Context menu item on a message recipient for adding them to the user's
+         contacts (used if the recipient is not already in the address book)
+    -->
+    <!-- Sender to be used if the sender address has been hidden -->
+    <!-- Text to be used for affirmative response button in dialog boxes -->
+    <string name="yes">OK</string>
+    <!-- Text to be used for negative response button in dialog boxes -->
+    <string name="no">Annuler</string>
+    <!-- Button text used for editing a slideshow (imperative verb) -->
+    <string name="edit">Editer</string>
+    <!-- Settings screen menu item for restoring all settings to default -->
+    <string name="restore_default">Restaurer les paramètres par défaut</string>
+    <!-- Confirm Delete -->
+    <!-- Delete confirmation dialog title -->
+    <string name="confirm_dialog_title">Supprimer</string>
+    <!-- Delete entire thread confirmation dialog message -->
+    <string name="confirm_delete_conversation">Le sujet complet sera supprimé</string>
+    <!-- Delete all threads confirmation dialog message -->
+    <string name="confirm_delete_all_conversations">Tous les sujets seront supprimés</string>
+    <!-- Delete message confirmation dialog message -->
+    <!-- Delete message confirmation dialog message for a locked message -->
+    <!-- Delete entire thread confirmation dialog message -->
+    <!-- Delete button title -->
+    <string name="delete">Supprimer</string>
+    <!-- Status in "Report" window -->
+    <!-- Status in "Report" window -->
+    <string name="status_pending">En attente</string>
+    <!-- Status in "Report" window -->
+    <!-- Status in "Report" window -->
+    <string name="status_failed">Echec</string>
+    <!-- Status in "Report" window -->
+    <!-- Status in "Report" window -->
+    <!-- Label in "Report" window -->
+    <!-- Label in "Report" window -->
+    <!-- Menu item -->
+    <!-- Label for the "Me" number of this phone. -->
+    <!-- Brief small label shown to right of message when it is being sent. -->
+    </resources>

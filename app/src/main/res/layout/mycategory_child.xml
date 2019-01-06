@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <!--
+     <View
+	     android:id="@+id/divider"
+	     android:layout_width="match_parent"
+	     android:layout_height="1dip"
+	     android:layout_marginLeft="@dimen/call_log_outer_margin"
+	     android:layout_marginRight="@dimen/call_log_outer_margin"
+	     android:layout_below="@+id/summary"
+	     android:background="#55ffffff" />-->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:gravity="center_vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    android:layout_weight="1">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:fadingEdge="horizontal"
+        android:gravity="top|left"
+        android:ellipsize="marquee"
+        android:singleLine="true"
+        android:textColor="?android:attr/textColorPrimary"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textIsSelectable="false" />
+        
+    <TextView android:id="@+id/summary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="?android:attr/textColorSecondary"
+        android:textIsSelectable="true"
+         />    
+    
+    <!--
+     <View
+	     android:id="@+id/divider"
+	     android:layout_width="match_parent"
+	     android:layout_height="1dip"
+	     android:layout_marginLeft="@dimen/call_log_outer_margin"
+	     android:layout_marginRight="@dimen/call_log_outer_margin"
+	     android:layout_below="@+id/summary"
+	     android:background="#55ffffff" />-->
+
+</RelativeLayout>

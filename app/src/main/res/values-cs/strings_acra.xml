@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="crash_dialog_title">PhoneX byl ukončen</string>
+    <string name="crash_dialog_text">Došlo k neočekávané chybě která zastavila aplikaci. Prosím pomozte nám problém vyřešit rychleji zasláním zprávy o chybě.</string>
+    <string name="crash_dialog_comment_prompt">Prosím zadejte váš komentář k chybě sem:</string>
+    <string name="crash_dialog_ok_toast">Děkujeme!</string>
+    <string name="crash_dialog_positive_button">Odeslat chybu</string>
+</resources>

@@ -1,0 +1,77 @@
+Index: pjsip/sources/pjlib/src/pj/os_core_unix.c
+===================================================================
+--- pjsip.orig/sources/pjlib/src/pj/os_core_unix.c
++++ pjsip/sources/pjlib/src/pj/os_core_unix.c
+@@ -164,6 +164,7 @@ PJ_DEF(pj_status_t) pj_init(void)
+     /* Check if PJLIB have been initialized */
+     if (initialized) {
+ 	++initialized;
++	PJ_LOG(1,(THIS_FILE, "pjlib %s for POSIX initialized again %d", PJ_VERSION, initialized));
+ 	return PJ_SUCCESS;
+     }
+ 
+@@ -211,7 +212,7 @@ PJ_DEF(pj_status_t) pj_init(void)
+     ++initialized;
+     pj_assert(initialized == 1);
+ 
+-    PJ_LOG(4,(THIS_FILE, "pjlib %s for POSIX initialized",
++    PJ_LOG(2,(THIS_FILE, "pjlib %s for POSIX initialized",
+ 	      PJ_VERSION));
+ 
+     return PJ_SUCCESS;
+@@ -238,8 +239,10 @@ PJ_DEF(void) pj_shutdown()
+ 
+     /* Only perform shutdown operation when 'initialized' reaches zero */
+     pj_assert(initialized > 0);
+-    if (--initialized != 0)
++    PJ_LOG(4,(THIS_FILE, "pjlib pj_shutdown called, init=%d", initialized));
++    if (--initialized != 0){
+ 	return;
++	}
+ 
+     /* Call atexit() functions */
+     for (i=atexit_count-1; i>=0; --i) {
+@@ -287,7 +290,13 @@ PJ_DEF(pj_uint32_t) pj_getpid(void)
+ PJ_DEF(pj_bool_t) pj_thread_is_registered(void)
+ {
+ #if PJ_HAS_THREADS
+-    return pj_thread_local_get(thread_tls_id) != 0;
++    pj_bool_t isreg = pj_thread_local_get(thread_tls_id) != NULL;
++
++    /*if (isreg){
++        PJ_LOG(4,(THIS_FILE, "pjlib is_registered init=%d tls_id=%d", initialized, thread_tls_id));
++    }*/
++
++    return isreg;
+ #else
+     pj_assert("pj_thread_is_registered() called in non-threading mode!");
+     return PJ_TRUE;
+@@ -479,6 +488,8 @@ PJ_DEF(pj_status_t) pj_thread_register (
+ #endif
+ 
+     *ptr_thread = thread;
++
++    PJ_LOG(4,(THIS_FILE, "pjlib thread_register init=%d tls_id=%d", initialized, thread_tls_id));
+     return PJ_SUCCESS;
+ #else
+     pj_thread_t *thread = (pj_thread_t*)desc;
+@@ -638,7 +649,7 @@ PJ_DEF(pj_status_t) pj_thread_create( pj
+ 
+     *ptr_thread = rec;
+ 
+-    PJ_LOG(6, (rec->obj_name, "Thread created"));
++    PJ_LOG(5, (rec->obj_name, "Thread created"));
+     return PJ_SUCCESS;
+ #else
+     pj_assert(!"Threading is disabled!");
+@@ -716,6 +727,10 @@ PJ_DEF(pj_status_t) pj_thread_join(pj_th
+     int result;
+ 
+     PJ_CHECK_STACK();
++    if(pj_thread_this()->thread == rec->thread){
++        PJ_LOG(5, (pj_thread_this()->obj_name, "Joined thread %s", p->obj_name));
++    	return PJ_SUCCESS;
++    }
+ 
+     if (p == pj_thread_this())
+ 	return PJ_ECANCELLED;

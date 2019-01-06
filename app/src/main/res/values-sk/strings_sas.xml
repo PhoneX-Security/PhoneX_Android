@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sas_confirm">Potvrdiť</string>
+    <string name="sas_reject">Odmietnúť</string>
+    <string name="sas_title">Bezpečnostný kód</string>
+    <string name="sas_say">Povedzte kontatku:</string>
+    <string name="sas_verify">Kontakt by mal povedať:</string>
+    <string name="sas_more_info">Viac informácií</string>
+    <string name="sas_more_desc">Bezpečnostný kód je ďalšia vrstva ochrany proti odpočúvaniu.<br/><br/>\n\nVzájomným overením bezpečnostného kódu s volaným kontaktom overíte neprítomnosť odpočúvania a potvrdíte bezpečnosť Vášho komunikačného kanálu.<br/><br/>\n\nTáto kontrola je potrebná pri prvom hovore s daným volaným kontaktom.<br/><br/>\n\n<b>Doporučený postup:</b><br/>\nNasledujte príkazy na obrazovke zhora dole. Ak je to "<b>Povedzte kontaktu</b>", povedzte kód v oranžovom poli kontaktu na druhej strane, aby ho mohol overiť. Potom nenechajte kontakt povedať jeho čast kódu, overte správnosť voči kódu v šedom poli. <br/><br/>\n\nAk je zobrazený príkaz \"<b>Kontakt by mal povedať</b>\", vyčkajte, až kontakt povie svoju časť kódu a porovnajte ju so zobrazenou hodnotou s kódom v šedom poli. Následne pokračujte na ďalší krok a povedzte kontaktu svoju časť kódu v oranžovom poli, aby ho mohol overiť.<br/><br/>\n\nPo skončení tejto procedúry by na oboch stranách mal byť rovnaký kód. Ak je tomu tak, stlačte "<b>Potvrdiť</b>".</string>
+</resources>

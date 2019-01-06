@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="verify_n_digit_pin">Zadejte váš PIN</string>
+    <string name="create_n_digit_pin">Zadejte nový PIN</string>
+    <string name="confirm_n_digit_pin">Potvrďte PIN</string>
+    <string name="pin_mismatch">PIN se nezhoduje.</string>
+    <string name="pin_created">PIN vytvořen.</string>
+    <string name="saving_pin">Ukládání PINu.</string>
+    <string name="pin_tries_depleted">Nesprávný PIN kód zadán %d-krát, odhlašuji.</string>
+</resources>

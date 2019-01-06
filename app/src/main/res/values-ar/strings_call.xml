@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <!-- ##automatically translated below -->
+    <string name="answer_call">إجابة</string>
+    <string name="end_call">نهاية</string>
+    <string name="speaker">المتحدث</string>
+    <string name="mute">كتم</string>
+    <string name="call_state_calling">استدعاء ...</string>
+    <string name="call_state_disconnected">التعلق</string>
+    <string name="call_state_incoming">مكالمة واردة ...</string>
+    <string name="hold_call">عقد</string>
+    <string name="on_hold">في الانتظار</string>
+    <string name="transport_secure_to_server">ويستخدم النقل TLS لهوب فوري</string>
+    <string name="transport_secure_full">ومن المفترض إشارة نهاية إلى نهاية آمنة</string>
+</resources>

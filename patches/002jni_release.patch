@@ -1,0 +1,13 @@
+Index: phonexAnd/app/jni/Application.mk
+===================================================================
+--- phonexAnd.orig/app/jni/Application.mk
++++ phonexAnd/app/jni/Application.mk
+@@ -5,7 +5,7 @@ JNI_DIR := $(call my-dir)
+ # enable this for release build, no debug and optimizations
+ #APP_OPTIM        := release
+ # debug build, minimal optimization, debug information (larger binary)
+-APP_OPTIM := debug
++APP_OPTIM := release
+ 
+ APP_ABI := armeabi armeabi-v7a x86
+ # mips

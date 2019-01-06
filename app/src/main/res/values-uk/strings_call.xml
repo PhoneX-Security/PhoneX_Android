@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="answer_call">Відповісти</string>
+  <string name="end_call">Завершення</string>
+  <string name="speaker">Гучномовець</string>
+  <string name="mute">Вимкнути звук</string>
+  <string name="call_state_calling">Виклик…</string>
+  <string name="call_state_disconnected">Покласти трубку</string>
+  <string name="call_state_incoming">Вхідний дзвінок…</string>
+  <string name="hold_call">Утримати</string>
+  <string name="on_hold">На Утриманні</string>
+  <!-- ##automatically translated below -->
+
+<string name="transport_secure_to_server">TLS транспорт використовується для негайного хоп</string>
+<string name="transport_secure_full">Впритул сигналізації передбачається безпечним</string>
+</resources>

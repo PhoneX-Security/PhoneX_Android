@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <!--Network-->
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <!--UI-->
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <!--Generic-->
+
+
+
+<!-- ##automatically translated below -->
+
+<string name="prefs">Configuración</string>
+<string name="prefs_connectivity">Rede</string>
+<string name="prefs_media">Medios</string>
+<string name="prefs_ui">Interface co usuario</string>
+<string name="prefs_security">Seguridade</string>
+<string name="transport">Transporte</string>
+<string name="network_watchdog">Watchdog rede</string>
+<string name="network_watchdog_desc">Reinicia o servizo en caso de non rexistro. En cuestión de segundos. 0 = desactivar</string>
+<string name="audio_quality">A calidade do audio</string>
+<string name="audio_volume">Volume</string>
+<string name="codecs">Códecs</string>
+<string name="echo_cancellation">Cancelación de eco</string>
+<string name="echo_cancellation_desc">Active a cancelación de eco</string>
+<string name="disable_vad">Detección de audio de voz</string>
+<string name="disable_vad_desc">Activar detección de audio de voz</string>
+<string name="enable_noise_reduction">A redución de ruído</string>
+<string name="enable_noise_reduction_desc">Funciona se a cancelación de eco está activado e WebRTC cancelador de eco motor usado</string>
+<string name="sound_mic_volume">Amplificación Micro</string>
+<string name="sound_speaker_volume">Amplificación Speaker</string>
+<string name="sound_bt_mic_volume">Amplificación de micrófono Bluetooth</string>
+<string name="media_quality">Calidade dos medios de comunicación</string>
+<string name="media_quality_desc">Calidade do fluxo multimedia (modificar só se sabes o que estás a facer)</string>
+<string name="sound_clock_rate">Clock</string>
+<string name="sound_clock_rate_desc">Frecuencia da canle de audio</string>
+<string name="echo_cancellation_mode">Modo Eco</string>
+<string name="echo_cancellation_mode_desc">Algoritmo para echo</string>
+<string name="enable_focus_audio">Foco de son</string>
+<string name="auto">Automático</string>
+<string name="simple">Simple</string>
+<string name="slow">Devagar</string>
+<string name="fast">Rápido</string>
+<string name="general_ui">Interface de usuario Xeral</string>
+<string name="keep_awake_incall">Manter acordado mentres na chamada</string>
+<string name="keep_awake_incall_desc">Correccións obter un son axitado cando a pantalla apagado, mentres que na chamada WIFI</string>
+<string name="log_level">Entrar nivel</string>
+<string name="ringtone">Ringtone</string>
+<string name="prevent_screen_rotation">Impedir a rotación da pantalla</string>
+<string name="invert_proximity_sensor">Inverte sensor de proximidade</string>
+<string name="normal_preferences">Modo Normal</string>
+<string name="security_messages">Mensaxes</string>
+<string name="messages_delete_period_desc">Canto tempo para manter as mensaxes no ficheiro</string>
+<string name="messages_delete_period">Mensaxes archivation</string>
+<string name="just_session">Só nesta sesión</string>
+<string name="one_day">1 día</string>
+<string name="three_days">3 días</string>
+<string name="week">Semana</string>
+<string name="month">Mes</string>
+<string name="forever">Para sempre</string>
+</resources>

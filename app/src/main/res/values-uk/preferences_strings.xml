@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="prefs">Налаштування</string>
+  <string name="prefs_connectivity">Мережа</string>
+  <string name="prefs_media">Носії</string>
+  <string name="prefs_ui">Інтерфейс користувача</string>
+  <!--Network-->
+  <string name="transport">Транспорт</string>
+  <!--<string name="ka_use_wake">Keep alive awake</string>
+    <string name="ka_use_wake_desc">If activated keep alive will awake phone</string>-->
+  <!--Security-->
+  <!--Media-->
+  <string name="audio_quality">Якість звуку</string>
+  <string name="audio_volume">Гучність</string>
+  <string name="codecs">Кодеки</string>
+  <string name="echo_cancellation">Придушення луни</string>
+  <string name="echo_cancellation_desc">Активувати приглушення еха</string>
+  <string name="disable_vad">Виявлення звуку</string>
+  <string name="disable_vad_desc">Активація виявлення звуку</string>
+  <string name="sound_mic_volume">Мікро посилення</string>
+  <string name="sound_speaker_volume">Спікер посилення</string>
+  <string name="media_quality">Якість медіа</string>
+  <string name="media_quality_desc">Якість потоку засобів масової інформації (змінити, тільки якщо ви знаєте, що робите)</string>
+  <string name="sound_clock_rate">Тактова частота</string>
+  <string name="sound_clock_rate_desc">Аудіо частотний канал</string>
+  <string name="echo_cancellation_mode">Ехо режим</string>
+  <string name="echo_cancellation_mode_desc">Ехо алгоритм</string>
+  <string name="auto">Авто</string>
+  <string name="simple">Простий</string>
+  <!--UI-->
+  <string name="general_ui">Користувальницький інтерфейс</string>
+  <string name="keep_awake_incall">Пильнувати у той час як за викликом</string>
+  <string name="keep_awake_incall_desc">Лагодження, якщо ви отримуєте поривчастий звук, коли екран вимкнути в той час як в WIFI мережі</string>
+  <string name="log_level">Рівень журналу для налагодження</string>
+  <string name="ringtone">Рингтон</string>
+  <string name="prevent_screen_rotation">Заборонити повертання екрану</string>
+  <string name="invert_proximity_sensor">Звернути датчик</string>
+  <!--Fast settings-->
+  <!--Calls settings-->
+  <!--Settings modes-->
+  <!--Generic-->
+
+
+
+<!-- ##automatically translated below -->
+
+<string name="prefs_security">Безпека</string>
+<string name="network_watchdog">Мережа сторожовий</string>
+<string name="network_watchdog_desc">Перезапуску служби у разі відсутності реєстрації. Протягом декількох секунд. 0 = вимкнено</string>
+<string name="enable_noise_reduction">Придушення шуму</string>
+<string name="enable_noise_reduction_desc">Працює, якщо ехоподавлення активується і WebRTC ехоподавітелем бекенда використані</string>
+<string name="sound_bt_mic_volume">Bluetooth посилення мікрофона</string>
+<string name="enable_focus_audio">Аудіо фокусу</string>
+<string name="slow">Уповільнювати</string>
+<string name="fast">Швидко</string>
+<string name="normal_preferences">Нормальний режим</string>
+<string name="security_messages">Повідомлення</string>
+<string name="messages_delete_period_desc">Як довго тримати Ваші повідомлення в архіві</string>
+<string name="messages_delete_period">Повідомлення архівування</string>
+<string name="just_session">Тільки на цій сесії</string>
+<string name="one_day">1 день</string>
+<string name="three_days">3 днів</string>
+<string name="week">Тиждень</string>
+<string name="month">Місяць</string>
+<string name="forever">Назавжди</string>
+</resources>

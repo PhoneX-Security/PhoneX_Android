@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="prefs">Setări</string>
+<string name="prefs_connectivity">Rețea</string>
+<string name="prefs_media">Mass-media</string>
+<string name="prefs_ui">Interfața cu utilizatorul</string>
+<string name="prefs_security">Securitate</string>
+<string name="transport">Transport</string>
+<string name="network_watchdog">Watchdog rețea</string>
+<string name="network_watchdog_desc">Serviciu repornește în cazul în care nici o înregistrare. În secunde. 0 = dezactivare</string>
+<string name="audio_quality">Calitatea audio</string>
+<string name="audio_volume">Volum</string>
+<string name="codecs">Codec-uri</string>
+<string name="echo_cancellation">Ecoului</string>
+<string name="echo_cancellation_desc">Activați ecoului</string>
+<string name="disable_vad">Detectare audio voce</string>
+<string name="disable_vad_desc">Activați detectarea audio voce</string>
+<string name="enable_noise_reduction">Reducerea zgomotului</string>
+<string name="enable_noise_reduction_desc">Funcționează dacă anularea ecoului este activată și WebRTC canceller ecou backend folosit</string>
+<string name="sound_mic_volume">Amplificarea micro</string>
+<string name="sound_speaker_volume">Amplificare difuzor</string>
+<string name="sound_bt_mic_volume">Amplificare microfon Bluetooth</string>
+<string name="media_quality">Calitate mass-media</string>
+<string name="media_quality_desc">Calitatea fluxului media (modifica numai daca stii ce faci)</string>
+<string name="sound_clock_rate">Rata de ceas</string>
+<string name="sound_clock_rate_desc">Frecvența canalului audio</string>
+<string name="echo_cancellation_mode">Mod de ecou</string>
+<string name="echo_cancellation_mode_desc">Algoritmul de ecou</string>
+<string name="enable_focus_audio">Focus audio</string>
+<string name="auto">Auto</string>
+<string name="simple">Simplu</string>
+<string name="slow">Lent</string>
+<string name="fast">Rapid</string>
+<string name="general_ui">Interfața generale de utilizare</string>
+<string name="keep_awake_incall">Ține treaz timp de gardă</string>
+<string name="keep_awake_incall_desc">Fixat dacă aveți un sunet instabil atunci când ecranul opriți în timp ce în apel WIFI</string>
+<string name="log_level">Log nivel</string>
+<string name="ringtone">Ringtone</string>
+<string name="prevent_screen_rotation">Preveni rotația ecranului</string>
+<string name="invert_proximity_sensor">Invert senzor de proximitate</string>
+<string name="normal_preferences">Modul Normal</string>
+<string name="security_messages">Mesaje</string>
+<string name="messages_delete_period_desc">Cât timp să păstrați mesajele dumneavoastră în arhivă</string>
+<string name="messages_delete_period">Mesaje arhivarea</string>
+<string name="just_session">Doar în această sesiune</string>
+<string name="one_day">1 zi</string>
+<string name="three_days">3 zile</string>
+<string name="week">Săptămână</string>
+<string name="month">Lună</string>
+<string name="forever">Pentru totdeauna</string>
+</resources>

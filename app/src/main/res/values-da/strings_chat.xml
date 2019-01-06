@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="menu_delete_all">Slet tråde</string>
+<string name="menu_delete">Slet tråden</string>
+<string name="menu_view">Se tråden</string>
+<string name="undelivered_msg_dialog_title">Leverede besked</string>
+<string name="copy_message_text">Kopier meddelelsesteksten</string>
+<string name="done">Udført</string>
+<string name="compose_title">Compose</string>
+<string name="send">Send</string>
+<string name="type_to_compose_text_enter_to_send">Skriv at komponere</string>
+<string name="yes">OK</string>
+<string name="no">Annuller</string>
+<string name="edit">Rediger</string>
+<string name="restore_default">"Gendan standardindstillinger"</string>
+<string name="confirm_dialog_title">Slet</string>
+<string name="confirm_delete_conversation">Hele tråden vil blive slettet.</string>
+<string name="confirm_delete_all_conversations">Alle tråde vil blive slettet.</string>
+<string name="delete">Slet</string>
+<string name="status_pending">Afventer</string>
+<string name="status_failed">Mislykket</string>
+</resources>

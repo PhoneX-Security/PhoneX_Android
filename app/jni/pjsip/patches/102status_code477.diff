@@ -1,0 +1,12 @@
+Index: pjsip/sources/pjsip/include/pjsip/sip_msg.h
+===================================================================
+--- pjsip.orig/sources/pjsip/include/pjsip/sip_msg.h	2014-11-10 23:23:51.669932965 +0100
++++ pjsip/sources/pjsip/include/pjsip/sip_msg.h	2014-11-10 23:23:51.669932965 +0100
+@@ -435,6 +435,7 @@
+     PJSIP_SC_EXTENSION_REQUIRED = 421,
+     PJSIP_SC_SESSION_TIMER_TOO_SMALL = 422,
+     PJSIP_SC_INTERVAL_TOO_BRIEF = 423,
++    PJSIP_SC_ERROR_ON_SENDING_TO_NEXT_HOP = 477,
+     PJSIP_SC_TEMPORARILY_UNAVAILABLE = 480,
+     PJSIP_SC_CALL_TSX_DOES_NOT_EXIST = 481,
+     PJSIP_SC_LOOP_DETECTED = 482,

@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+  <string name="account_name">Kontonamn</string>
+  <string name="account_name_desc">Visningsnamn för detta konto</string>
+  </resources>

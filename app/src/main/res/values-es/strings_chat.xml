@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="menu_delete_all">Eliminar conversaciones</string>
+    <string name="menu_delete">Eliminar conversación</string>
+    <string name="menu_view">Ver conversación</string>
+    <string name="undelivered_msg_dialog_title">Mensaje sin entregar</string>
+    <string name="copy_message_text">Copiar texto del mensaje</string>
+    <string name="done">Realizado</string>
+    <string name="compose_title">Redactar</string>
+    <string name="send">Enviar</string>
+    <string name="type_to_compose_text_enter_to_send">Escribir</string>
+    <string name="yes">Aceptar</string>
+    <string name="no">Cancelar</string>
+    <string name="edit">Editar</string>
+    <string name="restore_default">Reestablecer configuración por defecto</string>
+    <string name="confirm_dialog_title">Eliminar</string>
+    <string name="confirm_delete_conversation">Se eliminará toda la conversación.</string>
+    <string name="confirm_delete_all_conversations">Se eliminarán todas las conversaciones.</string>
+    <string name="delete">Eliminar</string>
+    <string name="status_pending">Pendiente</string>
+    <string name="status_failed">Fallido</string>
+    </resources>

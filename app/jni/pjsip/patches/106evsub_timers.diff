@@ -1,0 +1,129 @@
+Index: pjsip/sources/pjsip/src/pjsip-simple/evsub.c
+===================================================================
+--- pjsip.orig/sources/pjsip/src/pjsip-simple/evsub.c
++++ pjsip/sources/pjsip/src/pjsip-simple/evsub.c
+@@ -305,8 +305,10 @@ PJ_DEF(pj_status_t) pjsip_evsub_init_mod
+ 
+     /* Create pool: */
+     mod_evsub.pool = pjsip_endpt_create_pool(endpt, "evsub", 512, 512);
+-    if (!mod_evsub.pool)
++    if (!mod_evsub.pool){
++    PJ_LOG(1,("evsub", "Cannot init module, pool is null %d", __LINE__));
+ 	return PJ_ENOMEM;
++    }
+ 
+     /* Register module: */
+     status = pjsip_endpt_register_module(endpt, &mod_evsub.mod);
+@@ -498,11 +500,14 @@ static void set_timer( pjsip_evsub *sub,
+ 		       pj_int32_t seconds)
+ {
+     if (sub->timer.id != TIMER_TYPE_NONE) {
+-	PJ_LOG(5,(sub->obj_name, "%s %s timer", 
++	PJ_LOG(5,(sub->obj_name, "%s %s timer %p",
+ 		  (timer_id==sub->timer.id ? "Updating" : "Cancelling"),
+-		  timer_names[sub->timer.id]));
++		  timer_names[sub->timer.id],
++		  &sub->timer));
+ 	pjsip_endpt_cancel_timer(sub->endpt, &sub->timer);
+ 	sub->timer.id = TIMER_TYPE_NONE;
++	PJ_LOG(5,(sub->obj_name, "timer %p cancelled",
++			  &sub->timer));
+     }
+ 
+     if (timer_id != TIMER_TYPE_NONE) {
+@@ -517,9 +522,10 @@ static void set_timer( pjsip_evsub *sub,
+ 	sub->timer.id = timer_id;
+ 
+ 	pjsip_endpt_schedule_timer(sub->endpt, &sub->timer, &timeout);
++	sub->timer.id = timer_id;
+ 
+-	PJ_LOG(5,(sub->obj_name, "Timer %s scheduled in %d seconds", 
+-		  timer_names[sub->timer.id], timeout.sec));
++	PJ_LOG(5,(sub->obj_name, "Timer %s scheduled in %d seconds @ %p",
++		  timer_names[sub->timer.id], timeout.sec, &sub->timer));
+     }
+ }
+ 
+@@ -615,28 +621,60 @@ static void set_state( pjsip_evsub *sub,
+ 
+ /*
+  * Timer callback.
++ * WARNING: Race conditions here!
+  */
+ static void on_timer( pj_timer_heap_t *timer_heap,
+ 		      struct pj_timer_entry *entry)
+ {
+-    pjsip_evsub *sub;
+-    int timer_id;
++    pjsip_evsub *sub = NULL;
++    int timer_id = 0;
+ 
+     PJ_UNUSED_ARG(timer_heap);
+ 
++    // Sanity check for sub - if null, do not trigger
++    if (entry->user_data == NULL){
++    	PJ_LOG(1,("evsub", "Timer has null data @ %p id=%d.", entry, entry->id));
++    	return;	// TODO: Should assert here!
++    }
++
+     sub = (pjsip_evsub*) entry->user_data;
+ 
++    // Sanity check for sub->dialog - if null, do not trigger
++    if (sub->obj_name == NULL || sub->dlg == NULL){
++    	PJ_LOG(1,("evsub", "Timer has null obj_name/dialog @ %p id=%d.", entry, entry->id));
++    	return;	// TODO: Should assert here!
++    }
++
++    // Locking dialog
+     pjsip_dlg_inc_lock(sub->dlg);
+ 
++    // Sanity check - if subscription is in terminated state
++    // Following timer cases make no sense - ignore triggered timer.
++    if (sub->state == PJSIP_EVSUB_STATE_TERMINATED){
++    	PJ_LOG(2,(sub->obj_name, "Timer @ %p id=%d fired in terminated state, ignoring.", entry, entry->id));
++    	goto timer_done;
++    }
++
++    // If timer is null, it was cancelled meanwhile, ignore it
++    if (entry->id == TIMER_TYPE_NONE || entry->id == 0){
++    	PJ_LOG(2,(sub->obj_name, "Timer @ %p id=%d was probably cancelled meanwhile, ignoring.", entry, entry->id));
++    	goto timer_done;
++    }
++
+     timer_id = entry->id;
+     entry->id = TIMER_TYPE_NONE;
++    PJ_LOG(5,(sub->obj_name, "Timer fired @ %p id=%d dlg=%p", entry, timer_id, sub->dlg));
+ 
+     switch (timer_id) {
+ 
+     case TIMER_TYPE_UAC_REFRESH:
+ 	/* Time for UAC to refresh subscription */
+ 	if (sub->user.on_client_refresh && sub->call_cb) {
++		PJ_LOG(5,(sub->obj_name, "<on_client_refresh @ %p>", entry));
++		pj_log_push_indent();
+ 	    (*sub->user.on_client_refresh)(sub);
++	    pj_log_pop_indent();
++	    PJ_LOG(5,(sub->obj_name, "</on_client_refresh @ %p>", entry));
+ 	} else {
+ 	    pjsip_tx_data *tdata;
+ 	    pj_status_t status;
+@@ -648,6 +686,7 @@ static void on_timer( pj_timer_heap_t *t
+ 					  &tdata);
+ 	    if (status == PJ_SUCCESS)
+ 		pjsip_evsub_send_request(sub, tdata);
++	    PJ_LOG(5,(sub->obj_name, "</Refreshing subscription.>"));
+ 
+ 	    pj_log_pop_indent();
+ 	}
+@@ -705,9 +744,11 @@ static void on_timer( pj_timer_heap_t *t
+ 	break;
+ 
+     default:
++	PJ_LOG(1,(sub->obj_name, "Invalid timer @ %p id=%d sub %p", entry, timer_id, sub));
+ 	pj_assert(!"Invalid timer id");
+     }
+ 
++timer_done:
+     pjsip_dlg_dec_lock(sub->dlg);
+ }
+ 

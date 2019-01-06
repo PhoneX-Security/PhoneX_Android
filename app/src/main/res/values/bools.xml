@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <bool name="prefs_v11_enabled">false</bool>
+    <bool name="prefs_v8_enabled">true</bool>
+
+</resources>

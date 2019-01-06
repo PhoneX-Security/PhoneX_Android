@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="prefs">Asetukset</string>
+<string name="prefs_connectivity">Verkko</string>
+<string name="prefs_media">Tiedotusvälineet</string>
+<string name="prefs_ui">Käyttöliittymä</string>
+<string name="prefs_security">Turvallisuus</string>
+<string name="transport">Kuljettaa</string>
+<string name="network_watchdog">Verkko vahtikoira</string>
+<string name="network_watchdog_desc">Käynnistyy uudelleen palvelu jos ei rekisteröintiä. Sekunneissa. 0 = pois käytöstä</string>
+<string name="audio_quality">Äänenlaatu</string>
+<string name="audio_volume">Tilavuus</string>
+<string name="codecs">Koodekit</string>
+<string name="echo_cancellation">Kaikua</string>
+<string name="echo_cancellation_desc">Aktivoi kaikua</string>
+<string name="disable_vad">Voice äänentunnistusasetusten</string>
+<string name="disable_vad_desc">Aktivoi ääni äänentunnistusasetusten</string>
+<string name="enable_noise_reduction">Kohinanvaimennus</string>
+<string name="enable_noise_reduction_desc">Toimii, jos kaikua aktivoituu ja WebRTC kaiunpoistimen ajurilta käytetään</string>
+<string name="sound_mic_volume">Micro vahvistus</string>
+<string name="sound_speaker_volume">Kaiutin vahvistus</string>
+<string name="sound_bt_mic_volume">Bluetooth mic vahvistus</string>
+<string name="media_quality">Media laatu</string>
+<string name="media_quality_desc">Laatu mediavuon (muuttaa vain, jos tiedät mitä olet tekemässä)</string>
+<string name="sound_clock_rate">Kellotaajuus</string>
+<string name="sound_clock_rate_desc">Audio-kanavan taajuus</string>
+<string name="echo_cancellation_mode">Toistoääni</string>
+<string name="echo_cancellation_mode_desc">Algoritmi kaiku</string>
+<string name="enable_focus_audio">Focus audio</string>
+<string name="auto">Auto</string>
+<string name="simple">Yksinkertainen</string>
+<string name="slow">Hidas</string>
+<string name="fast">Nopeasti</string>
+<string name="general_ui">Yleinen käyttöliittymä</string>
+<string name="keep_awake_incall">Pidä hereillä ollessaan puhelun</string>
+<string name="keep_awake_incall_desc">Korjaa jos saat nykii ääni, kun näyttö sammuu kun WIFI puhelu</string>
+<string name="log_level">Kirjaudu tasolla</string>
+<string name="ringtone">Ringtone</string>
+<string name="prevent_screen_rotation">Estä näytön kierto</string>
+<string name="invert_proximity_sensor">Kääntele läheisyys anturi</string>
+<string name="normal_preferences">Normaalitilaan</string>
+<string name="security_messages">Viestit</string>
+<string name="messages_delete_period_desc">Kuinka kauan pitää viestejä arkisto</string>
+<string name="messages_delete_period">Viestit archivation</string>
+<string name="just_session">Juuri tämän istunnon</string>
+<string name="one_day">1 päivä</string>
+<string name="three_days">3 päivää</string>
+<string name="week">Viikko</string>
+<string name="month">Kuukausi</string>
+<string name="forever">Ikuisesti</string>
+</resources>

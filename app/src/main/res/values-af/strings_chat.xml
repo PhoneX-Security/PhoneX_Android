@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="send">Stuur</string>
+    <string name="yes">Anvaar</string>
+    <string name="no">Kanselleer</string>
+    <string name="confirm_dialog_title">Skrap</string>
+    <string name="delete">Skrap</string>
+    <!-- ##automatically translated below -->
+
+    <string name="menu_delete_all">Verwyder drade</string>
+    <string name="menu_delete">Verwyder draad</string>
+    <string name="menu_view">Sien draad</string>
+    <string name="undelivered_msg_dialog_title">Onafgelewerde boodskap</string>
+    <string name="copy_message_text">Kopieer boodskap teks</string>
+    <string name="done">Gedoen</string>
+    <string name="compose_title">Komponeer</string>
+    <string name="type_to_compose_text_enter_to_send">Tik op te stel</string>
+    <string name="edit">Wysig</string>
+    <string name="restore_default">"Herstel verstek instellings"</string>
+    <string name="confirm_delete_conversation">Die hele draad sal geskrap word.</string>
+    <string name="confirm_delete_all_conversations">Alle drade sal geskrap word.</string>
+    <string name="status_pending">Hangende</string>
+    <string name="status_failed">Onsuksesvol</string>
+</resources>

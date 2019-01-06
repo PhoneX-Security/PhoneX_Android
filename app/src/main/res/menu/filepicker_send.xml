@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/filepicker_send"
+        android:icon="@drawable/svg_send_enabled"
+        android:title="@string/send_message" />
+
+</menu>

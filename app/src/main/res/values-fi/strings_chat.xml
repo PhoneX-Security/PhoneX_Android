@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+<!-- ##automatically translated below -->
+<string name="menu_delete_all">Poista ketjut</string>
+<string name="menu_delete">Poista thread</string>
+<string name="menu_view">Katso viesti</string>
+<string name="undelivered_msg_dialog_title">Ei-lähetetyt viesti</string>
+<string name="copy_message_text">Kopioi viestin teksti</string>
+<string name="done">Tehty</string>
+<string name="compose_title">Säveltää</string>
+<string name="send">Lähettää</string>
+<string name="type_to_compose_text_enter_to_send">Kirjoita säveltää</string>
+<string name="yes">Kunnossa</string>
+<string name="no">Peruuttaa</string>
+<string name="edit">Muokata</string>
+<string name="restore_default">"Palauta oletusasetukset"</string>
+<string name="confirm_dialog_title">Poistaa</string>
+<string name="confirm_delete_conversation">Koko ketju poistetaan.</string>
+<string name="confirm_delete_all_conversations">Kaikki säikeet poistetaan.</string>
+<string name="delete">Poistaa</string>
+<string name="status_pending">Odotettaessa</string>
+<string name="status_failed">Epäonnistunut</string>
+</resources>

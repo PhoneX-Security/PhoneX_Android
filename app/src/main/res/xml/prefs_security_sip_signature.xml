@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="sipsig_drop"
+        android:title="@string/sipsig_drop">
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="drop_bad_invite"
+            android:summary="@string/drop_bad_invite_desc"
+            android:title="@string/drop_bad_invite" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="drop_bad_bye"
+            android:summary="@string/drop_bad_bye_desc"
+            android:title="@string/drop_bad_bye" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="sipsig_misc"
+        android:title="@string/sipsig_misc">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="show_sipsig_warnings"
+            android:summary="@string/show_sipsig_warnings"
+            android:title="@string/show_sipsig_warnings" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

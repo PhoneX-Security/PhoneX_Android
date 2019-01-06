@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <!-- ##automatically translated below -->
+    <string name="menu_delete_all">حذف المواضيع</string>
+    <string name="menu_delete">حذف الموضوع</string>
+    <string name="menu_view">عرض الموضوع</string>
+    <string name="undelivered_msg_dialog_title">رسالة غير المسلمة</string>
+    <string name="copy_message_text">نسخ نص الرسالة</string>
+    <string name="done">فعلت</string>
+    <string name="compose_title">تشكل</string>
+    <string name="send">إرسال</string>
+    <string name="type_to_compose_text_enter_to_send">اكتب أن يؤلف</string>
+    <string name="yes">حسنا</string>
+    <string name="no">إلغاء</string>
+    <string name="edit">تعديل</string>
+    <string name="restore_default">"استعادة الإعدادات الافتراضية"</string>
+    <string name="confirm_dialog_title">حذف</string>
+    <string name="confirm_delete_conversation">سيتم حذف الموضوع كاملا مع محتوياته.</string>
+    <string name="confirm_delete_all_conversations">سيتم حذف جميع المواضيع.</string>
+    <string name="delete">حذف</string>
+    <string name="status_pending">ريثما</string>
+    <string name="status_failed">غير ناجح</string>
+</resources>

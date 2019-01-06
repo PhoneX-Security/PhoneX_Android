@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+    <string name="answer_call">Odpověď</string>
+    <string name="end_call">Ukončit</string>
+    <string name="speaker">Reproduktor</string>
+    <string name="mute">Ztlumit</string>
+    <string name="call_state_calling">Volání</string>
+    <string name="call_state_disconnected">Zavěsit</string>
+    <string name="call_state_incoming">Příchozí hovor</string>
+    <string name="call_state_preparing">Připravuji</string>
+    <string name="call_state_encrypting">Šifrování hlasu</string>
+    <string name="hold_call">Přidržet</string>
+    <string name="on_hold">Přidrženo</string>
+</resources>

@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resources>
+
+    <string name="menu_delete_all">Delete threads</string>
+    <string name="menu_delete">Delete thread</string>
+    <string name="menu_view">View thread</string>
+
+    <string name="undelivered_msg_dialog_title">Undelivered message</string>
+    <string name="msg_backoff_resend">Resend in %s s</string>
+
+    <string name="copy_message_text">Copy message text</string>
+    <string name="done">Done</string>
+
+    <string name="compose_title">Chat</string>
+    <string name="send">Send</string>
+    <string name="type_to_compose_text_enter_to_send">Type to compose</string>
+    <string name="yes">OK</string>
+    <string name="no">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="restore_default">"Restore default settings"</string>
+    <string name="confirm_dialog_title">Delete</string>
+    <string name="confirm_delete_conversation">The entire thread will be deleted.</string>
+    <string name="confirm_delete_all_conversations">All threads will be deleted.</string>
+    <string name="delete">Delete</string>
+
+    <string name="status_pending">Pending</string>
+    <string name="status_failed">Unsuccessful</string>
+</resources>
